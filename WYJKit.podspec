@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 #s.dependency 'DZNEmptyDataSet'
 #s.dependency 'MJRefresh'
 
-#s.public_header_files = 'WYJKit/**/*.{h}'
+s.public_header_files = 'WYJKit/**/*.{h}'
 
 
 
