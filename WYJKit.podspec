@@ -7,11 +7,11 @@ Pod::Spec.new do |s|
                             category
                        DESC
 
-  s.homepage         = 'https://github.com/MemoryKing/WYJKit'
+  s.homepage         = 'https://github.com/MemoryKing/WYJKit.git'
   #s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.license          = 'MIT'
   s.author           = { '╰莪呮想好好宠Nǐつ ' => '1091676312@qq.com' }
-  s.source           = { :git => 'https://github.com/MemoryKing/WYJKit', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/MemoryKing/WYJKit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
