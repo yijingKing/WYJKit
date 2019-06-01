@@ -1,0 +1,26 @@
+/*******************************************************************************
+ Copyright (K), 2019 - ~, Eugene King
+ 
+ File name:     UIFont+WYJKit.h
+ Author:        Eugene King (Wang Yijing)
+ E-mail:        1091676312@qq.com
+ 
+ ********************************************************************************/
+
+
+#ifndef WYJPrefixHeader_h
+#define WYJPrefixHeader_h
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//布局位置
+#import "WYJFrameMacro.h"
+//与系统有关宏
+#import "WYJSystemMacro.h"
+//对象引用
+#import "WYJObjectMacro.h"
+//常用宏
+#import "WYJHandy.h"
+
+#endif /* WYJPrefixHeader_h */
