@@ -1,5 +1,5 @@
 /*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
  
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
@@ -41,9 +41,9 @@ static const char TextAlignementKey;
 #pragma clang diagnostic pop
     
     CGFloat imageOffsetX = (imageWith + labelWidth) / 2 - imageWith / 2;//image中心移动的x距离
-    CGFloat imageOffsetY = imageHeight / 2 + spacing / 2;//image中心移动的y距离
+    CGFloat imageOffsetY = imageHeight / 2 - spacing;//image中心移动的y距离
     CGFloat labelOffsetX = (imageWith + labelWidth / 2) - (imageWith + labelWidth) / 2;//label中心移动的x距离
-    CGFloat labelOffsetY = labelHeight / 2 + spacing / 2;//label中心移动的y距离
+    CGFloat labelOffsetY = labelHeight / 2 + spacing * 2;//label中心移动的y距离
     
     switch (postitionStatus) {
         case WImagePositionLeft:
