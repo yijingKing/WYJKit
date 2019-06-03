@@ -6,8 +6,8 @@
  
  ********************************************************************************/
 
-#ifndef WYJCategory_h
-#define WYJCategory_h
+#ifndef YJCategory_h
+#define YJCategory_h
 
 #import "WYJCategoriesMacro.h"
 
@@ -30,5 +30,5 @@
 #import "NSMutableArray+YJAdd.h"
 
 
-#endif /* WYJCategory_h */
+#endif /* YJCategory_h */
 

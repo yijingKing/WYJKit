@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             category and empty
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit','Foundation','AVFoundation','WebKit'
 
-#s.source_files = 'WYJKit/**/*.{h,m}'
+s.source_files = 'WYJKit/**/WYJKitHeader.{h}'
 
 s.public_header_files   = 'WYJKit/**/WYJKitHeader.{h}'
 
@@ -33,5 +33,13 @@ e.dependency 'DZNEmptyDataSet'
 e.dependency 'MJRefresh'
 end
 
+s.subspec 'Utility' do |u|
+e.public_header_files   = 'WYJKit/Utility/**/*.{h}'
+e.source_files          = 'WYJKit/Utility/**/*.{h,m}';
+e.dependency 'DZNEmptyDataSet'
+e.dependency 'MJRefresh'
+end
+
 s.requires_arc = true
 end
+
