@@ -3,7 +3,7 @@
  
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
- 
+ GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
 #ifndef WBaseEmotyHeader_h

@@ -42,6 +42,7 @@
 		98EF40EE22A2900E005A0547 /* YJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40ED22A2900E005A0547 /* YJTableViewCell.m */; };
 		98EF40F122A29635005A0547 /* YJSystemPermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40F022A29635005A0547 /* YJSystemPermissions.m */; };
 		98EF413322A4B830005A0547 /* YJSystemService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF413222A4B830005A0547 /* YJSystemService.m */; };
+		98EF41B522A50CDA005A0547 /* UIView+YJPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF41B322A50CDA005A0547 /* UIView+YJPageRouter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		98EF40F022A29635005A0547 /* YJSystemPermissions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSystemPermissions.m; sourceTree = "<group>"; };
 		98EF413122A4B830005A0547 /* YJSystemService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSystemService.h; sourceTree = "<group>"; };
 		98EF413222A4B830005A0547 /* YJSystemService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSystemService.m; sourceTree = "<group>"; };
+		98EF41B322A50CDA005A0547 /* UIView+YJPageRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJPageRouter.m"; sourceTree = "<group>"; };
+		98EF41B422A50CDA005A0547 /* UIView+YJPageRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YJPageRouter.h"; sourceTree = "<group>"; };
 		A6EB4CCFCD028867BB16B886 /* libPods-YJKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YJKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA8F86FA19772DFABE9201C /* Pods-YJKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -315,6 +318,8 @@
 		98EB8D8E229FDF1000CC4AB1 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				98EF41B422A50CDA005A0547 /* UIView+YJPageRouter.h */,
+				98EF41B322A50CDA005A0547 /* UIView+YJPageRouter.m */,
 				98EB8D8F229FDF1000CC4AB1 /* UIView+YJAdd.m */,
 				98EB8D90229FDF1000CC4AB1 /* UIView+YJAdd.h */,
 			);
@@ -720,6 +725,7 @@
 				98EB8DC6229FDF1000CC4AB1 /* NSString+YJRegular.m in Sources */,
 				98EF40EE22A2900E005A0547 /* YJTableViewCell.m in Sources */,
 				98EF40E722A289CE005A0547 /* UIColor+YJAdd.m in Sources */,
+				98EF41B522A50CDA005A0547 /* UIView+YJPageRouter.m in Sources */,
 				98EB8C77229FDB5900CC4AB1 /* main.m in Sources */,
 				98EB8DCA229FDF1000CC4AB1 /* NSMutableArray+YJAdd.m in Sources */,
 				98EF413322A4B830005A0547 /* YJSystemService.m in Sources */,
