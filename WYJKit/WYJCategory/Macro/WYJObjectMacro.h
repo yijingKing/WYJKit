@@ -21,8 +21,4 @@
 #define WEAKSELF typeof(self) __weak weakSelf = self;
 #define STRONGSELF typeof(weakSelf) __strong strongSelf = weakSelf;
 
-// 数据的有效性, 判断字符串是否有效
-#define WValidity_Str(string) (((string != nil) && (string.length>0))?YES:NO)
-
-
 #endif /* WYJObjectMacro_h */

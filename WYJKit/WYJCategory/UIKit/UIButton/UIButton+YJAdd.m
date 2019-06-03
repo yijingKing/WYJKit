@@ -75,17 +75,7 @@ static const char TextAlignementKey;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+#pragma make ------ runtime ------
 - (void)setTitleFont:(CGFloat)titleFont {
     objc_setAssociatedObject(self, &TitleFontKey, @(titleFont), OBJC_ASSOCIATION_ASSIGN);
     self.titleLabel.font = [UIFont fontAdapter:titleFont];

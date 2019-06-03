@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WYJKitHeader.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : YJBaseViewController
+
 
 
 @end

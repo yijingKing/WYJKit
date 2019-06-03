@@ -10,8 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <CoreText/CoreText.h>
-#import "WYJCategory.h"
-
+#import "WYJFrameMacro.h"
 
 #define SizeScale   (WLessIphone6 ? - 1.5 : (WIPhone6 || WIPhoneX) ? 0 : 1.5)
 

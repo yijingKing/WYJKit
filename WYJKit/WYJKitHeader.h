@@ -1,14 +1,17 @@
-//
-//  WYJKitHeader.h
-//  YJKitDemo
-//
-//  Created by Eugene King on 2019/5/30.
-//  Copyright © 2019 Eugene King. All rights reserved.
-//
+/*******************************************************************************
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
+ 
+ Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ E-mail:        1091676312@qq.com
+ 
+ ********************************************************************************/
+
 
 #ifndef WYJKitHeader_h
 #define WYJKitHeader_h
 
-#import "WYJCategory.h"
+#import "YJCategory.h"
+#import "YJUtilityHeader.h"
+#import "YJBaseEmotyHeader.h"
 
 #endif /* WYJKitHeader_h */

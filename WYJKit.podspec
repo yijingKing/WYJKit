@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.version          = '1.0.2'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
-                            category
+                            category and empty
                        DESC
 
   s.homepage         = 'https://github.com/MemoryKing/WYJKit.git'
@@ -15,20 +15,22 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.frameworks = 'UIKit','Foundation','AVFoundation'
+  s.frameworks = 'UIKit','Foundation','AVFoundation','WebKit'
 
 #s.source_files = 'WYJKit/**/*.{h,m}'
 
-#s.dependency 'DZNEmptyDataSet'
-#s.dependency 'MJRefresh'
-
-s.public_header_files = 'WYJKit/**/WYJKitHeader.{h}'
-
-
+s.public_header_files   = 'WYJKit/**/WYJKitHeader.{h}'
 
 s.subspec 'WYJCategory' do |c|
-c.public_header_files = 'WYJKit/WYJCategory/**/*.{h}'
-c.source_files = 'WYJKit/WYJCategory/**/*.{h,m}';
+c.public_header_files   = 'WYJKit/WYJCategory/**/*.{h}'
+c.source_files          = 'WYJKit/WYJCategory/**/*.{h,m}';
+end
+
+s.subspec 'WBaseEmpty' do |e|
+e.public_header_files   = 'WYJKit/WBaseEmpty/**/*.{h}'
+e.source_files          = 'WYJKit/WBaseEmpty/**/*.{h,m}';
+e.dependency 'DZNEmptyDataSet'
+e.dependency 'MJRefresh'
 end
 
 s.requires_arc = true
