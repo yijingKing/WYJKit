@@ -1,10 +1,10 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '1.0.5'
+  s.version          = '1.0.6'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
-                            Page Router
+                            Page Router bug
                        DESC
 
   s.homepage         = 'https://github.com/MemoryKing/WYJKit.git'

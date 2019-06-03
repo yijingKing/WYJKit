@@ -13,10 +13,19 @@
 
 - (void)push:(UIViewController *)vc {
     UIViewController * currentC = [self currentController];
+    
     if([currentC isKindOfClass:[UINavigationController class]]) {
-        [((UINavigationController *)currentC) pushViewController:vc animated:YES];
+        UINavigationController * nav = (UINavigationController *)currentC;
+        if (nav.viewControllers.count > 0 ) {
+            vc.hidesBottomBarWhenPushed = YES;
+        }
+        [nav pushViewController:vc animated:YES];
     }
     else {
+        UINavigationController * nav = [currentC navigationController];
+        if (nav.viewControllers.count > 0 ) {
+            vc.hidesBottomBarWhenPushed = YES;
+        }
         [[currentC navigationController] pushViewController:vc animated:YES];
     }
 }
@@ -71,8 +80,21 @@
 
 - (UIViewController *)currentController {
     UIViewController * presentedVC = [[UIApplication sharedApplication].delegate window].rootViewController;
-    while (presentedVC.presentedViewController) {
+    if ([presentedVC isKindOfClass:[UINavigationController class]]) {
         presentedVC = presentedVC.presentedViewController;
+    }
+    else if ([presentedVC isKindOfClass:[UITabBarController class]]) {
+        UITabBarController* tabBarController = (UITabBarController* )presentedVC;
+        presentedVC = tabBarController.selectedViewController;
+    }
+    else {
+        NSUInteger childViewControllerCount = presentedVC.childViewControllers.count;
+        if (childViewControllerCount > 0) {
+            presentedVC = presentedVC.childViewControllers.lastObject;
+            return presentedVC;
+        } else {
+            return presentedVC;
+        }
     }
     return presentedVC;
 }
