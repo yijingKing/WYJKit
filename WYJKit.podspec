@@ -34,10 +34,8 @@ e.dependency 'MJRefresh'
 end
 
 s.subspec 'Utility' do |u|
-e.public_header_files   = 'WYJKit/Utility/**/*.{h}'
-e.source_files          = 'WYJKit/Utility/**/*.{h,m}';
-e.dependency 'DZNEmptyDataSet'
-e.dependency 'MJRefresh'
+u.public_header_files   = 'WYJKit/Utility/**/*.{h}'
+u.source_files          = 'WYJKit/Utility/**/*.{h,m}';
 end
 
 s.requires_arc = true
