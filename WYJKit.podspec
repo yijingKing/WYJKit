@@ -38,11 +38,6 @@ u.public_header_files   = 'WYJKit/Utility/**/*.{h}'
 u.source_files          = 'WYJKit/Utility/**/*.{h,m}'
 end
 
-s.subspec 'Macro' do |m|
-m.public_header_files   = 'WYJKit/Macro/**/*.{h}'
-m.source_files          = 'WYJKit/Macro/**/*.{h}'
-end
-
 s.requires_arc = true
 end
 

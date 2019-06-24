@@ -68,11 +68,11 @@
 		7A8338279364F31DFDA20A20 /* Pods-YJKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJKitDemo.release.xcconfig"; path = "Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		987CC5C422C0737E00BDFD25 /* NSString+YJConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YJConversion.h"; sourceTree = "<group>"; };
 		987CC5C522C0737E00BDFD25 /* NSString+YJConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YJConversion.m"; sourceTree = "<group>"; };
-		98D8903A22A75FAD0032B7AC /* WYJObjectMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJObjectMacro.h; sourceTree = "<group>"; };
-		98D8903B22A75FAD0032B7AC /* WYJSystemMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJSystemMacro.h; sourceTree = "<group>"; };
-		98D8903C22A75FAD0032B7AC /* WYJHandy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJHandy.h; sourceTree = "<group>"; };
-		98D8903D22A75FAD0032B7AC /* WYJFrameMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJFrameMacro.h; sourceTree = "<group>"; };
-		98D8903E22A75FAD0032B7AC /* WYJCategoriesMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJCategoriesMacro.h; sourceTree = "<group>"; };
+		98B525E722C0AD0100FE4C97 /* WYJObjectMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJObjectMacro.h; sourceTree = "<group>"; };
+		98B525E822C0AD0100FE4C97 /* WYJSystemMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJSystemMacro.h; sourceTree = "<group>"; };
+		98B525E922C0AD0100FE4C97 /* WYJHandy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJHandy.h; sourceTree = "<group>"; };
+		98B525EA22C0AD0100FE4C97 /* WYJFrameMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJFrameMacro.h; sourceTree = "<group>"; };
+		98B525EB22C0AD0100FE4C97 /* WYJCategoriesMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJCategoriesMacro.h; sourceTree = "<group>"; };
 		98D8903F22A7629B0032B7AC /* YJSystemInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSystemInfo.h; sourceTree = "<group>"; };
 		98D8904022A7629B0032B7AC /* YJSystemInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSystemInfo.m; sourceTree = "<group>"; };
 		98EB8C64229FDB5800CC4AB1 /* YJKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,17 +196,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		98D8903922A75FAD0032B7AC /* Macro */ = {
+		98B525E622C0AD0100FE4C97 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
-				98D8903A22A75FAD0032B7AC /* WYJObjectMacro.h */,
-				98D8903B22A75FAD0032B7AC /* WYJSystemMacro.h */,
-				98D8903C22A75FAD0032B7AC /* WYJHandy.h */,
-				98D8903D22A75FAD0032B7AC /* WYJFrameMacro.h */,
-				98D8903E22A75FAD0032B7AC /* WYJCategoriesMacro.h */,
+				98B525E722C0AD0100FE4C97 /* WYJObjectMacro.h */,
+				98B525E822C0AD0100FE4C97 /* WYJSystemMacro.h */,
+				98B525E922C0AD0100FE4C97 /* WYJHandy.h */,
+				98B525EA22C0AD0100FE4C97 /* WYJFrameMacro.h */,
+				98B525EB22C0AD0100FE4C97 /* WYJCategoriesMacro.h */,
 			);
-			name = Macro;
-			path = ../../WYJKit/Macro;
+			path = Macro;
 			sourceTree = "<group>";
 		};
 		98D8904222A762AD0032B7AC /* YJSystemInfo */ = {
@@ -247,7 +246,6 @@
 				98EF40D722A2878C005A0547 /* WBaseEmpty */,
 				98EB8E0A229FE25100CC4AB1 /* Utility */,
 				98EB8D7F229FDF1000CC4AB1 /* WYJKit */,
-				98D8903922A75FAD0032B7AC /* Macro */,
 				98EB8E0B229FE2B200CC4AB1 /* demo */,
 			);
 			path = YJKitDemo;
@@ -284,6 +282,7 @@
 		98EB8D80229FDF1000CC4AB1 /* WYJCategory */ = {
 			isa = PBXGroup;
 			children = (
+				98B525E622C0AD0100FE4C97 /* Macro */,
 				98EB8D81229FDF1000CC4AB1 /* UIKit */,
 				98EB8DA2229FDF1000CC4AB1 /* Foundation */,
 			);
