@@ -18,6 +18,7 @@
 #define HEIGHT                       [UIScreen mainScreen].bounds.size.height
 
 #define SizeScale   ((WLessIp6) ? - 1.5 : (WIP6 || WIPX) ? 0 : 1.5)
+
 @implementation UIFont (YJAdd)
 
 - (BOOL)isBold {

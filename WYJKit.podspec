@@ -23,24 +23,24 @@ s.public_header_files   = 'WYJKit/**/WYJKitHeader.{h}'
 
 s.subspec 'WYJCategory' do |c|
 c.public_header_files   = 'WYJKit/WYJCategory/**/*.{h}'
-c.source_files          = 'WYJKit/WYJCategory/**/*.{h,m}';
+c.source_files          = 'WYJKit/WYJCategory/**/*.{h,m}'
 end
 
 s.subspec 'WBaseEmpty' do |e|
 e.public_header_files   = 'WYJKit/WBaseEmpty/**/*.{h}'
-e.source_files          = 'WYJKit/WBaseEmpty/**/*.{h,m}';
+e.source_files          = 'WYJKit/WBaseEmpty/**/*.{h,m}'
 e.dependency 'DZNEmptyDataSet'
 e.dependency 'MJRefresh'
 end
 
 s.subspec 'Utility' do |u|
 u.public_header_files   = 'WYJKit/Utility/**/*.{h}'
-u.source_files          = 'WYJKit/Utility/**/*.{h,m}';
+u.source_files          = 'WYJKit/Utility/**/*.{h,m}'
 end
 
 s.subspec 'Macro' do |m|
 m.public_header_files   = 'WYJKit/Macro/**/*.{h}'
-m.source_files          = 'WYJKit/Macro/**/*.{h}';
+m.source_files          = 'WYJKit/Macro/**/*.{h}'
 end
 
 s.requires_arc = true
