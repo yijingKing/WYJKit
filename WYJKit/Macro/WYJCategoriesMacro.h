@@ -8,8 +8,8 @@
  ********************************************************************************/
 
 
-#ifndef WYJPrefixHeader_h
-#define WYJPrefixHeader_h
+#ifndef WYJCategoriesMacro_h
+#define WYJCategoriesMacro_h
 
 //布局位置
 #import "WYJFrameMacro.h"
@@ -20,4 +20,4 @@
 //常用宏
 #import "WYJHandy.h"
 
-#endif /* WYJPrefixHeader_h */
+#endif /* WYJCategoriesMacro_h */
