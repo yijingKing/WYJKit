@@ -22,9 +22,11 @@
 #import "UIImageView+YJAdd.h"
 #import "UITextField+YJAdd.h"
 
+#import "NSString+YJConversion.h"
 #import "NSString+YJAdd.h"
 #import "NSString+YJRegular.h"
 #import "NSString+YJMD5.h"
+
 #import "NSDate+YJAdd.h"
 #import "NSArray+YJAdd.h"
 #import "NSMutableArray+YJAdd.h"

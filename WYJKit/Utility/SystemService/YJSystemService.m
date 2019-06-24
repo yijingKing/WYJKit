@@ -14,7 +14,11 @@
     NSURL * url = [NSURL URLWithString:[@"tel:" stringByAppendingString:phoneNum]];
     NSString *version= [UIDevice currentDevice].systemVersion;
     if(version.doubleValue >= 10.0) {
-        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+        if (@available(iOS 10.0, *)) {
+            [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+        } else {
+            // Fallback on earlier versions
+        }
     }else{
         [UIApplication.sharedApplication openURL:url];
     }
@@ -31,7 +35,11 @@
     NSURL * url = [NSURL URLWithString:[@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" stringByAppendingString:appId]];
     NSString *version= [UIDevice currentDevice].systemVersion;
     if(version.doubleValue >= 10.0) {
-        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+        if (@available(iOS 10.0, *)) {
+            [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+        } else {
+            // Fallback on earlier versions
+        }
     } else {
         // Fallback on earlier versions
         [UIApplication.sharedApplication openURL:url];
@@ -43,7 +51,11 @@
     NSURL * url = [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"];
     NSString *version= [UIDevice currentDevice].systemVersion;
     if(version.doubleValue >= 10.0) {
-        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+        if (@available(iOS 10.0, *)) {
+            [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+        } else {
+            // Fallback on earlier versions
+        }
     } else {
         [UIApplication.sharedApplication openURL:url];
     }
@@ -65,7 +77,11 @@
     NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",appid]];
     NSString *version= [UIDevice currentDevice].systemVersion;
     if(version.doubleValue >= 10.0) {
-        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+        if (@available(iOS 10.0, *)) {
+            [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+        } else {
+            // Fallback on earlier versions
+        }
     } else {
         // Fallback on earlier versions
         [UIApplication.sharedApplication openURL:url];

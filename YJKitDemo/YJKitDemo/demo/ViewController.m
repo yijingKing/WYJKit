@@ -28,6 +28,8 @@
         [self dis];
     }];
     
+    [NSString chaptersDealWithString:@"123"];
+    
 //    self.tableView.hiddenTime = YES;
 //    self.tableView.hiddenState = YES;
 }
