@@ -12,7 +12,7 @@
 #import <CoreText/CoreText.h>
 
 
-#define SizeScale   (WLessIphone6 ? - 1.5 : (WIPhone6 || WIPhoneX) ? 0 : 1.5)
+
 
 NS_ASSUME_NONNULL_BEGIN
 

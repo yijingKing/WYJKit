@@ -8,8 +8,16 @@
 
 #import "UIFont+YJAdd.h"
 #import <objc/runtime.h>
-#import "WYJFrameMacro.h"
+//屏幕高度区别手机
+#define WIP4 (HEIGHT == 480)
+#define WIP5 (HEIGHT == 568)
+#define WIP6 (HEIGHT == 667)
+#define WIP6P (HEIGHT == 736)
+#define WIPX (HEIGHT == 812)
+#define WLessIp6 (WIP4 || WIP5)
+#define HEIGHT                       [UIScreen mainScreen].bounds.size.height
 
+#define SizeScale   ((WLessIp6) ? - 1.5 : (WIP6 || WIPX) ? 0 : 1.5)
 @implementation UIFont (YJAdd)
 
 - (BOOL)isBold {
