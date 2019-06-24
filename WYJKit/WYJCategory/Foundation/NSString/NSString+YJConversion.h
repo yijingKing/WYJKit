@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     
 ///汉语数字转阿拉伯数字
 +(NSString *)chaptersDealWithString:(NSString *)chapterStr;
+    
 @end
 
 NS_ASSUME_NONNULL_END

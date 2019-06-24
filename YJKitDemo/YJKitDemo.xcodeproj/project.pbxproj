@@ -426,13 +426,13 @@
 			isa = PBXGroup;
 			children = (
 				98EB8DA5229FDF1000CC4AB1 /* NSString+YJAdd.h */,
-				98EB8DA6229FDF1000CC4AB1 /* NSString+YJMD5.h */,
-				98EB8DA7229FDF1000CC4AB1 /* NSString+YJRegular.m */,
-				98EB8DA8229FDF1000CC4AB1 /* NSString+YJMD5.m */,
 				98EB8DA9229FDF1000CC4AB1 /* NSString+YJAdd.m */,
-				98EB8DAA229FDF1000CC4AB1 /* NSString+YJRegular.h */,
 				987CC5C422C0737E00BDFD25 /* NSString+YJConversion.h */,
 				987CC5C522C0737E00BDFD25 /* NSString+YJConversion.m */,
+				98EB8DA6229FDF1000CC4AB1 /* NSString+YJMD5.h */,
+				98EB8DA8229FDF1000CC4AB1 /* NSString+YJMD5.m */,
+				98EB8DAA229FDF1000CC4AB1 /* NSString+YJRegular.h */,
+				98EB8DA7229FDF1000CC4AB1 /* NSString+YJRegular.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";

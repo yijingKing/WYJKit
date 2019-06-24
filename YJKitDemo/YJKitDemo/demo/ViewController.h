@@ -12,6 +12,5 @@
 @interface ViewController : YJBaseViewController
 
 
-
 @end
 
