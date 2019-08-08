@@ -1,10 +1,11 @@
-//
-//  UITextField+YJAdd.m
-//  WYJCategoryDemo
-//
-//  Created by Eugene King on 2019/5/21.
-//  Copyright © 2019 Eugene King. All rights reserved.
-//
+/*******************************************************************************
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
+ 
+ Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ E-mail:        1091676312@qq.com
+ GitHub:        https://github.com/MemoryKing
+ ********************************************************************************/
+
 
 #import "UITextField+YJAdd.h"
 #import <objc/runtime.h>
@@ -15,7 +16,12 @@
 
 - (void)setPlaceholderColor:(UIColor *)placeholderColor {
     objc_setAssociatedObject(self, &@selector(placeholderColor), placeholderColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setValue:placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
+    if (@available(iOS 13.0, *)) {
+        NSMutableAttributedString * att = [NSMutableAttributedString.alloc initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName:placeholderColor}];
+        self.attributedPlaceholder = att;
+    } else {
+        [self setValue:placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
+    }
 }
 
 - (UIColor *)placeholderColor {
