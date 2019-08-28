@@ -32,6 +32,7 @@
     
 //    self.tableView.hiddenTime = YES;
 //    self.tableView.hiddenState = YES;
+    WSCREEN_WIDTH
 }
 
 - (void)dis {
