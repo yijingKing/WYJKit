@@ -92,8 +92,8 @@
 #pragma make ------ 导航 多按钮 ------
 /** 文本*/
 - (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action;
-- (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(void))block;
-- (void)setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(void))block;
+- (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block;
+- (void)setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block;
 ///图片
 - (void)setNavLeftItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action;
 ///图片
@@ -101,11 +101,12 @@
 
 ///通用
 - (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action;
+- (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block;
 
 /** 文本*/
 - (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action;
-- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(void))block;
-- (void)setNavRightItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(void))block;
+- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block;
+- (void)setNavRightItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block;
 
 ///图片
 - (void)setNavRightItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action;
@@ -114,7 +115,7 @@
 
 ///通用
 - (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action;
-
+- (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block;
 
 /**
  *  返回上一个界面

@@ -187,18 +187,25 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     [self setNavLeftItemsWithImages:images titles:nil color:nil action:@selector(leftItemsAction:)];
 }
 
-- (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(void))block {
+- (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &leftItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     [self setNavLeftItemsWithImages:nil titles:titles color:nil action:@selector(leftItemsAction:)];
 }
 
-- (void)setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(void))block {
+- (void)setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &leftItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     [self setNavLeftItemsWithImages:nil titles:titles color:colors action:@selector(leftItemsAction:)];
+}
+
+- (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block {
+    if (block) {
+        objc_setAssociatedObject(self, &leftItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    [self setNavLeftItemsWithImages:images titles:titles color:colors action:@selector(leftItemsAction:)];
 }
 
 - (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action {
@@ -363,18 +370,24 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     [self setNavRightItemsWithImages:images titles:nil color:nil action:@selector(rightItemsAction:)];
 }
 
-- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(void))block {
+- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &rightItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     [self setNavRightItemsWithImages:nil titles:titles color:nil action:@selector(rightItemsAction:)];
 }
 
-- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(void))block {
+- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &rightItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     [self setNavRightItemsWithImages:nil titles:titles color:colors action:@selector(rightItemsAction:)];
+}
+- (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block {
+    if (block) {
+        objc_setAssociatedObject(self, &rightItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    [self setNavRightItemsWithImages:images titles:titles color:colors action:@selector(rightItemsAction:)];
 }
 
 - (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action {
