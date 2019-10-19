@@ -27,21 +27,22 @@
 /** end editing */
 @property (nonatomic, assign) BOOL endEditing;
 
-/**
- *  设置导航栏标题
- */
+
+#pragma make ------ 设置导航栏标题 ------
 - (void)setNavTitle:(NSString *)title;
 - (void)setNavTitle:(NSString *)title color:(UIColor *)color;
-- (void)showNavTitle:(NSString *)title backItem:(BOOL)show;
-
+- (void)setNavTitleView:(UIView *)titleView;
 /**
  *  导航栏 按钮，
  color为空时，表示默认颜色
  */
+#pragma make ------ 导航 返回 ------
 // 返回  图片为空时,为文字"<"
 - (void)setBackItem:(UIImage *)image;
 - (void)setBackItem:(UIImage *)image closeItem:(UIImage *)closeImage;
+- (void)showNavTitle:(NSString *)title backItem:(BOOL)show;
 
+#pragma make ------ 导航 按钮 ------
 /** 导航按钮 图片 */
 - (UIBarButtonItem *)navItemWithImage:(UIImage *)image action:(SEL)action;
 
@@ -54,6 +55,7 @@
 - (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action;
 - (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action;
 
+#pragma make ------ 导航 左按钮 ------
 /** 导航 左按钮 图片 */
 - (void)setNavLeftItemWithImage:(UIImage *)image action:(SEL)action;
 - (void)setNavLeftItemWithImage:(UIImage *)image actionBlock:(void(^)(void))block;
@@ -70,6 +72,7 @@
 - (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title actionBlock:(void(^)(void))block;
 - (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color actionBlock:(void(^)(void))block;
 
+#pragma make ------ 导航 右按钮 ------
 /** 导航 右按钮 图片 */
 - (void)setNavRightItemWithImage:(UIImage *)image action:(SEL)action;
 - (void)setNavRightItemWithImage:(UIImage *)image actionBlock:(void(^)(void))block;
@@ -85,6 +88,32 @@
 - (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action;
 - (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title actionBlock:(void(^)(void))block;
 - (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color actionBlock:(void(^)(void))block;
+
+#pragma make ------ 导航 多按钮 ------
+/** 文本*/
+- (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action;
+- (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(void))block;
+- (void)setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(void))block;
+///图片
+- (void)setNavLeftItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action;
+///图片
+- (void)setNavLeftItemsWithImages:(NSArray<UIImage *> *)images actionBlock:(void(^)(NSInteger tag))block;
+
+///通用
+- (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action;
+
+/** 文本*/
+- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action;
+- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(void))block;
+- (void)setNavRightItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(void))block;
+
+///图片
+- (void)setNavRightItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action;
+///图片
+- (void)setNavRightItemsWithImages:(NSArray<UIImage *> *)images actionBlock:(void(^)(NSInteger tag))block;
+
+///通用
+- (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action;
 
 
 /**

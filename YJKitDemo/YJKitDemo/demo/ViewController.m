@@ -19,22 +19,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor.lightGrayColor;
     
-    [self.view addSubview:self.tableView];
-    [self.tableView wRefreshFooterWithRefreshingBlock:^{
-        [self dis];
-    }];
-    [self.tableView wRefreshNormakHeaderWithRefreshingBlock:^{
-        [self dis];
-    }];
+//    [self.view addSubview:self.tableView];
+//    [self.tableView wRefreshFooterWithRefreshingBlock:^{
+//        [self dis];
+//    }];
+//    [self.tableView wRefreshNormakHeaderWithRefreshingBlock:^{
+//        [self dis];
+//    }];
     
-    [NSString chaptersDealWithString:@"123"];
+//    [NSString chaptersDealWithString:@"123"];
     
 //    self.tableView.hiddenTime = YES;
 //    self.tableView.hiddenState = YES;
-    WSCREEN_WIDTH
+    
+    
+    UITextField * tv = [UITextField.alloc initWithFrame:CGRectMake(0, 0, 100, 44)];
+    tv.backgroundColor = UIColor.redColor;
+    [self setNavTitleView:tv];
+    
+    [self setNavLeftItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
+        NSLog(@"qwqqq===%ld",tag);
+    }];
+    
+    [self setNavRightItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
+        NSLog(@"qwwczzzzzzzzzzzzqq===%ld",tag);
+        }];
+//    [self setNavLeftItemsWithTitles:@[@"213",@"213123e"] action:@selector(aaaa)];
 }
-
+- (void)aaaa {
+    NSLog(@"weqweeeeee");
+}
 - (void)dis {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView wEndRefresh];

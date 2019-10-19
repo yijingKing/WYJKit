@@ -396,8 +396,8 @@
 			isa = PBXGroup;
 			children = (
 				98EB8D9B229FDF1000CC4AB1 /* UIViewController+YJAdd.h */,
-				98EB8D9C229FDF1000CC4AB1 /* WYJNavigationButton.h */,
 				98EB8D9D229FDF1000CC4AB1 /* UIViewController+YJAdd.m */,
+				98EB8D9C229FDF1000CC4AB1 /* WYJNavigationButton.h */,
 				98EB8D9E229FDF1000CC4AB1 /* WYJNavigationButton.m */,
 			);
 			path = UIViewController;

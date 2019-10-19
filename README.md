@@ -28,8 +28,10 @@
       4).宏定义
 
 #### 4.版本记录
-      1.0.6).view page router
 
+    1.1.4).add nav items
+    1.0.6).view page router
+      
 
 
 
