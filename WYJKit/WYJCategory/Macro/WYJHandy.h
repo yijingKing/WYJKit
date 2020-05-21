@@ -1,7 +1,7 @@
 /*******************************************************************************
  Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
  
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ Author:        ╰莪呮想好好宠Nǐつ (kang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
@@ -11,10 +11,10 @@
 
 
 //单例宏
-#define WSINGLETON_FOR_CLASS_Interface(className) \
+#define kSINGLETON_FOR_CLASS_Interface(className) \
 + (className *)shared;
 
-#define WSINGLETON_FOR_CLASS_Implementation(className) \
+#define kSINGLETON_FOR_CLASS_Implementation(className) \
 \
 + (className *)shared { \
 static className *shared = nil; \
@@ -26,10 +26,10 @@ return shared; \
 }
 
 //push跳转
-#define  WPushViewController(VC)        [self.navigationController pushViewController:VC animated:YES];
+#define  kPushViekController(VC)        [self.navigationController pushViekController:VC animated:YES];
 
 //pop跳转
-#define WPopViewController       [self.navigationController popViewControllerAnimated:YES];
+#define kPopViekController       [self.navigationController popViekControllerAnimated:YES];
 
 
 

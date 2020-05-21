@@ -1,7 +1,7 @@
 /*******************************************************************************
  Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
  
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ Author:        ╰莪呮想好好宠Nǐつ (kang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
@@ -15,33 +15,33 @@
 #define isNotVersion84                  ([[[UIDevice currentDevice] systemVersion] floatValue] > 8.4)
 
 // 屏幕尺寸
-#define WSCREEN_WIDTH                        [UIScreen mainScreen].bounds.size.width
-#define WSCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height
+#define kSCREEN_kIDTH                        [UIScreen mainScreen].bounds.size.kidth
+#define kSCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height
 
 //------ 屏幕适配 -------
 //比例计算，根据设计稿修改
-#define WRatioSize(w)     w * WSCREEN_WIDTH / 375.0
+#define kRatioSize(k)     k * kSCREEN_kIDTH / 375.0
 //屏幕高度区别手机
-#define WIPhone4 (WSCREEN_HEIGHT == 480)
-#define WIPhone5 (WSCREEN_HEIGHT == 568)
-#define WIPhone6 (WSCREEN_HEIGHT == 667)
-#define WIPhone6P (WSCREEN_HEIGHT == 736)
-#define WIPhoneX (WSCREEN_HEIGHT == 812)
-#define WLessIphone6 (WIPhone4 || WIPhone5)
+#define kIPhone4 (kSCREEN_HEIGHT == 480)
+#define kIPhone5 (kSCREEN_HEIGHT == 568)
+#define kIPhone6 (kSCREEN_HEIGHT == 667)
+#define kIPhone6P (kSCREEN_HEIGHT == 736)
+#define kIPhoneX (kSCREEN_HEIGHT == 812)
+#define kLessIphone6 (kIPhone4 || kIPhone5)
 //导航栏高度
-#define WNavBarHeight (44.0)
+#define kNavBarHeight (44.0)
 //tabbar栏高度
-#define WTabBarHeight (49.0)
+#define kTabBarHeight (49.0)
 //底部安全区域
-#define WBottomSafeHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20.1?34.0:0.0)
+#define kBottomSafeHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20.1?34.0:0.0)
 //状态条占的高度
-#define WStatusForHeight (CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame))
+#define kStatusForHeight (CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame))
 
 /** 导航栏高度 + 状态栏高度 */
-#define WStatusAndNavForHeight (WNavBarHeight + WStatusForHeight)
+#define kStatusAndNavForHeight (kNavBarHeight + kStatusForHeight)
 
 /** tabbar高度 + iphoneX多出来的高度 */
-#define WBottomSafeAndTabBarForHeight (WTabBarHeight + WBottomSafeHeight)
+#define kBottomSafeAndTabBarForHeight (kTabBarHeight + kBottomSafeHeight)
 
 
-#endif /* WFrameMacro_h */
+#endif /* kFrameMacro_h */

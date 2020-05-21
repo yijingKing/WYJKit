@@ -1,7 +1,7 @@
 /*******************************************************************************
  Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
  
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ Author:        ╰莪呮想好好宠Nǐつ (kang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
@@ -24,25 +24,25 @@
 
 #pragma mark ---- iOS 版本 定义 --------
 //操作系统版本
-#define WSYSTEMVERSION   [UIDevice currentDevice].systemVersion
+#define kSYSTEMVERSION   [UIDevice currentDevice].systemVersion
 
 //大于多少版本
-#define iOS7OrLater ([WSYSTEMVERSION floatValue] >= 7.0)
-#define iOS8OrLater ([WSYSTEMVERSION floatValue] >= 8.0)
-#define iOS9OrLater ([WSYSTEMVERSION floatValue] >= 9.0)
-#define iOS10OrLater ([WSYSTEMVERSION floatValue] >= 10.0)
-#define iOS11OrLater ([WSYSTEMVERSION floatValue] >= 11.0)
-#define iOS12OrLater ([WSYSTEMVERSION floatValue] >= 12.0)
+#define iOS7OrLater ([kSYSTEMVERSION floatValue] >= 7.0)
+#define iOS8OrLater ([kSYSTEMVERSION floatValue] >= 8.0)
+#define iOS9OrLater ([kSYSTEMVERSION floatValue] >= 9.0)
+#define iOS10OrLater ([kSYSTEMVERSION floatValue] >= 10.0)
+#define iOS11OrLater ([kSYSTEMVERSION floatValue] >= 11.0)
+#define iOS12OrLater ([kSYSTEMVERSION floatValue] >= 12.0)
 
 //和上面一样
-#define WSYSTEM_VERSION_EQUAL_TO(v)                  ([WSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedSame)
-#define WSYSTEM_VERSION_GREATER_THAN(v)              ([WSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedDescending)
-#define WSYSTEM_VERSION_GREATER_THAN_OR_EQUAL(v)  ([WSYSTEMVERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define WSYSTEM_VERSION_LESS_THAN(v)                 ([WSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedAscending)
-#define WSYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([WSYSTEMVERSION compare:v options:NSNumericSearch] != NSOrderedDescending)
+#define kSYSTEM_VERSION_EQUAL_TO(v)                  ([kSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedSame)
+#define kSYSTEM_VERSION_GREATER_THAN(v)              ([kSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define kSYSTEM_VERSION_GREATER_THAN_OR_EQUAL(v)  ([kSYSTEMVERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define kSYSTEM_VERSION_LESS_THAN(v)                 ([kSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define kSYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([kSYSTEMVERSION compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 //  iOS 支持
-#define WSUPPORT_IPHONE_OS_VERSION(version) ( __IPHONE_OS_VERSION_MIN_REQUIRED <= version && __IPHONE_OS_VERSION_MAX_ALLOWED >= version)
+#define kSUPPORT_IPHONE_OS_VERSION(version) ( __IPHONE_OS_VERSION_MIN_REQUIRED <= version && __IPHONE_OS_VERSION_MAX_ALLOkED >= version)
 
 // 设置Debug模式下打印log,release模式下不打印
 #ifdef DEBUG
@@ -53,13 +53,13 @@
 #endif
 
 //获取temp
-#define WPathTemp NSTemporaryDirectory()
+#define kPathTemp NSTemporaryDirectory()
 
 //获取沙盒 Document
-#define WPathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
+#define kPathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
 
 //获取沙盒 Cache
-#define WPathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
+#define kPathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
 
 
