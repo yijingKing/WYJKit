@@ -26,37 +26,37 @@ typedef NS_ENUM(NSUInteger, WImagePosition) {
 
 @interface UIButton (YJAdd)
 /** title font */
-@property (nonatomic, assign) CGFloat titleFont;
+@property (nonatomic, assign) CGFloat yi_titleFont;
 /** title Alignement */
-@property (nonatomic, assign) TextAlignement textAlignement;
+@property (nonatomic, assign) TextAlignement yi_textAlignement;
 
 /** title normal status */
-@property (nonatomic, copy) NSString * titleText;
+@property (nonatomic, copy) NSString * yi_titleText;
 /** title color normal status */
-@property (nonatomic, strong) UIColor * titleColor;
+@property (nonatomic, strong) UIColor * yi_titleColor;
 /** image normal status */
-@property (nonatomic, strong) UIImage * image;
+@property (nonatomic, strong) UIImage * yi_image;
 /** background image normal status */
-@property (nonatomic, strong) UIImage * backgroundImage;
+@property (nonatomic, strong) UIImage * yi_backgroundImage;
 /** attributed normal status */
-@property (nonatomic, copy) NSAttributedString * attributedText;
+@property (nonatomic, copy) NSAttributedString * yi_attributedText;
 
 /** title select status */
-@property (nonatomic, copy) NSString * selectTitle;
+@property (nonatomic, copy) NSString * yi_selectTitle;
 /** title color select status */
-@property (nonatomic, strong) UIColor * selectTitleColor;
+@property (nonatomic, strong) UIColor * yi_selectTitleColor;
 /** image select status */
-@property (nonatomic, strong) UIImage * selectImage;
+@property (nonatomic, strong) UIImage * yi_selectImage;
 /** background image select status */
-@property (nonatomic, strong) UIImage * selectBackgroundImage;
+@property (nonatomic, strong) UIImage * yi_selectBackgroundImage;
 /** attributed select status */
-@property (nonatomic, copy) NSAttributedString * selectAttributedText;
+@property (nonatomic, copy) NSAttributedString * yi_selectAttributedText;
 
 /** touch up inside */
-- (void)addTargetUpInside:(nullable id)tat action:(nonnull SEL)sel;
+- (void)yi_addTargetUpInside:(nullable id)tat action:(nonnull SEL)sel;
 
 /** image and title position */
-- (void)imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing;
+- (void)yi_imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing;
 
 @end
 

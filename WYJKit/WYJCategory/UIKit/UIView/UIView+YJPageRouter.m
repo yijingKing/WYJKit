@@ -11,8 +11,8 @@
 
 @implementation UIView (YJPageRouter)
 
-- (void)push:(UIViewController *)vc {
-    UIViewController * currentC = [self currentController];
+- (void)yi_push:(UIViewController *)vc {
+    UIViewController * currentC = [self yi_currentController];
     
     if([currentC isKindOfClass:[UINavigationController class]]) {
         UINavigationController * nav = (UINavigationController *)currentC;
@@ -30,8 +30,8 @@
     }
 }
 
-- (void)pop {
-    UIViewController * currentC = [self currentController];
+- (void)yi_pop {
+    UIViewController * currentC = [self yi_currentController];
     if([currentC isKindOfClass:[UINavigationController class]]) {
         [((UINavigationController *)currentC) popViewControllerAnimated:YES];
     }
@@ -40,12 +40,12 @@
     }
 }
 
-- (void)popToRoot {
-    [self popToRootWithAnimated:YES];
+- (void)yi_popToRoot {
+    [self yi_popToRootWithAnimated:YES];
 }
 
-- (void)popToRootWithAnimated:(BOOL)animated {
-    UIViewController * currentC = [self currentController];
+- (void)yi_popToRootWithAnimated:(BOOL)animated {
+    UIViewController * currentC = [self yi_currentController];
     if([currentC isKindOfClass:[UINavigationController class]]) {
         [((UINavigationController *)currentC) popToRootViewControllerAnimated:YES];
     }
@@ -54,31 +54,31 @@
     }
 }
 
-- (void)present:(UIViewController *)vc {
-    [self present:vc animated:YES];
+- (void)yi_present:(UIViewController *)vc {
+    [self yi_present:vc animated:YES];
 }
 
-- (void)present:(UIViewController *)vc animated:(BOOL)animated {
-    [[self currentController] presentViewController:vc animated:animated completion:nil];
+- (void)yi_present:(UIViewController *)vc animated:(BOOL)animated {
+    [[self yi_currentController] presentViewController:vc animated:animated completion:nil];
 }
 
-- (void)dismiss {
-    [self dismiss:nil];
+- (void)yi_dismiss {
+    [self yi_dismiss:nil];
 }
 
-- (void)dismiss:(void (^)(void))completion {
-    [self dismissAnimated:YES completion:completion];
+- (void)yi_dismiss:(void (^)(void))completion {
+    [self yi_dismissAnimated:YES completion:completion];
 }
 
-- (void)dismissAnimated:(BOOL)animated {
-    [self dismissAnimated:animated completion:nil];
+- (void)yi_dismissAnimated:(BOOL)animated {
+    [self yi_dismissAnimated:animated completion:nil];
 }
 
-- (void)dismissAnimated:(BOOL)animated completion:(void(^)(void))completion {
-    [[self currentController] dismissViewControllerAnimated:animated completion:completion];
+- (void)yi_dismissAnimated:(BOOL)animated completion:(void(^)(void))completion {
+    [[self yi_currentController] dismissViewControllerAnimated:animated completion:completion];
 }
 
-- (UIViewController *)currentController {
+- (UIViewController *)yi_currentController {
     UIViewController * presentedVC = [[UIApplication sharedApplication].delegate window].rootViewController;
     if ([presentedVC isKindOfClass:[UINavigationController class]]) {
         presentedVC = presentedVC.presentedViewController;

@@ -21,32 +21,32 @@
 
 @implementation UIFont (YJAdd)
 
-- (BOOL)isBold {
+- (BOOL)yi_isBold {
     if (![self respondsToSelector:@selector(fontDescriptor)]) return NO;
     return (self.fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold) > 0;
 }
 
-- (BOOL)isItalic {
+- (BOOL)yi_isItalic {
     if (![self respondsToSelector:@selector(fontDescriptor)]) return NO;
     return (self.fontDescriptor.symbolicTraits & UIFontDescriptorTraitItalic) > 0;
 }
 
-- (BOOL)isMonoSpace {
+- (BOOL)yi_isMonoSpace {
     if (![self respondsToSelector:@selector(fontDescriptor)]) return NO;
     return (self.fontDescriptor.symbolicTraits & UIFontDescriptorTraitMonoSpace) > 0;
 }
 
-- (BOOL)isColorGlyphs {
+- (BOOL)yi_isColorGlyphs {
     if (![self respondsToSelector:@selector(fontDescriptor)]) return NO;
     return (CTFontGetSymbolicTraits((__bridge CTFontRef)self) & kCTFontTraitColorGlyphs) != 0;
 }
 
-- (CGFloat)fontWeight {
+- (CGFloat)yi_fontWeight {
     NSDictionary *traits = [self.fontDescriptor objectForKey:UIFontDescriptorTraitsAttribute];
     return [traits[UIFontWeightTrait] floatValue];
 }
 
-+ (UIFont *)fontAdapter:(CGFloat)font {
++ (UIFont *)yi_fontAdapter:(CGFloat)font {
     return [UIFont systemFontOfSize:font + SizeScale];
 }
 

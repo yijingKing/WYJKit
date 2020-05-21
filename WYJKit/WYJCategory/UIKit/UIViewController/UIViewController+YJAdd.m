@@ -68,14 +68,14 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 }
 
 #pragma make ------ 导航返回按钮 ------
-- (void)setBackItem:(UIImage *)image {
-    return [self setBackItem:image closeItem:image];
+- (void)yi_setBackItem:(UIImage *)image {
+    return [self yi_setBackItem:image closeItem:image];
 }
 
-- (void)showNavTitle:(NSString *)title backItem:(BOOL)show {
-    [self setNavTitle:title];
+- (void)yi_showNavTitle:(NSString *)title backItem:(BOOL)show {
+    [self yi_setNavTitle:title];
     if (show) {
-        [self setBackItem:[UIImage imageNamed:@"nav_back"] closeItem:[UIImage imageNamed:@"nav_close"]];
+        [self yi_setBackItem:[UIImage imageNamed:@"nav_back"] closeItem:[UIImage imageNamed:@"nav_close"]];
     }
     else {
         self.navigationItem.leftBarButtonItem = nil;
@@ -83,16 +83,16 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     }
 }
 
-- (void)setBackItem:(UIImage *)image closeItem:(UIImage *)closeImage {
+- (void)yi_setBackItem:(UIImage *)image closeItem:(UIImage *)closeImage {
     if (self.navigationController.viewControllers.count == 1 && self.presentingViewController) {
-        self.navigationItem.leftBarButtonItem = [self navItemWithImage:closeImage
+        self.navigationItem.leftBarButtonItem = [self yi_navItemWithImage:closeImage
                                                                  title:(closeImage ? nil : @"ㄨ")
-                                                                action:@selector(goBack)];
+                                                                action:@selector(yi_goBack)];
     }
     else if ((self.navigationController.viewControllers.count > 1 || (!self.navigationController && !self.parentViewController))) {
-        UIBarButtonItem *backItem = [self navItemWithImage:image
+        UIBarButtonItem *backItem = [self yi_navItemWithImage:image
                                                      title:(image ? nil : @"ㄑ")
-                                                    action:@selector(goBack)];
+                                                    action:@selector(yi_goBack)];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.navigationItem.leftBarButtonItems = @[backItem, spaceItem];
@@ -105,110 +105,110 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 }
 
 #pragma make ------ 导航标题 ------
-- (void)setNavTitle:(NSString *)title {
-    [self setNavTitle:title color: self.titleColor ? self.titleColor : UIColor.blackColor];
+- (void)yi_setNavTitle:(NSString *)title {
+    [self yi_setNavTitle:title color: self.yi_titleColor ? self.yi_titleColor : UIColor.blackColor];
 }
 
-- (void)setNavTitle:(NSString *)title color:(UIColor *)color {
+- (void)yi_setNavTitle:(NSString *)title color:(UIColor *)color {
     self.navigationItem.title = title;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : color}];
 }
 
-- (void)setNavTitleView:(UIView *)titleView {
+- (void)yi_setNavTitleView:(UIView *)titleView {
     self.navigationItem.titleView = titleView;
 }
 
 #pragma mark -----  导航按钮 -----
-- (UIBarButtonItem *)navItemWithImage:(UIImage *)image action:(SEL)action {
-    return [self navItemWithImage:image title:nil color:nil action:action];
+- (UIBarButtonItem *)yi_navItemWithImage:(UIImage *)image action:(SEL)action {
+    return [self yi_navItemWithImage:image title:nil color:nil action:action];
 }
 
-- (UIBarButtonItem *)navItemWithTitle:(NSString *)title action:(SEL)action {
-    return [self navItemWithImage:nil title:title color:nil action:action];
+- (UIBarButtonItem *)yi_navItemWithTitle:(NSString *)title action:(SEL)action {
+    return [self yi_navItemWithImage:nil title:title color:nil action:action];
 }
 
-- (UIBarButtonItem *)navItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action {
-    return [self navItemWithImage:nil title:title color:color action:action];
+- (UIBarButtonItem *)yi_navItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action {
+    return [self yi_navItemWithImage:nil title:title color:color action:action];
 }
 
-- (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action {
-    return [self navItemWithImage:image title:title color:nil action:action];
+- (UIBarButtonItem *)yi_navItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action {
+    return [self yi_navItemWithImage:image title:title color:nil action:action];
 }
 
-- (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
-    return [self navItemWithImage:image title:title color:color target:self action:action];
+- (UIBarButtonItem *)yi_navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
+    return [self yi_navItemWithImage:image title:title color:color target:self action:action];
 }
-- (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action {
+- (UIBarButtonItem *)yi_navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action {
     return [[UIBarButtonItem alloc] initWithCustomView:[WYJBarButton buttonWithImage:image title:title color:color target:target action:action]];
 }
 
 
 
 #pragma mark -----  导航 左按钮 -----
-- (void)setNavLeftItemWithImage:(UIImage *)image action:(SEL)action {
-    [self setNavLeftItemWithImage:image title:nil color:nil action:action];
+- (void)yi_setNavLeftItemWithImage:(UIImage *)image action:(SEL)action {
+    [self yi_setNavLeftItemWithImage:image title:nil color:nil action:action];
 }
 
-- (void)setNavLeftItemWithTitle:(NSString *)title action:(SEL)action {
-    [self setNavLeftItemWithImage:nil title:title color:nil action:action];
+- (void)yi_setNavLeftItemWithTitle:(NSString *)title action:(SEL)action {
+    [self yi_setNavLeftItemWithImage:nil title:title color:nil action:action];
 }
 
-- (void)setNavLeftItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action {
-    [self setNavLeftItemWithImage:nil title:title color:color action:action];
+- (void)yi_setNavLeftItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action {
+    [self yi_setNavLeftItemWithImage:nil title:title color:color action:action];
 }
 
-- (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action {
-    [self setNavLeftItemWithImage:image title:title color:nil action:action];
+- (void)yi_setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action {
+    [self yi_setNavLeftItemWithImage:image title:title color:nil action:action];
 }
 
-- (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
+- (void)yi_setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
     WYJBarButton *button = [WYJBarButton buttonWithImage:image title:title color:color target:self action:action];
     button.frame = CGRectMake(10, 0, 44, 44);
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 #pragma mark -----  导航 左按钮 多个 -----
 
-- (void)setNavLeftItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action {
-    [self setNavLeftItemsWithImages:images titles:nil color:nil action:action];
+- (void)yi_setNavLeftItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action {
+    [self yi_setNavLeftItemsWithImages:images titles:nil color:nil action:action];
 }
 
-- (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action {
-    [self setNavLeftItemsWithImages:nil titles:titles color:nil action:action];
+- (void)yi_setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action {
+    [self yi_setNavLeftItemsWithImages:nil titles:titles color:nil action:action];
 }
 
-- (void)setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors action:(SEL)action {
-    [self setNavLeftItemsWithImages:nil titles:titles color:colors action:action];
+- (void)yi_setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors action:(SEL)action {
+    [self yi_setNavLeftItemsWithImages:nil titles:titles color:colors action:action];
 }
 
-- (void)setNavLeftItemsWithImages:(NSArray<UIImage *> *)images actionBlock:(void(^)(NSInteger tag))block {
+- (void)yi_setNavLeftItemsWithImages:(NSArray<UIImage *> *)images actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &leftItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemsWithImages:images titles:nil color:nil action:@selector(leftItemsAction:)];
+    [self yi_setNavLeftItemsWithImages:images titles:nil color:nil action:@selector(leftItemsAction:)];
 }
 
-- (void)setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block {
+- (void)yi_setNavLeftItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &leftItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemsWithImages:nil titles:titles color:nil action:@selector(leftItemsAction:)];
+    [self yi_setNavLeftItemsWithImages:nil titles:titles color:nil action:@selector(leftItemsAction:)];
 }
 
-- (void)setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block {
+- (void)yi_setNavLeftItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &leftItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemsWithImages:nil titles:titles color:colors action:@selector(leftItemsAction:)];
+    [self yi_setNavLeftItemsWithImages:nil titles:titles color:colors action:@selector(leftItemsAction:)];
 }
 
-- (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block {
+- (void)yi_setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &leftItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemsWithImages:images titles:titles color:colors action:@selector(leftItemsAction:)];
+    [self yi_setNavLeftItemsWithImages:images titles:titles color:colors action:@selector(leftItemsAction:)];
 }
 
-- (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action {
+- (void)yi_setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action {
     NSUInteger count = 0;
     if (images.count > titles.count) {
         count = images.count;
@@ -220,12 +220,12 @@ typedef void(^RightNavItemsBlock)(NSInteger);
         UIBarButtonItem *buttonItem;
         if (images != nil) {
             if (titles != nil) {
-                buttonItem = [self navItemWithImage:images[i] title:titles[i] color:colors[i] action:action];
+                buttonItem = [self yi_navItemWithImage:images[i] title:titles[i] color:colors[i] action:action];
             } else {
-                buttonItem = [self navItemWithImage:images[i] title:nil color:nil action:action];
+                buttonItem = [self yi_navItemWithImage:images[i] title:nil color:nil action:action];
             }
         } else {
-            buttonItem = [self navItemWithImage:nil title:titles[i] color:colors[i] action:action];
+            buttonItem = [self yi_navItemWithImage:nil title:titles[i] color:colors[i] action:action];
         }
         buttonItem.tag = i;
         [items addObject:buttonItem];
@@ -243,99 +243,99 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 
 
 #pragma mark -----  导航 右按钮 -----
-- (void)setNavRightItemWithImage:(UIImage *)image action:(SEL)action {
-    [self setNavRightItemWithImage:image title:nil color:nil action:action];
+- (void)yi_setNavRightItemWithImage:(UIImage *)image action:(SEL)action {
+    [self yi_setNavRightItemWithImage:image title:nil color:nil action:action];
 }
 
-- (void)setNavRightItemWithTitle:(NSString *)title action:(SEL)action {
-    [self setNavRightItemWithImage:nil title:title color:nil action:action];
+- (void)yi_setNavRightItemWithTitle:(NSString *)title action:(SEL)action {
+    [self yi_setNavRightItemWithImage:nil title:title color:nil action:action];
 }
 
-- (void)setNavRightItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action {
-    [self setNavRightItemWithImage:nil title:title color:color action:action];
+- (void)yi_setNavRightItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action {
+    [self yi_setNavRightItemWithImage:nil title:title color:color action:action];
 }
 
-- (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action {
-    [self setNavRightItemWithImage:image title:title color:nil action:action];
+- (void)yi_setNavRightItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action {
+    [self yi_setNavRightItemWithImage:image title:title color:nil action:action];
 }
 
-- (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
+- (void)yi_setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
     WYJBarButton *button = [WYJBarButton buttonWithImage:image title:title color:color target:self action:action];
     button.frame = CGRectMake(10, 0, 44, 44);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 /** 导航 左按钮 文 */
-- (void)setNavLeftItemWithTitle:(NSString *)title actionBlock:(void(^)(void))block {
+- (void)yi_setNavLeftItemWithTitle:(NSString *)title actionBlock:(void(^)(void))block {
     if (block) {
         objc_setAssociatedObject(self, &itemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemWithTitle:title action:@selector(navBlockAction)];
+    [self yi_setNavLeftItemWithTitle:title action:@selector(navBlockAction)];
 }
 
-- (void)setNavLeftItemWithTitle:(NSString *)title color:(UIColor *)color actionBlock:(void(^)(void))block {
+- (void)yi_setNavLeftItemWithTitle:(NSString *)title color:(UIColor *)color actionBlock:(void(^)(void))block {
     if (block) {
         objc_setAssociatedObject(self, &itemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemWithTitle:title color:color action:@selector(navBlockAction)];
+    [self yi_setNavLeftItemWithTitle:title color:color action:@selector(navBlockAction)];
 }
 
-- (void)setNavLeftItemWithImage:(UIImage *)image actionBlock:(void(^)(void))block; {
+- (void)yi_setNavLeftItemWithImage:(UIImage *)image actionBlock:(void(^)(void))block; {
     if (block) {
         objc_setAssociatedObject(self, &itemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemWithImage:image action:@selector(navBlockAction)];
+    [self yi_setNavLeftItemWithImage:image action:@selector(navBlockAction)];
 }
 
-- (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title actionBlock:(void (^)(void))block {
+- (void)yi_setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title actionBlock:(void (^)(void))block {
     if (block) {
         objc_setAssociatedObject(self, &itemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemWithImage:image title:title action:@selector(navBlockAction)];
+    [self yi_setNavLeftItemWithImage:image title:title action:@selector(navBlockAction)];
 }
 
-- (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color actionBlock:(void (^)(void))block {
+- (void)yi_setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color actionBlock:(void (^)(void))block {
     if (block) {
         objc_setAssociatedObject(self, &itemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavLeftItemWithImage:image title:title color:color action:@selector(navBlockAction)];
+    [self yi_setNavLeftItemWithImage:image title:title color:color action:@selector(navBlockAction)];
 }
 
 /** 导航 右按钮 文 */
-- (void)setNavRightItemWithTitle:(NSString *)title actionBlock:(void(^)(void))block{
+- (void)yi_setNavRightItemWithTitle:(NSString *)title actionBlock:(void(^)(void))block{
     if (block) {
         objc_setAssociatedObject(self, &ritemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemWithTitle:title action:@selector(rightNavBlockAction)];
+    [self yi_setNavRightItemWithTitle:title action:@selector(rightNavBlockAction)];
 }
 
-- (void)setNavRightItemWithTitle:(NSString *)title color:(UIColor *)color actionBlock:(void(^)(void))block{
+- (void)yi_setNavRightItemWithTitle:(NSString *)title color:(UIColor *)color actionBlock:(void(^)(void))block{
     if (block) {
         objc_setAssociatedObject(self, &ritemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemWithTitle:title color:color action:@selector(rightNavBlockAction)];
+    [self yi_setNavRightItemWithTitle:title color:color action:@selector(rightNavBlockAction)];
 }
 
 /** 导航 右按钮 图 */
-- (void)setNavRightItemWithImage:(UIImage *)image actionBlock:(void(^)(void))block{
+- (void)yi_setNavRightItemWithImage:(UIImage *)image actionBlock:(void(^)(void))block{
     if (block) {
         objc_setAssociatedObject(self, &ritemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemWithImage:image action:@selector(rightNavBlockAction)];
+    [self yi_setNavRightItemWithImage:image action:@selector(rightNavBlockAction)];
 }
 
-- (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title actionBlock:(void (^)(void))block {
+- (void)yi_setNavRightItemWithImage:(UIImage *)image title:(NSString *)title actionBlock:(void (^)(void))block {
     if (block) {
         objc_setAssociatedObject(self, &itemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemWithImage:image title:title action:@selector(rightNavBlockAction)];
+    [self yi_setNavRightItemWithImage:image title:title action:@selector(rightNavBlockAction)];
 }
 
-- (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color actionBlock:(void (^)(void))block {
+- (void)yi_setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color actionBlock:(void (^)(void))block {
     if (block) {
         objc_setAssociatedObject(self, &itemKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemWithImage:image title:title color:color action:@selector(rightNavBlockAction)];
+    [self yi_setNavRightItemWithImage:image title:title color:color action:@selector(rightNavBlockAction)];
 }
 
 
@@ -351,46 +351,46 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 
 #pragma make ------ 多个右按钮 ------
 
-- (void)setNavRightItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action {
-    [self setNavRightItemsWithImages:images titles:nil color:nil action:action];
+- (void)yi_setNavRightItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action {
+    [self yi_setNavRightItemsWithImages:images titles:nil color:nil action:action];
 }
 
-- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action {
-    [self setNavRightItemsWithImages:nil titles:titles color:nil action:action];
+- (void)yi_setNavRightItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action {
+    [self yi_setNavRightItemsWithImages:nil titles:titles color:nil action:action];
 }
 
-- (void)setNavRightItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors action:(SEL)action {
-    [self setNavRightItemsWithImages:nil titles:titles color:colors action:action];
+- (void)yi_setNavRightItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors action:(SEL)action {
+    [self yi_setNavRightItemsWithImages:nil titles:titles color:colors action:action];
 }
 
-- (void)setNavRightItemsWithImages:(NSArray<UIImage *> *)images actionBlock:(void(^)(NSInteger tag))block {
+- (void)yi_setNavRightItemsWithImages:(NSArray<UIImage *> *)images actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &rightItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemsWithImages:images titles:nil color:nil action:@selector(rightItemsAction:)];
+    [self yi_setNavRightItemsWithImages:images titles:nil color:nil action:@selector(rightItemsAction:)];
 }
 
-- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block {
+- (void)yi_setNavRightItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &rightItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemsWithImages:nil titles:titles color:nil action:@selector(rightItemsAction:)];
+    [self yi_setNavRightItemsWithImages:nil titles:titles color:nil action:@selector(rightItemsAction:)];
 }
 
-- (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block {
+- (void)yi_setNavRightItemsWithTitles:(NSArray<NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &rightItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemsWithImages:nil titles:titles color:colors action:@selector(rightItemsAction:)];
+    [self yi_setNavRightItemsWithImages:nil titles:titles color:colors action:@selector(rightItemsAction:)];
 }
-- (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block {
+- (void)yi_setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block {
     if (block) {
         objc_setAssociatedObject(self, &rightItemsKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    [self setNavRightItemsWithImages:images titles:titles color:colors action:@selector(rightItemsAction:)];
+    [self yi_setNavRightItemsWithImages:images titles:titles color:colors action:@selector(rightItemsAction:)];
 }
 
-- (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action {
+- (void)yi_setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action {
     NSUInteger count = 0;
     if (images.count > titles.count) {
         count = images.count;
@@ -402,12 +402,12 @@ typedef void(^RightNavItemsBlock)(NSInteger);
         UIBarButtonItem *buttonItem;
         if (images != nil) {
             if (titles != nil) {
-                buttonItem = [self navItemWithImage:images[i] title:titles[i] color:colors[i] action:action];
+                buttonItem = [self yi_navItemWithImage:images[i] title:titles[i] color:colors[i] action:action];
             } else {
-                buttonItem = [self navItemWithImage:images[i] title:nil color:nil action:action];
+                buttonItem = [self yi_navItemWithImage:images[i] title:nil color:nil action:action];
             }
         } else {
-            buttonItem = [self navItemWithImage:nil title:titles[i] color:colors[i] action:action];
+            buttonItem = [self yi_navItemWithImage:nil title:titles[i] color:colors[i] action:action];
         }
         buttonItem.tag = i;
         [items addObject:buttonItem];
@@ -424,11 +424,11 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 }
 
 #pragma mark -----  返回 -----
-- (void)goBack {
-    [self goBack:YES];
+- (void)yi_goBack {
+    [self yi_goBack:YES];
 }
 
-- (void)goBack:(BOOL)animated {
+- (void)yi_goBack:(BOOL)animated {
     @try {
         if (self.navigationController.viewControllers.count > 1) {
             [self.navigationController popViewControllerAnimated:animated];
@@ -443,10 +443,10 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 }
 
 #pragma mark -----  跳转 -----
-- (void)dismissOrPopToRootControlelr {
-    [self dismissOrPopToRootController:YES];
+- (void)yi_dismissOrPopToRootControlelr {
+    [self yi_dismissOrPopToRootController:YES];
 }
-- (void)dismissOrPopToRootController:(BOOL)animated {
+- (void)yi_dismissOrPopToRootController:(BOOL)animated {
     @try {
         if (self.presentingViewController) {
             [self dismissViewControllerAnimated:animated completion:nil];
@@ -460,17 +460,17 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     }
 }
 
-- (instancetype)topPresentedVC {
-    return [self topPresentedVCWihtKeys:@[@"centerViewController", @"contentViewController"]];
+- (instancetype)yi_topPresentedVC {
+    return [self yi_topPresentedVCWihtKeys:@[@"centerViewController", @"contentViewController"]];
 }
 
-- (instancetype)topPresentedVCWihtKeys:(NSArray<NSString *> *)keys {
+- (instancetype)yi_topPresentedVCWihtKeys:(NSArray<NSString *> *)keys {
     UIViewController *rootVC = self;
     if ([rootVC isKindOfClass:[UITabBarController class]]) {
         UITabBarController *tab = (UITabBarController *)rootVC;
         UIViewController *vc = tab.selectedViewController ?: tab.childViewControllers.firstObject;
         if (vc) {
-            return [vc topPresentedVC];
+            return [vc yi_topPresentedVC];
         }
     }
     for (NSString *key in keys) {
@@ -484,7 +484,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
             } @catch (NSException *exception) {
             }
             if ([vc isKindOfClass:[UIViewController class]]) {
-                return [vc topPresentedVC];
+                return [vc yi_topPresentedVC];
             }
         }
     }
@@ -494,8 +494,8 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     return rootVC;
 }
 
-+ (instancetype)rootTopPresentedVC {
-    return [[[UIApplication sharedApplication] delegate] window].rootViewController.topPresentedVC;
++ (instancetype)yi_rootTopPresentedVC {
+    return [[[UIApplication sharedApplication] delegate] window].rootViewController.yi_topPresentedVC;
 }
 
 - (NSArray<UIViewController *> *)optimizeVcs:(NSArray<UIViewController *> *)vcs {
@@ -528,61 +528,61 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 
 #pragma make ------ 扩展属性 ------
 /** 标题颜色 */
-- (void)setTitleColor:(UIColor *)titleColor {
-    objc_setAssociatedObject(self, &titleColorKey, titleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setYi_titleColor:(UIColor *)yi_titleColor {
+    objc_setAssociatedObject(self, &titleColorKey, yi_titleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIColor *)titleColor {
+- (UIColor *)yi_titleColor {
     return objc_getAssociatedObject(self, &titleColorKey);
 }
 
-- (void)setNavBackgroundColor:(UIColor *)navBackgroundColor {
-    objc_setAssociatedObject(self, &NavBackgroundColorKey, navBackgroundColor, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    self.navigationController.navigationBar.barTintColor = navBackgroundColor;
+- (void)setYi_navBackgroundColor:(UIColor *)yi_navBackgroundColor {
+    objc_setAssociatedObject(self, &NavBackgroundColorKey, yi_navBackgroundColor, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    self.navigationController.navigationBar.barTintColor = yi_navBackgroundColor;
     self.navigationController.navigationBar.translucent = NO;
-    if (self.hiddenShadow) {
+    if (self.yi_hiddenShadow) {
         [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     }
 }
 
-- (UIColor *)navBackgroundColor {
+- (UIColor *)yi_navBackgroundColor {
     return objc_getAssociatedObject(self, &NavBackgroundColorKey);
 }
 
-- (void)setHiddenShadow:(BOOL)hiddenShadow {
-    objc_setAssociatedObject(self, &HidderShadowKey, @(hiddenShadow), OBJC_ASSOCIATION_ASSIGN);
-    if (hiddenShadow) {
+- (void)setYi_hiddenShadow:(BOOL)yi_hiddenShadow{
+    objc_setAssociatedObject(self, &HidderShadowKey, @(yi_hiddenShadow), OBJC_ASSOCIATION_ASSIGN);
+    if (yi_hiddenShadow) {
         [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     }
 }
 
-- (BOOL)hiddenShadow {
+- (BOOL)yi_hiddenShadow {
     return [objc_getAssociatedObject(self, &HidderShadowKey) boolValue];
 }
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
-    objc_setAssociatedObject(self, &BackgroundColorKey, backgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    self.view.backgroundColor = backgroundColor;
+- (void)setYi_backgroundColor:(UIColor *)yi_backgroundColor {
+    objc_setAssociatedObject(self, &BackgroundColorKey, yi_backgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    self.view.backgroundColor = yi_backgroundColor;
 }
 
-- (UIColor *)backgroundColor {
+- (UIColor *)yi_backgroundColor {
     return objc_getAssociatedObject(self, &BackgroundColorKey);
 }
 
-- (void)setEndEditing:(BOOL)endEditing {
-    objc_setAssociatedObject(self, &EndEditKey, @(endEditing), OBJC_ASSOCIATION_ASSIGN);
+- (void)setYi_endEditing:(BOOL)yi_endEditing {
+    objc_setAssociatedObject(self, &EndEditKey, @(yi_endEditing), OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (BOOL)endEditing {
+- (BOOL)yi_endEditing {
     return [objc_getAssociatedObject(self, &EndEditKey) boolValue];
 }
 
-- (void)setHiddenNavigationBar:(BOOL)hiddenNavigationBar {
-    objc_setAssociatedObject(self, &HiddenNavigationBarKey, @(hiddenNavigationBar), OBJC_ASSOCIATION_ASSIGN);
-    [self.navigationController setNavigationBarHidden:hiddenNavigationBar animated:self.animated];
+- (void)setYi_hiddenNavigationBar:(BOOL)yi_hiddenNavigationBar {
+    objc_setAssociatedObject(self, &HiddenNavigationBarKey, @(yi_hiddenNavigationBar), OBJC_ASSOCIATION_ASSIGN);
+    [self.navigationController setNavigationBarHidden:yi_hiddenNavigationBar animated:self.animated];
 }
 
-- (BOOL)hiddenNavigationBar {
+- (BOOL)yi_hiddenNavigationBar {
     return [objc_getAssociatedObject(self, &HiddenNavigationBarKey) boolValue];
 }
 

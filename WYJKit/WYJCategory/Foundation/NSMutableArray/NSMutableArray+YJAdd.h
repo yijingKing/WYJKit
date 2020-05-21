@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSMutableArray (YJAdd)
 /** 去重 */
-@property (nonatomic, copy, readonly)NSMutableArray * wRemoveDuplicates;
+@property (nonatomic, copy, readonly)NSMutableArray * yi_removeDuplicates;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,24 +11,24 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (YJMD5)
-- (NSString *)MD5Bits16LowercaseEncryption
+- (NSString *)yi_MD5Bits16LowercaseEncryption
 {
     return [NSString MD5_NB16BitEncry:self isUppercase:NO];
 }
-- (NSString *)MD5Bits16UppercaseEncryption
+- (NSString *)yi_MD5Bits16UppercaseEncryption
 {
     return [NSString MD5_NB16BitEncry:self isUppercase:YES];
 }
-- (NSString *)MD5Bits32LowercaseEncryption
+- (NSString *)yi_MD5Bits32LowercaseEncryption
 {
     return [NSString MD5_NB32BitEncry:self isUppercase:NO];
 }
-- (NSString *)MD5Bits32UppercaseEncryption
+- (NSString *)yi_MD5Bits32UppercaseEncryption
 {
     return [NSString MD5_NB32BitEncry:self isUppercase:YES];
 }
 
-- (NSString *)base64Decryption {
+- (NSString *)yi_base64Decryption {
     return [NSString base64EncodingWithString:self];
 }
 
@@ -99,7 +99,8 @@
     }
 }
 
-+(NSString *)base64EncodingWithData:(NSData *)sourceData{
+//***base64加密***//
++(NSString *)base64EncodingWithData:(NSData *)sourceData {
     if (!sourceData) { //如果sourceData则返回nil，不进行加密。
         return nil;
     }
@@ -107,6 +108,7 @@
     return resultString;
     
 }
+
 //***base64解密***//
 +(id)base64EncodingWithString:(NSString *)sourceString{
     if (!sourceString)

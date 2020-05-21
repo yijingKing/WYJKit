@@ -52,7 +52,7 @@ static char const * const kEmptyDataSetSource =     "emptyDataSetSource";
 static char const * const kEmptyDataSetDelegate =   "emptyDataSetDelegate";
 static char const * const kEmptyDataSetView =       "emptyDataSetView";
 
-#define kEmptyImageViewAnimationKey @"com.dzn.emptyDataSet.imageViewAnimation"
+#define kyi_emptyImageViewAnimationKey @"com.dzn.emptyDataSet.imageViewAnimation"
 
 @interface UIScrollView () <UIGestureRecognizerDelegate>
 @property (nonatomic, readonly) DZNEmptyDataSetView *emptyDataSetView;
@@ -545,11 +545,11 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
             CAAnimation *animation = [self dzn_imageAnimation];
             
             if (animation) {
-                [self.emptyDataSetView.imageView.layer addAnimation:animation forKey:kEmptyImageViewAnimationKey];
+                [self.emptyDataSetView.imageView.layer addAnimation:animation forKey:kyi_emptyImageViewAnimationKey];
             }
         }
-        else if ([self.emptyDataSetView.imageView.layer animationForKey:kEmptyImageViewAnimationKey]) {
-            [self.emptyDataSetView.imageView.layer removeAnimationForKey:kEmptyImageViewAnimationKey];
+        else if ([self.emptyDataSetView.imageView.layer animationForKey:kyi_emptyImageViewAnimationKey]) {
+            [self.emptyDataSetView.imageView.layer removeAnimationForKey:kyi_emptyImageViewAnimationKey];
         }
         
         // Notifies that the empty dataset view did appear

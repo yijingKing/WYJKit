@@ -28,7 +28,7 @@
 }
 
 #pragma mark -----  调用系统相册、拍照上传图片 -----
-- (void)setUploadPictures:(void(^)(UIImage *))bloack {
+- (void)yi_setUploadPictures:(void(^)(UIImage *))bloack {
     self.block = bloack;
     __block typeof (self) weak_self = self;
     self.picker = [[UIImagePickerController alloc] init];

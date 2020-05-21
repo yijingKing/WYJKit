@@ -11,8 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJFileManager : NSObject
-+(UIImage *)getDocumentImageName:(NSString *)name;
-+(NSString *)saveDocumentsImage:(UIImage *)image imgName:(NSString *)name;
++(UIImage *)yi_getDocumentImageName:(NSString *)name;
++(NSString *)yi_saveDocumentsImage:(UIImage *)image imgName:(NSString *)name;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -40,7 +40,6 @@
 		98EF40E222A2878D005A0547 /* YJBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40DA22A2878D005A0547 /* YJBaseCollectionView.m */; };
 		98EF40E322A2878D005A0547 /* YJBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40DE22A2878D005A0547 /* YJBaseTableView.m */; };
 		98EF40E422A2878D005A0547 /* YJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40E122A2878D005A0547 /* YJBaseViewController.m */; };
-		98EF40E722A289CE005A0547 /* UIColor+YJAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40E522A289CE005A0547 /* UIColor+YJAdd.m */; };
 		98EF40EB22A28F37005A0547 /* YJTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40EA22A28F37005A0547 /* YJTableView.m */; };
 		98EF40EE22A2900E005A0547 /* YJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40ED22A2900E005A0547 /* YJTableViewCell.m */; };
 		98EF40F122A29635005A0547 /* YJSystemPermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EF40F022A29635005A0547 /* YJSystemPermissions.m */; };
@@ -139,8 +138,6 @@
 		98EF40DE22A2878D005A0547 /* YJBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBaseTableView.m; sourceTree = "<group>"; };
 		98EF40E022A2878D005A0547 /* YJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBaseViewController.h; sourceTree = "<group>"; };
 		98EF40E122A2878D005A0547 /* YJBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBaseViewController.m; sourceTree = "<group>"; };
-		98EF40E522A289CE005A0547 /* UIColor+YJAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+YJAdd.m"; path = "../../UIKit/UIColor/UIColor+YJAdd.m"; sourceTree = "<group>"; };
-		98EF40E622A289CE005A0547 /* UIColor+YJAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+YJAdd.h"; path = "../../UIKit/UIColor/UIColor+YJAdd.h"; sourceTree = "<group>"; };
 		98EF40E822A28A11005A0547 /* YJUtilityHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJUtilityHeader.h; sourceTree = "<group>"; };
 		98EF40E922A28F37005A0547 /* YJTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJTableView.h; sourceTree = "<group>"; };
 		98EF40EA22A28F37005A0547 /* YJTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJTableView.m; sourceTree = "<group>"; };
@@ -415,22 +412,12 @@
 		98EB8DA2229FDF1000CC4AB1 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				98EB8DA3229FDF1000CC4AB1 /* UIColor */,
 				98EB8DA4229FDF1000CC4AB1 /* NSString */,
 				98EB8DAB229FDF1000CC4AB1 /* NSArray */,
 				98EB8DAE229FDF1000CC4AB1 /* NSMutableArray */,
 				98EB8DB1229FDF1000CC4AB1 /* NSDate */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		98EB8DA3229FDF1000CC4AB1 /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-				98EF40E622A289CE005A0547 /* UIColor+YJAdd.h */,
-				98EF40E522A289CE005A0547 /* UIColor+YJAdd.m */,
-			);
-			path = UIColor;
 			sourceTree = "<group>";
 		};
 		98EB8DA4229FDF1000CC4AB1 /* NSString */ = {
@@ -755,7 +742,6 @@
 				98EB8DBF229FDF1000CC4AB1 /* UIView+YJAdd.m in Sources */,
 				98EB8DC6229FDF1000CC4AB1 /* NSString+YJRegular.m in Sources */,
 				98EF40EE22A2900E005A0547 /* YJTableViewCell.m in Sources */,
-				98EF40E722A289CE005A0547 /* UIColor+YJAdd.m in Sources */,
 				98EF41B522A50CDA005A0547 /* UIView+YJPageRouter.m in Sources */,
 				98EB8C77229FDB5900CC4AB1 /* main.m in Sources */,
 				98EB8DCA229FDF1000CC4AB1 /* NSMutableArray+YJAdd.m in Sources */,

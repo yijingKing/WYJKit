@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (YJConversion)
 /// 阿拉伯数字转换成中文
-+ (NSString *)digitalConversionNumber:(int)number;
++ (NSString *)yi_digitalConversionNumber:(int)number;
     
 ///汉语数字转阿拉伯数字
-+(NSString *)chaptersDealWithString:(NSString *)chapterStr;
++(NSString *)yi_chaptersDealWithString:(NSString *)chapterStr;
     
 @end
 

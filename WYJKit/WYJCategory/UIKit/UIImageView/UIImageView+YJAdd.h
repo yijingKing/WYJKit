@@ -13,11 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImageView (YJAdd)
 
 /** image name */
-@property (nonatomic, copy)NSString * imageName;
+@property (nonatomic, copy)NSString * yi_imageName;
 
-@property (nonatomic, copy)NSString * base64Image;
+@property (nonatomic, copy)NSString * yi_base64Image;
 
-- (void)wAddTouchUpInside:(void(^)(void))block;
+- (void)yi_addTouchUpInside:(void(^)(void))block;
 @end
 
 NS_ASSUME_NONNULL_END

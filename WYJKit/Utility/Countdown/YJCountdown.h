@@ -12,19 +12,19 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJCountdown : NSObject
-@property (nonatomic, strong, nullable)dispatch_source_t timer;
+@property (nonatomic, strong, nullable)dispatch_source_t yi_timer;
 /**
  count down
 
  @param totalTime total time(seconds)
  @param completeBlock   return the remaining (seconds)
  */
-- (void)numberDownWithTime:(NSInteger)totalTime completeBlock:(void(^)(NSInteger countDown))completeBlock;
+- (void)yi_numberDownWithTime:(NSInteger)totalTime completeBlock:(void(^)(NSInteger countDown))completeBlock;
 
 /**
- destory timer
+ destory yi_timer
  */
-- (void)destoryTimer;
+- (void)yi_destoryTimer;
 
 @end
 

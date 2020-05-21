@@ -9,7 +9,7 @@
 #import "YJFileManager.h"
 
 @implementation YJFileManager
-+(NSString *)saveDocumentsImage:(UIImage *)image imgName:(NSString *)name  {
++(NSString *)yi_saveDocumentsImage:(UIImage *)image imgName:(NSString *)name  {
     
     UIImage *imagesave = image;
     NSString *path_sandox = NSHomeDirectory();
@@ -20,7 +20,7 @@
     return imagePath;
 }
 
-+(UIImage *)getDocumentImageName:(NSString *)name {
++(UIImage *)yi_getDocumentImageName:(NSString *)name {
     // 读取沙盒路径图片
     NSString *aPath=[NSString stringWithFormat:@"%@/Documents/%@.png",NSHomeDirectory(),name];
     // 拿到沙盒路径图片

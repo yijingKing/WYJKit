@@ -86,10 +86,10 @@
         
         // 2.格式化日期
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        BOOL isToday = NO;
+        BOOL yi_isToday = NO;
         if ([cmp1 day] == [cmp2 day]) { // 今天
             formatter.dateFormat = @" HH:mm";
-            isToday = YES;
+            yi_isToday = YES;
         } else if ([cmp1 year] == [cmp2 year]) { // 今年
             formatter.dateFormat = @"MM-dd HH:mm";
         } else {
@@ -100,7 +100,7 @@
         // 3.显示日期
         self.lastUpdatedTimeLabel.text = [NSString stringWithFormat:@"%@%@%@",
                                           [NSBundle mj_localizedStringForKey:MJRefreshHeaderLastTimeText],
-                                          isToday ? [NSBundle mj_localizedStringForKey:MJRefreshHeaderDateTodayText] : @"",
+                                          yi_isToday ? [NSBundle mj_localizedStringForKey:MJRefreshHeaderDateTodayText] : @"",
                                           time];
     } else {
         self.lastUpdatedTimeLabel.text = [NSString stringWithFormat:@"%@%@",

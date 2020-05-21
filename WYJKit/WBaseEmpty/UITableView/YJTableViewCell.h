@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YJTableViewCell : UITableViewCell
 /** the devider (default NO)  */
-@property (nonatomic, strong)UIView * dividerView;
+@property (nonatomic, strong)UIView * yi_dividerView;
 
 @end
 

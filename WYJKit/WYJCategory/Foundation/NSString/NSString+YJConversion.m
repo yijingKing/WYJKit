@@ -12,7 +12,7 @@
 @implementation NSString (YJConversion)
 
 /// 阿拉伯数字转换成中文
-+ (NSString *)digitalConversionNumber:(int)number {
++ (NSString *)yi_digitalConversionNumber:(int)number {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     NSLocale *locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_Hans"];
     formatter.locale = locale;
@@ -22,7 +22,7 @@
 }
     
 ///汉语数字转阿拉伯数字
-+(NSString *)chaptersDealWithString:(NSString *)chapterStr {
++(NSString *)yi_chaptersDealWithString:(NSString *)chapterStr {
     NSString *str = chapterStr;
     NSArray * chapter_numerals = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0"];
     NSArray *chinese_numerals = @[@"一",@"二",@"三",@"四",@"五",@"六",@"七",@"八",@"九",@"零"];

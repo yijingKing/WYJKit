@@ -14,7 +14,7 @@
 #define WRGBACOLOR(r,g,b,a)                  [UIColor colorWithRed:r / 255.0 green:g / 255.0  blue:b / 255.0 alpha:a]
 
 #ifndef WHexColor
-#define WHexColor(_hex_)   [UIColor hexStr:((__bridge NSString *)CFSTR(#_hex_))]
+#define WHexColor(_hex_)   [UIColor yi_hexStr:((__bridge NSString *)CFSTR(#_hex_))]
 #endif
 
 #define WHSVCOLOR(h,s,v)                     [UIColor colorWithHue:h saturation:s value:v alpha:1]
@@ -26,11 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (YJAdd)
 
-+ (UIColor *)hexStr:(NSString *)hexStr alpha:(CGFloat)a;
++ (UIColor *)yi_hexStr:(NSString *)yi_hexStr alpha:(CGFloat)a;
 
-+ (UIColor *)hexStr:(NSString *)hexStr;
++ (UIColor *)yi_hexStr:(NSString *)yi_hexStr;
 
-+ (UIColor *)randomColor;
++ (UIColor *)yi_randomColor;
 
 @end
 

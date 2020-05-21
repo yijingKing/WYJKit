@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YJBaseViewController : UIViewController
 /** Call the system album, take photos and upload pictures */
-- (void)setUploadPictures:(void(^)(UIImage * img))bloack;
+- (void)yi_setUploadPictures:(void(^)(UIImage * img))bloack;
 
 @end
 

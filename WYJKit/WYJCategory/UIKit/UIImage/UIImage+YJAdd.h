@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (YJAdd)
 /** image conversion base64 */
-@property (nonatomic, copy, readonly)NSString * base64String;
+@property (nonatomic, copy, readonly)NSString * yi_base64String;
 
 
 
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param gradientType direction
  @return image
  */
-+ (UIImage *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
++ (UIImage *)yi_imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
 
 @end
 

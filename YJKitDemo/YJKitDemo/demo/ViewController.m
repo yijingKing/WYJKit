@@ -22,44 +22,44 @@
     self.view.backgroundColor = UIColor.lightGrayColor;
     
 //    [self.view addSubview:self.tableView];
-//    [self.tableView wRefreshFooterWithRefreshingBlock:^{
+//    [self.tableView yi_refreshFooterWithRefreshingBlock:^{
 //        [self dis];
 //    }];
 //    [self.tableView wRefreshNormakHeaderWithRefreshingBlock:^{
 //        [self dis];
 //    }];
     
-//    [NSString chaptersDealWithString:@"123"];
+//    [NSString yi_chaptersDealWithString:@"123"];
     
-//    self.tableView.hiddenTime = YES;
-//    self.tableView.hiddenState = YES;
+//    self.tableView.yi_hiddenTime = YES;
+//    self.tableView.yi_hiddenState = YES;
     
     
     UIButton * tv = [UIButton.alloc initWithFrame:CGRectMake(0, 100, 100, 44)];
     tv.backgroundColor = UIColor.redColor;
-    tv.titleText = @"ewdsdsa";
-    tv.titleColor = UIColor.blueColor;
+    tv.yi_titleText = @"ewdsdsa";
+    tv.yi_titleColor = UIColor.blueColor;
     
     [self.view addSubview:tv];
     
 //    [self setNavTitleView:tv];
     
-    [self setNavLeftItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
+    [self yi_setNavLeftItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
         NSLog(@"qwqqq===%ld",tag);
     }];
     
-    [self setNavRightItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
+    [self yi_setNavRightItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
         NSLog(@"qwwczzzzzzzzzzzzqq===%ld",tag);
         }];
-//    [self setNavLeftItemsWithTitles:@[@"213",@"213123e"] action:@selector(aaaa)];
+//    [self yi_setNavLeftItemsWithTitles:@[@"213",@"213123e"] action:@selector(aaaa)];
 }
 - (void)aaaa {
     NSLog(@"weqweeeeee");
 }
 - (void)dis {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView wEndRefresh];
-        [self.tableView wEndRefreshAndNoMoreData];
+        [self.tableView yi_endRefresh];
+        [self.tableView yi_endRefreshAndNoMoreData];
 //        self.isL = YES;
         [self.tableView reloadData];
     });
@@ -67,7 +67,7 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self setUploadPictures:^(UIImage * _Nonnull img) {
+//    [self yi_setUploadPictures:^(UIImage * _Nonnull img) {
 //
 //    }];
 }
