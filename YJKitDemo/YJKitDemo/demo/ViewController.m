@@ -35,9 +35,14 @@
 //    self.tableView.hiddenState = YES;
     
     
-    UITextField * tv = [UITextField.alloc initWithFrame:CGRectMake(0, 0, 100, 44)];
+    UIButton * tv = [UIButton.alloc initWithFrame:CGRectMake(0, 100, 100, 44)];
     tv.backgroundColor = UIColor.redColor;
-    [self setNavTitleView:tv];
+    tv.titleText = @"ewdsdsa";
+    tv.titleColor = UIColor.blueColor;
+    
+    [self.view addSubview:tv];
+    
+//    [self setNavTitleView:tv];
     
     [self setNavLeftItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
         NSLog(@"qwqqq===%ld",tag);

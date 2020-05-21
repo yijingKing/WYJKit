@@ -85,12 +85,12 @@ static const char TextAlignementKey;
     return [objc_getAssociatedObject(self, &TitleFontKey) floatValue];
 }
 
-- (void)setTitle:(NSString *)title {
+- (void)setTitleText:(NSString *)title {
     objc_setAssociatedObject(self, &TitleKey, title, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self setTitle:title forState:UIControlStateNormal];
 }
 
-- (NSString *)title {
+- (NSString *)titleText {
     return objc_getAssociatedObject(self, &TitleKey);
 }
 

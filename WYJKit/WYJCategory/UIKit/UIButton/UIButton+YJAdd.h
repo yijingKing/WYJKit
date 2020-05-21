@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, WImagePosition) {
 @property (nonatomic, assign) TextAlignement textAlignement;
 
 /** title normal status */
-@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString * titleText;
 /** title color normal status */
 @property (nonatomic, strong) UIColor * titleColor;
 /** image normal status */
