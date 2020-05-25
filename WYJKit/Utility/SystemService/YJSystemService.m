@@ -24,13 +24,6 @@
     }
 }
 
-+ (void)wPhoneCallWithPhoneNum:(NSString *)phoneNum contentView:(UIView *)view {
-    
-    UIWebView * callWebview = [[UIWebView alloc] init];
-    [callWebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[@"tel:" stringByAppendingString:phoneNum]]]];
-    [view addSubview:callWebview];
-}
-
 + (void)wJumpToAppReviewPageWithAppId:(NSString *)appId {
     NSURL * url = [NSURL URLWithString:[@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" stringByAppendingString:appId]];
     NSString *version= [UIDevice currentDevice].systemVersion;

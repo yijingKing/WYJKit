@@ -22,14 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)wPhoneCallWithPhoneNum:(NSString *)phoneNum;
 
 /**
- *  弹出对话框并询问是否拨打电话(打完电话后还会回到原来的程序,也会弹出提示,推荐这种)
- *
- *  @param phoneNum 电话号码
- *  @param view     contentView
- */
-+ (void)wPhoneCallWithPhoneNum:(NSString *)phoneNum contentView:(UIView *)view;
-
-/**
  *  跳到app的评论页
  *
  *  @param appId APP的id号
