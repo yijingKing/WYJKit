@@ -27,6 +27,11 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
+
 #pragma mark -----  调用系统相册、拍照上传图片 -----
 - (void)yi_setUploadPictures:(void(^)(UIImage *))bloack {
     self.block = bloack;

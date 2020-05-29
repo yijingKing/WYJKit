@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0414F6A92480E84200E12C63 /* YJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0414F6A82480E84200E12C63 /* YJNavigationController.m */; };
 		839DB4C90827238C15F5079C /* libPods-YJKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EB4CCFCD028867BB16B886 /* libPods-YJKitDemo.a */; };
 		9852BEE723161E4200EC124A /* YJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9852BEE623161E4200EC124A /* YJFileManager.m */; };
 		987CC5C622C0737E00BDFD25 /* NSString+YJConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 987CC5C522C0737E00BDFD25 /* NSString+YJConversion.m */; };
@@ -65,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0414F6A72480E84200E12C63 /* YJNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJNavigationController.h; sourceTree = "<group>"; };
+		0414F6A82480E84200E12C63 /* YJNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJNavigationController.m; sourceTree = "<group>"; };
 		7A8338279364F31DFDA20A20 /* Pods-YJKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJKitDemo.release.xcconfig"; path = "Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9852BEE523161E4200EC124A /* YJFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJFileManager.h; sourceTree = "<group>"; };
 		9852BEE623161E4200EC124A /* YJFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJFileManager.m; sourceTree = "<group>"; };
@@ -540,6 +543,8 @@
 			children = (
 				98EF40E022A2878D005A0547 /* YJBaseViewController.h */,
 				98EF40E122A2878D005A0547 /* YJBaseViewController.m */,
+				0414F6A72480E84200E12C63 /* YJNavigationController.h */,
+				0414F6A82480E84200E12C63 /* YJNavigationController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -767,6 +772,7 @@
 				98EB8DC5229FDF1000CC4AB1 /* UITextField+YJAdd.m in Sources */,
 				98EB8DBE229FDF1000CC4AB1 /* UIColor+YJAdd.m in Sources */,
 				987CC5C622C0737E00BDFD25 /* NSString+YJConversion.m in Sources */,
+				0414F6A92480E84200E12C63 /* YJNavigationController.m in Sources */,
 				98EB8DCB229FDF1000CC4AB1 /* NSDate+YJAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
