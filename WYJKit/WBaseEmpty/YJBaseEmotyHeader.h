@@ -12,7 +12,7 @@
 #import "YJBaseCollectionView.h"
 #import "YJBaseTableView.h"
 #import "YJBaseViewController.h"
-
+#import "YJNavigationController.h"
 #import "YJTableView.h"
 #import "YJTableViewCell.h"
 

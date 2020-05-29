@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YJBaseViewController : UIViewController
 /** Call the system album, take photos and upload pictures */
 
-@property(nonatomic,strong) UIStatusBarStyle * yi_barStyle;
+@property (nonatomic,assign) UIStatusBarStyle * yi_barStyle;
 
 - (void)yi_setUploadPictures:(void(^)(UIImage * img))bloack;
 
