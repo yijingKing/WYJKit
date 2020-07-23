@@ -27,8 +27,13 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
 }
 
+- (void)setYi_barStyle:(UIStatusBarStyle)yi_barStyle {
+    _yi_barStyle = yi_barStyle;
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleDefault;
+    return self.yi_barStyle;
 }
 
 

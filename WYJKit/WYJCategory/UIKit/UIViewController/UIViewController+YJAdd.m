@@ -69,8 +69,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 
 #pragma make ------ 导航返回按钮 ------
 - (void)yi_setBackItem:(UIImage *)image {
-    UIBarButtonItem * item = [UIBarButtonItem.alloc initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(yi_goBack)];
-    self.navigationItem.leftBarButtonItem = item;
+    [self yi_setBackItem:image closeItem:image];
 }
 
 - (void)yi_showNavTitle:(NSString *)title backItem:(BOOL)show {
@@ -94,9 +93,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
         UIBarButtonItem *backItem = [self yi_navItemWithImage:image
                                                      title:(image ? nil : @"ㄑ")
                                                     action:@selector(yi_goBack)];
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-        self.navigationItem.leftBarButtonItems = @[backItem, spaceItem];
+        self.navigationItem.leftBarButtonItems = @[backItem];
     }
     else {
         self.navigationItem.leftBarButtonItem = nil;
