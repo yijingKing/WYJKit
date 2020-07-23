@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-
+#import "sjkfaViewController.h"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)YJBaseTableView * tableView;
 @property (nonatomic, assign)BOOL isL;
@@ -70,11 +70,12 @@
 //    [self yi_setUploadPictures:^(UIImage * _Nonnull img) {
 //
 //    }];
+    [self pushViewController:sjkfaViewController.alloc.init animated:YES];
 }
 
 #pragma mark -----  区头高度 -----
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return section == 0 ? 0.01 : WRatioSize(10);
+    return 0.01;
 }
 
 #pragma mark -----  区头视图 -----

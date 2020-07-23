@@ -137,8 +137,9 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     return [self yi_navItemWithImage:image title:title color:color target:self action:action];
 }
 - (UIBarButtonItem *)yi_navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action {
-    
-    return [[UIBarButtonItem alloc] initWithCustomView:[WYJBarButton buttonWithImage:image title:title color:color target:target action:action]];
+    WYJBarButton *button = [WYJBarButton buttonWithImage:image title:title color:color target:self action:action];
+    button.frame = CGRectMake(10, 0, 44, 44);
+    return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 
