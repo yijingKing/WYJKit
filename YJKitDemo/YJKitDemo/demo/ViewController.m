@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
+
 #import "sjkfaViewController.h"
+
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)YJBaseTableView * tableView;
 @property (nonatomic, assign)BOOL isL;
@@ -21,15 +23,15 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.lightGrayColor;
     
-//    [self.view addSubview:self.tableView];
-//    [self.tableView yi_refreshFooterWithRefreshingBlock:^{
-//        [self dis];
-//    }];
-//    [self.tableView wRefreshNormakHeaderWithRefreshingBlock:^{
-//        [self dis];
-//    }];
+    [self.view addSubview:self.tableView];
+    [self.tableView yi_refreshFooterWithRefreshingBlock:^{
+        [self dis];
+    }];
+    [self.tableView wRefreshNormakHeaderWithRefreshingBlock:^{
+        [self dis];
+    }];
     
-//    [NSString yi_chaptersDealWithString:@"123"];
+    [NSString yi_chaptersDealWithString:@"123"];
     
 //    self.tableView.yi_hiddenTime = YES;
 //    self.tableView.yi_hiddenState = YES;
@@ -44,13 +46,13 @@
     
 //    [self setNavTitleView:tv];
     
-    [self yi_setNavLeftItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
-        NSLog(@"qwqqq===%ld",tag);
-    }];
-    
-    [self yi_setNavRightItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
-        NSLog(@"qwwczzzzzzzzzzzzqq===%ld",tag);
-        }];
+//    [self yi_setNavLeftItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
+//        NSLog(@"qwqqq===%ld",tag);
+//    }];
+//
+//    [self yi_setNavRightItemsWithImages:@[[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"],[UIImage imageNamed:@"common_btn_collect_selected"]] actionBlock:^(NSInteger tag) {
+//        NSLog(@"qwwczzzzzzzzzzzzqq===%ld",tag);
+//        }];
 //    [self yi_setNavLeftItemsWithTitles:@[@"213",@"213123e"] action:@selector(aaaa)];
 }
 - (void)aaaa {
