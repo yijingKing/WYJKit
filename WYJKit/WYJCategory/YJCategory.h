@@ -9,8 +9,6 @@
 #ifndef YJCategory_h
 #define YJCategory_h
 
-#import "WYJCategoriesMacro.h"
-
 #import "UIApplication+YJAdd.h"
 #import "UIViewController+YJAdd.h"
 #import "UIImage+YJAdd.h"
