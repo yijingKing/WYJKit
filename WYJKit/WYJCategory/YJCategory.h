@@ -29,7 +29,7 @@
 #import "NSArray+YJAdd.h"
 #import "NSMutableArray+YJAdd.h"
 
-#import "AppDelegate+Configure.h"
+#import "UIResponder+Configure.h"
 
 #endif /* YJCategory_h */
 
