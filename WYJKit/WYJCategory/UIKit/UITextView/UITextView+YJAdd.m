@@ -10,92 +10,94 @@
 #import "NSString+YJAdd.h"
 
 @implementation UITextView (YJAdd)
-
-- (void)setYi_promptFont:(UIFont *)yi_promptFont {
-    objc_setAssociatedObject(self, &@selector(yi_promptFont), yi_promptFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (UITextView *)yi {
+    return self;
+}
+- (void)setPromptFont:(UIFont *)promptFont {
+    objc_setAssociatedObject(self, &@selector(promptFont), promptFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIFont *)yi_promptFont {
-    return objc_getAssociatedObject(self, &@selector(yi_promptFont));
+- (UIFont *)promptFont {
+    return objc_getAssociatedObject(self, &@selector(promptFont));
 }
 
-- (void)setYi_addNoti:(BOOL)yi_addNoti {
+- (void)setAddNoti:(BOOL)addNoti {
     
-    objc_setAssociatedObject(self, &@selector(yi_addNoti), [NSNumber numberWithBool:yi_addNoti], OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &@selector(addNoti), [NSNumber numberWithBool:addNoti], OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (BOOL)yi_addNoti {
+- (BOOL)addNoti {
     
-    BOOL obj = [objc_getAssociatedObject(self, &@selector(yi_addNoti)) boolValue];
+    BOOL obj = [objc_getAssociatedObject(self, &@selector(addNoti)) boolValue];
     return obj;
 }
 
-- (void)setYi_placeholder:(NSString *)yi_placeholder {
+- (void)setPlaceholder:(NSString *)placeholder {
     
-    objc_setAssociatedObject(self, &@selector(yi_placeholder), yi_placeholder, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &@selector(placeholder), placeholder, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
     // setNeedsDisplay会在下一个消息循环时刻，调用drawRect:
     [self addTextChangeNoti];
     [self setNeedsDisplay];
 }
 
-- (NSString *)yi_placeholder {
+- (NSString *)placeholder {
     
-    NSString *obj = objc_getAssociatedObject(self, &@selector(yi_placeholder));
+    NSString *obj = objc_getAssociatedObject(self, &@selector(placeholder));
     return obj;
 }
 
-- (void)setYi_placeholderColor:(UIColor *)yi_placeholderColor {
+- (void)setPlaceholderColor:(UIColor *)placeholderColor {
     
-    objc_setAssociatedObject(self, &@selector(yi_placeholderColor), yi_placeholderColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &@selector(placeholderColor), placeholderColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     [self addTextChangeNoti];
 }
 
-- (UIColor *)yi_placeholderColor {
+- (UIColor *)placeholderColor {
     
-    UIColor *obj = objc_getAssociatedObject(self, &@selector(yi_placeholderColor));
+    UIColor *obj = objc_getAssociatedObject(self, &@selector(placeholderColor));
     return obj;
 }
 
-- (void)setYi_maximumLimit:(NSInteger)yi_maximumLimit{
+- (void)setMaximumLimit:(NSInteger)maximumLimit{
     
-    objc_setAssociatedObject(self, &@selector(yi_maximumLimit), [NSNumber numberWithInteger:yi_maximumLimit], OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &@selector(maximumLimit), [NSNumber numberWithInteger:maximumLimit], OBJC_ASSOCIATION_ASSIGN);
     
     //setNeedsDisplay会在下一个消息循环时刻，调用drawRect:
     [self addTextChangeNoti];
     [self setNeedsDisplay];
 }
 
-- (NSInteger)yi_maximumLimit {
+- (NSInteger)maximumLimit {
     
-    id obj = objc_getAssociatedObject(self, &@selector(yi_maximumLimit));
+    id obj = objc_getAssociatedObject(self, &@selector(maximumLimit));
     return [obj integerValue];
 }
 
-- (void)setYi_characterLengthPrompt:(BOOL)yi_characterLengthPrompt {
+- (void)setCharacterLengthPrompt:(BOOL)characterLengthPrompt {
     
-    objc_setAssociatedObject(self, &@selector(yi_characterLengthPrompt), [NSNumber numberWithBool:yi_characterLengthPrompt], OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &@selector(characterLengthPrompt), [NSNumber numberWithBool:characterLengthPrompt], OBJC_ASSOCIATION_ASSIGN);
     
     //setNeedsDisplay会在下一个消息循环时刻，调用drawRect:
     [self addTextChangeNoti];
     [self setNeedsDisplay];
 }
 
-- (BOOL)yi_characterLengthPrompt {
+- (BOOL)characterLengthPrompt {
     
-    id obj = objc_getAssociatedObject(self, &@selector(yi_characterLengthPrompt));
+    id obj = objc_getAssociatedObject(self, &@selector(characterLengthPrompt));
     return [obj boolValue];
 }
 
-- (void)setYi_textHandle:(void (^)(NSString * _Nonnull))yi_textHandle {
+- (void)setTextHandle:(void (^)(NSString * _Nonnull))textHandle {
     
-    objc_setAssociatedObject(self, &@selector(yi_textHandle), yi_textHandle, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &@selector(textHandle), textHandle, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (void (^)(NSString *))yi_textHandle {
+- (void (^)(NSString *))textHandle {
     
-    id handle = objc_getAssociatedObject(self, &@selector(yi_textHandle));
+    id handle = objc_getAssociatedObject(self, &@selector(textHandle));
     if (handle) {
         
         return (void(^)(NSString *textStr))handle;
@@ -103,25 +105,25 @@
     return nil;
 }
 
-- (void)setYi_lastTextStr:(NSString *)yi_lastTextStr {
+- (void)setLastTextStr:(NSString *)lastTextStr {
     
-    objc_setAssociatedObject(self, @selector(yi_lastTextStr), yi_lastTextStr, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(lastTextStr), lastTextStr, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (NSString *)yi_lastTextStr {
+- (NSString *)lastTextStr {
     
-    return [self yi_emptyStr:objc_getAssociatedObject(self, _cmd)];
+    return [self emptyStr:objc_getAssociatedObject(self, _cmd)];
 }
 
 - (void)textDidChange:(void (^)(NSString *))handle {
     
-    self.yi_textHandle = handle;
+    self.textHandle = handle;
     [self addTextChangeNoti];
 }
 
 - (void)fixMessyDisplay {
     
-    if(self.yi_maximumLimit <= 0) {self.yi_maximumLimit = MAXFLOAT;}
+    if(self.maximumLimit <= 0) {self.maximumLimit = MAXFLOAT;}
     [self addTextChangeNoti];
 }
 
@@ -150,12 +152,12 @@
     if (!self.font) {
         self.font = [UIFont systemFontOfSize:16];
     }
-    CGFloat textHeight = [self.yi_placeholder yi_heightWithFontConstrainedToWidth:rect.size.width font:self.yi_promptFont?:self.font];
+    CGFloat textHeight = [self.placeholder heightWithFontConstrainedToWidth:rect.size.width font:self.promptFont?:self.font];
     //画最大字符文本,添加文本显示边界
-    if((self.yi_maximumLimit > 0) && (self.yi_characterLengthPrompt == YES)) {
+    if((self.maximumLimit > 0) && (self.characterLengthPrompt == YES)) {
         //设置文字属性
-        attributes[NSFontAttributeName] = self.yi_promptFont ?: self.font;
-        attributes[NSForegroundColorAttributeName] = self.yi_placeholderColor ? self.yi_placeholderColor : [UIColor lightGrayColor];
+        attributes[NSFontAttributeName] = self.promptFont ?: self.font;
+        attributes[NSForegroundColorAttributeName] = self.placeholderColor ? self.placeholderColor : [UIColor lightGrayColor];
         
         [self setContentInset:UIEdgeInsetsMake(0, 0, textHeight, 0)];
         
@@ -165,7 +167,7 @@
         NSMutableDictionary *maximumLimitAttributes = [attributes mutableCopy];
         maximumLimitAttributes[NSParagraphStyleAttributeName] = paragraphStyle;
         
-        NSString *limitStr = [NSString stringWithFormat:@"%lu/%ld",(unsigned long)self.text.length > (long)self.yi_maximumLimit ? (long)self.yi_maximumLimit : (unsigned long)self.text.length ,(long)self.yi_maximumLimit];
+        NSString *limitStr = [NSString stringWithFormat:@"%lu/%ld",(unsigned long)self.text.length > (long)self.maximumLimit ? (long)self.maximumLimit : (unsigned long)self.text.length ,(long)self.maximumLimit];
         
         [limitStr drawInRect:CGRectMake(x, rect.size.height - textHeight + self.contentOffset.y, width, textHeight) withAttributes:maximumLimitAttributes];
     }
@@ -179,59 +181,59 @@
     if (self.hasText) return;
     //画文字
     attributes[NSFontAttributeName] = self.font;
-    attributes[NSForegroundColorAttributeName] = self.yi_placeholderColor ? self.yi_placeholderColor : [UIColor lightGrayColor];
+    attributes[NSForegroundColorAttributeName] = self.placeholderColor ? self.placeholderColor : [UIColor lightGrayColor];
     CGFloat height = rect.size.height - 2 * y;
     CGRect placeholderRect = CGRectMake(x, y, width, height);
-    [self.yi_placeholder drawInRect:placeholderRect withAttributes:attributes];
+    [self.placeholder drawInRect:placeholderRect withAttributes:attributes];
 }
 
 - (void)characterTruncation {
     
     //字符截取
-    if(self.yi_maximumLimit > 0) {
+    if(self.maximumLimit > 0) {
         
         UITextRange *selectedRange = [self markedTextRange];
         //获取高亮部分
         UITextPosition *position = [self positionFromPosition:selectedRange.start offset:0];
         //没有高亮选择的字，则对已输入的文字进行字数统计和限制,如果有高亮待选择的字，则暂不对文字进行统计和限制
-        if ((position == nil) && (self.text.length > self.yi_maximumLimit)) {
+        if ((position == nil) && (self.text.length > self.maximumLimit)) {
             
-            const char *res = [self.text substringToIndex:self.yi_maximumLimit].UTF8String;
+            const char *res = [self.text substringToIndex:self.maximumLimit].UTF8String;
             if (res == NULL) {
-                self.text = [self.text substringToIndex:self.yi_maximumLimit - 1];
+                self.text = [self.text substringToIndex:self.maximumLimit - 1];
             }else{
-                self.text = [self.text substringToIndex:self.yi_maximumLimit];
+                self.text = [self.text substringToIndex:self.maximumLimit];
             }
         }
     }
     
-    if((self.yi_textHandle) && (![self.text isEqualToString:self.yi_lastTextStr])) {
+    if((self.textHandle) && (![self.text isEqualToString:self.lastTextStr])) {
         
-        self.yi_textHandle(self.text);
+        self.textHandle(self.text);
     }
-    self.yi_lastTextStr = self.text;
+    self.lastTextStr = self.text;
 }
 
 - (void)addTextChangeNoti {
     
-    if(self.yi_addNoti == NO) {
+    if(self.addNoti == NO) {
         
         // 当UITextView的文字发生改变时，UITextView自己会发出一个UITextViewTextDidChangeNotification通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEnd) name:UITextViewTextDidEndEditingNotification object:nil];
     }
-    self.yi_addNoti = YES;
+    self.addNoti = YES;
 }
 
 - (void)dealloc {
     
-    if(self.yi_addNoti == YES) {
+    if(self.addNoti == YES) {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextViewTextDidEndEditingNotification object:nil];
         [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextViewTextDidChangeNotification object:nil];
     }
 }
 
-- (NSString *)yi_emptyStr:(NSString *)str {
+- (NSString *)emptyStr:(NSString *)str {
     
     if(([str isKindOfClass:[NSNull class]]) || ([str isEqual:[NSNull null]]) || (str == nil) || (!str)) {
         str = @"";

@@ -1,17 +1,17 @@
-//
-//  UIResponder+Configure.m
-//  YJKitDemo
-//
-//  Created by PZ-IMAC-1 on 2021/9/1.
-//  Copyright © 2021 Eugene King. All rights reserved.
-//
+/*******************************************************************************
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
+ 
+ Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ E-mail:        1091676312@qq.com
+ GitHub:        https://github.com/MemoryKing
+ ********************************************************************************/
 
 #import "UIResponder+Configure.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 @implementation UIResponder (Configure)
 
 #pragma make ------  键盘收回管理 ------
--(void)yi_configureBoardManager{
+-(void)configureBoardManager{
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;// 控制整个功能是否启用
     manager.shouldResignOnTouchOutside = YES;// 控制点击背景是否收起键盘

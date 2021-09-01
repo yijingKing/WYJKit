@@ -12,9 +12,9 @@
 
 @implementation UIColor (YJAdd)
 
-+ (UIColor *)yi_hexStr:(NSString *)yi_hexStr alpha:(CGFloat)a {
++ (UIColor *)hexStr:(NSString *)hexStr alpha:(CGFloat)a {
     //删除字符串中的空格
-    NSString *cString = [[yi_hexStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    NSString *cString = [[hexStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     // String should be 6 or 8 characters
     if ([cString length] < 6){
         return [UIColor clearColor];
@@ -52,11 +52,11 @@
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:a];
 }
 
-+ (UIColor *)yi_hexStr:(NSString *)yi_hexStr {
-    return [UIColor yi_hexStr:yi_hexStr alpha:1.0];
++ (UIColor *)hexStr:(NSString *)hexStr {
+    return [UIColor hexStr:hexStr alpha:1.0];
 }
 
-+ (UIColor *)yi_randomColor {
++ (UIColor *)randomColor {
     NSInteger aRedValue = arc4random() % 255;
     NSInteger aGreenValue = arc4random() % 255;
     NSInteger aBlueValue = arc4random() % 255;

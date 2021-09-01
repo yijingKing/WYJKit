@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WYJBaseTabBarController : UITabBarController
 //封装添加子控制器的方法
-- (void)yi_addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage;
+- (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage;
+- (WYJBaseTabBarController *)yi;
+
 @end
 
 NS_ASSUME_NONNULL_END

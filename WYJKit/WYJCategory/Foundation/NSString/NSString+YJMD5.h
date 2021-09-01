@@ -13,15 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (YJMD5)
 /** 16位MD5加密--小写 */
-@property (nonatomic, copy,readonly)NSString * yi_MD5Bits16LowercaseEncryption;
+@property (nonatomic, copy,readonly)NSString * MD5Bits16LowercaseEncryption;
 /** 16位MD5加密--大写 */
-@property (nonatomic, copy,readonly)NSString * yi_MD5Bits16UppercaseEncryption;
+@property (nonatomic, copy,readonly)NSString * MD5Bits16UppercaseEncryption;
 /** 32位MD5加密--小写 */
-@property (nonatomic, copy,readonly)NSString * yi_MD5Bits32LowercaseEncryption;
+@property (nonatomic, copy,readonly)NSString * MD5Bits32LowercaseEncryption;
 /** 32位MD5加密--大写 */
-@property (nonatomic, copy,readonly)NSString * yi_MD5Bits32UppercaseEncryption;
+@property (nonatomic, copy,readonly)NSString * MD5Bits32UppercaseEncryption;
 /** base64 decryption */
-@property (nonatomic, copy,readonly)NSString * yi_base64Decryption;
+@property (nonatomic, copy,readonly)NSString * base64Decryption;
 
 
 + (NSString *)MD5_16BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase;
@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)base64EncodingWithData:(NSData *)sourceData;
 //***base64解密***//
 +(id)base64EncodingWithString:(NSString *)sourceString;
+- (NSString *)yi;
 @end
 
 

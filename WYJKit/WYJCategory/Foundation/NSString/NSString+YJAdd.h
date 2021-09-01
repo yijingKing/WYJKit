@@ -14,23 +14,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (YJAdd)
 /** HTML转成富文本 */
-@property (nonatomic, copy,readonly)NSAttributedString * yi_HTMLAttributedString;
+@property (nonatomic, copy,readonly)NSAttributedString * HTMLAttributedString;
 /** 首字母转换成大写 */
-@property (nonatomic, copy,readonly) NSString * yi_firstCharUpper;
+@property (nonatomic, copy,readonly) NSString * firstCharUpper;
 /** 首字母转换成小写 */
-@property (nonatomic, copy,readonly) NSString * yi_firstCharLower;
+@property (nonatomic, copy,readonly) NSString * firstCharLower;
 /** json 转 dictionary */
-@property (nonatomic, copy,readonly)NSDictionary * yi_jsonConversionDictionary;
+@property (nonatomic, copy,readonly)NSDictionary * jsonConversionDictionary;
 /** base64 转 image */
-@property (nonatomic, copy, readonly)UIImage * yi_base64ToImage;
+@property (nonatomic, copy, readonly)UIImage * base64ToImage;
 
 /** string judge empty */
-+ (BOOL)yi_judgeEmpty:(NSString *)str;
++ (BOOL)judgeEmpty:(NSString *)str;
 
 /** string conversion date */
-- (NSDate *)yi_dateFromStringFormat:(NSString *)format;
+- (NSDate *)dateFromStringFormat:(NSString *)format;
 /** dateString from formatter */
-- (NSString *)yi_dateStringFromFormat:(NSString *)format;
+- (NSString *)dateStringFromFormat:(NSString *)format;
 
 /*
  *  @brief 计算文字的宽度
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  param font   字体(默认为系统字体)
  *  param height 约束高度
  */
-- (CGFloat)yi_widthWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font;
+- (CGFloat)widthWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font;
 
 /**
  *  @brief 计算文字的高度
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  param font  字体(默认为系统字体)
  *  param width 约束宽度
  */
-- (CGFloat)yi_heightWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font;
+- (CGFloat)heightWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font;
 
 /**
  *  @brief 计算文字的大小
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  param font   字体(默认为系统字体)
  *  param height 约束高度
  */
-- (CGSize)yi_sizeWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font;
+- (CGSize)sizeWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font;
 
 /**
  *  @brief 计算文字的大小
@@ -62,22 +62,22 @@ NS_ASSUME_NONNULL_BEGIN
  *  param font  字体(默认为系统字体)
  *  param width 约束宽度
  */
-- (CGSize)yi_sizeWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font;
+- (CGSize)sizeWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font;
 
 /**
  验证非空字符串
  */
-+ (NSString *)yi_emptyStr:(NSString *)str;
++ (NSString *)emptyStr:(NSString *)str;
 
 /** 拼接字符串判空 */
-+ (instancetype)yi_stringWithFormatNoNull:(NSString *)format, ... ;
++ (instancetype)stringWithFormatNoNull:(NSString *)format, ... ;
 /** 用字符串中的数字的值进行比较 */
-- (NSComparisonResult)yi_compareByCasesNumeric:(NSString *)anotherCom;
+- (NSComparisonResult)compareByCasesNumeric:(NSString *)anotherCom;
 /** 不区分大小写 */
-- (NSComparisonResult)yi_compareByCaseInsensitive:(NSString *)anotherCom;
+- (NSComparisonResult)compareByCaseInsensitive:(NSString *)anotherCom;
 /** 区分大小写 */
-- (NSComparisonResult)yi_compareByCaseSensitive:(NSString *)anotherCom;
-
+- (NSComparisonResult)compareByCaseSensitive:(NSString *)anotherCom;
+- (NSString *)yi;
 @end
 
 NS_ASSUME_NONNULL_END

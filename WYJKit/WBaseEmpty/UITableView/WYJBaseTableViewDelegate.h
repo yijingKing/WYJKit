@@ -11,14 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NSInteger(^NumberForSection)(void);
-typedef NSInteger(^NumberOfRowsInSection)(UITableView *,NSInteger);
-typedef CGFloat(^HeightForRowAtIndexPath)(UITableView *,NSIndexPath *);
+typedef NSInteger(^NumberOfRowsInSection)(UITableView * tableView,NSInteger section);
+typedef CGFloat(^HeightForRowAtIndexPath)(UITableView * tableView,NSIndexPath * indexPath);
 typedef UITableViewCell*_Nullable(^CellForRowAtIndexPath)(UITableView * _Nullable tableView, NSIndexPath * _Nullable  indexPath);
 typedef void(^DidSelectRowAtIndexPath)(UITableView * _Nullable tableView, NSIndexPath * _Nullable  indexPath);
-typedef CGFloat(^HeightForHeaderInSection)(UITableView *,NSInteger);
-typedef CGFloat(^HeightForFooterInSection)(UITableView *,NSInteger);
-typedef UIView*_Nullable(^ViewForHeaderInSection)(UITableView *,NSInteger);
-typedef UIView*_Nullable(^ViewForFooterInSection)(UITableView *,NSInteger);
+typedef CGFloat(^HeightForHeaderInSection)(UITableView * tableView,NSInteger section);
+typedef CGFloat(^HeightForFooterInSection)(UITableView * tableView,NSInteger section);
+typedef UIView*_Nullable(^ViewForHeaderInSection)(UITableView * tableView,NSInteger section);
+typedef UIView*_Nullable(^ViewForFooterInSection)(UITableView * tableView,NSInteger section);
 
 @interface WYJBaseTableViewDelegate : NSObject<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, copy)NumberForSection numberForSectionBlock;
@@ -30,7 +30,6 @@ typedef UIView*_Nullable(^ViewForFooterInSection)(UITableView *,NSInteger);
 @property (nonatomic, copy)HeightForFooterInSection heightForFooterInSection;
 @property (nonatomic, copy)ViewForHeaderInSection viewForHeaderInSection;
 @property (nonatomic, copy)ViewForFooterInSection viewForFooterInSection;
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,39 +16,41 @@ static const char ImageClickBlockKey;
 
 @implementation UIImageView (YJAdd)
 
-@dynamic yi_imageName;
-
-- (void)yi_addTouchUpInside:(void (^)(void))block {
+@dynamic imageName;
+- (UIImageView *)yi {
+    return self;
+}
+- (void)addTouchUpInside:(void (^)(void))block {
     if (block) {
         objc_setAssociatedObject(self, &ImageClickBlockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
     self.userInteractionEnabled = YES;
-    UITapGestureRecognizer * tap = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(yi_touchupInside)];
+    UITapGestureRecognizer * tap = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(touchupInside)];
     [self addGestureRecognizer:tap];
 }
-- (void)yi_touchupInside {
+- (void)touchupInside {
     ImageClickBlock block = objc_getAssociatedObject(self, &ImageClickBlockKey);
     block();
 }
 
-- (void)setYi_imageName:(NSString *)yi_imageName {
-    objc_setAssociatedObject(self, &@selector(yi_imageName), yi_imageName, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    self.image = [UIImage imageNamed:yi_imageName];
+- (void)setImageName:(NSString *)imageName {
+    objc_setAssociatedObject(self, &@selector(imageName), imageName, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    self.image = [UIImage imageNamed:imageName];
 }
 
-- (NSString *)yi_imageName {
-    return objc_getAssociatedObject(self, &@selector(yi_imageName));
+- (NSString *)imageName {
+    return objc_getAssociatedObject(self, &@selector(imageName));
 }
 
-- (void)setYi_base64Image:(NSString *)yi_base64Image {
-    objc_setAssociatedObject(self, @selector(yi_base64Image), yi_base64Image, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    NSData * imageData =[[NSData alloc] initWithBase64EncodedString:yi_base64Image options:NSDataBase64DecodingIgnoreUnknownCharacters];
+- (void)setBase64Image:(NSString *)base64Image {
+    objc_setAssociatedObject(self, @selector(base64Image), base64Image, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    NSData * imageData =[[NSData alloc] initWithBase64EncodedString:base64Image options:NSDataBase64DecodingIgnoreUnknownCharacters];
     UIImage *photo = [UIImage imageWithData:imageData];
     self.image = photo;
 }
 
-- (NSString *)yi_base64Image {
-    return objc_getAssociatedObject(self, &@selector(yi_base64Image));
+- (NSString *)base64Image {
+    return objc_getAssociatedObject(self, &@selector(base64Image));
 }
 
 @end

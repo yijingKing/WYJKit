@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 #import "sjkfaViewController.h"
-
 @interface ViewController ()
 @property (nonatomic, assign)BOOL isL;
 @end
@@ -20,8 +19,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.lightGrayColor;
-    
-
     
     [self addTableView];
     

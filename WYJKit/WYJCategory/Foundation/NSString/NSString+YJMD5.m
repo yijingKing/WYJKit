@@ -11,24 +11,27 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (YJMD5)
-- (NSString *)yi_MD5Bits16LowercaseEncryption
+- (NSString *)yi {
+    return self;
+}
+- (NSString *)MD5Bits16LowercaseEncryption
 {
     return [NSString MD5_NB16BitEncry:self isUppercase:NO];
 }
-- (NSString *)yi_MD5Bits16UppercaseEncryption
+- (NSString *)MD5Bits16UppercaseEncryption
 {
     return [NSString MD5_NB16BitEncry:self isUppercase:YES];
 }
-- (NSString *)yi_MD5Bits32LowercaseEncryption
+- (NSString *)MD5Bits32LowercaseEncryption
 {
     return [NSString MD5_NB32BitEncry:self isUppercase:NO];
 }
-- (NSString *)yi_MD5Bits32UppercaseEncryption
+- (NSString *)MD5Bits32UppercaseEncryption
 {
     return [NSString MD5_NB32BitEncry:self isUppercase:YES];
 }
 
-- (NSString *)yi_base64Decryption {
+- (NSString *)base64Decryption {
     return [NSString base64EncodingWithString:self];
 }
 

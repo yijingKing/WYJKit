@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WYJBaseViewController : UIViewController
 @property (strong, nonatomic) WYJBaseTableView * mainTableView;
-@property (nonatomic,assign) UIStatusBarStyle yi_barStyle;
+@property (nonatomic,assign) UIStatusBarStyle barStyle;
 
 - (void)yi_setUploadPictures:(void(^)(UIImage * img))bloack;
 

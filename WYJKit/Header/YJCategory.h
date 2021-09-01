@@ -30,6 +30,7 @@
 #import "NSMutableArray+YJAdd.h"
 
 #import "UIResponder+Configure.h"
-
+#import "NSString+Date.h"
+#import "NSArray+Conversion.h"
 #endif /* YJCategory_h */
 

@@ -14,18 +14,18 @@
 @implementation UITextField (YJAdd)
 
 
-- (void)setYi_placeholderColor:(UIColor *)yi_placeholderColor {
-    objc_setAssociatedObject(self, &@selector(yi_placeholderColor), yi_placeholderColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setPlaceholderColor:(UIColor *)placeholderColor {
+    objc_setAssociatedObject(self, &@selector(placeholderColor), placeholderColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (@available(iOS 13.0, *)) {
-        NSMutableAttributedString * att = [NSMutableAttributedString.alloc initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName:yi_placeholderColor}];
+        NSMutableAttributedString * att = [NSMutableAttributedString.alloc initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName:placeholderColor}];
         self.attributedPlaceholder = att;
     } else {
-        [self setValue:yi_placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
+        [self setValue:placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
     }
 }
 
-- (UIColor *)yi_placeholderColor {
-    return objc_getAssociatedObject(self, &@selector(yi_placeholderColor));
+- (UIColor *)placeholderColor {
+    return objc_getAssociatedObject(self, &@selector(placeholderColor));
 }
 
 - (void)setAddNoti:(BOOL)addNoti {
@@ -39,12 +39,12 @@
     return obj;
 }
 
-- (void)setYi_maximumLimit:(NSInteger)yi_maximumLimit {
-    objc_setAssociatedObject(self, @selector(yi_maximumLimit), @(yi_maximumLimit), OBJC_ASSOCIATION_ASSIGN);
+- (void)setMaximumLimit:(NSInteger)maximumLimit {
+    objc_setAssociatedObject(self, @selector(maximumLimit), @(maximumLimit), OBJC_ASSOCIATION_ASSIGN);
     [self addTextChangeNoti];
 }
 
-- (NSInteger)yi_maximumLimit {
+- (NSInteger)maximumLimit {
     return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
@@ -61,7 +61,7 @@
 }
 
 - (NSString *)lastTextStr {
-    return [NSString yi_emptyStr:objc_getAssociatedObject(self, _cmd)];
+    return [NSString emptyStr:objc_getAssociatedObject(self, _cmd)];
 }
 
 /**
@@ -71,7 +71,7 @@
     [self characterTruncation];
 }
 
-- (void)yi_textDidChange:(void (^)(NSString * _Nonnull))handle {
+- (void)textDidChange:(void (^)(NSString * _Nonnull))handle {
     self.textHandle = handle;
     [self addTextChangeNoti];
 }
@@ -79,8 +79,8 @@
 /**
 *  处理系统输入法导致的乱码,如果调用了maximumLimit属性，内部会默认处理乱码
 */
-- (void)yi_fixMessyDisplay {
-    if(self.yi_maximumLimit <= 0) {self.yi_maximumLimit = MAXFLOAT;}
+- (void)fixMessyDisplay {
+    if(self.maximumLimit <= 0) {self.maximumLimit = MAXFLOAT;}
     [self addTextChangeNoti];
 }
 
@@ -94,18 +94,18 @@
 
 - (NSString *)characterTruncation {
     //字符截取
-    if(self.yi_maximumLimit) {
+    if(self.maximumLimit) {
         
         UITextRange *selectedRange = [self markedTextRange];
         //获取高亮部分
         UITextPosition *position = [self positionFromPosition:selectedRange.start offset:0];
         //没有高亮选择的字，则对已输入的文字进行字数统计和限制,如果有高亮待选择的字，则暂不对文字进行统计和限制
-        if ((position == nil) && (self.text.length > self.yi_maximumLimit)) {
-            const char *res = [self.text substringToIndex:self.yi_maximumLimit].UTF8String;
+        if ((position == nil) && (self.text.length > self.maximumLimit)) {
+            const char *res = [self.text substringToIndex:self.maximumLimit].UTF8String;
             if (res == NULL) {
-                self.text = [self.text substringToIndex:self.yi_maximumLimit - 1];
+                self.text = [self.text substringToIndex:self.maximumLimit - 1];
             }else{
-                self.text = [self.text substringToIndex:self.yi_maximumLimit];
+                self.text = [self.text substringToIndex:self.maximumLimit];
             }
         }
     }
@@ -124,5 +124,7 @@
     }
 }
 
-
+- (UITextField *)yi {
+    return self;
+}
 @end

@@ -10,9 +10,11 @@
 
 @implementation NSArray (YJAdd)
 
-- (NSArray *)yi_removeDuplicate {
+- (NSArray *)removeDuplicate {
     NSSet * set = [NSSet setWithArray:self];
     return [set allObjects];
 }
-
+- (NSArray *)yi {
+    return self;
+}
 @end

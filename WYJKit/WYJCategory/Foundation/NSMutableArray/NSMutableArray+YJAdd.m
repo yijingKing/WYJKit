@@ -11,10 +11,12 @@
 
 @implementation NSMutableArray (YJAdd)
 
-- (NSMutableArray *)yi_removeDuplicates {
+- (NSMutableArray *)removeDuplicates {
     NSSet * set = [NSSet setWithArray:self];
     NSMutableArray * array = [NSMutableArray arrayWithArray:set.allObjects];
     return array;
 }
-
+- (NSMutableArray *)yi {
+    return self;
+}
 @end

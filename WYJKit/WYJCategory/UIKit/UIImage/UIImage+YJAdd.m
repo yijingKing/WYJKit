@@ -12,15 +12,17 @@
 
 
 @implementation UIImage (YJAdd)
+- (UIImage *)yi{
+    return self;
+}
 
-
-- (NSString *)yi_base64String {
+- (NSString *)base64String {
     NSData * imagedata = UIImagePNGRepresentation(self);
     NSString * image64 = [imagedata base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return image64;
 }
 
-+ (UIImage *)yi_imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType {
++ (UIImage *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType {
     NSMutableArray *ar = [NSMutableArray array];
     for(UIColor *c in colors) {
         [ar addObject:(id)c.CGColor];

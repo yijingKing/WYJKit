@@ -11,10 +11,10 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import <MJRefresh/MJRefresh.h>
 
-static const char yi_emptyTitleKey;
-static const char yi_emptyImageKey;
-static const char yi_emptyBackgroundColorKey;
-static const char yi_emptyDescriptionKey;
+static const char emptyTitleKey;
+static const char emptyImageKey;
+static const char emptyBackgroundColorKey;
+static const char emptyDescriptionKey;
 
 typedef enum : NSUInteger {
     EmptyTypeNomer = 0,
@@ -73,14 +73,14 @@ typedef enum : NSUInteger {
         self.emptyDataSetDelegate = self;
         self.isFirstShow = YES;
         self.backgroundColor = UIColor.clearColor;
-        [self yi_showNoSourcePageWithEmpty:self.emptyMsg];
+        [self showNoSourcePageWithEmpty:self.emptyMsg];
         self.dataSource = self.baseDelegate;
         self.delegate = self.baseDelegate;
     }
     return self;
 }
 
-- (void)yi_refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock footerWithRefreshingBlock:(void(^)(void))footBlock {
+- (void)refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock footerWithRefreshingBlock:(void(^)(void))footBlock {
     if (headerBlock) {
         MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             headerBlock();
@@ -95,7 +95,7 @@ typedef enum : NSUInteger {
     }
 }
 
-- (void)yi_refreshNormakHeaderWithRefreshingBlock:(void(^)(void))headerBlock {
+- (void)refreshNormakHeaderWithRefreshingBlock:(void(^)(void))headerBlock {
     if (headerBlock) {
         MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             headerBlock();
@@ -104,7 +104,7 @@ typedef enum : NSUInteger {
     }
 }
 
-- (void)yi_refreshGifHeaderWithRefreshingBlock:(void(^)(void))headerBlock {
+- (void)refreshGifHeaderWithRefreshingBlock:(void(^)(void))headerBlock {
     if (headerBlock) {
         MJRefreshGifHeader * header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
             headerBlock();
@@ -114,7 +114,7 @@ typedef enum : NSUInteger {
 }
 
 
-- (void)yi_refreshFooterWithRefreshingBlock:(void (^)(void))footBlock {
+- (void)refreshFooterWithRefreshingBlock:(void (^)(void))footBlock {
     if (footBlock) {
         MJRefreshBackNormalFooter * footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             footBlock();
@@ -124,33 +124,33 @@ typedef enum : NSUInteger {
 }
 
 
-- (void)yi_endRefreshingWithNoMoreData {
+- (void)endRefreshingWithNoMoreData {
     [self.mj_footer endRefreshingWithNoMoreData];
 }
 
-- (void)yi_endRefresh {
+- (void)endRefresh {
     [self.mj_header endRefreshing];
     [self.mj_footer endRefreshing];
 }
 
-- (void)yi_showNoSourcePageWithEmpty:(NSString *)msg {
+- (void)showNoSourcePageWithEmpty:(NSString *)msg {
     self.emptyMsg = msg;
     self.state = EmptyTypeNomer;
     [self reloadEmptyDataSet];
-    [self yi_endRefresh];
+    [self endRefresh];
 }
 
-- (void)yi_showButtonTitleForEmpty:(NSString *)string Click:(void(^)(void))click {
+- (void)showButtonTitleForEmpty:(NSString *)string Click:(void(^)(void))click {
     self.emptyMsg = string;
     self.clickBadNetWorkPage = click;
     self.state = EmptyTypeButton;
     [self reloadEmptyDataSet];
-    [self yi_endRefresh];
+    [self endRefresh];
 }
 
-- (void)yi_endRefreshAndNoMoreData {
-    [self yi_endRefresh];
-    [self yi_endRefreshingWithNoMoreData];
+- (void)endRefreshAndNoMoreData {
+    [self endRefresh];
+    [self endRefreshingWithNoMoreData];
 }
 
 #pragma mark - DZNEmptyDataSetSource
@@ -158,10 +158,10 @@ typedef enum : NSUInteger {
  *  返回标题文字
  */
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
-    UIFont * font = self.yi_emptyTitleFont ?: [UIFont systemFontOfSize:16];
+    UIFont * font = self.emptyTitleFont ?: [UIFont systemFontOfSize:16];
     
     NSDictionary *attrDic = @{NSFontAttributeName: font,
-                              NSForegroundColorAttributeName : self.yi_emptyTitleColor ?: [UIColor lightGrayColor]
+                              NSForegroundColorAttributeName : self.emptyTitleColor ?: [UIColor lightGrayColor]
                               };
     
     if (self.isFirstShow || self.state == EmptyTypeButton) {
@@ -169,12 +169,12 @@ typedef enum : NSUInteger {
         return nil;
     }
     //富文本
-    if (self.yi_emptyTitleAttributedString) {
-        return self.yi_emptyTitleAttributedString;
+    if (self.emptyTitleAttributedString) {
+        return self.emptyTitleAttributedString;
     } else
     /* 字符串 */
-        if (self.yi_emptyTitle) {
-        NSAttributedString *msg = [[NSAttributedString alloc] initWithString:self.yi_emptyTitle attributes:attrDic];
+        if (self.emptyTitle) {
+        NSAttributedString *msg = [[NSAttributedString alloc] initWithString:self.emptyTitle attributes:attrDic];
         return msg;
     }
     NSAttributedString *msg = [[NSAttributedString alloc] initWithString:self.emptyMsg attributes:attrDic];
@@ -185,8 +185,8 @@ typedef enum : NSUInteger {
  *  文字按钮
  */
 - (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
-    UIFont * font = self.yi_emptyTitleFont ?: [UIFont systemFontOfSize:16];
-    UIColor *textColor = self.yi_emptyDescriptionColor ?: UIColor.lightGrayColor;
+    UIFont * font = self.emptyTitleFont ?: [UIFont systemFontOfSize:16];
+    UIColor *textColor = self.emptyDescriptionColor ?: UIColor.lightGrayColor;
     NSMutableDictionary *attributes = [NSMutableDictionary new];
     [attributes setObject:font forKey:NSFontAttributeName];
     [attributes setObject:textColor forKey:NSForegroundColorAttributeName];
@@ -195,12 +195,12 @@ typedef enum : NSUInteger {
         return nil;
     }
     //富文本
-    if (self.yi_emptyTitleAttributedString) {
-        return self.yi_emptyTitleAttributedString;
+    if (self.emptyTitleAttributedString) {
+        return self.emptyTitleAttributedString;
     } else
     /* 字符串 */
-        if (self.yi_emptyTitle) {
-            NSAttributedString *msg = [[NSAttributedString alloc] initWithString:self.yi_emptyTitle attributes:attributes];
+        if (self.emptyTitle) {
+            NSAttributedString *msg = [[NSAttributedString alloc] initWithString:self.emptyTitle attributes:attributes];
             return msg;
         }
     return [[NSAttributedString alloc] initWithString:self.emptyMsg attributes:attributes];
@@ -210,25 +210,25 @@ typedef enum : NSUInteger {
  *  返回占位图图片
  */
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-    return self.yi_emptyImage ?: nil;
+    return self.emptyImage ?: nil;
 }
 
 /**
  *  返回详情文字
  */
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView {
-    UIFont * font = self.yi_emptyDescriptionFont ?: [UIFont systemFontOfSize:16];
-    UIColor *textColor = self.yi_emptyDescriptionColor ?: UIColor.lightGrayColor;
+    UIFont * font = self.emptyDescriptionFont ?: [UIFont systemFontOfSize:16];
+    UIColor *textColor = self.emptyDescriptionColor ?: UIColor.lightGrayColor;
     NSMutableDictionary *attributes = [NSMutableDictionary new];
     [attributes setObject:font forKey:NSFontAttributeName];
     [attributes setObject:textColor forKey:NSForegroundColorAttributeName];
     //富文本
-    if (self.yi_emptyDescriptionAttributedString) {
-        return self.yi_emptyDescriptionAttributedString;
+    if (self.emptyDescriptionAttributedString) {
+        return self.emptyDescriptionAttributedString;
     } else
     /* 字符串 */
-        if (self.yi_emptyDescription) {
-            NSAttributedString *msg = [[NSAttributedString alloc] initWithString:self.yi_emptyDescription attributes:attributes];
+        if (self.emptyDescription) {
+            NSAttributedString *msg = [[NSAttributedString alloc] initWithString:self.emptyDescription attributes:attributes];
             return msg;
         }
     return nil;
@@ -245,7 +245,7 @@ typedef enum : NSUInteger {
  *  自定义背景颜色
  */
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {
-    return self.yi_emptyBackgroundColor ?: UIColor.whiteColor;
+    return self.emptyBackgroundColor ?: UIColor.whiteColor;
 }
 
 /**
@@ -312,122 +312,124 @@ typedef enum : NSUInteger {
 void CustomHeader (WYJBaseTableView * tab) {
     if (tab.mj_header) {
         MJRefreshStateHeader * header = (MJRefreshStateHeader *)tab.mj_header;
-        header.lastUpdatedTimeLabel.hidden = tab.yi_hiddenTime;
-        header.stateLabel.hidden = tab.yi_hiddenState;
+        header.lastUpdatedTimeLabel.hidden = tab.hiddenTime;
+        header.stateLabel.hidden = tab.hiddenState;
     }
 }
 
 #pragma make ------ runtime  ------
 
-- (void)setYi_emptyTitleAttributedString:(NSAttributedString *)yi_emptyTitleAttributedString {
-    objc_setAssociatedObject(self, &@selector(yi_emptyTitleAttributedString), yi_emptyTitleAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setemptyTitleAttributedString:(NSAttributedString *)emptyTitleAttributedString {
+    objc_setAssociatedObject(self, &@selector(emptyTitleAttributedString), emptyTitleAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
     
 }
 
-- (NSString *)yi_emptyTitleAttributedString {
-    return objc_getAssociatedObject(self, &@selector(yi_emptyTitleAttributedString));
+- (NSString *)emptyTitleAttributedString {
+    return objc_getAssociatedObject(self, &@selector(emptyTitleAttributedString));
 }
 
-- (void)setYi_emptyTitle:(NSString *)yi_emptyTitle {
-    objc_setAssociatedObject(self, &yi_emptyTitleKey, yi_emptyTitle, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setemptyTitle:(NSString *)emptyTitle {
+    objc_setAssociatedObject(self, &emptyTitleKey, emptyTitle, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
 
-- (NSString *)yi_emptyTitle {
-    return objc_getAssociatedObject(self, &yi_emptyTitleKey);
+- (NSString *)emptyTitle {
+    return objc_getAssociatedObject(self, &emptyTitleKey);
 }
 
-- (void)setYi_emptyTitleFont:(UIFont *)yi_emptyTitleFont {
-    objc_setAssociatedObject(self, &@selector(yi_emptyTitleFont), yi_emptyTitleFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setemptyTitleFont:(UIFont *)emptyTitleFont {
+    objc_setAssociatedObject(self, &@selector(emptyTitleFont), emptyTitleFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
 
-- (UIFont *)yi_emptyTitleFont {
-    return objc_getAssociatedObject(self, &@selector(yi_emptyTitleFont));
+- (UIFont *)emptyTitleFont {
+    return objc_getAssociatedObject(self, &@selector(emptyTitleFont));
 }
 
-- (void)setYi_emptyTitleColor:(UIColor *)yi_emptyTitleColor {
-    objc_setAssociatedObject(self, &@selector(yi_emptyTitleColor), yi_emptyTitleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setemptyTitleColor:(UIColor *)emptyTitleColor {
+    objc_setAssociatedObject(self, &@selector(emptyTitleColor), emptyTitleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
 
-- (UIColor *)yi_emptyTitleColor {
-    return objc_getAssociatedObject(self, &@selector(yi_emptyTitleColor));
+- (UIColor *)emptyTitleColor {
+    return objc_getAssociatedObject(self, &@selector(emptyTitleColor));
 }
 
-- (void)setYi_emptyImage:(UIImage *)yi_emptyImage {
-    objc_setAssociatedObject(self, &yi_emptyImageKey, yi_emptyImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setemptyImage:(UIImage *)emptyImage {
+    objc_setAssociatedObject(self, &emptyImageKey, emptyImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
 
-- (UIImage *)yi_emptyImage {
-    return objc_getAssociatedObject(self, &yi_emptyImageKey);
+- (UIImage *)emptyImage {
+    return objc_getAssociatedObject(self, &emptyImageKey);
 }
 
-- (void)setYi_emptyBackgroundColor:(UIColor *)yi_emptyBackgroundColor {
-    objc_setAssociatedObject(self, &yi_emptyBackgroundColorKey, yi_emptyBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setemptyBackgroundColor:(UIColor *)emptyBackgroundColor {
+    objc_setAssociatedObject(self, &emptyBackgroundColorKey, emptyBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
 
-- (UIColor *)yi_emptyBackgroundColor {
-    return objc_getAssociatedObject(self, &yi_emptyBackgroundColorKey);
+- (UIColor *)emptyBackgroundColor {
+    return objc_getAssociatedObject(self, &emptyBackgroundColorKey);
 }
 
-- (void)setYi_emptyDescription:(NSString *)yi_emptyDescription {
-    objc_setAssociatedObject(self, &yi_emptyDescriptionKey, yi_emptyDescription, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setemptyDescription:(NSString *)emptyDescription {
+    objc_setAssociatedObject(self, &emptyDescriptionKey, emptyDescription, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
 
-- (NSString *)yi_emptyDescription {
-    return objc_getAssociatedObject(self, &yi_emptyDescriptionKey);
+- (NSString *)emptyDescription {
+    return objc_getAssociatedObject(self, &emptyDescriptionKey);
 }
 
-- (void)setYi_emptyDescriptionFont:(UIFont *)yi_emptyDescriptionFont {
-    objc_setAssociatedObject(self, &@selector(yi_emptyDescriptionFont), yi_emptyDescriptionFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setemptyDescriptionFont:(UIFont *)emptyDescriptionFont {
+    objc_setAssociatedObject(self, &@selector(emptyDescriptionFont), emptyDescriptionFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIFont *)yi_emptyDescriptionFont {
-    return objc_getAssociatedObject(self, &@selector(yi_emptyDescriptionFont));
+- (UIFont *)emptyDescriptionFont {
+    return objc_getAssociatedObject(self, &@selector(emptyDescriptionFont));
 }
 
-- (void)setYi_emptyDescriptionColor:(UIColor *)yi_emptyDescriptionColor {
-    objc_setAssociatedObject(self, &@selector(yi_emptyDescriptionColor), yi_emptyDescriptionColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setemptyDescriptionColor:(UIColor *)emptyDescriptionColor {
+    objc_setAssociatedObject(self, &@selector(emptyDescriptionColor), emptyDescriptionColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
 
-- (UIFont *)yi_emptyDescriptionColor {
-    return objc_getAssociatedObject(self, &@selector(yi_emptyDescriptionColor));
+- (UIFont *)emptyDescriptionColor {
+    return objc_getAssociatedObject(self, &@selector(emptyDescriptionColor));
 }
 
-- (void)setYi_emptyDescriptionAttributedString:(NSAttributedString *)yi_emptyDescriptionAttributedString {
-    objc_setAssociatedObject(self, &yi_emptyDescriptionAttributedString, yi_emptyDescriptionAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setemptyDescriptionAttributedString:(NSAttributedString *)emptyDescriptionAttributedString {
+    objc_setAssociatedObject(self, &emptyDescriptionAttributedString, emptyDescriptionAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
 
-- (NSString *)yi_emptyDescriptionAttributedString {
-    return objc_getAssociatedObject(self, &@selector(yi_emptyDescriptionAttributedString));
+- (NSString *)emptyDescriptionAttributedString {
+    return objc_getAssociatedObject(self, &@selector(emptyDescriptionAttributedString));
 }
 
-- (void)setYi_hiddenTime:(BOOL)yi_hiddenTime {
-    objc_setAssociatedObject(self, &@selector(yi_hiddenTime), @(yi_hiddenTime), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)sethiddenTime:(BOOL)hiddenTime {
+    objc_setAssociatedObject(self, &@selector(hiddenTime), @(hiddenTime), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     CustomHeader(self);
     
 }
 
-- (BOOL)yi_hiddenTime {
-    return [objc_getAssociatedObject(self, &@selector(yi_hiddenTime)) boolValue];
+- (BOOL)hiddenTime {
+    return [objc_getAssociatedObject(self, &@selector(hiddenTime)) boolValue];
 }
 
-- (void)setYi_hiddenState:(BOOL)yi_hiddenState {
-    objc_setAssociatedObject(self, &@selector(yi_hiddenState), @(yi_hiddenState), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)sethiddenState:(BOOL)hiddenState {
+    objc_setAssociatedObject(self, &@selector(hiddenState), @(hiddenState), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     CustomHeader(self);
 }
 
 
 
-- (BOOL)yi_hiddenState {
-    return [objc_getAssociatedObject(self, &@selector(yi_hiddenState)) boolValue];
+- (BOOL)hiddenState {
+    return [objc_getAssociatedObject(self, &@selector(hiddenState)) boolValue];
 }
-
+- (WYJBaseTableView *)yi {
+    return self;
+}
 @end

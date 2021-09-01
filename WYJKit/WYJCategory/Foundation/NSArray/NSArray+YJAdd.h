@@ -16,7 +16,8 @@ typedef NS_ENUM(NSUInteger,ArraySortingType) {
 };
 
 @interface NSArray (YJAdd)
-@property (nonatomic, strong, readonly)NSArray * yi_removeDuplicate;
+@property (nonatomic, strong, readonly)NSArray * removeDuplicate;
+- (NSArray *)yi;
 @end
 
 NS_ASSUME_NONNULL_END

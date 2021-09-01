@@ -14,12 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (YJAdd)
 
-- (void)yi_addTouchUpInside:(void(^)(void))block;
+- (void)addTouchUpInside:(void(^)(void))block;
 
 /** 设置部分圆角*/
-- (void)yi_roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size;
+- (void)roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size;
 /** 设置阴影 */
-- (void)yi_shadowsColor:(UIColor *)color size:(CGSize)size radius:(CGFloat)radius opacity:(CGFloat)opacity;
+- (void)shadowsColor:(UIColor *)color size:(CGSize)size radius:(CGFloat)radius opacity:(CGFloat)opacity;
 
 /**
  渐变色
@@ -29,14 +29,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param gradientType direction
  @return image
  */
-- (UIView *)yi_imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
+- (UIView *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
 
 /**
  Remove all subviews.
 
  @warning Never call this method inside your view's drawRect: method.
  */
-- (void)yi_removeAllSubviews;
+- (void)removeAllSubviews;
 @end
 
 NS_ASSUME_NONNULL_END

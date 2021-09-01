@@ -9,16 +9,18 @@
 #import "NSDate+YJAdd.h"
 
 @implementation NSDate (YJAdd)
-
-+ (NSString *)yi_stringFromDate:(NSDate *)date formatter:(NSString *)formatter {
-    return yi_stringFromDate(date, formatter);
+- (NSDate *)yi {
+    return self;
+}
++ (NSString *)stringFromDate:(NSDate *)date formatter:(NSString *)formatter {
+    return stringFromDate(date, formatter);
 }
 
-- (NSString *)yi_stringFromDate:(NSString *)formatter {
-    return yi_stringFromDate(self, formatter);
+- (NSString *)stringFromDate:(NSString *)formatter {
+    return stringFromDate(self, formatter);
 }
 
-+ (NSDate *)yi_getPriousorLaterDateFromDate:(NSDate *)date withMonth:(int)month {
++ (NSDate *)getPriousorLaterDateFromDate:(NSDate *)date withMonth:(int)month {
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     [comps setMonth:month];
     NSCalendar *calender = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -26,7 +28,7 @@
     return mDate;
 }
 
-- (NSDate *)yi_getPriousorLaterDateWithMonth:(int)month {
+- (NSDate *)getPriousorLaterDateWithMonth:(int)month {
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     [comps setMonth:month];
     NSCalendar *calender = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -38,7 +40,7 @@
   获取当前是星期几
   @return 1、2、3、4、5、6、7(星期六是 7 ，星期日 1)
   */
-+ (NSInteger)yi_getNowWeekday {
++ (NSInteger)getNowWeekday {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
@@ -53,7 +55,7 @@
   计算星期几
   @return 1、2、3、4、5、6、7(星期六是 7 ，星期日 1)
   */
-+ (NSInteger)yi_getWeekdayWithDate:(NSDate *)date {
++ (NSInteger)getWeekdayWithDate:(NSDate *)date {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
@@ -68,7 +70,7 @@
   获取当前是几月几日
   @return 07月07日
   */
-+ (NSString *)yi_getTodayString {
++ (NSString *)getTodayString {
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateComponents *components = [cal components:(NSCalendarUnitEra|NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay) fromDate:[NSDate date]];
     NSDate *today = [cal dateFromComponents:components];
@@ -78,7 +80,7 @@
 }
 
 //是否为今天
-- (BOOL)yi_isToday {
+- (BOOL)isToday {
     //now: 2015-09-05 11:23:00
     //self 调用这个方法的对象本身
     
@@ -95,7 +97,7 @@
 }
 
 //是否为昨天
-- (BOOL)yi_isYesterday {
+- (BOOL)isYesterday {
     //2014-05-01
     NSDate *nowDate = [[NSDate date] dateWithYMD];
     
@@ -110,7 +112,7 @@
 }
 
 //是否在同一周
-- (BOOL)yi_isSameWeek {
+- (BOOL)isSameWeek {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     int unit = NSCalendarUnitWeekday | NSCalendarUnitMonth | NSCalendarUnitYear ;
     
@@ -124,22 +126,22 @@
 }
 
 /** 某天后几天 */
-+ (NSDate *)yi_dateAfterDay:(NSDate *)date num:(int)num {
-    return [date yi_dateByAddingDays:num];
++ (NSDate *)dateAfterDay:(NSDate *)date num:(int)num {
+    return [date dateByAddingDays:num];
 }
 
 /** 某天前几天 */
-+ (NSDate *)yi_dateBeforeDay:(NSDate *)date num:(int)num {
-    return [date yi_dateBySubtractingDays:num];
++ (NSDate *)dateBeforeDay:(NSDate *)date num:(int)num {
+    return [date dateBySubtractingDays:num];
 }
 
 /** 减少dDays天 */
-- (NSDate *)yi_dateBySubtractingDays:(NSInteger)dDays {
-    return [self yi_dateByAddingDays:(dDays * -1)];
+- (NSDate *)dateBySubtractingDays:(NSInteger)dDays {
+    return [self dateByAddingDays:(dDays * -1)];
 }
 
 /** 增加dDays天 */
-- (NSDate *)yi_dateByAddingDays:(NSUInteger)days {
+- (NSDate *)dateByAddingDays:(NSUInteger)days {
     NSDateComponents *c = [[NSDateComponents alloc] init];
     c.day = days;
     NSCalendar *calender = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
@@ -148,14 +150,14 @@
 }
 
 /** 增加dHours小时 */
-- (NSDate *)yi_dateByAddingHours:(NSInteger)dHours {
+- (NSDate *)dateByAddingHours:(NSInteger)dHours {
     NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + WHours() * dHours;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
 /** 当前小时前dHours个小时 */
-+ (NSDate *)yi_dateWithHoursFromNow:(NSInteger)dHours {
++ (NSDate *)dateWithHoursFromNow:(NSInteger)dHours {
     NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + WHours() * dHours;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
@@ -169,15 +171,19 @@
     return [fmt dateFromString:selfStr];
 }
 
+
+
+
+
 @end
 
-NSString * yi_stringFromDate(NSDate * date, NSString * formatter) {
+NSString * stringFromDate(NSDate * date, NSString * formatter) {
     NSDateFormatter * form = NSDateFormatter.alloc.init;
     form.dateFormat = formatter;
     return [form stringFromDate:date];
 }
 
-NSTimeInterval yi_dateCalculatedTimeDifference (NSString * start, NSString * stop, NSString * formatter) {
+NSTimeInterval dateCalculatedTimeDifference (NSString * start, NSString * stop, NSString * formatter) {
     NSDateFormatter* formater = [[NSDateFormatter alloc] init];
     [formater setDateFormat:formatter];
     NSDate* startDate = [formater dateFromString:start];

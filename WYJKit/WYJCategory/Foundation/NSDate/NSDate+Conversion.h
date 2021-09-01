@@ -1,20 +1,18 @@
 /*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
  
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJTableViewCell : UITableViewCell
-/** the devider (default NO)  */
-@property (nonatomic, strong)UIView * dividerView;
-- (WYJTableViewCell *)yi;
+@interface NSDate (Conversion)
+#pragma mark --- 将时间转换成时间戳
+- (NSString *)toTimestampFromTime:(NSString * _Nullable)formatterStr;
 @end
 
 NS_ASSUME_NONNULL_END

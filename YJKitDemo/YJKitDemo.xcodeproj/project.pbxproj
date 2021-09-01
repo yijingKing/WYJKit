@@ -52,6 +52,8 @@
 		F774063C26DF182A00A2249D /* WYJKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F774063B26DF182A00A2249D /* WYJKit.podspec */; };
 		F774064326DF24B300A2249D /* UIResponder+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = F774064226DF24B300A2249D /* UIResponder+Configure.m */; };
 		F774064826DF4F9100A2249D /* WYJBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F774064726DF4F9100A2249D /* WYJBaseTabBarController.m */; };
+		F774064E26DF663E00A2249D /* NSDate+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = F774064D26DF663E00A2249D /* NSDate+Conversion.m */; };
+		F774065526DF693D00A2249D /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = F774065426DF693D00A2249D /* NSString+Date.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +173,10 @@
 		F774064226DF24B300A2249D /* UIResponder+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Configure.m"; sourceTree = "<group>"; };
 		F774064626DF4F9100A2249D /* WYJBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJBaseTabBarController.h; sourceTree = "<group>"; };
 		F774064726DF4F9100A2249D /* WYJBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJBaseTabBarController.m; sourceTree = "<group>"; };
+		F774064C26DF663E00A2249D /* NSDate+Conversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Conversion.h"; sourceTree = "<group>"; };
+		F774064D26DF663E00A2249D /* NSDate+Conversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Conversion.m"; sourceTree = "<group>"; };
+		F774065326DF693D00A2249D /* NSString+Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
+		F774065426DF693D00A2249D /* NSString+Date.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,10 +348,10 @@
 		63F6DE4D2579DAA200248B30 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				63F6DE4E2579DAA200248B30 /* UIView+YJPageRouter.h */,
-				63F6DE4F2579DAA200248B30 /* UIView+YJAdd.m */,
-				63F6DE502579DAA200248B30 /* UIView+YJPageRouter.m */,
 				63F6DE512579DAA200248B30 /* UIView+YJAdd.h */,
+				63F6DE4F2579DAA200248B30 /* UIView+YJAdd.m */,
+				63F6DE4E2579DAA200248B30 /* UIView+YJPageRouter.h */,
+				63F6DE502579DAA200248B30 /* UIView+YJPageRouter.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -381,8 +387,8 @@
 			isa = PBXGroup;
 			children = (
 				63F6DE5C2579DAA200248B30 /* UIViewController+YJAdd.h */,
-				63F6DE5D2579DAA200248B30 /* WYJNavigationButton.h */,
 				63F6DE5E2579DAA200248B30 /* UIViewController+YJAdd.m */,
+				63F6DE5D2579DAA200248B30 /* WYJNavigationButton.h */,
 				63F6DE5F2579DAA200248B30 /* WYJNavigationButton.m */,
 			);
 			path = UIViewController;
@@ -412,13 +418,15 @@
 			isa = PBXGroup;
 			children = (
 				63F6DE652579DAA200248B30 /* NSString+YJAdd.h */,
-				63F6DE662579DAA200248B30 /* NSString+YJMD5.h */,
-				63F6DE672579DAA200248B30 /* NSString+YJConversion.m */,
-				63F6DE682579DAA200248B30 /* NSString+YJRegular.m */,
-				63F6DE692579DAA200248B30 /* NSString+YJMD5.m */,
 				63F6DE6A2579DAA200248B30 /* NSString+YJAdd.m */,
+				63F6DE662579DAA200248B30 /* NSString+YJMD5.h */,
+				63F6DE692579DAA200248B30 /* NSString+YJMD5.m */,
 				63F6DE6B2579DAA200248B30 /* NSString+YJConversion.h */,
+				63F6DE672579DAA200248B30 /* NSString+YJConversion.m */,
 				63F6DE6C2579DAA200248B30 /* NSString+YJRegular.h */,
+				63F6DE682579DAA200248B30 /* NSString+YJRegular.m */,
+				F774065326DF693D00A2249D /* NSString+Date.h */,
+				F774065426DF693D00A2249D /* NSString+Date.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -446,6 +454,8 @@
 			children = (
 				63F6DE742579DAA200248B30 /* NSDate+YJAdd.h */,
 				63F6DE752579DAA200248B30 /* NSDate+YJAdd.m */,
+				F774064C26DF663E00A2249D /* NSDate+Conversion.h */,
+				F774064D26DF663E00A2249D /* NSDate+Conversion.m */,
 			);
 			path = NSDate;
 			sourceTree = "<group>";
@@ -784,6 +794,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F774065526DF693D00A2249D /* NSString+Date.m in Sources */,
 				63F6DE9C2579DAA200248B30 /* UIImageView+YJAdd.m in Sources */,
 				63F6DEAB2579DAA200248B30 /* YJSystemInfo.m in Sources */,
 				63F6DE9A2579DAA200248B30 /* UIFont+YJAdd.m in Sources */,
@@ -796,6 +807,7 @@
 				F774064326DF24B300A2249D /* UIResponder+Configure.m in Sources */,
 				F733E92526DE01AC00DE364F /* WYJBaseTableViewDelegate.m in Sources */,
 				98EB8C6C229FDB5800CC4AB1 /* ViewController.m in Sources */,
+				F774064E26DF663E00A2249D /* NSDate+Conversion.m in Sources */,
 				63F6DE952579DAA200248B30 /* UIApplication+YJAdd.m in Sources */,
 				F733E92826DE15DA00DE364F /* WYJBaseTableView+Delegate.m in Sources */,
 				F774064826DF4F9100A2249D /* WYJBaseTabBarController.m in Sources */,

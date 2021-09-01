@@ -20,7 +20,7 @@
 }
 
 //封装添加子控制器的方法
-- (void)yi_addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{
+- (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{
     //设置标题
     childVc.tabBarItem.title = title;
     childVc.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -29,5 +29,8 @@
     WYJNavigationController *homeNav = [[WYJNavigationController alloc] initWithRootViewController:childVc];
     //不要忘记添加到父控制器上
     [self addChildViewController:homeNav];
+}
+- (WYJBaseTabBarController *)yi {
+    return self;
 }
 @end

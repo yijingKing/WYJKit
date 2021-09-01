@@ -1,18 +1,23 @@
-//
-//  UIResponder+Configure.h
-//  YJKitDemo
-//
-//  Created by PZ-IMAC-1 on 2021/9/1.
-//  Copyright © 2021 Eugene King. All rights reserved.
-//
+/*******************************************************************************
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
+ 
+ Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ E-mail:        1091676312@qq.com
+ GitHub:        https://github.com/MemoryKing
+ ********************************************************************************/
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+
 @interface UIResponder (Configure)
+
+
+
 #pragma make ------  键盘收回管理 ------
--(void)yi_configureBoardManager;
+-(void)configureBoardManager;
 @end
 
 NS_ASSUME_NONNULL_END

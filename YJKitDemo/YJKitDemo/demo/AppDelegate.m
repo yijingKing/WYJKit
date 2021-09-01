@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     WYJBaseTabBarController * tab = [WYJBaseTabBarController.alloc init];
-    [tab yi_addChildVc:ViewController.alloc.init title:@"123" image:@"" selectedImage:@""];
+    [tab addChildVc:ViewController.alloc.init title:@"123" image:@"" selectedImage:@""];
     self.window.rootViewController = tab;
     
     return YES;

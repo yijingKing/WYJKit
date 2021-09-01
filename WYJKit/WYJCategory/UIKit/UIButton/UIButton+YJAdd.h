@@ -26,38 +26,38 @@ typedef NS_ENUM(NSUInteger, WImagePosition) {
 
 @interface UIButton (YJAdd)
 /** title font */
-@property (nonatomic, assign) CGFloat yi_titleFont;
+@property (nonatomic, assign) CGFloat titleFont;
 /** title Alignement */
-@property (nonatomic, assign) TextAlignement yi_textAlignement;
+@property (nonatomic, assign) TextAlignement textAlignement;
 
 /** title normal status */
-@property (nonatomic, copy) NSString * yi_titleText;
+@property (nonatomic, copy) NSString * titleText;
 /** title color normal status */
-@property (nonatomic, strong) UIColor * yi_titleColor;
+@property (nonatomic, strong) UIColor * titleColor;
 /** image normal status */
-@property (nonatomic, strong) UIImage * yi_image;
+@property (nonatomic, strong) UIImage * image;
 /** background image normal status */
-@property (nonatomic, strong) UIImage * yi_backgroundImage;
+@property (nonatomic, strong) UIImage * backgroundImage;
 /** attributed normal status */
-@property (nonatomic, copy) NSAttributedString * yi_attributedText;
+@property (nonatomic, copy) NSAttributedString * attributedText;
 
 /** title select status */
-@property (nonatomic, copy) NSString * yi_selectTitle;
+@property (nonatomic, copy) NSString * selectTitle;
 /** title color select status */
-@property (nonatomic, strong) UIColor * yi_selectTitleColor;
+@property (nonatomic, strong) UIColor * selectTitleColor;
 /** image select status */
-@property (nonatomic, strong) UIImage * yi_selectImage;
+@property (nonatomic, strong) UIImage * selectImage;
 /** background image select status */
-@property (nonatomic, strong) UIImage * yi_selectBackgroundImage;
+@property (nonatomic, strong) UIImage * selectBackgroundImage;
 /** attributed select status */
-@property (nonatomic, copy) NSAttributedString * yi_selectAttributedText;
+@property (nonatomic, copy) NSAttributedString * selectAttributedText;
 
 /** touch up inside */
-- (void)yi_addTargetUpInside:(nullable id)tat action:(nonnull SEL)sel;
+- (void)addTargetUpInside:(nullable id)tat action:(nonnull SEL)sel;
 
 /** image and title position */
-- (void)yi_imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing;
-
+- (void)imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing;
+- (UIButton *)yi;
 @end
 
 NS_ASSUME_NONNULL_END

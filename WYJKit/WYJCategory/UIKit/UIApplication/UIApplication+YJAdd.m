@@ -61,6 +61,9 @@
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 }
 
+- (UIApplication *)yi {
+    return self;
+}
 @end
 
 

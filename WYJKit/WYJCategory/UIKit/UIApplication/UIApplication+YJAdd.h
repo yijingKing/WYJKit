@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// Application's Build number. e.g. "123"
 @property (nullable, nonatomic, readonly) NSString *appBuildVersion;
 
+- (UIApplication *)yi;
 @end
 
 NS_ASSUME_NONNULL_END

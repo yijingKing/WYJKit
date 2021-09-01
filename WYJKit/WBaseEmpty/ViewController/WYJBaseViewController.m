@@ -74,13 +74,13 @@
         make.bottom.mas_equalTo(isHidden ? -bottomHeight : (-bottomHeight - 49));
     }];
 }
-- (void)setYi_barStyle:(UIStatusBarStyle)yi_barStyle {
-    _yi_barStyle = yi_barStyle;
+- (void)setBarStyle:(UIStatusBarStyle)barStyle {
+    _barStyle = barStyle;
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return self.yi_barStyle;
+    return self.barStyle;
 }
 #pragma mark -----  调用系统相册、拍照上传图片 -----
 - (void)yi_setUploadPictures:(void(^)(UIImage *))bloack {

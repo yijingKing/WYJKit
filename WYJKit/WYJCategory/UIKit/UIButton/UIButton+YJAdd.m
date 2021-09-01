@@ -27,11 +27,11 @@ static const char TextAlignementKey;
 
 @implementation UIButton (YJAdd)
 
-- (void)yi_addTargetUpInside:(id)tat action:(SEL)sel {
+- (void)addTargetUpInside:(id)tat action:(SEL)sel {
     [self addTarget:tat action:sel forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)yi_imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing {
+- (void)imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing {
     CGFloat imageWith = self.imageView.image.size.width;
     CGFloat imageHeight = self.imageView.image.size.height;
 #pragma clang diagnostic push
@@ -76,119 +76,121 @@ static const char TextAlignementKey;
 }
 
 #pragma make ------ runtime ------
-- (void)setYi_titleFont:(CGFloat)yi_titleFont {
-    objc_setAssociatedObject(self, &TitleFontKey, @(yi_titleFont), OBJC_ASSOCIATION_ASSIGN);
-    self.titleLabel.font = [UIFont yi_fontAdapter:yi_titleFont];
+- (void)setTitleFont:(CGFloat)titleFont {
+    objc_setAssociatedObject(self, &TitleFontKey, @(titleFont), OBJC_ASSOCIATION_ASSIGN);
+    self.titleLabel.font = [UIFont systemFontOfSize:titleFont];
 }
 
-- (CGFloat)yi_titleFont {
+- (CGFloat)titleFont {
     return [objc_getAssociatedObject(self, &TitleFontKey) floatValue];
 }
 
-- (void)setYi_titleText:(NSString *)yi_titleText {
-    objc_setAssociatedObject(self, &TitleKey, yi_titleText, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setTitle:yi_titleText forState:UIControlStateNormal];
+- (void)setTitleText:(NSString *)titleText {
+    objc_setAssociatedObject(self, &TitleKey, titleText, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setTitle:titleText forState:UIControlStateNormal];
 }
 
-- (NSString *)yi_titleText {
+- (NSString *)titleText {
     return objc_getAssociatedObject(self, &TitleKey);
 }
 
-- (void)setYi_titleColor:(UIColor *)yi_titleColor {
-    objc_setAssociatedObject(self, &TitleColorKey, yi_titleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setTitleColor:yi_titleColor forState:UIControlStateNormal];
+- (void)setTitleColor:(UIColor *)titleColor {
+    objc_setAssociatedObject(self, &TitleColorKey, titleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setTitleColor:titleColor forState:UIControlStateNormal];
 }
 
-- (UIColor *)yi_titleColor {
+- (UIColor *)titleColor {
     return objc_getAssociatedObject(self, &TitleColorKey);
 }
 
-- (void)setYi_selectTitle:(NSString *)yi_selectTitle {
-    objc_setAssociatedObject(self, &SelectTitleKey, yi_selectTitle, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setTitle:yi_selectTitle forState:UIControlStateSelected];
+- (void)setSelectTitle:(NSString *)selectTitle {
+    objc_setAssociatedObject(self, &SelectTitleKey, selectTitle, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setTitle:selectTitle forState:UIControlStateSelected];
 }
 
-- (NSString *)yi_selectTitle {
+- (NSString *)selectTitle {
     return objc_getAssociatedObject(self, &SelectTitleKey);
 }
 
-- (void)setYi_selectTitleColor:(UIColor *)yi_selectTitleColor {
-    objc_setAssociatedObject(self, &SelectTitleColorKey, yi_selectTitleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setTitleColor:yi_selectTitleColor forState:UIControlStateSelected];
+- (void)setSelectTitleColor:(UIColor *)selectTitleColor {
+    objc_setAssociatedObject(self, &SelectTitleColorKey, selectTitleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setTitleColor:selectTitleColor forState:UIControlStateSelected];
 }
 
-- (UIColor *)yi_selectTitleColor {
+- (UIColor *)selectTitleColor {
     return objc_getAssociatedObject(self, &SelectTitleColorKey);
 }
 
-- (void)setYi_backgroundImage:(UIImage *)yi_backgroundImage{
-    objc_setAssociatedObject(self, &BackgroundImageKey, yi_backgroundImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setBackgroundImage:yi_backgroundImage forState:UIControlStateNormal];
+- (void)setBackgroundImage:(UIImage *)backgroundImage{
+    objc_setAssociatedObject(self, &BackgroundImageKey, backgroundImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
 }
 
-- (UIImage *)yi_backgroundImage {
+- (UIImage *)backgroundImage {
     return objc_getAssociatedObject(self, &BackgroundImageKey);
 }
 
-- (void)setYi_selectBackgroundImage:(UIImage *)yi_selectBackgroundImage {
-    objc_setAssociatedObject(self, &SelectBackgroundImageKey, yi_selectBackgroundImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setBackgroundImage:yi_selectBackgroundImage forState:UIControlStateSelected];
+- (void)setSelectBackgroundImage:(UIImage *)selectBackgroundImage {
+    objc_setAssociatedObject(self, &SelectBackgroundImageKey, selectBackgroundImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setBackgroundImage:selectBackgroundImage forState:UIControlStateSelected];
 }
 
-- (UIImage *)yi_selectBackgroundImage {
+- (UIImage *)selectBackgroundImage {
     return objc_getAssociatedObject(self, &SelectBackgroundImageKey);
 }
 
-- (void)setYi_image:(UIImage *)yi_image {
-    objc_setAssociatedObject(self, &ImageKey, yi_image, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setImage:yi_image forState:UIControlStateNormal];
+- (void)setImage:(UIImage *)image {
+    objc_setAssociatedObject(self, &ImageKey, image, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setImage:image forState:UIControlStateNormal];
 }
 
-- (UIImage *)yi_image {
+- (UIImage *)image {
     return objc_getAssociatedObject(self, &ImageKey);
 }
 
-- (void)setYi_selectImage:(UIImage *)yi_selectImage {
-    objc_setAssociatedObject(self, &SelectImageKey, yi_selectImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setImage:yi_selectImage forState:UIControlStateSelected];
+- (void)setSelectImage:(UIImage *)selectImage {
+    objc_setAssociatedObject(self, &SelectImageKey, selectImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setImage:selectImage forState:UIControlStateSelected];
 }
 
-- (UIImage *)yi_selectImage {
+- (UIImage *)selectImage {
     return objc_getAssociatedObject(self, &SelectImageKey);
 }
 
-- (void)setYi_attributedText:(NSAttributedString *)yi_attributedText {
-    objc_setAssociatedObject(self, &AttributedTextKey, yi_attributedText, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setAttributedTitle:yi_attributedText forState:UIControlStateNormal];
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+    objc_setAssociatedObject(self, &AttributedTextKey, attributedText, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setAttributedTitle:attributedText forState:UIControlStateNormal];
 }
 
-- (NSAttributedString *)yi_attributedText {
+- (NSAttributedString *)attributedText {
     return objc_getAssociatedObject(self, &AttributedTextKey);
 }
 
-- (void)setYi_selectAttributedText:(NSAttributedString *)yi_selectAttributedText {
-    objc_setAssociatedObject(self, &SelectAttributedTextKey, yi_selectAttributedText, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self setAttributedTitle:yi_selectAttributedText forState:UIControlStateSelected];
+- (void)setSelectAttributedText:(NSAttributedString *)selectAttributedText {
+    objc_setAssociatedObject(self, &SelectAttributedTextKey, selectAttributedText, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setAttributedTitle:selectAttributedText forState:UIControlStateSelected];
 }
 
-- (NSAttributedString *)yi_selectAttributedText {
+- (NSAttributedString *)selectAttributedText {
     return objc_getAssociatedObject(self, &SelectAttributedTextKey);
 }
 
-- (void)setYi_textAlignement:(TextAlignement)yi_textAlignement {
-    objc_setAssociatedObject(self, &TextAlignementKey, @(yi_textAlignement), OBJC_ASSOCIATION_ASSIGN);
-    if (yi_textAlignement == TextAlignmentLeft) {
+- (void)setTextAlignement:(TextAlignement)textAlignement {
+    objc_setAssociatedObject(self, &TextAlignementKey, @(textAlignement), OBJC_ASSOCIATION_ASSIGN);
+    if (textAlignement == TextAlignmentLeft) {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    } else if (yi_textAlignement == TextAlignmentCenter) {
+    } else if (textAlignement == TextAlignmentCenter) {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     } else {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     }
 }
 
-- (TextAlignement)yi_textAlignement {
+- (TextAlignement)textAlignement {
     return [objc_getAssociatedObject(self,&TextAlignementKey) integerValue];
 }
 
-
+- (UIButton *)yi {
+    return self;
+}
 @end

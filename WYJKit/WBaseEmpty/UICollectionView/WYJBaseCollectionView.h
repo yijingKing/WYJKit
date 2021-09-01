@@ -10,63 +10,63 @@
 #import <UIKit/UIKit.h>
 
 @interface WYJBaseCollectionView : UICollectionView
-@property (nonatomic, copy)NSAttributedString * yi_emptyTitleAttributedString;
-@property (nonatomic, copy)NSString * yi_emptyTitle;
-@property (nonatomic, strong)UIFont * yi_emptyTitleFont;
-@property (nonatomic, strong)UIColor * yi_emptyTitleColor;
-@property (nonatomic, strong)UIImage * yi_emptyImage;
+@property (nonatomic, copy)NSAttributedString * emptyTitleAttributedString;
+@property (nonatomic, copy)NSString * emptyTitle;
+@property (nonatomic, strong)UIFont * emptyTitleFont;
+@property (nonatomic, strong)UIColor * emptyTitleColor;
+@property (nonatomic, strong)UIImage * emptyImage;
 
-@property (nonatomic, copy)NSString * yi_emptyDescription;
-@property (nonatomic, strong)UIFont * yi_emptyDescriptionFont;
-@property (nonatomic, strong)UIColor * yi_emptyDescriptionColor;
-@property (nonatomic, copy)NSAttributedString * yi_emptyDescriptionAttributedString;
+@property (nonatomic, copy)NSString * emptyDescription;
+@property (nonatomic, strong)UIFont * emptyDescriptionFont;
+@property (nonatomic, strong)UIColor * emptyDescriptionColor;
+@property (nonatomic, copy)NSAttributedString * emptyDescriptionAttributedString;
 
-@property (nonatomic, strong)UIColor * yi_emptyBackgroundColor;
-@property (nonatomic, copy)NSArray * yi_dataSoureBaseArray;
-
+@property (nonatomic, strong)UIColor * emptyBackgroundColor;
+@property (nonatomic, copy)NSArray * dataSoureBaseArray;
+- (WYJBaseCollectionView *)yi;
 /**
  空页面的字显示
  @param msg 显示的字
  */
-- (void)yi_showNoSourcePageWithIsEmptyMsg:(NSString *)msg;
+- (void)showNoSourcePageWithIsEmptyMsg:(NSString *)msg;
 
 /**
  空页面按钮
  @param string 按钮上的字
  @param click 点击回调
  */
-- (void)yi_showButtonTitleForEmpty:(NSString *)string Click:(void(^)(void))click;
+- (void)showButtonTitleForEmpty:(NSString *)string Click:(void(^)(void))click;
 
 /**
  刷新
  @param headerBlock 下拉刷新回调
  @param footBlock 上拉刷新回调
  */
-- (void)yi_refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock footerWithRefreshingBlock:(void(^)(void))footBlock;
+- (void)refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock footerWithRefreshingBlock:(void(^)(void))footBlock;
 
 /**
  刷新
  @param headerBlock 下拉刷新回调
  */
-- (void)yi_refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock;
+- (void)refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock;
 
 /**
  刷新
  @param footBlock 上拉刷新回调
  */
-- (void)yi_refreshFooterWithRefreshingBlock:(void(^)(void))footBlock;
+- (void)refreshFooterWithRefreshingBlock:(void(^)(void))footBlock;
 
 /**
  显示没有更多
  */
-- (void)yi_endRefreshingWithNoMoreData;
+- (void)endRefreshingWithNoMoreData;
 
 /**
  结束刷新
  */
-- (void)yi_endRefresh;
+- (void)endRefresh;
 
 /** 结束刷新并显示没有更多 */
-- (void)yi_endRefreshAndNoMoreData;
+- (void)endRefreshAndNoMoreData;
 
 @end

@@ -12,7 +12,7 @@
 
 @implementation NSString (YJAdd)
 
-+ (BOOL)yi_judgeEmpty:(NSString *)str {
++ (BOOL)judgeEmpty:(NSString *)str {
     if (!str) {
         return YES;
     }
@@ -29,13 +29,13 @@
     return NO;
 }
 
-- (NSDate *)yi_dateFromStringFormat:(NSString *)format {
+- (NSDate *)dateFromStringFormat:(NSString *)format {
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:format];
     return [formatter dateFromString:self];
 }
 
-- (NSString * )yi_dateStringFromFormat:(NSString *)format {
+- (NSString * )dateStringFromFormat:(NSString *)format {
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:format];
     NSDate * date = [formatter dateFromString:self];
@@ -48,7 +48,7 @@
  *  param font  字体(默认为系统字体)
  *  param width 约束宽度
  */
-- (CGFloat)yi_heightWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font {
+- (CGFloat)heightWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font {
     UIFont * textFont = font;
     CGSize textSize;
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 70000
@@ -88,7 +88,7 @@
  *  param font   字体(默认为系统字体)
  *  param height 约束高度
  */
-- (CGFloat)yi_widthWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font  {
+- (CGFloat)widthWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font  {
     UIFont *textFont = font;
     CGSize textSize;
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 70000
@@ -127,7 +127,7 @@
  *  param font  字体(默认为系统字体)
  *  param width 约束宽度
  */
-- (CGSize)yi_sizeWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font {
+- (CGSize)sizeWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font {
     UIFont *textFont = font;
     CGSize textSize;
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 70000
@@ -166,7 +166,7 @@
  *  param font   字体(默认为系统字体)
  *  param height 约束高度
  */
-- (CGSize)yi_sizeWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font {
+- (CGSize)sizeWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font {
     UIFont *textFont = font ? font : [UIFont systemFontOfSize:[UIFont systemFontSize]];
     CGSize textSize;
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 70000
@@ -199,7 +199,7 @@
     return CGSizeMake(ceil(textSize.width), ceil(textSize.height));
 }
 
-+ (NSString *)yi_emptyStr:(NSString *)str {
++ (NSString *)emptyStr:(NSString *)str {
     
     if(([str isKindOfClass:[NSNull class]]) || ([str isEqual:[NSNull null]]) || (str == nil) || (!str)) {
         str = @"";
@@ -208,7 +208,7 @@
 }
 
 /** 拼接字符串判空 */
-+ (instancetype)yi_stringWithFormatNoNull:(NSString *)format, ... {
++ (instancetype)stringWithFormatNoNull:(NSString *)format, ... {
     va_list arg;
     va_start (arg, format);
     NSString *hasNullStr = [[NSString alloc] initWithFormat:format arguments:arg];
@@ -227,24 +227,24 @@
  NSNumericSearch = 64,        用字符串中的数字的值进行比较
  */
 //options:NSCaseInsensitiveSearch
-- (NSComparisonResult)yi_compareByCasesNumeric:(NSString *)anotherCom {
+- (NSComparisonResult)compareByCasesNumeric:(NSString *)anotherCom {
     return [self compare:anotherCom options:NSNumericSearch];
 }
-- (NSComparisonResult)yi_compareByCaseInsensitive:(NSString *)anotherCom {
+- (NSComparisonResult)compareByCaseInsensitive:(NSString *)anotherCom {
     return [self compare:anotherCom options:NSCaseInsensitiveSearch];
 }
-- (NSComparisonResult)yi_compareByCaseSensitive:(NSString *)anotherCom {
+- (NSComparisonResult)compareByCaseSensitive:(NSString *)anotherCom {
     return [self compare:anotherCom options:NSLiteralSearch];
 }
 
 #pragma make ------ 属性 ------
-- (NSAttributedString *)yi_HTMLAttributedString {
+- (NSAttributedString *)HTMLAttributedString {
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[self dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     return attributedString;
 }
 
 /** 首字母转换成小写 */
-- (NSString *)yi_firstCharLower
+- (NSString *)firstCharLower
 {
     if (self.length == 0) return self;
     NSMutableString *string = [NSMutableString string];
@@ -254,7 +254,7 @@
 }
 
 /** 首字母转换成大写 */
-- (NSString *)yi_firstCharUpper
+- (NSString *)firstCharUpper
 {
     if (self.length == 0) return self;
     NSMutableString *string = [NSMutableString string];
@@ -263,7 +263,7 @@
     return string;
 }
 
-- (NSDictionary * )yi_jsonConversionDictionary {
+- (NSDictionary * )jsonConversionDictionary {
     if (self == nil) {
         return nil;
     }
@@ -279,11 +279,13 @@
     return dic;
 }
 
-- (UIImage *)yi_base64ToImage {
+- (UIImage *)base64ToImage {
     NSData * imageData =[[NSData alloc] initWithBase64EncodedString:self options:NSDataBase64DecodingIgnoreUnknownCharacters];
     UIImage *photo = [UIImage imageWithData:imageData];
     return photo;
 }
-
+- (NSString *)yi {
+    return self;
+}
 
 @end

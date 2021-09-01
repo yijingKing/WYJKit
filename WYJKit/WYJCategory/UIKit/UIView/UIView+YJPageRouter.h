@@ -11,19 +11,19 @@
 
 @interface UIView (YJPageRouter)
 
-- (void)yi_push:(UIViewController *)vc;
-- (void)yi_pop;
-- (void)yi_popToRoot;
-- (void)yi_popToRootWithAnimated:(BOOL)animated;
+- (void)push:(UIViewController *)vc;
+- (void)pop;
+- (void)popToRoot;
+- (void)popToRootWithAnimated:(BOOL)animated;
 
-- (void)yi_present:(UIViewController *)vc;
-- (void)yi_present:(UIViewController *)vc animated:(BOOL)animated;
-- (void)yi_dismiss;
-- (void)yi_dismiss:(void (^)(void))completion;
-- (void)yi_dismissAnimated:(BOOL)animated;
-- (void)yi_dismissAnimated:(BOOL)animated completion:(void(^)(void))completion;
+- (void)present:(UIViewController *)vc;
+- (void)present:(UIViewController *)vc animated:(BOOL)animated;
+- (void)dismiss;
+- (void)dismiss:(void (^)(void))completion;
+- (void)dismissAnimated:(BOOL)animated;
+- (void)dismissAnimated:(BOOL)animated completion:(void(^)(void))completion;
 
-- (UIViewController *)yi_currentController;
+- (UIViewController *)currentController;
 
 @end
 
