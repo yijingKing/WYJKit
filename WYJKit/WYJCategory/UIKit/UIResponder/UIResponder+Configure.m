@@ -7,7 +7,7 @@
 //
 
 #import "UIResponder+Configure.h"
-#import <IQKeyboardManager.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 @implementation UIResponder (Configure)
 
 #pragma make ------  键盘收回管理 ------

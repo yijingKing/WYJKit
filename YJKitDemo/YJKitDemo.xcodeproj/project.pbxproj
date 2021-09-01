@@ -216,10 +216,10 @@
 		63F6DE2C2579DAA200248B30 /* WYJKit */ = {
 			isa = PBXGroup;
 			children = (
+				F774064426DF28DA00A2249D /* Header */,
 				63F6DE7D2579DAA200248B30 /* Utility */,
 				63F6DE2D2579DAA200248B30 /* WBaseEmpty */,
 				63F6DE3F2579DAA200248B30 /* WYJCategory */,
-				63F6DE3E2579DAA200248B30 /* WYJKitHeader.h */,
 			);
 			name = WYJKit;
 			path = ../../WYJKit;
@@ -231,7 +231,6 @@
 				63F6DE2F2579DAA200248B30 /* UICollectionView */,
 				63F6DE322579DAA200248B30 /* UITableView */,
 				63F6DE392579DAA200248B30 /* ViewController */,
-				63F6DE2E2579DAA200248B30 /* YJBaseEmotyHeader.h */,
 			);
 			path = WBaseEmpty;
 			sourceTree = "<group>";
@@ -279,7 +278,6 @@
 				63F6DE402579DAA200248B30 /* UIKit */,
 				63F6DE632579DAA200248B30 /* Foundation */,
 				63F6DE762579DAA200248B30 /* Macro */,
-				63F6DE7C2579DAA200248B30 /* YJCategory.h */,
 			);
 			path = WYJCategory;
 			sourceTree = "<group>";
@@ -469,7 +467,6 @@
 				63F6DE842579DAA200248B30 /* SystemService */,
 				63F6DE872579DAA200248B30 /* FileManager */,
 				63F6DE8A2579DAA200248B30 /* YJSystemInfo */,
-				63F6DE8D2579DAA200248B30 /* YJUtilityHeader.h */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -594,6 +591,17 @@
 				F774064226DF24B300A2249D /* UIResponder+Configure.m */,
 			);
 			path = UIResponder;
+			sourceTree = "<group>";
+		};
+		F774064426DF28DA00A2249D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				63F6DE8D2579DAA200248B30 /* YJUtilityHeader.h */,
+				63F6DE3E2579DAA200248B30 /* WYJKitHeader.h */,
+				63F6DE7C2579DAA200248B30 /* YJCategory.h */,
+				63F6DE2E2579DAA200248B30 /* YJBaseEmotyHeader.h */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,7 +10,8 @@
 #import "YJBaseViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Masonry/Masonry.h>
-#import "WYJKitHeader.h"
+#import "UIColor+YJAdd.h"
+#import "WYJFrameMacro.h"
 @interface YJBaseViewController ()<UIImagePickerControllerDelegate,UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 @property(nonatomic, strong)UIImagePickerController *picker;
 
