@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 #import "YJBaseTableView.h"
+#import "UIColor+YJAdd.h"
+#import "WYJFrameMacro.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJBaseViewController : UIViewController
