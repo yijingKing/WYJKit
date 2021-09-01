@@ -54,6 +54,13 @@ typedef enum : NSUInteger {
 
 @implementation YJBaseTableView
 
+- (WYJBaseTableViewDelegate *)baseDelegate {
+    if (!_baseDelegate) {
+        _baseDelegate = WYJBaseTableViewDelegate.alloc.init;
+    }
+    return _baseDelegate;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     if (self = [super initWithFrame:frame style:style]) {
         if (@available(iOS 11.0, *)) {
@@ -67,6 +74,8 @@ typedef enum : NSUInteger {
         self.isFirstShow = YES;
         self.backgroundColor = UIColor.clearColor;
         [self yi_showNoSourcePageWithEmpty:self.emptyMsg];
+        self.dataSource = self.baseDelegate;
+        self.delegate = self.baseDelegate;
     }
     return self;
 }
@@ -86,7 +95,7 @@ typedef enum : NSUInteger {
     }
 }
 
-- (void)wRefreshNormakHeaderWithRefreshingBlock:(void(^)(void))headerBlock {
+- (void)yi_refreshNormakHeaderWithRefreshingBlock:(void(^)(void))headerBlock {
     if (headerBlock) {
         MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             headerBlock();
@@ -160,8 +169,8 @@ typedef enum : NSUInteger {
         return nil;
     }
     //富文本
-    if (self.yi_yi_emptyTitleAttributedString) {
-        return self.yi_yi_emptyTitleAttributedString;
+    if (self.yi_emptyTitleAttributedString) {
+        return self.yi_emptyTitleAttributedString;
     } else
     /* 字符串 */
         if (self.yi_emptyTitle) {
@@ -186,8 +195,8 @@ typedef enum : NSUInteger {
         return nil;
     }
     //富文本
-    if (self.yi_yi_emptyTitleAttributedString) {
-        return self.yi_yi_emptyTitleAttributedString;
+    if (self.yi_emptyTitleAttributedString) {
+        return self.yi_emptyTitleAttributedString;
     } else
     /* 字符串 */
         if (self.yi_emptyTitle) {
@@ -310,17 +319,17 @@ void CustomHeader (YJBaseTableView * tab) {
 
 #pragma make ------ runtime  ------
 
-- (void)setyi_yi_emptyTitleAttributedString:(NSAttributedString *)yi_yi_emptyTitleAttributedString {
-    objc_setAssociatedObject(self, &@selector(yi_yi_emptyTitleAttributedString), yi_yi_emptyTitleAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setYi_emptyTitleAttributedString:(NSAttributedString *)yi_emptyTitleAttributedString {
+    objc_setAssociatedObject(self, &@selector(yi_emptyTitleAttributedString), yi_emptyTitleAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
     
 }
 
-- (NSString *)yi_yi_emptyTitleAttributedString {
-    return objc_getAssociatedObject(self, &@selector(yi_yi_emptyTitleAttributedString));
+- (NSString *)yi_emptyTitleAttributedString {
+    return objc_getAssociatedObject(self, &@selector(yi_emptyTitleAttributedString));
 }
 
-- (void)setyi_emptyTitle:(NSString *)yi_emptyTitle {
+- (void)setYi_emptyTitle:(NSString *)yi_emptyTitle {
     objc_setAssociatedObject(self, &yi_emptyTitleKey, yi_emptyTitle, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -329,7 +338,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &yi_emptyTitleKey);
 }
 
-- (void)setyi_emptyTitleFont:(UIFont *)yi_emptyTitleFont {
+- (void)setYi_emptyTitleFont:(UIFont *)yi_emptyTitleFont {
     objc_setAssociatedObject(self, &@selector(yi_emptyTitleFont), yi_emptyTitleFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -338,7 +347,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &@selector(yi_emptyTitleFont));
 }
 
-- (void)setyi_emptyTitleColor:(UIColor *)yi_emptyTitleColor {
+- (void)setYi_emptyTitleColor:(UIColor *)yi_emptyTitleColor {
     objc_setAssociatedObject(self, &@selector(yi_emptyTitleColor), yi_emptyTitleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -347,7 +356,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &@selector(yi_emptyTitleColor));
 }
 
-- (void)setyi_emptyImage:(UIImage *)yi_emptyImage {
+- (void)setYi_emptyImage:(UIImage *)yi_emptyImage {
     objc_setAssociatedObject(self, &yi_emptyImageKey, yi_emptyImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -356,7 +365,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &yi_emptyImageKey);
 }
 
-- (void)setyi_emptyBackgroundColor:(UIColor *)yi_emptyBackgroundColor {
+- (void)setYi_emptyBackgroundColor:(UIColor *)yi_emptyBackgroundColor {
     objc_setAssociatedObject(self, &yi_emptyBackgroundColorKey, yi_emptyBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -365,7 +374,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &yi_emptyBackgroundColorKey);
 }
 
-- (void)setyi_emptyDescription:(NSString *)yi_emptyDescription {
+- (void)setYi_emptyDescription:(NSString *)yi_emptyDescription {
     objc_setAssociatedObject(self, &yi_emptyDescriptionKey, yi_emptyDescription, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -374,7 +383,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &yi_emptyDescriptionKey);
 }
 
-- (void)setyi_emptyDescriptionFont:(UIFont *)yi_emptyDescriptionFont {
+- (void)setYi_emptyDescriptionFont:(UIFont *)yi_emptyDescriptionFont {
     objc_setAssociatedObject(self, &@selector(yi_emptyDescriptionFont), yi_emptyDescriptionFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -382,7 +391,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &@selector(yi_emptyDescriptionFont));
 }
 
-- (void)setyi_emptyDescriptionColor:(UIColor *)yi_emptyDescriptionColor {
+- (void)setYi_emptyDescriptionColor:(UIColor *)yi_emptyDescriptionColor {
     objc_setAssociatedObject(self, &@selector(yi_emptyDescriptionColor), yi_emptyDescriptionColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -391,7 +400,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &@selector(yi_emptyDescriptionColor));
 }
 
-- (void)setyi_emptyDescriptionAttributedString:(NSAttributedString *)yi_emptyDescriptionAttributedString {
+- (void)setYi_emptyDescriptionAttributedString:(NSAttributedString *)yi_emptyDescriptionAttributedString {
     objc_setAssociatedObject(self, &yi_emptyDescriptionAttributedString, yi_emptyDescriptionAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -400,7 +409,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return objc_getAssociatedObject(self, &@selector(yi_emptyDescriptionAttributedString));
 }
 
-- (void)setyi_hiddenTime:(BOOL)yi_hiddenTime {
+- (void)setYi_hiddenTime:(BOOL)yi_hiddenTime {
     objc_setAssociatedObject(self, &@selector(yi_hiddenTime), @(yi_hiddenTime), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     CustomHeader(self);
     
@@ -410,7 +419,7 @@ void CustomHeader (YJBaseTableView * tab) {
     return [objc_getAssociatedObject(self, &@selector(yi_hiddenTime)) boolValue];
 }
 
-- (void)setyi_hiddenState:(BOOL)yi_hiddenState {
+- (void)setYi_hiddenState:(BOOL)yi_hiddenState {
     objc_setAssociatedObject(self, &@selector(yi_hiddenState), @(yi_hiddenState), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     CustomHeader(self);
 }

@@ -60,7 +60,7 @@
     NSInteger aRedValue = arc4random() % 255;
     NSInteger aGreenValue = arc4random() % 255;
     NSInteger aBlueValue = arc4random() % 255;
-    return [UIColor colorWithRed:aRedValue green:aGreenValue blue:aBlueValue alpha:1];
+    return [UIColor colorWithRed:aRedValue / 255.0 green:aGreenValue / 255.0 blue:aBlueValue / 255.0 alpha:1];
 }
 
 @end

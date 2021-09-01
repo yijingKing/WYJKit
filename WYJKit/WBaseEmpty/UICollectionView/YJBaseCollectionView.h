@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @interface YJBaseCollectionView : UICollectionView
-@property (nonatomic, copy)NSAttributedString * yi_yi_emptyTitleAttributedString;
+@property (nonatomic, copy)NSAttributedString * yi_emptyTitleAttributedString;
 @property (nonatomic, copy)NSString * yi_emptyTitle;
 @property (nonatomic, strong)UIFont * yi_emptyTitleFont;
 @property (nonatomic, strong)UIColor * yi_emptyTitleColor;

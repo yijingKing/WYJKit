@@ -15,7 +15,7 @@
 #define isNotVersion84                  ([[[UIDevice currentDevice] systemVersion] floatValue] > 8.4)
 
 // 屏幕尺寸
-#define kSCREEN_kIDTH                        [UIScreen mainScreen].bounds.size.kidth
+#define kSCREEN_WIDTH                        [UIScreen mainScreen].bounds.size.width
 #define kSCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height
 
 //------ 屏幕适配 -------

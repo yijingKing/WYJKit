@@ -18,11 +18,10 @@ typedef enum  {
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface UIImage (YJAdd)
 /** image conversion base64 */
 @property (nonatomic, copy, readonly)NSString * yi_base64String;
-
-
 
 /**
  渐变色

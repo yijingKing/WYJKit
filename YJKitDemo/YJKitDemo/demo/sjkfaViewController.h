@@ -10,8 +10,16 @@
 #import "WYJKitHeader.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface sjkfaViewController : UIViewController
 
+@protocol sjkfa  <NSObject>
+
+@optional
+- (void)logDemo;
+
+@end
+
+@interface sjkfaViewController : UIViewController<sjkfa>
+@property (nonatomic,weak) id <sjkfa> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

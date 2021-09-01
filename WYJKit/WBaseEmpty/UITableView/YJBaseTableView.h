@@ -8,11 +8,11 @@
 
 
 #import <UIKit/UIKit.h>
-
+#import "WYJBaseTableViewDelegate.h"
 @interface YJBaseTableView : UITableView
-
+@property (strong, nonatomic)WYJBaseTableViewDelegate * baseDelegate;
 #pragma make ------ empty ------
-@property (nonatomic, copy)NSAttributedString * yi_yi_emptyTitleAttributedString;
+@property (nonatomic, copy)NSAttributedString * yi_emptyTitleAttributedString;
 @property (nonatomic, copy)NSString * yi_emptyTitle;
 @property (nonatomic, strong)UIFont * yi_emptyTitleFont;
 @property (nonatomic, strong)UIColor * yi_emptyTitleColor;
@@ -29,7 +29,6 @@
 #pragma make ------ refresh heder------
 @property (nonatomic, assign)BOOL yi_hiddenTime;
 @property (nonatomic, assign)BOOL yi_hiddenState;
-
 
 /**
  empty text
@@ -52,7 +51,7 @@
 /**
  normal refresh
  */
-- (void)wRefreshNormakHeaderWithRefreshingBlock:(void(^)(void))headerBlock;
+- (void)yi_refreshNormakHeaderWithRefreshingBlock:(void(^)(void))headerBlock;
 
 /**
  git refresh (ongoing...)

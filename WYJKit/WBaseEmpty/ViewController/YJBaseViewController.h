@@ -8,16 +8,20 @@
 
 
 #import <UIKit/UIKit.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJBaseViewController : UIViewController
-/** Call the system album, take photos and upload pictures */
-
+@property (strong, nonatomic) YJBaseTableView * mainTableView;
 @property (nonatomic,assign) UIStatusBarStyle yi_barStyle;
 
 - (void)yi_setUploadPictures:(void(^)(UIImage * img))bloack;
 
+#pragma mark -----  添加tableview -----
+///添加tableview
+- (void)addTableView;
+///添加tableview
+- (void)addTableView:(UITableViewStyle)style configuration:(void(^)(UITableView *))block;
 @end
 
 NS_ASSUME_NONNULL_END
+

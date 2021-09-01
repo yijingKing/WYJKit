@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '1.2.8'
+  s.version          = '1.3.1'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -13,13 +13,18 @@ Pod::Spec.new do |s|
   s.author           = { '╰莪呮想好好宠Nǐつ ' => '1091676312@qq.com' }
   s.source           = { :git => 'https://github.com/MemoryKing/WYJKit.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-  s.frameworks = 'UIKit','Foundation','AVFoundation','WebKit'
+  s.frameworks = 'UIKit','Foundation'
 
 s.source_files = 'WYJKit/**/WYJKitHeader.{h}'
 
 s.public_header_files   = 'WYJKit/**/WYJKitHeader.{h}'
+
+s.dependency 'MJRefresh'
+s.dependency 'DZNEmptyDataSet'
+s.dependency 'Masonry'
+s.dependency 'IQKeyboardManager'
 
 s.subspec 'WYJCategory' do |c|
 c.public_header_files   = 'WYJKit/WYJCategory/**/*.{h}'

@@ -9,13 +9,23 @@
 
 #import "YJBaseViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "YJBaseTableView.h"
 @interface YJBaseViewController ()<UIImagePickerControllerDelegate,UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 @property(nonatomic, strong)UIImagePickerController *picker;
 
 @property(nonatomic, copy)void (^block)(UIImage *);
-@end
 
+@end
 @implementation YJBaseViewController
+
+- (YJBaseTableView *)mainTableView {
+    if (!_mainTableView) {
+        _mainTableView = [YJBaseTableView.alloc initWithFrame:CGRectZero style:(UITableViewStyleGrouped)];
+        
+    }
+    return _mainTableView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -26,7 +36,31 @@
     // 防止返回手势失效
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
 }
+- (void) addTableView {
+    [self initTableView:UITableViewStyleGrouped];
+}
+- (void) addTableView:(UITableViewStyle)style configuration:(void(^)(UITableView *))block {
+    [self initTableView:style];
+    !block ?: block(self.mainTableView);
+}
 
+- (void)initTableView:(UITableViewStyle)style {
+    self.mainTableView = [YJBaseTableView.alloc initWithFrame: CGRectZero style: style];
+    self.mainTableView.estimatedRowHeight = 44.0;
+    self.mainTableView.estimatedSectionHeaderHeight = 0.01;
+    self.mainTableView.estimatedSectionFooterHeight = 0.01;
+    self.mainTableView.showsVerticalScrollIndicator = false;
+    self.mainTableView.showsHorizontalScrollIndicator = false;
+    self.mainTableView.backgroundColor = WHexColor(@"#f5f5f5");
+    self.mainTableView.tableFooterView = [[UIView alloc] init];
+    self.mainTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    [self.view addSubview:self.mainTableView];
+    [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.navigationController ? kStatusAndNavForHeight : kStatusForHeight);
+        make.left.right.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.tabBarController.tabBar.isHidden ? -kBottomSafeHeight : -kBottomSafeAndTabBarForHeight);
+    }];
+}
 - (void)setYi_barStyle:(UIStatusBarStyle)yi_barStyle {
     _yi_barStyle = yi_barStyle;
     [self setNeedsStatusBarAppearanceUpdate];
@@ -35,8 +69,6 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return self.yi_barStyle;
 }
-
-
 #pragma mark -----  调用系统相册、拍照上传图片 -----
 - (void)yi_setUploadPictures:(void(^)(UIImage *))bloack {
     self.block = bloack;
@@ -123,6 +155,5 @@
     return YES;
 }
 
-
-
 @end
+

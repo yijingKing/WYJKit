@@ -15,6 +15,6 @@
 #import "YJNavigationController.h"
 #import "YJTableView.h"
 #import "YJTableViewCell.h"
-
+#import "YJBaseTableView+Delegate.h"
 
 #endif /* WBaseEmotyHeader_h */

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0448AE9724C9627F00F7CC4D /* sjkfaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448AE9624C9627F00F7CC4D /* sjkfaViewController.m */; };
+		10543138D81A1256B7D3D9AD /* Pods_YJKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158B16202CE63EC22223BE8E /* Pods_YJKitDemo.framework */; };
 		63F6DE8E2579DAA200248B30 /* YJBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6DE312579DAA200248B30 /* YJBaseCollectionView.m */; };
 		63F6DE8F2579DAA200248B30 /* YJBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6DE362579DAA200248B30 /* YJBaseTableView.m */; };
 		63F6DE902579DAA200248B30 /* YJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6DE372579DAA200248B30 /* YJTableViewCell.m */; };
@@ -38,7 +39,6 @@
 		63F6DEA92579DAA200248B30 /* YJSystemService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6DE852579DAA200248B30 /* YJSystemService.m */; };
 		63F6DEAA2579DAA200248B30 /* YJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6DE882579DAA200248B30 /* YJFileManager.m */; };
 		63F6DEAB2579DAA200248B30 /* YJSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F6DE8C2579DAA200248B30 /* YJSystemInfo.m */; };
-		839DB4C90827238C15F5079C /* libPods-YJKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EB4CCFCD028867BB16B886 /* libPods-YJKitDemo.a */; };
 		98EB8C69229FDB5800CC4AB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EB8C68229FDB5800CC4AB1 /* AppDelegate.m */; };
 		98EB8C6C229FDB5800CC4AB1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EB8C6B229FDB5800CC4AB1 /* ViewController.m */; };
 		98EB8C6F229FDB5800CC4AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98EB8C6D229FDB5800CC4AB1 /* Main.storyboard */; };
@@ -47,6 +47,10 @@
 		98EB8C77229FDB5900CC4AB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EB8C76229FDB5900CC4AB1 /* main.m */; };
 		98EB8C81229FDB5900CC4AB1 /* YJKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EB8C80229FDB5900CC4AB1 /* YJKitDemoTests.m */; };
 		98EB8C8C229FDB5900CC4AB1 /* YJKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EB8C8B229FDB5900CC4AB1 /* YJKitDemoUITests.m */; };
+		F733E92526DE01AC00DE364F /* WYJBaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F733E92426DE01AC00DE364F /* WYJBaseTableViewDelegate.m */; };
+		F733E92826DE15DA00DE364F /* YJBaseTableView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F733E92726DE15DA00DE364F /* YJBaseTableView+Delegate.m */; };
+		F774063A26DF159400A2249D /* AppDelegate+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = F774063926DF159400A2249D /* AppDelegate+Configure.m */; };
+		F774063C26DF182A00A2249D /* WYJKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F774063B26DF182A00A2249D /* WYJKit.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,7 @@
 /* Begin PBXFileReference section */
 		0448AE9524C9627F00F7CC4D /* sjkfaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sjkfaViewController.h; sourceTree = "<group>"; };
 		0448AE9624C9627F00F7CC4D /* sjkfaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sjkfaViewController.m; sourceTree = "<group>"; };
+		158B16202CE63EC22223BE8E /* Pods_YJKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YJKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F6DE2E2579DAA200248B30 /* YJBaseEmotyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBaseEmotyHeader.h; sourceTree = "<group>"; };
 		63F6DE302579DAA200248B30 /* YJBaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBaseCollectionView.h; sourceTree = "<group>"; };
 		63F6DE312579DAA200248B30 /* YJBaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBaseCollectionView.m; sourceTree = "<group>"; };
@@ -155,8 +160,14 @@
 		98EB8C87229FDB5900CC4AB1 /* YJKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YJKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98EB8C8B229FDB5900CC4AB1 /* YJKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJKitDemoUITests.m; sourceTree = "<group>"; };
 		98EB8C8D229FDB5900CC4AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6EB4CCFCD028867BB16B886 /* libPods-YJKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YJKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA8F86FA19772DFABE9201C /* Pods-YJKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F733E92326DE01AC00DE364F /* WYJBaseTableViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJBaseTableViewDelegate.h; sourceTree = "<group>"; };
+		F733E92426DE01AC00DE364F /* WYJBaseTableViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJBaseTableViewDelegate.m; sourceTree = "<group>"; };
+		F733E92626DE15DA00DE364F /* YJBaseTableView+Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YJBaseTableView+Delegate.h"; sourceTree = "<group>"; };
+		F733E92726DE15DA00DE364F /* YJBaseTableView+Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YJBaseTableView+Delegate.m"; sourceTree = "<group>"; };
+		F774063826DF159400A2249D /* AppDelegate+Configure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Configure.h"; sourceTree = "<group>"; };
+		F774063926DF159400A2249D /* AppDelegate+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Configure.m"; sourceTree = "<group>"; };
+		F774063B26DF182A00A2249D /* WYJKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WYJKit.podspec; path = ../../WYJKit.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				839DB4C90827238C15F5079C /* libPods-YJKitDemo.a in Frameworks */,
+				10543138D81A1256B7D3D9AD /* Pods_YJKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +199,7 @@
 		1C5BD4F99AE50FE797DC47F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A6EB4CCFCD028867BB16B886 /* libPods-YJKitDemo.a */,
+				158B16202CE63EC22223BE8E /* Pods_YJKitDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,10 +216,10 @@
 		63F6DE2C2579DAA200248B30 /* WYJKit */ = {
 			isa = PBXGroup;
 			children = (
-				63F6DE2D2579DAA200248B30 /* WBaseEmpty */,
-				63F6DE3E2579DAA200248B30 /* WYJKitHeader.h */,
-				63F6DE3F2579DAA200248B30 /* WYJCategory */,
 				63F6DE7D2579DAA200248B30 /* Utility */,
+				63F6DE2D2579DAA200248B30 /* WBaseEmpty */,
+				63F6DE3F2579DAA200248B30 /* WYJCategory */,
+				63F6DE3E2579DAA200248B30 /* WYJKitHeader.h */,
 			);
 			name = WYJKit;
 			path = ../../WYJKit;
@@ -217,10 +228,10 @@
 		63F6DE2D2579DAA200248B30 /* WBaseEmpty */ = {
 			isa = PBXGroup;
 			children = (
-				63F6DE2E2579DAA200248B30 /* YJBaseEmotyHeader.h */,
 				63F6DE2F2579DAA200248B30 /* UICollectionView */,
 				63F6DE322579DAA200248B30 /* UITableView */,
 				63F6DE392579DAA200248B30 /* ViewController */,
+				63F6DE2E2579DAA200248B30 /* YJBaseEmotyHeader.h */,
 			);
 			path = WBaseEmpty;
 			sourceTree = "<group>";
@@ -237,12 +248,16 @@
 		63F6DE322579DAA200248B30 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				F733E92326DE01AC00DE364F /* WYJBaseTableViewDelegate.h */,
+				F733E92426DE01AC00DE364F /* WYJBaseTableViewDelegate.m */,
 				63F6DE332579DAA200248B30 /* YJBaseTableView.h */,
-				63F6DE342579DAA200248B30 /* YJTableViewCell.h */,
-				63F6DE352579DAA200248B30 /* YJTableView.h */,
 				63F6DE362579DAA200248B30 /* YJBaseTableView.m */,
-				63F6DE372579DAA200248B30 /* YJTableViewCell.m */,
+				63F6DE352579DAA200248B30 /* YJTableView.h */,
 				63F6DE382579DAA200248B30 /* YJTableView.m */,
+				63F6DE372579DAA200248B30 /* YJTableViewCell.m */,
+				63F6DE342579DAA200248B30 /* YJTableViewCell.h */,
+				F733E92626DE15DA00DE364F /* YJBaseTableView+Delegate.h */,
+				F733E92726DE15DA00DE364F /* YJBaseTableView+Delegate.m */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -250,9 +265,9 @@
 		63F6DE392579DAA200248B30 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				63F6DE3C2579DAA200248B30 /* YJBaseViewController.h */,
 				63F6DE3A2579DAA200248B30 /* YJBaseViewController.m */,
 				63F6DE3B2579DAA200248B30 /* YJNavigationController.h */,
-				63F6DE3C2579DAA200248B30 /* YJBaseViewController.h */,
 				63F6DE3D2579DAA200248B30 /* YJNavigationController.m */,
 			);
 			path = ViewController;
@@ -272,6 +287,7 @@
 		63F6DE402579DAA200248B30 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				F774063726DF157200A2249D /* AppDelegate */,
 				63F6DE412579DAA200248B30 /* UIImage */,
 				63F6DE442579DAA200248B30 /* UIApplication */,
 				63F6DE472579DAA200248B30 /* UIButton */,
@@ -528,6 +544,7 @@
 		98EB8C66229FDB5800CC4AB1 /* YJKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F774063B26DF182A00A2249D /* WYJKit.podspec */,
 				63F6DE2C2579DAA200248B30 /* WYJKit */,
 				98EB8E0B229FE2B200CC4AB1 /* demo */,
 			);
@@ -570,6 +587,15 @@
 			path = demo;
 			sourceTree = "<group>";
 		};
+		F774063726DF157200A2249D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F774063826DF159400A2249D /* AppDelegate+Configure.h */,
+				F774063926DF159400A2249D /* AppDelegate+Configure.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -581,7 +607,7 @@
 				98EB8C60229FDB5800CC4AB1 /* Sources */,
 				98EB8C61229FDB5800CC4AB1 /* Frameworks */,
 				98EB8C62229FDB5800CC4AB1 /* Resources */,
-				076C01554EC0B148D9360B06 /* [CP] Copy Pods Resources */,
+				5101A45E52032DD35EA60946 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -675,6 +701,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F774063C26DF182A00A2249D /* WYJKit.podspec in Resources */,
 				98EB8C74229FDB5900CC4AB1 /* LaunchScreen.storyboard in Resources */,
 				98EB8C71229FDB5900CC4AB1 /* Assets.xcassets in Resources */,
 				98EB8C6F229FDB5800CC4AB1 /* Main.storyboard in Resources */,
@@ -720,21 +747,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		076C01554EC0B148D9360B06 /* [CP] Copy Pods Resources */ = {
+		5101A45E52032DD35EA60946 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -753,8 +780,10 @@
 				63F6DEA92579DAA200248B30 /* YJSystemService.m in Sources */,
 				63F6DEA42579DAA200248B30 /* NSArray+YJAdd.m in Sources */,
 				63F6DE9B2579DAA200248B30 /* UITextView+YJAdd.m in Sources */,
+				F733E92526DE01AC00DE364F /* WYJBaseTableViewDelegate.m in Sources */,
 				98EB8C6C229FDB5800CC4AB1 /* ViewController.m in Sources */,
 				63F6DE952579DAA200248B30 /* UIApplication+YJAdd.m in Sources */,
+				F733E92826DE15DA00DE364F /* YJBaseTableView+Delegate.m in Sources */,
 				63F6DEA62579DAA200248B30 /* NSDate+YJAdd.m in Sources */,
 				63F6DE8F2579DAA200248B30 /* YJBaseTableView.m in Sources */,
 				98EB8C77229FDB5900CC4AB1 /* main.m in Sources */,
@@ -774,6 +803,7 @@
 				63F6DE932579DAA200248B30 /* YJNavigationController.m in Sources */,
 				63F6DEA32579DAA200248B30 /* NSString+YJAdd.m in Sources */,
 				63F6DEA02579DAA200248B30 /* NSString+YJConversion.m in Sources */,
+				F774063A26DF159400A2249D /* AppDelegate+Configure.m in Sources */,
 				63F6DEA22579DAA200248B30 /* NSString+YJMD5.m in Sources */,
 				63F6DE922579DAA200248B30 /* YJBaseViewController.m in Sources */,
 				63F6DE9D2579DAA200248B30 /* UIViewController+YJAdd.m in Sources */,
@@ -948,10 +978,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDA8F86FA19772DFABE9201C /* Pods-YJKitDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63X4PDHZJB;
+				GCC_PREFIX_HEADER = "/Users/pz-imac-1/Desktop/工具库/WYJKit/WYJKit/WYJKitHeader.h";
 				INFOPLIST_FILE = "$(SRCROOT)/YJKitDemo/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -968,10 +1000,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A8338279364F31DFDA20A20 /* Pods-YJKitDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63X4PDHZJB;
+				GCC_PREFIX_HEADER = "/Users/pz-imac-1/Desktop/工具库/WYJKit/WYJKit/WYJKitHeader.h";
 				INFOPLIST_FILE = "$(SRCROOT)/YJKitDemo/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
