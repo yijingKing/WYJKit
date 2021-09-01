@@ -6,13 +6,13 @@
 //  Copyright © 2020 Eugene King. All rights reserved.
 //
 
-#import "YJNavigationController.h"
+#import "WYJNavigationController.h"
 
-@interface YJNavigationController ()
+@interface WYJNavigationController ()
 
 @end
 
-@implementation YJNavigationController
+@implementation WYJNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

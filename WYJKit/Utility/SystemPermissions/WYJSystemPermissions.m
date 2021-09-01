@@ -6,9 +6,9 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import "YJSystemPermissions.h"
+#import "WYJSystemPermissions.h"
 
-@implementation YJSystemPermissions
+@implementation WYJSystemPermissions
 
 
 @end

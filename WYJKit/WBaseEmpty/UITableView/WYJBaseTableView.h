@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WYJBaseTableViewDelegate.h"
-@interface YJBaseTableView : UITableView
+@interface WYJBaseTableView : UITableView
 @property (strong, nonatomic)WYJBaseTableViewDelegate * baseDelegate;
 #pragma make ------ empty ------
 @property (nonatomic, copy)NSAttributedString * yi_emptyTitleAttributedString;

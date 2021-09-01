@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YJSystemPermissions : NSObject
+@interface WYJSystemPermissions : NSObject
 
 @end
 

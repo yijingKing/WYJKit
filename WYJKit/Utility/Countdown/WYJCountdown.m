@@ -7,9 +7,9 @@
  ********************************************************************************/
 
 
-#import "YJCountdown.h"
+#import "WYJCountdown.h"
 
-@implementation YJCountdown
+@implementation WYJCountdown
 /**
  倒计时
  

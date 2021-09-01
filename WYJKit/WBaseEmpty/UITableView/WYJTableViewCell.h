@@ -7,24 +7,13 @@
  ********************************************************************************/
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YJCountdown : NSObject
-@property (nonatomic, strong, nullable)dispatch_source_t yi_timer;
-/**
- count down
-
- @param totalTime total time(seconds)
- @param completeBlock   return the remaining (seconds)
- */
-- (void)yi_numberDownWithTime:(NSInteger)totalTime completeBlock:(void(^)(NSInteger countDown))completeBlock;
-
-/**
- destory yi_timer
- */
-- (void)yi_destoryTimer;
+@interface WYJTableViewCell : UITableViewCell
+/** the devider (default NO)  */
+@property (nonatomic, strong)UIView * yi_dividerView;
 
 @end
 

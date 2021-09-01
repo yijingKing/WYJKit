@@ -6,9 +6,9 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import "YJTableView.h"
+#import "WYJTableView.h"
 
-@implementation YJTableView
+@implementation WYJTableView
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     self = [super initWithFrame:frame style:style];

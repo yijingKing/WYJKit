@@ -1,14 +1,14 @@
-//
-//  YJFileManager.m
-//  YJKitDemo
-//
-//  Created by 祎 on 2019/8/28.
-//  Copyright © 2019 Eugene King. All rights reserved.
-//
+/*******************************************************************************
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
+ 
+ Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ E-mail:        1091676312@qq.com
+ GitHub:        https://github.com/MemoryKing
+ ********************************************************************************/
 
-#import "YJFileManager.h"
+#import "WYJFileManager.h"
 
-@implementation YJFileManager
+@implementation WYJFileManager
 +(NSString *)yi_saveDocumentsImage:(UIImage *)image imgName:(NSString *)name  {
     
     UIImage *imagesave = image;

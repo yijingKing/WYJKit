@@ -7,7 +7,7 @@
  ********************************************************************************/
 
 
-#import "YJBaseTableView.h"
+#import "WYJBaseTableView.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import <MJRefresh/MJRefresh.h>
 
@@ -21,7 +21,7 @@ typedef enum : NSUInteger {
     EmptyTypeButton,
 } EmptyTypeState;
 
-@interface YJBaseTableView ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+@interface WYJBaseTableView ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 @property(nonatomic,assign) EmptyTypeState state;
 /** is empty data */
@@ -52,7 +52,7 @@ typedef enum : NSUInteger {
 
 @end
 
-@implementation YJBaseTableView
+@implementation WYJBaseTableView
 
 - (WYJBaseTableViewDelegate *)baseDelegate {
     if (!_baseDelegate) {
@@ -309,7 +309,7 @@ typedef enum : NSUInteger {
 }
 
 #pragma make ------ static ------
-void CustomHeader (YJBaseTableView * tab) {
+void CustomHeader (WYJBaseTableView * tab) {
     if (tab.mj_header) {
         MJRefreshStateHeader * header = (MJRefreshStateHeader *)tab.mj_header;
         header.lastUpdatedTimeLabel.hidden = tab.yi_hiddenTime;

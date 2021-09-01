@@ -6,9 +6,9 @@
 //  Copyright © 2021 Eugene King. All rights reserved.
 //
 
-#import "YJBaseTableView+Delegate.h"
+#import "WYJBaseTableView+Delegate.h"
 
-@implementation YJBaseTableView (Delegate)
+@implementation WYJBaseTableView (Delegate)
 - (void)numberForSection:(NumberForSection)numberForSections {
     self.baseDelegate.numberForSectionBlock = numberForSections;
 }

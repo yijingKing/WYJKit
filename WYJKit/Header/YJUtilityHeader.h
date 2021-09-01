@@ -10,8 +10,8 @@
 #ifndef YJUtilityHeader_h
 #define YJUtilityHeader_h
 
-#import "YJCountdown.h"
-#import "YJSystemPermissions.h"
-#import "YJSystemService.h"
-#import "YJFileManager.h"
+#import "WYJCountdown.h"
+#import "WYJSystemPermissions.h"
+#import "WYJSystemService.h"
+#import "WYJFileManager.h"
 #endif /* YJUtilityHeader_h */

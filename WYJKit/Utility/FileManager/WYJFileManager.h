@@ -6,15 +6,13 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#ifndef WBaseEmotyHeader_h
-#define WBaseEmotyHeader_h
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+NS_ASSUME_NONNULL_BEGIN
 
-#import "WYJBaseCollectionView.h"
-#import "WYJBaseTableView.h"
-#import "WYJBaseViewController.h"
-#import "WYJNavigationController.h"
-#import "WYJTableView.h"
-#import "WYJTableViewCell.h"
-#import "WYJBaseTableView+Delegate.h"
-#import "WYJBaseTabBarController.h"
-#endif /* WBaseEmotyHeader_h */
+@interface WYJFileManager : NSObject
++(UIImage *)yi_getDocumentImageName:(NSString *)name;
++(NSString *)yi_saveDocumentsImage:(UIImage *)image imgName:(NSString *)name;
+@end
+
+NS_ASSUME_NONNULL_END

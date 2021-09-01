@@ -7,7 +7,7 @@
  ********************************************************************************/
 
 
-#import "YJBaseCollectionView.h"
+#import "WYJBaseCollectionView.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import <MJRefresh/MJRefresh.h>
 
@@ -21,7 +21,7 @@ typedef enum : NSUInteger {
     EmptyTypeButton,
 } EmptyTypeState;
 
-@interface YJBaseCollectionView ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+@interface WYJBaseCollectionView ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 @property(nonatomic,assign)EmptyTypeState state;
 /** is empty data */
@@ -42,7 +42,7 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) void(^clickBadNetWorkPage)(void);
 @end
 
-@implementation YJBaseCollectionView
+@implementation WYJBaseCollectionView
 
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout
 {

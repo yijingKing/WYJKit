@@ -7,54 +7,38 @@
  ********************************************************************************/
 
 
-#import "YJSystemService.h"
+#import "WYJSystemService.h"
 
-@implementation YJSystemService
-+ (void)wPhoneCallWithPhoneNum:(NSString *)phoneNum {
+@implementation WYJSystemService
++ (void)yi_PhoneCallWithPhoneNum:(NSString *)phoneNum {
     NSURL * url = [NSURL URLWithString:[@"tel:" stringByAppendingString:phoneNum]];
-    NSString *version= [UIDevice currentDevice].systemVersion;
-    if(version.doubleValue >= 10.0) {
-        if (@available(iOS 10.0, *)) {
-            [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
-        } else {
-            // Fallback on earlier versions
-        }
-    }else{
-        [UIApplication.sharedApplication openURL:url];
+    if (@available(iOS 10.0, *)) {
+        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+    } else {
+        // Fallback on earlier versions
     }
 }
 
-+ (void)wJumpToAppReviewPageWithAppId:(NSString *)appId {
++ (void)yi_JumpToAppReviewPageWithAppId:(NSString *)appId {
     NSURL * url = [NSURL URLWithString:[@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" stringByAppendingString:appId]];
-    NSString *version= [UIDevice currentDevice].systemVersion;
-    if(version.doubleValue >= 10.0) {
-        if (@available(iOS 10.0, *)) {
-            [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
-        } else {
-            // Fallback on earlier versions
-        }
+    if (@available(iOS 10.0, *)) {
+        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
     } else {
         // Fallback on earlier versions
-        [UIApplication.sharedApplication openURL:url];
     }
 }
 
 //App Store评价
-+ (void)wJumpToAppStoreEvaluation:(NSString *)appID {
++ (void)yi_JumpToAppStoreEvaluation:(NSString *)appID {
     NSURL * url = [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"];
-    NSString *version= [UIDevice currentDevice].systemVersion;
-    if(version.doubleValue >= 10.0) {
-        if (@available(iOS 10.0, *)) {
-            [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
-        } else {
-            // Fallback on earlier versions
-        }
+    if (@available(iOS 10.0, *)) {
+        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
     } else {
-        [UIApplication.sharedApplication openURL:url];
+        // Fallback on earlier versions
     }
 }
 //分享给朋友
-+ (void)wShareToFriends:(NSString *)name imageName:(NSString *)imgName appId:(int)appId {
++ (void)yi_ShareToFriends:(NSString *)name imageName:(NSString *)imgName appId:(int)appId {
     NSString * str = name;
     UIImage * image = [UIImage imageNamed:imgName];
     NSString * appid = [NSString stringWithFormat:@"%d",appId];
@@ -66,18 +50,12 @@
 }
 
 //意见反馈
-+ (void)wJumpToAppFeedback:(NSString *)appid {
++ (void)yi_JumpToAppFeedback:(NSString *)appid {
     NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",appid]];
-    NSString *version= [UIDevice currentDevice].systemVersion;
-    if(version.doubleValue >= 10.0) {
-        if (@available(iOS 10.0, *)) {
-            [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
-        } else {
-            // Fallback on earlier versions
-        }
+    if (@available(iOS 10.0, *)) {
+        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
     } else {
         // Fallback on earlier versions
-        [UIApplication.sharedApplication openURL:url];
     }
 }
 @end

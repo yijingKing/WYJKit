@@ -1,7 +1,7 @@
 /*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
  
- Author:        ╰莪呮想好好宠Nǐつ (kang Yijing)
+ Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
@@ -33,15 +33,35 @@
 //tabbar栏高度
 #define kTabBarHeight (49.0)
 //底部安全区域
-#define kBottomSafeHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20.1?34.0:0.0)
+#define kBottomHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20.1?34.0:0.0)
 //状态条占的高度
-#define kStatusForHeight (CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame))
+#define kStatusHeight \
+^(){\
+if (@available(iOS 13.0, *)) {\
+    UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager;\
+    return statusBarManager.statusBarFrame.size.height;\
+} else {\
+    return [UIApplication sharedApplication].statusBarFrame.size.height;\
+}\
+}()
+
+//底部指示条
+#define INDICATOR_HEIGHT \
+^(){\
+if (@available(iOS 11.0, *)) {\
+    UIEdgeInsets safeAreaInsets = [[UIApplication sharedApplication] delegate].window.safeAreaInsets;\
+    return safeAreaInsets.bottom;\
+} else {\
+    return UIEdgeInsetsMake(0, 0, 0, 0).bottom;\
+}\
+}()
+
 
 /** 导航栏高度 + 状态栏高度 */
-#define kStatusAndNavForHeight (kNavBarHeight + kStatusForHeight)
+#define kStatusAndNavHeight (kNavBarHeight + kStatusHeight)
 
 /** tabbar高度 + iphoneX多出来的高度 */
-#define kBottomSafeAndTabBarForHeight (kTabBarHeight + kBottomSafeHeight)
+#define kBottomAndTabBarHeight (kTabBarHeight + kBottomHeight)
 
 
 #endif /* kFrameMacro_h */

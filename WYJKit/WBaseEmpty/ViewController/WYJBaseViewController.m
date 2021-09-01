@@ -7,21 +7,22 @@
  ********************************************************************************/
 
 
-#import "YJBaseViewController.h"
+#import "WYJBaseViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Masonry/Masonry.h>
 #import "UIColor+YJAdd.h"
-@interface YJBaseViewController ()<UIImagePickerControllerDelegate,UIGestureRecognizerDelegate,UINavigationControllerDelegate>
+#import "WYJFrameMacro.h"
+@interface WYJBaseViewController ()<UIImagePickerControllerDelegate,UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 @property(nonatomic, strong)UIImagePickerController *picker;
 
 @property(nonatomic, copy)void (^block)(UIImage *);
 
 @end
-@implementation YJBaseViewController
+@implementation WYJBaseViewController
 
-- (YJBaseTableView *)mainTableView {
+- (WYJBaseTableView *)mainTableView {
     if (!_mainTableView) {
-        _mainTableView = [YJBaseTableView.alloc initWithFrame:CGRectZero style:(UITableViewStyleGrouped)];
+        _mainTableView = [WYJBaseTableView.alloc initWithFrame:CGRectZero style:(UITableViewStyleGrouped)];
         
     }
     return _mainTableView;
@@ -46,21 +47,34 @@
 }
 
 - (void)initTableView:(UITableViewStyle)style {
-    self.mainTableView = [YJBaseTableView.alloc initWithFrame: CGRectZero style: style];
+    self.mainTableView = [WYJBaseTableView.alloc initWithFrame: CGRectZero style: style];
     self.mainTableView.estimatedRowHeight = 44.0;
     self.mainTableView.estimatedSectionHeaderHeight = 0.01;
     self.mainTableView.estimatedSectionFooterHeight = 0.01;
     self.mainTableView.showsVerticalScrollIndicator = false;
     self.mainTableView.showsHorizontalScrollIndicator = false;
-    self.mainTableView.backgroundColor = WHexColor(@"#F5F5F5");
+    self.mainTableView.backgroundColor = [UIColor yi_hexStr:@"#F5F5F5"];
     self.mainTableView.tableFooterView = [[UIView alloc] init];
     self.mainTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     [self.view addSubview:self.mainTableView];
-//    [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.navigationController ? kStatusAndNavForHeight : kStatusForHeight);
-//        make.left.right.mas_equalTo(self.view);
-//        make.bottom.mas_equalTo(self.tabBarController.tabBar.isHidden ? -kBottomSafeHeight : -kBottomSafeAndTabBarForHeight);
-//    }];
+    [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        CGFloat statusBarFrame;
+        if (@available(iOS 13.0, *)) {
+            UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager;
+            statusBarFrame = statusBarManager.statusBarFrame.size.height;
+        } else {
+            statusBarFrame = [UIApplication sharedApplication].statusBarFrame.size.height;
+        }
+        CGFloat statusNav = 44.0 + statusBarFrame;
+        CGFloat bottomHeight = [[UIApplication sharedApplication] statusBarFrame].size.height > 20.1 ? 34.0 : 0.0;
+        BOOL isHidden = true;
+        if (self.tabBarController) {
+            isHidden = self.tabBarController.tabBar.isHidden;
+        } 
+        make.top.mas_equalTo(self.navigationController ? statusNav : statusBarFrame);
+        make.left.right.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(isHidden ? -bottomHeight : (-bottomHeight - 49));
+    }];
 }
 - (void)setYi_barStyle:(UIStatusBarStyle)yi_barStyle {
     _yi_barStyle = yi_barStyle;

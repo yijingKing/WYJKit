@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "YJBaseTableView.h"
+#import "WYJBaseTableView.h"
 #import "WYJBaseTableViewDelegate.h"
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface YJBaseTableView (Delegate)
+@interface WYJBaseTableView (Delegate)
 //@property (copy, nonatomic) NumberForSection numberForSection;
 
 - (void)numberForSection:(NumberForSection)numberForSection;

@@ -7,9 +7,9 @@
  ********************************************************************************/
 
 
-#import "YJTableViewCell.h"
+#import "WYJTableViewCell.h"
 
-@implementation YJTableViewCell
+@implementation WYJTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

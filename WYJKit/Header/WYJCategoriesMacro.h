@@ -1,10 +1,9 @@
 /*******************************************************************************
- Copyright (K), 2019 - ~, Eugene King
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
  
- File name:     UIFont+WYJKit.h
- Author:        Eugene King (Wang Yijing)
+ Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
- 
+ GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
 

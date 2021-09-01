@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WYJKitHeader.h"
 
-@interface ViewController : YJBaseViewController
+@interface ViewController : WYJBaseViewController
 
 
 @end

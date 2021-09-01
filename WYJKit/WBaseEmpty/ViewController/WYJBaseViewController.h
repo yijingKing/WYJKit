@@ -8,12 +8,12 @@
 
 
 #import <UIKit/UIKit.h>
-#import "YJBaseTableView.h"
+#import "WYJBaseTableView.h"
 //#import "WYJFrameMacro.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YJBaseViewController : UIViewController
-@property (strong, nonatomic) YJBaseTableView * mainTableView;
+@interface WYJBaseViewController : UIViewController
+@property (strong, nonatomic) WYJBaseTableView * mainTableView;
 @property (nonatomic,assign) UIStatusBarStyle yi_barStyle;
 
 - (void)yi_setUploadPictures:(void(^)(UIImage * img))bloack;

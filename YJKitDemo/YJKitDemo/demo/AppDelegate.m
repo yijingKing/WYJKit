@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "WYJBaseTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,8 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    self.window.rootViewController = [UINavigationController.alloc initWithRootViewController:ViewController.alloc.init];
+    WYJBaseTabBarController * tab = [WYJBaseTabBarController.alloc init];
+    [tab yi_addChildVc:ViewController.alloc.init title:@"123" image:@"" selectedImage:@""];
+    self.window.rootViewController = tab;
     
     return YES;
 }
