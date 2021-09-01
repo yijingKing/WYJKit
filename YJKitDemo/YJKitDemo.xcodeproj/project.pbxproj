@@ -49,8 +49,8 @@
 		98EB8C8C229FDB5900CC4AB1 /* YJKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EB8C8B229FDB5900CC4AB1 /* YJKitDemoUITests.m */; };
 		F733E92526DE01AC00DE364F /* WYJBaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F733E92426DE01AC00DE364F /* WYJBaseTableViewDelegate.m */; };
 		F733E92826DE15DA00DE364F /* YJBaseTableView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F733E92726DE15DA00DE364F /* YJBaseTableView+Delegate.m */; };
-		F774063A26DF159400A2249D /* AppDelegate+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = F774063926DF159400A2249D /* AppDelegate+Configure.m */; };
 		F774063C26DF182A00A2249D /* WYJKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F774063B26DF182A00A2249D /* WYJKit.podspec */; };
+		F774064026DF241700A2249D /* AppDelegate+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = F774063F26DF241700A2249D /* AppDelegate+Configure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,9 +165,9 @@
 		F733E92426DE01AC00DE364F /* WYJBaseTableViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJBaseTableViewDelegate.m; sourceTree = "<group>"; };
 		F733E92626DE15DA00DE364F /* YJBaseTableView+Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YJBaseTableView+Delegate.h"; sourceTree = "<group>"; };
 		F733E92726DE15DA00DE364F /* YJBaseTableView+Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YJBaseTableView+Delegate.m"; sourceTree = "<group>"; };
-		F774063826DF159400A2249D /* AppDelegate+Configure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Configure.h"; sourceTree = "<group>"; };
-		F774063926DF159400A2249D /* AppDelegate+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Configure.m"; sourceTree = "<group>"; };
 		F774063B26DF182A00A2249D /* WYJKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WYJKit.podspec; path = ../../WYJKit.podspec; sourceTree = "<group>"; };
+		F774063E26DF241700A2249D /* AppDelegate+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Configure.h"; sourceTree = "<group>"; };
+		F774063F26DF241700A2249D /* AppDelegate+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Configure.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +287,7 @@
 		63F6DE402579DAA200248B30 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				F774063726DF157200A2249D /* AppDelegate */,
+				F774063D26DF241700A2249D /* AppDelegate */,
 				63F6DE412579DAA200248B30 /* UIImage */,
 				63F6DE442579DAA200248B30 /* UIApplication */,
 				63F6DE472579DAA200248B30 /* UIButton */,
@@ -587,11 +587,11 @@
 			path = demo;
 			sourceTree = "<group>";
 		};
-		F774063726DF157200A2249D /* AppDelegate */ = {
+		F774063D26DF241700A2249D /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				F774063826DF159400A2249D /* AppDelegate+Configure.h */,
-				F774063926DF159400A2249D /* AppDelegate+Configure.m */,
+				F774063E26DF241700A2249D /* AppDelegate+Configure.h */,
+				F774063F26DF241700A2249D /* AppDelegate+Configure.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -803,7 +803,7 @@
 				63F6DE932579DAA200248B30 /* YJNavigationController.m in Sources */,
 				63F6DEA32579DAA200248B30 /* NSString+YJAdd.m in Sources */,
 				63F6DEA02579DAA200248B30 /* NSString+YJConversion.m in Sources */,
-				F774063A26DF159400A2249D /* AppDelegate+Configure.m in Sources */,
+				F774064026DF241700A2249D /* AppDelegate+Configure.m in Sources */,
 				63F6DEA22579DAA200248B30 /* NSString+YJMD5.m in Sources */,
 				63F6DE922579DAA200248B30 /* YJBaseViewController.m in Sources */,
 				63F6DE9D2579DAA200248B30 /* UIViewController+YJAdd.m in Sources */,
