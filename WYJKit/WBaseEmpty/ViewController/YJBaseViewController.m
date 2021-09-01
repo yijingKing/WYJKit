@@ -10,7 +10,7 @@
 #import "YJBaseViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Masonry/Masonry.h>
-
+#import "UIColor+YJAdd.h"
 @interface YJBaseViewController ()<UIImagePickerControllerDelegate,UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 @property(nonatomic, strong)UIImagePickerController *picker;
 
@@ -52,15 +52,15 @@
     self.mainTableView.estimatedSectionFooterHeight = 0.01;
     self.mainTableView.showsVerticalScrollIndicator = false;
     self.mainTableView.showsHorizontalScrollIndicator = false;
-    self.mainTableView.backgroundColor = UIColor.lightGrayColor;
+    self.mainTableView.backgroundColor = WHexColor(@"#F5F5F5");
     self.mainTableView.tableFooterView = [[UIView alloc] init];
     self.mainTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     [self.view addSubview:self.mainTableView];
-    [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.navigationController ? kStatusAndNavForHeight : kStatusForHeight);
-        make.left.right.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.tabBarController.tabBar.isHidden ? -kBottomSafeHeight : -kBottomSafeAndTabBarForHeight);
-    }];
+//    [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(self.navigationController ? kStatusAndNavForHeight : kStatusForHeight);
+//        make.left.right.mas_equalTo(self.view);
+//        make.bottom.mas_equalTo(self.tabBarController.tabBar.isHidden ? -kBottomSafeHeight : -kBottomSafeAndTabBarForHeight);
+//    }];
 }
 - (void)setYi_barStyle:(UIStatusBarStyle)yi_barStyle {
     _yi_barStyle = yi_barStyle;
