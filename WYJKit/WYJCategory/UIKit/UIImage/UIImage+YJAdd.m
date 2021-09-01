@@ -14,10 +14,6 @@
 @implementation UIImage (YJAdd)
 
 
-- (void)download {
-    NSLog(@"12321232132131323211233");
-}
-
 - (NSString *)yi_base64String {
     NSData * imagedata = UIImagePNGRepresentation(self);
     NSString * image64 = [imagedata base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];

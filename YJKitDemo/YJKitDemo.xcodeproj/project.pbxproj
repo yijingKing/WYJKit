@@ -983,7 +983,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63X4PDHZJB;
-				GCC_PREFIX_HEADER = "/Users/pz-imac-1/Desktop/工具库/WYJKit/WYJKit/WYJKitHeader.h";
 				INFOPLIST_FILE = "$(SRCROOT)/YJKitDemo/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1005,7 +1004,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63X4PDHZJB;
-				GCC_PREFIX_HEADER = "/Users/pz-imac-1/Desktop/工具库/WYJKit/WYJKit/WYJKitHeader.h";
 				INFOPLIST_FILE = "$(SRCROOT)/YJKitDemo/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
