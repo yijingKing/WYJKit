@@ -10,8 +10,6 @@
 #import "WYJBaseViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Masonry/Masonry.h>
-#import "UIColor+YJAdd.h"
-#import "WYJFrameMacro.h"
 @interface WYJBaseViewController ()<UIImagePickerControllerDelegate,UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 @property(nonatomic, strong)UIImagePickerController *picker;
 
@@ -53,7 +51,7 @@
     self.mainTableView.estimatedSectionFooterHeight = 0.01;
     self.mainTableView.showsVerticalScrollIndicator = false;
     self.mainTableView.showsHorizontalScrollIndicator = false;
-    self.mainTableView.backgroundColor = [UIColor yi_hexStr:@"#F5F5F5"];
+    self.mainTableView.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1];
     self.mainTableView.tableFooterView = [[UIView alloc] init];
     self.mainTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     [self.view addSubview:self.mainTableView];
