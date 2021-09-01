@@ -277,7 +277,6 @@
 			children = (
 				63F6DE402579DAA200248B30 /* UIKit */,
 				63F6DE632579DAA200248B30 /* Foundation */,
-				63F6DE762579DAA200248B30 /* Macro */,
 			);
 			path = WYJCategory;
 			sourceTree = "<group>";
@@ -447,18 +446,6 @@
 			path = NSDate;
 			sourceTree = "<group>";
 		};
-		63F6DE762579DAA200248B30 /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-				63F6DE772579DAA200248B30 /* WYJObjectMacro.h */,
-				63F6DE782579DAA200248B30 /* WYJSystemMacro.h */,
-				63F6DE792579DAA200248B30 /* WYJHandy.h */,
-				63F6DE7A2579DAA200248B30 /* WYJFrameMacro.h */,
-				63F6DE7B2579DAA200248B30 /* WYJCategoriesMacro.h */,
-			);
-			path = Macro;
-			sourceTree = "<group>";
-		};
 		63F6DE7D2579DAA200248B30 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +587,11 @@
 				63F6DE3E2579DAA200248B30 /* WYJKitHeader.h */,
 				63F6DE7C2579DAA200248B30 /* YJCategory.h */,
 				63F6DE2E2579DAA200248B30 /* YJBaseEmotyHeader.h */,
+				63F6DE772579DAA200248B30 /* WYJObjectMacro.h */,
+				63F6DE782579DAA200248B30 /* WYJSystemMacro.h */,
+				63F6DE792579DAA200248B30 /* WYJHandy.h */,
+				63F6DE7A2579DAA200248B30 /* WYJFrameMacro.h */,
+				63F6DE7B2579DAA200248B30 /* WYJCategoriesMacro.h */,
 			);
 			path = Header;
 			sourceTree = "<group>";
