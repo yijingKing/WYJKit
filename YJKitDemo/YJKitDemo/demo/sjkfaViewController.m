@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self yi_setBackItem:[UIImage imageNamed:@"返 回"]];
+    [self setBackItem:[UIImage imageNamed:@"返 回"]];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
