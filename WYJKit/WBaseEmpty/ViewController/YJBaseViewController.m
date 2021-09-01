@@ -52,7 +52,7 @@
     self.mainTableView.estimatedSectionFooterHeight = 0.01;
     self.mainTableView.showsVerticalScrollIndicator = false;
     self.mainTableView.showsHorizontalScrollIndicator = false;
-    self.mainTableView.backgroundColor = WHexColor(@"#F5F5F5");
+    self.mainTableView.backgroundColor = UIColor.lightGrayColor;
     self.mainTableView.tableFooterView = [[UIView alloc] init];
     self.mainTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     [self.view addSubview:self.mainTableView];
