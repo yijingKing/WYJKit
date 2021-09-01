@@ -50,7 +50,7 @@
 		F733E92526DE01AC00DE364F /* WYJBaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F733E92426DE01AC00DE364F /* WYJBaseTableViewDelegate.m */; };
 		F733E92826DE15DA00DE364F /* YJBaseTableView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F733E92726DE15DA00DE364F /* YJBaseTableView+Delegate.m */; };
 		F774063C26DF182A00A2249D /* WYJKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F774063B26DF182A00A2249D /* WYJKit.podspec */; };
-		F774064026DF241700A2249D /* AppDelegate+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = F774063F26DF241700A2249D /* AppDelegate+Configure.m */; };
+		F774064326DF24B300A2249D /* UIResponder+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = F774064226DF24B300A2249D /* UIResponder+Configure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,8 +166,8 @@
 		F733E92626DE15DA00DE364F /* YJBaseTableView+Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YJBaseTableView+Delegate.h"; sourceTree = "<group>"; };
 		F733E92726DE15DA00DE364F /* YJBaseTableView+Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YJBaseTableView+Delegate.m"; sourceTree = "<group>"; };
 		F774063B26DF182A00A2249D /* WYJKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WYJKit.podspec; path = ../../WYJKit.podspec; sourceTree = "<group>"; };
-		F774063E26DF241700A2249D /* AppDelegate+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Configure.h"; sourceTree = "<group>"; };
-		F774063F26DF241700A2249D /* AppDelegate+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Configure.m"; sourceTree = "<group>"; };
+		F774064126DF24B300A2249D /* UIResponder+Configure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Configure.h"; sourceTree = "<group>"; };
+		F774064226DF24B300A2249D /* UIResponder+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Configure.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +287,7 @@
 		63F6DE402579DAA200248B30 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				F774063D26DF241700A2249D /* AppDelegate */,
+				F774063D26DF241700A2249D /* UIResponder */,
 				63F6DE412579DAA200248B30 /* UIImage */,
 				63F6DE442579DAA200248B30 /* UIApplication */,
 				63F6DE472579DAA200248B30 /* UIButton */,
@@ -587,13 +587,13 @@
 			path = demo;
 			sourceTree = "<group>";
 		};
-		F774063D26DF241700A2249D /* AppDelegate */ = {
+		F774063D26DF241700A2249D /* UIResponder */ = {
 			isa = PBXGroup;
 			children = (
-				F774063E26DF241700A2249D /* AppDelegate+Configure.h */,
-				F774063F26DF241700A2249D /* AppDelegate+Configure.m */,
+				F774064126DF24B300A2249D /* UIResponder+Configure.h */,
+				F774064226DF24B300A2249D /* UIResponder+Configure.m */,
 			);
-			path = AppDelegate;
+			path = UIResponder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -780,6 +780,7 @@
 				63F6DEA92579DAA200248B30 /* YJSystemService.m in Sources */,
 				63F6DEA42579DAA200248B30 /* NSArray+YJAdd.m in Sources */,
 				63F6DE9B2579DAA200248B30 /* UITextView+YJAdd.m in Sources */,
+				F774064326DF24B300A2249D /* UIResponder+Configure.m in Sources */,
 				F733E92526DE01AC00DE364F /* WYJBaseTableViewDelegate.m in Sources */,
 				98EB8C6C229FDB5800CC4AB1 /* ViewController.m in Sources */,
 				63F6DE952579DAA200248B30 /* UIApplication+YJAdd.m in Sources */,
@@ -803,7 +804,6 @@
 				63F6DE932579DAA200248B30 /* YJNavigationController.m in Sources */,
 				63F6DEA32579DAA200248B30 /* NSString+YJAdd.m in Sources */,
 				63F6DEA02579DAA200248B30 /* NSString+YJConversion.m in Sources */,
-				F774064026DF241700A2249D /* AppDelegate+Configure.m in Sources */,
 				63F6DEA22579DAA200248B30 /* NSString+YJMD5.m in Sources */,
 				63F6DE922579DAA200248B30 /* YJBaseViewController.m in Sources */,
 				63F6DE9D2579DAA200248B30 /* UIViewController+YJAdd.m in Sources */,

@@ -1,15 +1,14 @@
 //
-//  AppDelegate+Configure.m
+//  UIResponder+Configure.m
 //  YJKitDemo
 //
 //  Created by PZ-IMAC-1 on 2021/9/1.
 //  Copyright © 2021 Eugene King. All rights reserved.
 //
 
-#import "AppDelegate+Configure.h"
+#import "UIResponder+Configure.h"
 #import <IQKeyboardManager.h>
-@implementation AppDelegate (Configure)
-
+@implementation UIResponder (Configure)
 
 #pragma make ------  键盘收回管理 ------
 -(void)yi_configureBoardManager{
@@ -23,5 +22,4 @@
     manager.shouldShowToolbarPlaceholder = YES; // 是否显示占位文字
     manager.placeholderFont = [UIFont boldSystemFontOfSize:17]; // 设置占位文字的字体
 }
-
 @end
