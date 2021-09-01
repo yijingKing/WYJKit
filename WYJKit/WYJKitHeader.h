@@ -14,4 +14,5 @@
 #import "YJUtilityHeader.h"
 #import "YJBaseEmotyHeader.h"
 #import <Masonry/Masonry.h>
+#import "WYJCategoriesMacro.h"
 #endif /* WYJKitHeader_h */

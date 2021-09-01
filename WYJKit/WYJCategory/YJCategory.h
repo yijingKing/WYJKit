@@ -31,7 +31,7 @@
 #import "NSArray+YJAdd.h"
 #import "NSMutableArray+YJAdd.h"
 
-#import "UIView+YJPageRouter.h"
+#import "AppDelegate+Configure.h"
 
 #endif /* YJCategory_h */
 
