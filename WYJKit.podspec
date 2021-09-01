@@ -26,12 +26,13 @@ s.dependency 'IQKeyboardManager'
 
 s.subspec 'WYJCategory' do |c|
 c.public_header_files   = 'WYJKit/WYJCategory/**/**/*.{h}'
-c.public_header_files   = 'WYJKit/WYJCategory/**/**/*.{h}'
+c.source_files   = 'WYJKit/WYJCategory/**/**/*.{h}'
 end
 
 s.subspec 'WBaseEmpty' do |e|
 e.public_header_files   = 'WYJKit/WBaseEmpty/**/**/*.{h}'
 e.source_files          = 'WYJKit/WBaseEmpty/**/**/*.{h,m}'
+
 e.dependency 'DZNEmptyDataSet'
 e.dependency 'MJRefresh'
 end
