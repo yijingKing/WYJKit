@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIResponder (Configure)
 
-
+#pragma make ------  热更新 ------
+- (void)holdReload;
 
 #pragma make ------  键盘收回管理 ------
 -(void)configureBoardManager;

@@ -79,7 +79,7 @@
 		0448AE9524C9627F00F7CC4D /* sjkfaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sjkfaViewController.h; sourceTree = "<group>"; };
 		0448AE9624C9627F00F7CC4D /* sjkfaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sjkfaViewController.m; sourceTree = "<group>"; };
 		158B16202CE63EC22223BE8E /* Pods_YJKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YJKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63F6DE2E2579DAA200248B30 /* YJBaseEmotyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBaseEmotyHeader.h; sourceTree = "<group>"; };
+		63F6DE2E2579DAA200248B30 /* WYJBaseEmotyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJBaseEmotyHeader.h; sourceTree = "<group>"; };
 		63F6DE302579DAA200248B30 /* WYJBaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJBaseCollectionView.h; sourceTree = "<group>"; };
 		63F6DE312579DAA200248B30 /* WYJBaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJBaseCollectionView.m; sourceTree = "<group>"; };
 		63F6DE332579DAA200248B30 /* WYJBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJBaseTableView.h; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		63F6DE792579DAA200248B30 /* WYJHandy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJHandy.h; sourceTree = "<group>"; };
 		63F6DE7A2579DAA200248B30 /* WYJFrameMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJFrameMacro.h; sourceTree = "<group>"; };
 		63F6DE7B2579DAA200248B30 /* WYJCategoriesMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJCategoriesMacro.h; sourceTree = "<group>"; };
-		63F6DE7C2579DAA200248B30 /* YJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJCategory.h; sourceTree = "<group>"; };
+		63F6DE7C2579DAA200248B30 /* WYJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJCategory.h; sourceTree = "<group>"; };
 		63F6DE7F2579DAA200248B30 /* WYJCountdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJCountdown.h; sourceTree = "<group>"; };
 		63F6DE802579DAA200248B30 /* WYJCountdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJCountdown.m; sourceTree = "<group>"; };
 		63F6DE822579DAA200248B30 /* WYJSystemPermissions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJSystemPermissions.m; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		63F6DE892579DAA200248B30 /* WYJFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJFileManager.h; sourceTree = "<group>"; };
 		63F6DE8B2579DAA200248B30 /* YJSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSystemInfo.h; sourceTree = "<group>"; };
 		63F6DE8C2579DAA200248B30 /* YJSystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSystemInfo.m; sourceTree = "<group>"; };
-		63F6DE8D2579DAA200248B30 /* YJUtilityHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJUtilityHeader.h; sourceTree = "<group>"; };
+		63F6DE8D2579DAA200248B30 /* WYJUtilityHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJUtilityHeader.h; sourceTree = "<group>"; };
 		7A8338279364F31DFDA20A20 /* Pods-YJKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJKitDemo.release.xcconfig"; path = "Target Support Files/Pods-YJKitDemo/Pods-YJKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		98EB8C64229FDB5800CC4AB1 /* YJKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98EB8C67229FDB5800CC4AB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -608,9 +608,9 @@
 		F774064426DF28DA00A2249D /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				63F6DE8D2579DAA200248B30 /* YJUtilityHeader.h */,
-				63F6DE7C2579DAA200248B30 /* YJCategory.h */,
-				63F6DE2E2579DAA200248B30 /* YJBaseEmotyHeader.h */,
+				63F6DE8D2579DAA200248B30 /* WYJUtilityHeader.h */,
+				63F6DE7C2579DAA200248B30 /* WYJCategory.h */,
+				63F6DE2E2579DAA200248B30 /* WYJBaseEmotyHeader.h */,
 				63F6DE772579DAA200248B30 /* WYJObjectMacro.h */,
 				63F6DE782579DAA200248B30 /* WYJSystemMacro.h */,
 				63F6DE792579DAA200248B30 /* WYJHandy.h */,

@@ -22,8 +22,8 @@
     
     [self addTableView];
     
-    [self.mainTableView numberForSection:^NSInteger{
-        return self.isL ? 3 : 5;
+    [self.mainTableView numberOfRowsInSection:^NSInteger(UITableView * _Nonnull tableView, NSInteger section) {
+        
     }];
     
 }

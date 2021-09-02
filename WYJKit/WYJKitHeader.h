@@ -10,9 +10,9 @@
 #ifndef WYJKitHeader_h
 #define WYJKitHeader_h
 
-#import "YJCategory.h"
-#import "YJUtilityHeader.h"
-#import "YJBaseEmotyHeader.h"
+#import "WYJCategory.h"
+#import "WYJUtilityHeader.h"
+#import "WYJBaseEmotyHeader.h"
 #import <Masonry/Masonry.h>
 #import "WYJCategoriesMacro.h"
 #endif /* WYJKitHeader_h */

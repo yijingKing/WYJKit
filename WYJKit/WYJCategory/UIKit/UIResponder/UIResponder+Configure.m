@@ -9,9 +9,15 @@
 #import "UIResponder+Configure.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 @implementation UIResponder (Configure)
+#pragma make ------  热更新 ------
+- (void)holdReload {
+#if DEBUG
+    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
+#endif
+}
 
 #pragma make ------  键盘收回管理 ------
--(void)configureBoardManager{
+-(void)configureBoardManager {
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;// 控制整个功能是否启用
     manager.shouldResignOnTouchOutside = YES;// 控制点击背景是否收起键盘

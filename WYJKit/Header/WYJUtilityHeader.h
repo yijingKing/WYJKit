@@ -7,11 +7,11 @@
  ********************************************************************************/
 
 
-#ifndef YJUtilityHeader_h
-#define YJUtilityHeader_h
+#ifndef WYJUtilityHeader_h
+#define WYJUtilityHeader_h
 
 #import "WYJCountdown.h"
 #import "WYJSystemPermissions.h"
 #import "WYJSystemService.h"
 #import "WYJFileManager.h"
-#endif /* YJUtilityHeader_h */
+#endif /* WYJUtilityHeader_h */

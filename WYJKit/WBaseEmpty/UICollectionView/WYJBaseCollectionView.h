@@ -9,6 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WYJBaseCollectionViewDelegate.h"
+
 @interface WYJBaseCollectionView : UICollectionView
 @property (strong, nonatomic)WYJBaseCollectionViewDelegate * baseDelegate;
 @property (nonatomic, copy)NSAttributedString * emptyTitleAttributedString;

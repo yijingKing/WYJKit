@@ -25,7 +25,10 @@
     }
     return _mainTableView;
 }
-
+- (void)injected{
+    NSLog(@"injected--%@",self);
+    self.view.backgroundColor = [UIColor greenColor];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

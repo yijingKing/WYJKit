@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '2.0.2'
+  s.version          = '2.0.3'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
 
 s.dependency 'Masonry'
 s.dependency 'IQKeyboardManager'
-s.public_header_files   = 'WYJKit/**/WYJKitHeader.{h}'
-s.source_files = 'WYJKit/Header/**/*.{h,m}'
+s.public_header_files   = 'WYJKit/WYJKitHeader.{h}'
+s.source_files = 'WYJKit/WYJKitHeader.{h}'
 s.subspec 'Header' do |h|
-h.public_header_files   = 'WYJKit/Header/**/*.{h}'
-h.source_files = 'WYJKit/Header/**/*.{h,m}'
+h.public_header_files   = 'WYJKit/Header/*.{h}'
+h.source_files = 'WYJKit/Header/*.{h,m}'
 end
 s.subspec 'WYJCategory' do |c|
 c.public_header_files   = 'WYJKit/WYJCategory/**/**/*.{h}'

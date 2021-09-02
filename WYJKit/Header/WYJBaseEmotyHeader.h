@@ -6,8 +6,8 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#ifndef WBaseEmotyHeader_h
-#define WBaseEmotyHeader_h
+#ifndef WYJBaseEmotyHeader_h
+#define WYJBaseEmotyHeader_h
 
 #import "WYJBaseCollectionView.h"
 #import "WYJBaseTableView.h"
@@ -15,6 +15,5 @@
 #import "WYJNavigationController.h"
 #import "WYJTableView.h"
 #import "WYJTableViewCell.h"
-#import "WYJBaseTableView+Delegate.h"
 #import "WYJBaseTabBarController.h"
 #endif /* WBaseEmotyHeader_h */

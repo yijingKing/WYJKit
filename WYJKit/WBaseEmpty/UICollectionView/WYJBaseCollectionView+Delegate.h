@@ -1,21 +1,14 @@
-//
-//  WYJBaseCollectionView+Delegate.h
-//  YJKitDemo
-//
-//  Created by PZ-IMAC-1 on 2021/9/2.
-//  Copyright © 2021 Eugene King. All rights reserved.
-//
+/*******************************************************************************
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
+ 
+ Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
+ E-mail:        1091676312@qq.com
+ GitHub:        https://github.com/MemoryKing
+ ********************************************************************************/
 
 #import "WYJBaseCollectionView.h"
 #import "WYJBaseCollectionViewDelegate.h"
 NS_ASSUME_NONNULL_BEGIN
-//@property (nonatomic, copy)ReferenceSizeForFooterInSection referenceSizeForFooterInSection;
-//@property (nonatomic, copy)ViewForSupplementaryElementOfKind viewForSupplementaryElementOfKind;
-//@property (nonatomic, copy)SizeForItemAtIndexPath sizeForItemAtIndexPath;
-//
-//@property (nonatomic, copy)InsetForSectionAtIndex insetForSectionAtIndex;
-//@property (nonatomic, copy)MinimumInteritemSpacingForSectionAtIndex minimumInteritemSpacingForSectionAtIndex;
-//@property (nonatomic, copy)MinimumLineSpacingForSectionAtIndex minimumLineSpacingForSectionAtIndex;
 @interface WYJBaseCollectionView (Delegate)
 #pragma make ------ 区数 ------
 ///区数
