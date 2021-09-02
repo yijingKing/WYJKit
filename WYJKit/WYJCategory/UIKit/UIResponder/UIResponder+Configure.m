@@ -10,7 +10,7 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 @implementation UIResponder (Configure)
 #pragma make ------  热更新 ------
-- (void)holdReload {
+- (void)hotReload {
 #if DEBUG
     [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
 #endif
