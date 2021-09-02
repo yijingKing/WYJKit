@@ -43,6 +43,12 @@ typedef enum : NSUInteger {
 @end
 
 @implementation WYJBaseCollectionView
+- (WYJBaseCollectionViewDelegate *)baseDelegate {
+    if (!_baseDelegate) {
+        _baseDelegate = WYJBaseCollectionViewDelegate.alloc.init;
+    }
+    return _baseDelegate;
+}
 - (WYJBaseCollectionView *)yi {
     return self;
 }

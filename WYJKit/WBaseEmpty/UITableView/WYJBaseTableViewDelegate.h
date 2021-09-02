@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSInteger(^NumberForSection)(void);
+typedef NSInteger(^NumberForSection)(UITableView * tableView);
 typedef NSInteger(^NumberOfRowsInSection)(UITableView * tableView,NSInteger section);
 typedef CGFloat(^HeightForRowAtIndexPath)(UITableView * tableView,NSIndexPath * indexPath);
 typedef UITableViewCell*_Nullable(^CellForRowAtIndexPath)(UITableView * _Nullable tableView, NSIndexPath * _Nullable  indexPath);

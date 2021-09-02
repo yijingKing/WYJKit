@@ -13,7 +13,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (self.numberForSectionBlock) {
-        return self.numberForSectionBlock() ?: 1;
+        return self.numberForSectionBlock(tableView) ?: 1;
     }
     return 1;
 }
