@@ -22,9 +22,6 @@
     
     [self addTableView];
     
-    [self.mainTableView numberOfRowsInSection:^NSInteger(UITableView * _Nonnull tableView, NSInteger section) {
-        
-    }];
     
 }
 

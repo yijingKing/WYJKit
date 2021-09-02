@@ -51,6 +51,7 @@
 		F711D8E626E062C30083646E /* WYJBaseCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F711D8E526E062C30083646E /* WYJBaseCollectionViewDelegate.m */; };
 		F733E92526DE01AC00DE364F /* WYJBaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F733E92426DE01AC00DE364F /* WYJBaseTableViewDelegate.m */; };
 		F733E92826DE15DA00DE364F /* WYJBaseTableView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F733E92726DE15DA00DE364F /* WYJBaseTableView+Delegate.m */; };
+		F76DB59126E0B44100F38551 /* UITextField+View.m in Sources */ = {isa = PBXBuildFile; fileRef = F76DB58F26E0B44100F38551 /* UITextField+View.m */; };
 		F774063C26DF182A00A2249D /* WYJKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F774063B26DF182A00A2249D /* WYJKit.podspec */; };
 		F774064326DF24B300A2249D /* UIResponder+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = F774064226DF24B300A2249D /* UIResponder+Configure.m */; };
 		F774064826DF4F9100A2249D /* WYJBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F774064726DF4F9100A2249D /* WYJBaseTabBarController.m */; };
@@ -174,6 +175,8 @@
 		F733E92426DE01AC00DE364F /* WYJBaseTableViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJBaseTableViewDelegate.m; sourceTree = "<group>"; };
 		F733E92626DE15DA00DE364F /* WYJBaseTableView+Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WYJBaseTableView+Delegate.h"; sourceTree = "<group>"; };
 		F733E92726DE15DA00DE364F /* WYJBaseTableView+Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WYJBaseTableView+Delegate.m"; sourceTree = "<group>"; };
+		F76DB58F26E0B44100F38551 /* UITextField+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+View.m"; sourceTree = "<group>"; };
+		F76DB59026E0B44100F38551 /* UITextField+View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+View.h"; sourceTree = "<group>"; };
 		F774063B26DF182A00A2249D /* WYJKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WYJKit.podspec; path = ../../WYJKit.podspec; sourceTree = "<group>"; };
 		F774064126DF24B300A2249D /* UIResponder+Configure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Configure.h"; sourceTree = "<group>"; };
 		F774064226DF24B300A2249D /* UIResponder+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Configure.m"; sourceTree = "<group>"; };
@@ -553,6 +556,7 @@
 		98EB8C66229FDB5800CC4AB1 /* YJKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F76DB58E26E0B42F00F38551 /* 新增待完善 */,
 				F774063B26DF182A00A2249D /* WYJKit.podspec */,
 				63F6DE2C2579DAA200248B30 /* WYJKit */,
 				98EB8E0B229FE2B200CC4AB1 /* demo */,
@@ -594,6 +598,15 @@
 				98EB8C76229FDB5900CC4AB1 /* main.m */,
 			);
 			path = demo;
+			sourceTree = "<group>";
+		};
+		F76DB58E26E0B42F00F38551 /* 新增待完善 */ = {
+			isa = PBXGroup;
+			children = (
+				F76DB59026E0B44100F38551 /* UITextField+View.h */,
+				F76DB58F26E0B44100F38551 /* UITextField+View.m */,
+			);
+			path = "新增待完善";
 			sourceTree = "<group>";
 		};
 		F774063D26DF241700A2249D /* UIResponder */ = {
@@ -814,6 +827,7 @@
 				63F6DEA92579DAA200248B30 /* WYJSystemService.m in Sources */,
 				63F6DEA42579DAA200248B30 /* NSArray+YJAdd.m in Sources */,
 				63F6DE9B2579DAA200248B30 /* UITextView+YJAdd.m in Sources */,
+				F76DB59126E0B44100F38551 /* UITextField+View.m in Sources */,
 				F774064326DF24B300A2249D /* UIResponder+Configure.m in Sources */,
 				F733E92526DE01AC00DE364F /* WYJBaseTableViewDelegate.m in Sources */,
 				98EB8C6C229FDB5800CC4AB1 /* ViewController.m in Sources */,

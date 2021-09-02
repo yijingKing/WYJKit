@@ -18,7 +18,7 @@
 #define _weekObj(weakObj,variableObj)      __weak __typeof(&*variableObj)weakObj = variableObj;
 
 //弱引用/强引用
-#define kEAKSELF typeof(self) __weak weakSelf = self;
+#define kWEAKSELF typeof(self) __weak weakSelf = self;
 #define kSTRONGSELF typeof(weakSelf) __strong strongSelf = weakSelf;
 
 #endif /* WYJObjectMacro_h */

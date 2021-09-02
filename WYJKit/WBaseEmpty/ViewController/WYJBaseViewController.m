@@ -10,6 +10,7 @@
 #import "WYJBaseViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Masonry/Masonry.h>
+#import "UIViewController+YJAdd.h"
 @interface WYJBaseViewController ()<UIImagePickerControllerDelegate,UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 @property(nonatomic, strong)UIImagePickerController *picker;
 
@@ -18,16 +19,8 @@
 @end
 @implementation WYJBaseViewController
 
-- (WYJBaseTableView *)mainTableView {
-    if (!_mainTableView) {
-        _mainTableView = [WYJBaseTableView.alloc initWithFrame:CGRectZero style:(UITableViewStyleGrouped)];
-        
-    }
-    return _mainTableView;
-}
 - (void)injected{
     NSLog(@"injected--%@",self);
-    self.view.backgroundColor = [UIColor greenColor];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +31,8 @@
     self.extendedLayoutIncludesOpaqueBars = YES;
     // 防止返回手势失效
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+    self.hiddenShadow = true;
+    self.view.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1];
 }
 - (void) addTableView {
     [self initTableView:UITableViewStyleGrouped];

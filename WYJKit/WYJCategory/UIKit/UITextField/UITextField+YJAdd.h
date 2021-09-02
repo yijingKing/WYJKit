@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  文本发生改变时回调
  */
-- (void)textDidChange:(void (^)(NSString *))handle;
+- (void)textDidChange:(void (^)(NSString *string))handle;
 /**
  *  处理系统输入法导致的乱码,如果调用了maximumLimit属性，内部会默认处理乱码
  */

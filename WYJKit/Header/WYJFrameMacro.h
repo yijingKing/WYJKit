@@ -20,7 +20,11 @@
 
 //------ 屏幕适配 -------
 //比例计算，根据设计稿修改
-#define kRatioSize(k)     k * kSCREEN_kIDTH / 375.0
+#define Proportion(wid)    kSCREEN_WIDTH / wid
+#define kProportion         kSCREEN_WIDTH / 375
+#define kRatioSize(k)       k * kProportion
+#define RatioSize(k,size)     k * Proportion(size)
+#define kRatioFont(k)     [UIFont systemFontOfSize:kRatioSize(k)]
 //屏幕高度区别手机
 #define kIPhone4 (kSCREEN_HEIGHT == 480)
 #define kIPhone5 (kSCREEN_HEIGHT == 568)
