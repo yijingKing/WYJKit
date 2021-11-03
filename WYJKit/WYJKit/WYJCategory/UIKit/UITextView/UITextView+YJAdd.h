@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface UITextView (YJAdd)
 @property (nonatomic, assign) BOOL addNoti;
@@ -30,4 +30,4 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIFont * promptFont;
 @end
 
-NS_ASSUME_NONNULL_END
+

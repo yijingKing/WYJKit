@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface UIApplication (YJAdd)
 
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+
 
 
 NSString * _Nullable WAppDisplayName(void);

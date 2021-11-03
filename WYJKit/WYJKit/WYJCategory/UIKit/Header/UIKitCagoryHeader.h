@@ -10,12 +10,15 @@
 
 #ifndef UIKitCagoryHeader_h
 #define UIKitCagoryHeader_h
-
-#import "UIResponderCategoryHeader.h"
+#import "WYJUIManager.h"
+#import "UIFontHeader.h"
 #import "UIImageCategoryHeader.h"
 #import "UIApplicationCategoryHeader.h"
+#import "UIResponderCategoryHeader.h"
 #import "UIButtonCategoryHeader.h"
+#import "UIColorHeader.h"
+#import "UIViewHeader.h"
 
 
-#import "WYJUIManager.h"
+
 #endif /* UIKitCagoryHeader_h */

@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #include "WYJHandy.h"
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface WYJUIManager : NSObject
 
@@ -22,4 +22,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+

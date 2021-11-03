@@ -63,4 +63,61 @@
     return [UIColor colorWithRed:aRedValue / 255.0 green:aGreenValue / 255.0 blue:aBlueValue / 255.0 alpha:1];
 }
 
+/**
+ *  @brief  渐变颜色(横向渐变, 纵向渐变,length为渐变长度)
+ *
+ *  @param color     开始颜色
+ *  @param toColor     结束颜色
+ *  @param isHorizontal 是否是水平
+ *  @param length  渐变长度
+ *
+ *  @return 渐变颜色
+ */
++ (UIColor*)gradientFromColor:(UIColor*)color toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length
+{
+    CGSize size = CGSizeZero;
+    if (isHorizontal) {
+        size = CGSizeMake(length, 1);
+    } else {
+        size = CGSizeMake(1, length);
+    }
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    // 创建Quartz
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    // 创建色彩空间对象
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    // 颜色数组
+    NSArray* colors = [NSArray arrayWithObjects:(id)color.CGColor, (id)toColor.CGColor, nil];
+    // 创建渐变对象
+    CGGradientRef gradient = CGGradientCreateWithColors(colorspace, (__bridge CFArrayRef)colors, NULL);
+    if (isHorizontal) {
+        CGContextDrawLinearGradient(context, gradient, CGPointMake(0, 0), CGPointMake(size.width, 0), 0);
+    } else {
+        CGContextDrawLinearGradient(context, gradient, CGPointMake(0, 0), CGPointMake(0, size.height), 0);
+    }
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorspace);
+    UIGraphicsEndImageContext();
+    
+    return [UIColor colorWithPatternImage:image];
+}
+
+//判断颜色深浅
+- (BOOL)isDarkColor {
+    const CGFloat *componentColors = CGColorGetComponents(self.CGColor);
+    CGFloat colorBrightness = ((componentColors[0] * 299) + (componentColors[1] * 587) + (componentColors[2] * 114)) / 1000;
+    if (colorBrightness < 0.5){
+        //深色
+        return YES;
+    } else{
+        //浅色
+        return NO;
+    }
+}
+
+
+
 @end

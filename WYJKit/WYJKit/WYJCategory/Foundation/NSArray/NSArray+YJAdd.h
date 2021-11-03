@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger,ArraySortingType) {
     ArraySortingTypeReverse = 0,//降序
     ArraySortingTypeUsing//升序
@@ -20,4 +20,4 @@ typedef NS_ENUM(NSUInteger,ArraySortingType) {
 - (NSArray *)yi;
 @end
 
-NS_ASSUME_NONNULL_END
+

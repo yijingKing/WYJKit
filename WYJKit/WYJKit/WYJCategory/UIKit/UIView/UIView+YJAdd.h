@@ -10,11 +10,9 @@
 #import <UIKit/UIKit.h>
 #import "UIImage+WYJAdd.h"
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface UIView (YJAdd)
-
-- (void)addTouchUpInside:(void(^)(void))block;
 
 /** 设置部分圆角*/
 - (void)roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size;
@@ -42,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
  Returns the view's view controller (may be nil).
  */
 @property (nullable, nonatomic, readonly) UIViewController *viewController;
+
+
 @end
 
-NS_ASSUME_NONNULL_END
+

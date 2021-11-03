@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface UIImageView (YJAdd)
 
@@ -20,4 +20,4 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addTouchUpInside:(void(^)(void))block;
 @end
 
-NS_ASSUME_NONNULL_END
+

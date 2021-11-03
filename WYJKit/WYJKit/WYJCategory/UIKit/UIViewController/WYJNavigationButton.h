@@ -12,7 +12,7 @@
 
 #import <UIKit/UIKit.h>
 
-//NS_ASSUME_NONNULL_BEGIN
+//
 
 @interface WYJNavigationButton : UIButton
 - (void)setup NS_REQUIRES_SUPER;
@@ -24,7 +24,7 @@
 + (instancetype)buttonWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action;
 @end
 
-//NS_ASSUME_NONNULL_END
+//
 
 @interface WYJBarButton : WYJNavigationButton
 

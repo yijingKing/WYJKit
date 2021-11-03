@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface NSDate (Conversion)
 #pragma mark --- 将时间转换成时间戳
 - (NSString *)toTimestampFromTime:(NSString * _Nullable)formatterStr;
 @end
 
-NS_ASSUME_NONNULL_END
+

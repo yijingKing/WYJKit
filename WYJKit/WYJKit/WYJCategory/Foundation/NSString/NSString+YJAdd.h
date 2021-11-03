@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface NSString (YJAdd)
 /** HTML转成富文本 */
@@ -80,4 +80,4 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)yi;
 @end
 
-NS_ASSUME_NONNULL_END
+

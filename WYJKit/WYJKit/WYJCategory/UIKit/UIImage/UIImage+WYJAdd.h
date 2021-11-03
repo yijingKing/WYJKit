@@ -16,7 +16,7 @@ typedef enum  {
     GradientTypeUpRightToBottomLeft    //右上到左下
 } GradientType;
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 
 @interface UIImage (WYJAdd)
@@ -52,6 +52,16 @@ NS_ASSUME_NONNULL_BEGIN
                                    borderWidth:(CGFloat)borderWidth
                                    borderColor:(nullable UIColor *)borderColor
                                 borderLineJoin:(CGLineJoin)borderLineJoin;
+
+/// 获取图片、区域的主色
+/// @param image 图片
+/// @param scale 缩放比例
+/// @param rect 位置
++ (NSDictionary *)mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect;
+///裁剪图片
+- (UIImage *)cropSquareImageRect:(CGRect)rect;
+///图片是怎样就怎样 不会自动渲染
++ (UIImage *)imageWithNamed:(NSString *)name;
 @end
 
-NS_ASSUME_NONNULL_END
+

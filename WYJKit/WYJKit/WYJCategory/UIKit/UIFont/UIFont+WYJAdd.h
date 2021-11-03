@@ -12,7 +12,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <CoreText/CoreText.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 #ifndef WYJSysFontWithSizes
 #define WYJSysFontWithSizes(s)              [UIFont systemFontOfSize:(s)]
 #endif
@@ -71,4 +71,4 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIFont *)fontAdapter:(CGFloat)font;
 @end
 
-NS_ASSUME_NONNULL_END
+

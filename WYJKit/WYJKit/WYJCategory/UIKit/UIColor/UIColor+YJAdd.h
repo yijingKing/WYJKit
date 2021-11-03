@@ -27,10 +27,10 @@
 #endif
 //设置随机颜色
 #ifndef WRandomColor
-#define WRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+#define WRandomColor                         [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
 #endif
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface UIColor (YJAdd)
 
@@ -39,9 +39,22 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)hexStr:(NSString *)hexStr;
 
 + (UIColor *)randomColor;
+///判断颜色深浅
+- (BOOL)isDarkColor;
 
+/**
+ *  @brief  渐变颜色(横向渐变, 纵向渐变,length为渐变长度)
+ *
+ *  @param color     开始颜色
+ *  @param toColor     结束颜色
+ *  @param isHorizontal 是否是水平
+ *  @param length  渐变长度
+ *
+ *  @return 渐变颜色
+ */
++ (UIColor*)gradientFromColor:(UIColor*)c1 toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length;
 @end
 
-NS_ASSUME_NONNULL_END
+
 
 

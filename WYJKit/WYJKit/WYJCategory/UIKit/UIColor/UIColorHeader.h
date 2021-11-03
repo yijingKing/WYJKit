@@ -4,15 +4,12 @@
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
- FileContent:   字体适配
  ********************************************************************************/
 
-#import <UIKit/UIKit.h>
 
+#ifndef UIColorHeader_h
+#define UIColorHeader_h
 
+#import "UIColor+YJAdd.h"
 
-@interface UIFont (Adapter)
-
-@end
-
-
+#endif /* UIColorHeader_h */

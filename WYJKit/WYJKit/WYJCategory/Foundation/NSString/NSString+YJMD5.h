@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface NSString (YJMD5)
 /** 16位MD5加密--小写 */
@@ -38,4 +38,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-NS_ASSUME_NONNULL_END
+

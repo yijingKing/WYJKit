@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 typedef NS_ENUM(NSUInteger, TextAlignement) {
     TextAlignmentLeft,
@@ -61,4 +61,4 @@ typedef NS_ENUM(NSUInteger, WImagePosition) {
 - (void)imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing;
 @end
 
-NS_ASSUME_NONNULL_END
+

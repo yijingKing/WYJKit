@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface UITextField (YJAdd)
 /** 占位文字颜色 */
@@ -29,4 +29,4 @@ NS_ASSUME_NONNULL_BEGIN
 - (UITextField *)yi;
 @end
 
-NS_ASSUME_NONNULL_END
+

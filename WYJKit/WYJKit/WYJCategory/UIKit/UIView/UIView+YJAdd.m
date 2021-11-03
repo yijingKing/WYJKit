@@ -15,20 +15,6 @@ typedef void(^ViewClickBlock)(void);
 
 @implementation UIView (YJAdd)
 
-- (void)addTouchUpInside:(void(^)(void))block {
-    if (block) {
-        self.userInteractionEnabled = YES;
-        objc_setAssociatedObject(self, &ViewClickBlockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-        UITapGestureRecognizer * tap = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(touchupInside)];
-        [self addGestureRecognizer:tap];
-    }
-}
-
-- (void)touchupInside {
-    ViewClickBlock block = objc_getAssociatedObject(self, &ViewClickBlockKey);
-    block();
-}
-
 - (void)roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size {
     UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCon cornerRadii:size];
     CAShapeLayer* shape = [[CAShapeLayer alloc] init];
@@ -68,4 +54,5 @@ typedef void(^ViewClickBlock)(void);
     }
     return nil;
 }
+
 @end
