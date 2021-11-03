@@ -25,6 +25,7 @@
     [button setBackgroundImage:[UIImage imageWithColor:UIColor.blueColor] forState:normal];
     [self.view addSubview:button];
     NSLog(@"%lf",WYJUIManager.shared.width);
+    UIButton cre
 }
 
 

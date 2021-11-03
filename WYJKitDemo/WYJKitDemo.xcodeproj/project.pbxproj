@@ -434,8 +434,8 @@
 		F7E08B7027313BEC00361311 /* UIApplication */ = {
 			isa = PBXGroup;
 			children = (
-				F7E08B7127313BEC00361311 /* UIApplication+YJAdd.m */,
 				F7E08B7227313BEC00361311 /* UIApplication+YJAdd.h */,
+				F7E08B7127313BEC00361311 /* UIApplication+YJAdd.m */,
 				F7E08B7327313BEC00361311 /* UIApplicationCategoryHeader.h */,
 			);
 			path = UIApplication;
@@ -444,8 +444,8 @@
 		F7E08B7427313BEC00361311 /* UIResponder */ = {
 			isa = PBXGroup;
 			children = (
-				F7E08B7527313BEC00361311 /* UIResponder+WYJConfigure.m */,
 				F7E08B7627313BEC00361311 /* UIResponder+WYJConfigure.h */,
+				F7E08B7527313BEC00361311 /* UIResponder+WYJConfigure.m */,
 				F7E08B7727313BEC00361311 /* UIResponderCategoryHeader.h */,
 			);
 			path = UIResponder;
