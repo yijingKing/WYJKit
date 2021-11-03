@@ -6,17 +6,8 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
+#ifndef FoundationHeader_h
+#define FoundationHeader_h
 
-#ifndef WYJCategoriesMacro_h
-#define WYJCategoriesMacro_h
 
-//布局位置
-#import "WYJFrameMacro.h"
-//与系统有关宏
-#import "WYJSystemMacro.h"
-//对象引用
-#import "WYJObjectMacro.h"
-//常用宏
-#import "WYJHandy.h"
-
-#endif /* WYJCategoriesMacro_h */
+#endif /* FoundationHeader_h */
