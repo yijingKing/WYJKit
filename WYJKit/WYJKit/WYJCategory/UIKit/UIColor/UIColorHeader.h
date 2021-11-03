@@ -10,6 +10,6 @@
 #ifndef UIColorHeader_h
 #define UIColorHeader_h
 
-#import "UIColor+YJAdd.h"
+#import "UIColor+WYJAdd.h"
 
 #endif /* UIColorHeader_h */

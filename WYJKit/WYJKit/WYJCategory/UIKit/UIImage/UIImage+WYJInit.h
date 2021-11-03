@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 
-
+NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (WYJInit)
 
 #pragma make ------ 颜色生成图片 ------
 /// 颜色生成图片
-+ (UIImage *)imageWithColor:(UIColor *)color;
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
++ (nullable UIImage *)imageWithColor:(UIColor *)color;
++ (nullable UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
 @end
-
+NS_ASSUME_NONNULL_END
 

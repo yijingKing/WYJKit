@@ -31,7 +31,7 @@ static const char TextAlignementKey;
     [self addTarget:tat action:sel forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing {
+- (void)imagePosition:(WYJImagePosition)postitionStatus spacing:(CGFloat)spacing {
     CGFloat imageWith = self.imageView.image.size.width;
     CGFloat imageHeight = self.imageView.image.size.height;
 #pragma clang diagnostic push
@@ -46,25 +46,25 @@ static const char TextAlignementKey;
     CGFloat labelOffsetY = labelHeight / 2 + spacing * 2;//label中心移动的y距离
     
     switch (postitionStatus) {
-        case WImagePositionLeft:
+        case WYJImagePositionLeft:
             self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2, 0, spacing/2);
             self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing/2, 0, -spacing/2);
             self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             break;
             
-        case WImagePositionRight:
+        case WYJImagePositionRight:
             self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2));
             self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageHeight + spacing/2), 0, imageHeight + spacing/2);
             self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             break;
             
-        case WImagePositionTop:
+        case WYJImagePositionTop:
             self.imageEdgeInsets = UIEdgeInsetsMake(-imageOffsetY, imageOffsetX, imageOffsetY, -imageOffsetX);
             self.titleEdgeInsets = UIEdgeInsetsMake(labelOffsetY, -labelOffsetX, -labelOffsetY, labelOffsetX);
             self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             break;
             
-        case WImagePositionBottom:
+        case WYJImagePositionBottom:
             self.imageEdgeInsets = UIEdgeInsetsMake(imageOffsetY, imageOffsetX, -imageOffsetY, -imageOffsetX);
             self.titleEdgeInsets = UIEdgeInsetsMake(-labelOffsetY, -labelOffsetX, labelOffsetY, labelOffsetX);
             self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
@@ -172,17 +172,17 @@ static const char TextAlignementKey;
     return objc_getAssociatedObject(self, &SelectAttributedTextKey);
 }
 
-- (void)setTextAlignement:(TextAlignement)textAlignement {
+- (void)setTextAlignement:(WYJTextAlignement)textAlignement {
     objc_setAssociatedObject(self, &TextAlignementKey, @(textAlignement), OBJC_ASSOCIATION_ASSIGN);
-    if (textAlignement == TextAlignmentLeft) {
+    if (textAlignement == WYJTextAlignmentLeft) {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    } else if (textAlignement == TextAlignmentCenter) {
+    } else if (textAlignement == WYJTextAlignmentCenter) {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     } else {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     }
 }
-- (TextAlignement)textAlignement {
+- (WYJTextAlignement)textAlignement {
     return [objc_getAssociatedObject(self,&TextAlignementKey) integerValue];
 }
 

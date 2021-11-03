@@ -10,7 +10,7 @@
 
 @implementation NSDate (Conversion)
 #pragma mark --- 将时间转换成时间戳
-- (NSString *)toTimestampFromTime:(NSString * _Nullable)formatterStr{
+- (NSString *)toTimestampFromTime:(NSString *)formatterStr{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];

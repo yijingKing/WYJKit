@@ -7,13 +7,11 @@
  ********************************************************************************/
 
 
-#import "UIView+YJAdd.h"
+#import "UIView+WYJAdd.h"
 #import <objc/runtime.h>
 
-static const char ViewClickBlockKey;
-typedef void(^ViewClickBlock)(void);
 
-@implementation UIView (YJAdd)
+@implementation UIView (WYJAdd)
 
 - (void)roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size {
     UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCon cornerRadii:size];
@@ -29,7 +27,7 @@ typedef void(^ViewClickBlock)(void);
     self.layer.shadowOpacity = opacity;
 }
 
-- (UIView *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType {
+- (nullable UIView *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType {
     
     UIImage * image = [UIImage imageFromSize:size Colors:colors byGradientType:gradientType];
     
@@ -45,7 +43,7 @@ typedef void(^ViewClickBlock)(void);
     }
 }
 
-- (UIViewController *)viewController {
+- (nullable UIViewController *)viewController {
     for (UIView *view = self; view; view = view.superview) {
         UIResponder *nextResponder = [view nextResponder];
         if ([nextResponder isKindOfClass:[UIViewController class]]) {

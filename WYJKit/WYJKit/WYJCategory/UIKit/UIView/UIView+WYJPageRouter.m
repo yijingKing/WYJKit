@@ -7,9 +7,9 @@
  ********************************************************************************/
 
 
-#import "UIView+YJPageRouter.h"
-#import "UIView+YJAdd.h"
-@implementation UIView (YJPageRouter)
+#import "UIView+WYJPageRouter.h"
+#import "UIView+WYJAdd.h"
+@implementation UIView (WYJPageRouter)
 
 - (void)push:(UIViewController *)vc {
     UIViewController * currentC = self.viewController;

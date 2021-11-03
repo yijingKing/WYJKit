@@ -10,8 +10,7 @@
 #import <UIKit/UIKit.h>
 
 
-
-@interface UITextField (YJAdd)
+@interface UITextField (WYJAdd)
 /** 占位文字颜色 */
 @property (nonatomic, strong) UIColor * placeholderColor;
 /** 最大显示字符限制(会自动根据该属性截取文本字符长度) */
@@ -26,7 +25,6 @@
  */
 - (void)fixMessyDisplay;
 
-- (UITextField *)yi;
 @end
 
 

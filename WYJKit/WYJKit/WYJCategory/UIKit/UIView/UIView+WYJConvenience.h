@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 @interface UIView (WYJConvenience)
 @property (nonatomic) CGFloat left;
 @property (nonatomic) CGFloat top;
@@ -22,7 +20,8 @@
 @property (nonatomic) CGPoint origin;
 @property (nonatomic) CGSize  size;
 
-- (void)addSubviews:(id)array;;
+- (void)addSubviews:(id)array;
+
 @end
 
 

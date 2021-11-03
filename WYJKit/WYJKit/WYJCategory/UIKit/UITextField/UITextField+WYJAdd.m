@@ -7,12 +7,11 @@
  ********************************************************************************/
 
 
-#import "UITextField+YJAdd.h"
+#import "UITextField+WYJAdd.h"
 #import <objc/runtime.h>
 #import "NSString+YJAdd.h"
 
-@implementation UITextField (YJAdd)
-
+@implementation UITextField (WYJAdd)
 
 - (void)setPlaceholderColor:(UIColor *)placeholderColor {
     objc_setAssociatedObject(self, &@selector(placeholderColor), placeholderColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -71,7 +70,7 @@
     [self characterTruncation];
 }
 
-- (void)textDidChange:(void (^)(NSString * _Nonnull))handle {
+- (void)textDidChange:(void (^)(NSString *))handle {
     self.textHandle = handle;
     [self addTextChangeNoti];
 }
@@ -124,7 +123,4 @@
     }
 }
 
-- (UITextField *)yi {
-    return self;
-}
 @end

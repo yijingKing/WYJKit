@@ -10,14 +10,13 @@
 #import <objc/runtime.h>
 
 
-
-@interface UITextView (YJAdd)
+NS_ASSUME_NONNULL_BEGIN
+@interface UITextView (WYJAdd)
 @property (nonatomic, assign) BOOL addNoti;
 
 @property (nonatomic, copy) NSString * lastTextStr;
 
 @property (nonatomic, copy) void(^textHandle) (NSString *textStr);
-
 /** 占位文字 */
 @property (nonatomic, copy) NSString * placeholder;
 /** 占位文字颜色 */
@@ -31,3 +30,4 @@
 @end
 
 
+NS_ASSUME_NONNULL_END

@@ -6,13 +6,9 @@
  E-mail:        1091676312@qq.com
  History:
  2019-03-12:finishing
- 
  ********************************************************************************/
 
-
 #import <UIKit/UIKit.h>
-
-//
 
 @interface WYJNavigationButton : UIButton
 - (void)setup NS_REQUIRES_SUPER;
@@ -23,8 +19,6 @@
 + (instancetype)buttonWithTitle:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action;
 + (instancetype)buttonWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action;
 @end
-
-//
 
 @interface WYJBarButton : WYJNavigationButton
 

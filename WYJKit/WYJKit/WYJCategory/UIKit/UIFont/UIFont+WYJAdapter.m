@@ -6,10 +6,10 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import "UIFont+Adapter.h"
+#import "UIFont+WYJAdapter.h"
 #import <objc/runtime.h>
 #import "WYJFrameMacro.h"
-@implementation UIFont (Adapter)
+@implementation UIFont (WYJAdapter)
 +(void)load {
     //获取替换后的类方法
     Method newMethod = class_getClassMethod([self class], @selector(_systemFontOfSize:));

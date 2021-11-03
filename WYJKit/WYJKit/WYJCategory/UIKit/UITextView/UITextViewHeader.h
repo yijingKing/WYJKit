@@ -4,15 +4,10 @@
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
- FileContent:   字体适配
  ********************************************************************************/
 
-#import <UIKit/UIKit.h>
+#ifndef UITextViewHeader_h
+#define UITextViewHeader_h
 
-
-
-@interface UIFont (Adapter)
-
-@end
-
-
+#import "UITextView+WYJAdd.h"
+#endif /* UITextViewHeader_h */

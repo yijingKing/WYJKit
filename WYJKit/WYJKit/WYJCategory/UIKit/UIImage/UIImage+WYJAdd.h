@@ -16,22 +16,19 @@ typedef enum  {
     GradientTypeUpRightToBottomLeft    //右上到左下
 } GradientType;
 
-
-
-
+NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (WYJAdd)
 /** image conversion base64 */
-@property (nonatomic, copy, readonly)NSString * base64String;
+@property (nonatomic, copy, readonly,nullable)NSString * base64String;
 
 /**
  渐变色
-
  @param size size
  @param colors color array
  @param gradientType direction
  @return image
  */
-+ (UIImage *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
++ (nullable UIImage *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
 
 
 /**
@@ -57,11 +54,12 @@ typedef enum  {
 /// @param image 图片
 /// @param scale 缩放比例
 /// @param rect 位置
-+ (NSDictionary *)mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect;
++ (nullable NSDictionary *)mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect;
 ///裁剪图片
-- (UIImage *)cropSquareImageRect:(CGRect)rect;
+- (nullable UIImage *)cropSquareImageRect:(CGRect)rect;
 ///图片是怎样就怎样 不会自动渲染
-+ (UIImage *)imageWithNamed:(NSString *)name;
++ (nullable UIImage *)imageWithNamed:(nullable NSString *)name;
 @end
 
 
+NS_ASSUME_NONNULL_END

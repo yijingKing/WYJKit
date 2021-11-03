@@ -54,7 +54,7 @@
 #define PFSCFontWithSizes(s)                ([UIFont fontWithName:@"PingFangSC" size:(s)]:WYJSysFontWithSizes(s))
 #endif
 
-
+NS_ASSUME_NONNULL_BEGIN
 @interface UIFont (WYJAdd)
 /// Whether the font is bold.
 @property (nonatomic, readonly) BOOL isBold NS_AVAILABLE_IOS(7_0);
@@ -70,5 +70,5 @@
 /** font adaoter */
 + (UIFont *)fontAdapter:(CGFloat)font;
 @end
-
+NS_ASSUME_NONNULL_END
 

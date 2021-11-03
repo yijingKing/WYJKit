@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (YJPageRouter)
+@interface UIView (WYJPageRouter)
 
 - (void)push:(UIViewController *)vc;
 - (void)pop;

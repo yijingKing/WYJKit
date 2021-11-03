@@ -9,6 +9,6 @@
 #ifndef UIFontHeader_h
 #define UIFontHeader_h
 
-#import "UIFont+Adapter.h"
+#import "UIFont+WYJAdapter.h"
 #import "UIFont+WYJAdd.h"
 #endif /* UIFontHeader_h */

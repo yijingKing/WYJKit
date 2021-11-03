@@ -31,8 +31,8 @@
 #endif
 
 
-
-@interface UIColor (YJAdd)
+NS_ASSUME_NONNULL_BEGIN
+@interface UIColor (WYJAdd)
 
 + (UIColor *)hexStr:(NSString *)hexStr alpha:(CGFloat)a;
 
@@ -52,9 +52,9 @@
  *
  *  @return 渐变颜色
  */
-+ (UIColor*)gradientFromColor:(UIColor*)c1 toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length;
++ (nullable UIColor*)gradientFromColor:(UIColor*)color toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length;
 @end
-
+NS_ASSUME_NONNULL_END
 
 
 

@@ -16,7 +16,7 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     NSLocale *locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_Hans"];
     formatter.locale = locale;
-    formatter.numberStyle = kCFNumberFormatterRoundHalfDown;
+    formatter.numberStyle = NSNumberFormatterNoStyle;
     NSString *string = [formatter stringFromNumber:[NSNumber numberWithDouble:number]];
     return string;
 }

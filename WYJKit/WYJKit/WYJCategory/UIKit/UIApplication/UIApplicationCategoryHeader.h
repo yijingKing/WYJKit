@@ -9,6 +9,6 @@
 #ifndef UIApplicationCategoryHeader_h
 #define UIApplicationCategoryHeader_h
 
-#import "UIApplication+YJAdd.h"
+#import "UIApplication+WYJAdd.h"
 
 #endif /* UIApplicationCategoryHeader_h */

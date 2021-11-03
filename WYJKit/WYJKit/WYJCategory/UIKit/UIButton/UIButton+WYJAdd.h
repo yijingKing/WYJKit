@@ -9,19 +9,18 @@
 
 #import <UIKit/UIKit.h>
 
-
-
-typedef NS_ENUM(NSUInteger, TextAlignement) {
-    TextAlignmentLeft,
-    TextAlignmentCenter,
-    TextAlignmentRight
+NS_ASSUME_NONNULL_BEGIN
+typedef NS_ENUM(NSUInteger, WYJTextAlignement) {
+    WYJTextAlignmentLeft,
+    WYJTextAlignmentCenter,
+    WYJTextAlignmentRight
 };
 
-typedef NS_ENUM(NSUInteger, WImagePosition) {
-    WImagePositionLeft = 0,              //图片在左，文字在右，默认
-    WImagePositionRight = 1,             //图片在右，文字在左
-    WImagePositionTop = 2,               //图片在上，文字在下
-    WImagePositionBottom = 3,            //图片在下，文字在上
+typedef NS_ENUM(NSUInteger, WYJImagePosition) {
+    WYJImagePositionLeft = 0,              //图片在左，文字在右，默认
+    WYJImagePositionRight = 1,             //图片在右，文字在左
+    WYJImagePositionTop = 2,               //图片在上，文字在下
+    WYJImagePositionBottom = 3,            //图片在下，文字在上
 };
 
 @interface UIButton (WYJAdd)
@@ -30,7 +29,7 @@ typedef NS_ENUM(NSUInteger, WImagePosition) {
 /** title font */
 @property (nonatomic, assign) UIFont * font;
 /** title Alignement */
-@property (nonatomic, assign) TextAlignement textAlignement;
+@property (nonatomic, assign) WYJTextAlignement textAlignement;
 
 /** title normal status */
 @property (nonatomic, copy) NSString * titleText;
@@ -58,7 +57,8 @@ typedef NS_ENUM(NSUInteger, WImagePosition) {
 - (void)addTargetUpInside:(nullable id)tat action:(nonnull SEL)sel;
 
 /** image and title position */
-- (void)imagePosition:(WImagePosition)postitionStatus spacing:(CGFloat)spacing;
+- (void)imagePosition:(WYJImagePosition)postitionStatus spacing:(CGFloat)spacing;
 @end
 
 
+NS_ASSUME_NONNULL_END

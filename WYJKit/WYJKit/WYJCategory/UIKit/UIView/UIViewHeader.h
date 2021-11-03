@@ -10,8 +10,8 @@
 #ifndef UIViewHeader_h
 #define UIViewHeader_h
 
-#import "UIView+YJAdd.h"
-#import "UIView+YJPageRouter.h"
+#import "UIView+WYJAdd.h"
+#import "UIView+WYJPageRouter.h"
 #import "UIView+WYJConvenience.h"
 #import "UIView+WYJBlock.h"
 #endif /* UIViewHeader_h */

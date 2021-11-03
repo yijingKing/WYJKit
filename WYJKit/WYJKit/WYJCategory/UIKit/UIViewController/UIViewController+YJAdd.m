@@ -235,7 +235,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     self.navigationItem.leftBarButtonItems = items;
 }
 - (void)leftItemsAction:(WYJBarButton *)bar {
-    [self.navigationItem.leftBarButtonItems enumerateObjectsUsingBlock:^(UIBarButtonItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.navigationItem.leftBarButtonItems enumerateObjectsUsingBlock:^(UIBarButtonItem * obj, NSUInteger idx, BOOL * stop) {
         if (obj.customView == bar) {
             LeftNavItemsBlock block = objc_getAssociatedObject(self, &leftItemsKey);
             block(idx);
@@ -417,7 +417,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     self.navigationItem.rightBarButtonItems = items;
 }
 - (void)rightItemsAction:(WYJBarButton *)bar {
-    [self.navigationItem.rightBarButtonItems enumerateObjectsUsingBlock:^(UIBarButtonItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.navigationItem.rightBarButtonItems enumerateObjectsUsingBlock:^(UIBarButtonItem * obj, NSUInteger idx, BOOL * stop) {
         if (obj.customView == bar) {
             RightNavItemsBlock block = objc_getAssociatedObject(self, &rightItemsKey);
             block(idx);

@@ -7,10 +7,10 @@
  ********************************************************************************/
 
 
-#import "UIColor+YJAdd.h"
+#import "UIColor+WYJAdd.h"
 #import <objc/runtime.h>
 
-@implementation UIColor (YJAdd)
+@implementation UIColor (WYJAdd)
 
 + (UIColor *)hexStr:(NSString *)hexStr alpha:(CGFloat)a {
     //删除字符串中的空格
@@ -73,7 +73,7 @@
  *
  *  @return 渐变颜色
  */
-+ (UIColor*)gradientFromColor:(UIColor*)color toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length
++ (nullable UIColor*)gradientFromColor:(UIColor*)color toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length
 {
     CGSize size = CGSizeZero;
     if (isHorizontal) {

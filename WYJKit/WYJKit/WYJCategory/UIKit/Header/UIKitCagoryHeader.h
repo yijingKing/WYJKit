@@ -18,7 +18,7 @@
 #import "UIButtonCategoryHeader.h"
 #import "UIColorHeader.h"
 #import "UIViewHeader.h"
-
-
+#import "UITextViewHeader.h"
+#import "UITextFieldHeader.h"
 
 #endif /* UIKitCagoryHeader_h */

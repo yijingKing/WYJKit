@@ -7,9 +7,9 @@
  ********************************************************************************/
 
 
-#import "UIApplication+YJAdd.h"
+#import "UIApplication+WYJAdd.h"
 
-@implementation UIApplication (YJAdd)
+@implementation UIApplication (WYJAdd)
 
 - (NSURL *)documentsURL {
     return [[[NSFileManager defaultManager]
@@ -41,23 +41,23 @@
     return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject];
 }
 
-- (NSString *)appBundleName {
+- (nullable NSString *)appBundleName {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
 }
 
-- (NSString *)appDisplayName {
+- (nullable NSString *)appDisplayName {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
 }
 
-- (NSString *)appBundleID {
+- (nullable NSString *)appBundleID {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
 }
 
-- (NSString *)appVersion {
+- (nullable NSString *)appVersion {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
 
-- (NSString *)appBuildVersion {
+- (nullable NSString *)appBuildVersion {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 }
 
@@ -65,9 +65,9 @@
 
 
 
-NSString * _Nullable WAppDisplayName(void) {
+NSString * WAppDisplayName(void) {
     return UIApplication.sharedApplication.appDisplayName;
 }
-NSString * _Nullable WAppVersion(void) {
+NSString * WAppVersion(void) {
     return UIApplication.sharedApplication.appVersion;
 }

@@ -10,9 +10,9 @@
 #import <UIKit/UIKit.h>
 #import "UIImage+WYJAdd.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
-
-@interface UIView (YJAdd)
+@interface UIView (WYJAdd)
 
 /** 设置部分圆角*/
 - (void)roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size;
@@ -27,7 +27,7 @@
  @param gradientType direction
  @return image
  */
-- (UIView *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
+- (nullable UIView *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
 
 /**
  Remove all subviews.
@@ -43,5 +43,5 @@
 
 
 @end
-
+NS_ASSUME_NONNULL_END
 

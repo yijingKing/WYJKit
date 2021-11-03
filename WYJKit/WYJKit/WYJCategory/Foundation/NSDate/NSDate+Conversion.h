@@ -12,7 +12,8 @@
 
 @interface NSDate (Conversion)
 #pragma mark --- 将时间转换成时间戳
-- (NSString *)toTimestampFromTime:(NSString * _Nullable)formatterStr;
+- (NSString *_Nullable)toTimestampFromTime:(NSString *)formatterStr;
+
 @end
 
 

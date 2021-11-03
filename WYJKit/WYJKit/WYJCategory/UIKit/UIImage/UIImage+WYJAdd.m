@@ -13,13 +13,13 @@
 
 @implementation UIImage (WYJAdd)
 
-- (NSString *)base64String {
+- (nullable NSString *)base64String {
     NSData * imagedata = UIImagePNGRepresentation(self);
     NSString * image64 = [imagedata base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return image64;
 }
 
-+ (UIImage *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType {
++ (nullable UIImage *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType {
     NSMutableArray *ar = [NSMutableArray array];
     for(UIColor *c in colors) {
         [ar addObject:(id)c.CGColor];
@@ -61,7 +61,7 @@
 }
 
 
-- (UIImage *)imageByRoundCornerRadius:(CGFloat)radius
+- (nullable UIImage *)imageByRoundCornerRadius:(CGFloat)radius
                               corners:(UIRectCorner)corners
                           borderWidth:(CGFloat)borderWidth
                           borderColor:(UIColor *)borderColor
@@ -113,7 +113,7 @@
 
 
 /// 获取图片、区域的主色
-+ (NSDictionary *)mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect {
++ (nullable NSDictionary *)mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect {
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1
     int bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedLast;
@@ -191,14 +191,14 @@
     return dic;
 }
 ///裁剪图片
-- (UIImage *)cropSquareImageRect:(CGRect)rect {
+- (nullable UIImage *)cropSquareImageRect:(CGRect)rect {
     CGImageRef sourceImageRef = [self CGImage];
     CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);
     UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
     return newImage;
 }
 
-+ (UIImage *)imageWithNamed:(NSString *)name{
++ (nullable UIImage *)imageWithNamed:(nullable NSString *)name{
     UIImage *image = [[self imageNamed:name] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     return image;
 }

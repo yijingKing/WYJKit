@@ -6,10 +6,10 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import "UITextView+YJAdd.h"
+#import "UITextView+WYJAdd.h"
 #import "NSString+YJAdd.h"
 
-@implementation UITextView (YJAdd)
+@implementation UITextView (WYJAdd)
 - (void)setPromptFont:(UIFont *)promptFont {
     objc_setAssociatedObject(self, &@selector(promptFont), promptFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -87,7 +87,7 @@
     return [obj boolValue];
 }
 
-- (void)setTextHandle:(void (^)(NSString * _Nonnull))textHandle {
+- (void)setTextHandle:(void (^)(NSString *))textHandle {
     
     objc_setAssociatedObject(self, &@selector(textHandle), textHandle, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
