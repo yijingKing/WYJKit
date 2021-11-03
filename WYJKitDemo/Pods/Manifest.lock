@@ -1,0 +1,28 @@
+PODS:
+  - DZNEmptyDataSet (1.8.1)
+  - IQKeyboardManager (6.5.6)
+  - Masonry (1.1.0)
+  - MJRefresh (3.7.2)
+
+DEPENDENCIES:
+  - DZNEmptyDataSet
+  - IQKeyboardManager
+  - Masonry
+  - MJRefresh
+
+SPEC REPOS:
+  trunk:
+    - DZNEmptyDataSet
+    - IQKeyboardManager
+    - Masonry
+    - MJRefresh
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
+
+PODFILE CHECKSUM: e67b8d7a6ee2537ebfbef30c5ecb43706fd71dd5
+
+COCOAPODS: 1.11.0
