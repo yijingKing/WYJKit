@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma make ------ 设置导航栏标题 ------
 - (void)setNavTitle:(NSString *)title;
 - (void)setNavTitle:(NSString *)title color:(UIColor *)color;
+- (void)setNavTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font;
 - (void)setNavTitleView:(UIView *)titleView;
 /**
  *  导航栏 按钮，
@@ -51,8 +52,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 导航按钮 图文 */
 - (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action;
-- (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action;
-- (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action;
+- (UIBarButtonItem *)navItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color action:(SEL)action;
+- (UIBarButtonItem *)navItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color target:(id)target action:(SEL)action;
 
 #pragma make ------ 导航 左按钮 ------
 /** 导航 左按钮 图片 */
@@ -67,9 +68,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 导航 左按钮 图文 */
 - (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action;
-- (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action;
+- (void)setNavLeftItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color action:(SEL)action;
 - (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title actionBlock:(void(^)(void))block;
-- (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color actionBlock:(void(^)(void))block;
+- (void)setNavLeftItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color actionBlock:(void(^)(void))block;
 
 #pragma make ------ 导航 右按钮 ------
 /** 导航 右按钮 图片 */
@@ -84,9 +85,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 导航 右按钮 图文 */
 - (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action;
-- (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action;
+- (void)setNavRightItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color action:(SEL)action;
 - (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title actionBlock:(void(^)(void))block;
-- (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color actionBlock:(void(^)(void))block;
+- (void)setNavRightItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color actionBlock:(void(^)(void))block;
 
 #pragma make ------ 导航 多按钮 ------
 /** 文本*/
@@ -99,13 +100,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setNavLeftItemsWithImages:(NSArray<UIImage *> *)images actionBlock:(void(^)(NSInteger tag))block;
 
 ///通用
-- (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action;
-- (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block;
+- (void)setNavLeftItemsWithImages:(nullable NSArray <UIImage *> *)images titles:(nullable NSArray *)titles color:(nullable NSArray *)colors action:(SEL)action;
+- (void)setNavLeftItemsWithImages:(nullable NSArray <UIImage *> *)images titles:(nullable NSArray *)titles color:(nullable NSArray *)colors actionBlock:(void(^)(NSInteger tag))block;
 
 /** 文本*/
 - (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles action:(SEL)action;
 - (void)setNavRightItemsWithTitles:(NSArray<NSString *> *)titles actionBlock:(void(^)(NSInteger tag))block;
-- (void)setNavRightItemsWithTitles:(NSArray <NSString *> *)titles colors:(NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block;
+- (void)setNavRightItemsWithTitles:(nullable NSArray <NSString *> *)titles colors:(nullable NSArray<UIColor *> *)colors actionBlock:(void(^)(NSInteger tag))block;
 
 ///图片
 - (void)setNavRightItemsWithImages:(NSArray<UIImage *> *)images action:(SEL)action;
@@ -113,8 +114,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setNavRightItemsWithImages:(NSArray<UIImage *> *)images actionBlock:(void(^)(NSInteger tag))block;
 
 ///通用
-- (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action;
-- (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors actionBlock:(void(^)(NSInteger tag))block;
+- (void)setNavRightItemsWithImages:(nullable NSArray <UIImage *> *)images titles:(nullable NSArray *)titles color:(nullable NSArray *)colors action:(SEL)action;
+- (void)setNavRightItemsWithImages:(nullable NSArray <UIImage *> *)images titles:(nullable NSArray *)titles color:(nullable NSArray *)colors actionBlock:(void(^)(NSInteger tag))block;
 
 /**
  *  返回上一个界面

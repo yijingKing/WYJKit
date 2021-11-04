@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^WYJCompletion)(NSString *time);
-typedef void (^WYJStopCompletion)();
+typedef void (^WYJStopCompletion)(void);
 @interface UIButton (WYJCountDown)
 /// 倒计时按钮
 /// @param timeout 结束时间

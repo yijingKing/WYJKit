@@ -9,7 +9,7 @@
 #import "UIViewController+YJAdd.h"
 #import "WYJNavigationButton.h"
 #import <objc/runtime.h>
-
+#import "UIImageCategoryHeader.h"
 static const char itemKey;
 static const char ritemKey;
 
@@ -103,13 +103,52 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 
 #pragma make ------ 导航标题 ------
 - (void)setNavTitle:(NSString *)title {
-    [self setNavTitle:title color: self.titleColor ? self.titleColor : UIColor.blackColor];
+    [self setNavTitle:title color: self.titleColor ?: UIColor.blackColor];
 }
 
 - (void)setNavTitle:(NSString *)title color:(UIColor *)color {
+    [self setNavTitle:title color:color font:[UIFont systemFontOfSize:17]];
+}
+- (void)setNavTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font {
     self.navigationItem.title = title;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : color}];
+    [self color:color font:font backgroundColor:UIColor.whiteColor];
 }
+- (void)color:(UIColor *)color font:(UIFont *)font backgroundColor:(UIColor *_Nullable)backgroundColor {
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        [appearance configureWithTransparentBackground];
+        self.navigationController.navigationBar.translucent = NO;
+        if (backgroundColor == UIColor.clearColor) {
+            self.navigationController.navigationBar.translucent = YES;
+            appearance.backgroundImage = [UIImage imageWithColor:UIColor.clearColor];
+        } else {
+            appearance.backgroundColor = backgroundColor;
+        }
+        appearance.shadowImage = [UIImage imageWithColor:UIColor.clearColor];
+        appearance.shadowColor = UIColor.clearColor;
+        appearance.titleTextAttributes = @{NSForegroundColorAttributeName: color,NSFontAttributeName:font};
+        [self addNavigationBarAppearance:appearance];
+    } else {
+        self.navigationController.navigationBar.translucent = NO;
+        if (backgroundColor == UIColor.clearColor) {
+            self.navigationController.navigationBar.translucent = YES;
+            [self.navigationController.navigationBar setBackgroundImage:UIImage.alloc.init forBarMetrics:(UIBarMetricsDefault)];
+        } else {
+            [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:(UIBarMetricsDefault)];
+            self.navigationController.navigationBar.barTintColor = backgroundColor;
+        }
+        self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName: color}];
+    }
+}
+- (void)addNavigationBarAppearance:(UINavigationBarAppearance *)appearance  API_AVAILABLE(ios(13.0)){
+    ///带scroll滑动的页面
+    self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
+    /// 常规页面
+    self.navigationController.navigationBar.standardAppearance = appearance;
+}
+
 
 - (void)setNavTitleView:(UIView *)titleView {
     self.navigationItem.titleView = titleView;
@@ -132,24 +171,22 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     return [self navItemWithImage:image title:title color:nil action:action];
 }
 
-- (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
+- (UIBarButtonItem *)navItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color action:(SEL)action {
     return [self navItemWithImage:image title:title color:color target:self action:action];
 }
-- (UIBarButtonItem *)navItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action {
+- (UIBarButtonItem *)navItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color target:(id)target action:(SEL)action {
     WYJBarButton *button = [WYJBarButton buttonWithImage:image title:title color:color target:self action:action];
     button.frame = CGRectMake(10, 0, 44, 44);
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
-
-
 #pragma mark -----  导航 左按钮 -----
 - (void)setNavLeftItemWithImage:(UIImage *)image action:(SEL)action {
-    [self setNavLeftItemWithImage:image title:nil color:nil action:action];
+    [self setNavLeftItemWithImage:image title:nil color:UIColor.blackColor action:action];
 }
 
 - (void)setNavLeftItemWithTitle:(NSString *)title action:(SEL)action {
-    [self setNavLeftItemWithImage:nil title:title color:nil action:action];
+    [self setNavLeftItemWithImage:nil title:title color:UIColor.blackColor action:action];
 }
 
 - (void)setNavLeftItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action {
@@ -157,7 +194,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 }
 
 - (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action {
-    [self setNavLeftItemWithImage:image title:title color:nil action:action];
+    [self setNavLeftItemWithImage:image title:title color:UIColor.blackColor action:action];
 }
 
 - (void)setNavLeftItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
@@ -207,7 +244,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     [self setNavLeftItemsWithImages:images titles:titles color:colors action:@selector(leftItemsAction:)];
 }
 
-- (void)setNavLeftItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action {
+- (void)setNavLeftItemsWithImages:(nullable NSArray <UIImage *> *)images titles:(nullable NSArray *)titles color:(NSArray *)colors action:(SEL)action {
     NSUInteger count = 0;
     if (images.count > titles.count) {
         count = images.count;
@@ -258,7 +295,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     [self setNavRightItemWithImage:image title:title color:nil action:action];
 }
 
-- (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action {
+- (void)setNavRightItemWithImage:(nullable UIImage *)image title:(nullable NSString *)title color:(nullable UIColor *)color action:(SEL)action {
     WYJBarButton *button = [WYJBarButton buttonWithImage:image title:title color:color target:self action:action];
     button.frame = CGRectMake(10, 0, 44, 44);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -389,7 +426,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     [self setNavRightItemsWithImages:images titles:titles color:colors action:@selector(rightItemsAction:)];
 }
 
-- (void)setNavRightItemsWithImages:(NSArray <UIImage *> *)images titles:(NSArray *)titles color:(NSArray *)colors action:(SEL)action {
+- (void)setNavRightItemsWithImages:(nullable NSArray <UIImage *> *)images titles:(nullable NSArray *)titles color:(nullable NSArray *)colors action:(SEL)action {
     NSUInteger count = 0;
     if (images.count > titles.count) {
         count = images.count;

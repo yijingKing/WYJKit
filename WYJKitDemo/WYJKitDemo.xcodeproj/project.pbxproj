@@ -80,6 +80,7 @@
 		7F10928427337501002387AD /* UIButton+WYJTouch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WYJTouch.m"; sourceTree = "<group>"; };
 		7F109286273375CD002387AD /* UIButton+WYJCountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+WYJCountDown.h"; sourceTree = "<group>"; };
 		7F109287273375CD002387AD /* UIButton+WYJCountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WYJCountDown.m"; sourceTree = "<group>"; };
+		7F1744C52733D27800ABDF9C /* UIViewControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewControllerHeader.h; sourceTree = "<group>"; };
 		9F1BA5D44DE3FF254F289DE0 /* Pods-WYJKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYJKitDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-WYJKitDemoTests/Pods-WYJKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B66681F8BD2EAA606C03BBBE /* Pods_WYJKitDemo_WYJKitDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WYJKitDemo_WYJKitDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7161080273278E60062AD3D /* UIFontHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFontHeader.h; sourceTree = "<group>"; };
@@ -521,6 +522,7 @@
 		F7E08B9327313BEC00361311 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7F1744C52733D27800ABDF9C /* UIViewControllerHeader.h */,
 				F7E08BAA27313C5800361311 /* WYJNavigationButton.h */,
 				F7E08BA927313C5800361311 /* WYJNavigationButton.m */,
 				F7E08B9427313BEC00361311 /* UIViewController+YJAdd.h */,

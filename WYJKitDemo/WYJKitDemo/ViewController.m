@@ -15,6 +15,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setNavTitle:@"测试" color:UIColor.redColor];
+    [self setNavTitle:@"导航" color:UIColor.blueColor font:PFRFontWithSizes(20)];
+    [self setNavLeftItemWithTitle:@"返回" actionBlock:^{
+        
+    }];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.whiteColor;
 //    UIButton * button = [UIButton buttonWithType:(UIButtonTypeCustom)];
@@ -38,6 +44,8 @@
     } stopCompletion:^{
         NSLog(@"完成");
     }];
+    
+    
 }
 
 

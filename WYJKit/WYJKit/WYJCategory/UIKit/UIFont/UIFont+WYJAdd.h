@@ -31,27 +31,27 @@
 #endif
 ///PingFangSC-Regular
 #ifndef PFRFontWithSizes
-#define PFRFontWithSizes(s)                 ([UIFont fontWithName:@"PingFangSC-Regular" size:(s)]:WYJSysFontWithSizes(s))
+#define PFRFontWithSizes(s)                 ([UIFont fontWithName:@"PingFangSC-Regular" size:(s)])
 #endif
 ///PingFangSC-Medium
 #ifndef PFMFontWithSizes
-#define PFMFontWithSizes(s)                 ([UIFont fontWithName:@"PingFangSC-Medium" size:(s)]:WYJSysFontWithSizes(s))
+#define PFMFontWithSizes(s)                 ([UIFont fontWithName:@"PingFangSC-Medium" size:(s)])
 #endif
 ///PingFangSC-Thin
 #ifndef PFTFontWithSizes
-#define PFTFontWithSizes(s)                 ([UIFont fontWithName:@"PingFangSC-Thin" size:(s)]:WYJSysFontWithSizes(s))
+#define PFTFontWithSizes(s)                 ([UIFont fontWithName:@"PingFangSC-Thin" size:(s)])
 #endif
 ///PingFangSC-Semibold
 #ifndef PFSBFontWithSizes
-#define PFSBFontWithSizes(s)                ([UIFont fontWithName:@"PingFangSC-Semibold" size:(s)]:WYJSysFontWithSizes(s))
+#define PFSBFontWithSizes(s)                ([UIFont fontWithName:@"PingFangSC-Semibold" size:(s)])
 #endif
 ///PingFangSC-Light
 #ifndef PFLFontWithSizes
-#define PFLFontWithSizes(s)                 ([UIFont fontWithName:@"PingFangSC-Light" size:(s)]:WYJSysFontWithSizes(s))
+#define PFLFontWithSizes(s)                 ([UIFont fontWithName:@"PingFangSC-Light" size:(s)])
 #endif
 ///PingFangSC
 #ifndef PFSCFontWithSizes
-#define PFSCFontWithSizes(s)                ([UIFont fontWithName:@"PingFangSC" size:(s)]:WYJSysFontWithSizes(s))
+#define PFSCFontWithSizes(s)                ([UIFont fontWithName:@"PingFangSC" size:(s)])
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
