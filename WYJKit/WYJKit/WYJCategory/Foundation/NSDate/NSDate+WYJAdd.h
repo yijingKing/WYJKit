@@ -9,8 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (YJAdd)
-- (NSDate *)yi;
+@interface NSDate (WYJAdd)
 /** 当前dan时间格式转换 */
 - (NSString *)stringFromDate:(NSString *)formatter;
 /** 时间格式转换 */

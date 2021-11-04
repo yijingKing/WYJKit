@@ -6,12 +6,9 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import "NSDate+YJAdd.h"
+#import "NSDate+WYJAdd.h"
 
-@implementation NSDate (YJAdd)
-- (NSDate *)yi {
-    return self;
-}
+@implementation NSDate (WYJAdd)
 + (NSString *)stringFromDate:(NSDate *)date formatter:(NSString *)formatter {
     return stringFromDate(date, formatter);
 }

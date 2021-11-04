@@ -6,14 +6,10 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import <Foundation/Foundation.h>
 
+#ifndef NSArrayHeader_h
+#define NSArrayHeader_h
 
-
-@interface NSDate (Conversion)
-#pragma mark --- 将时间转换成时间戳
-- (NSString *_Nullable)toTimestampFromTime:(NSString *)formatterStr;
-
-@end
-
-
+#import "NSArray+WYJAdd.h"
+#import "NSArray+WYJConversion.h"
+#endif /* NSArrayHeader_h */

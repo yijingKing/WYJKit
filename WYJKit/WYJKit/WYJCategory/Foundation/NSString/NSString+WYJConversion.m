@@ -65,4 +65,12 @@
     NSLog(@"%@",chinese);
     return chinese;
 }
+
+- (NSArray *)toArray {
+    return [self componentsSeparatedByString:@","];
+}
+- (NSArray *)toArrayByString:(NSString *)string {
+    return [self componentsSeparatedByString:string];
+}
+
 @end

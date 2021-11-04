@@ -9,7 +9,7 @@
 
 #import "UITextField+WYJAdd.h"
 #import <objc/runtime.h>
-#import "NSString+YJAdd.h"
+#import "NSString+WYJAdd.h"
 
 @implementation UITextField (WYJAdd)
 

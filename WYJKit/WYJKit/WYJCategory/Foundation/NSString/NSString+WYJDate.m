@@ -25,5 +25,10 @@
     return timeStr;
 }
 
+- (NSDate *)dateFromStringFormat:(NSString *)format {
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:format];
+    return [formatter dateFromString:self];
+}
 
 @end

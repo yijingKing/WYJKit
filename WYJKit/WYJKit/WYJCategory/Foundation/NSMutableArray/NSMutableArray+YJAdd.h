@@ -9,12 +9,9 @@
 
 #import <Foundation/Foundation.h>
 
-
-
 @interface NSMutableArray (YJAdd)
 /** 去重 */
 @property (nonatomic, copy, readonly)NSMutableArray * removeDuplicates;
-- (NSMutableArray *)yi;
 @end
 
 

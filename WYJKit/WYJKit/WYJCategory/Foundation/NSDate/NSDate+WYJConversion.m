@@ -6,11 +6,11 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import "NSDate+Conversion.h"
+#import "NSDate+WYJConversion.h"
+@implementation NSDate (WYJConversion)
 
-@implementation NSDate (Conversion)
 #pragma mark --- 将时间转换成时间戳
-- (NSString *)toTimestampFromTime:(NSString *)formatterStr{
+- (nullable NSString *)toTimestampFromTime:(nullable NSString *)formatterStr{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];

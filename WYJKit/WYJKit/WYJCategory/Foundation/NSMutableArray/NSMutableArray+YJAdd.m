@@ -16,7 +16,5 @@
     NSMutableArray * array = [NSMutableArray arrayWithArray:set.allObjects];
     return array;
 }
-- (NSMutableArray *)yi {
-    return self;
-}
+
 @end

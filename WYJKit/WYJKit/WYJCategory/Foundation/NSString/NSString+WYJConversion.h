@@ -16,7 +16,11 @@
     
 ///汉语数字转阿拉伯数字
 +(NSString *)chaptersDealWithString:(NSString *)chapterStr;
-    
+
+///转换成数组-> ","分割
+- (NSArray *)toArray;
+///转换成数组
+- (NSArray *)toArrayByString:(NSString *)string;
 @end
 
 

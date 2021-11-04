@@ -7,7 +7,7 @@
  ********************************************************************************/
 
 #import "UITextView+WYJAdd.h"
-#import "NSString+YJAdd.h"
+#import "NSString+WYJAdd.h"
 
 @implementation UITextView (WYJAdd)
 - (void)setPromptFont:(UIFont *)promptFont {

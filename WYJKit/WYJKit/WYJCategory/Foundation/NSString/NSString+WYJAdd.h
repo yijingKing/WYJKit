@@ -25,8 +25,6 @@
 /** string judge empty */
 + (BOOL)judgeEmpty:(NSString *)str;
 
-/** string conversion date */
-- (NSDate *)dateFromStringFormat:(NSString *)format;
 /** dateString from formatter */
 - (NSString *)dateStringFromFormat:(NSString *)format;
 

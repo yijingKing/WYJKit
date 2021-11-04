@@ -1,5 +1,5 @@
 /*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
  
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
@@ -7,16 +7,13 @@
  ********************************************************************************/
 
 
-#import <Foundation/Foundation.h>
+#import "NSArray+WYJConversion.h"
 
-
-typedef NS_ENUM(NSUInteger,ArraySortingType) {
-    ArraySortingTypeReverse = 0,//降序
-    ArraySortingTypeUsing//升序
-};
-
-@interface NSArray (YJAdd)
-@property (nonatomic, strong, readonly)NSArray * removeDuplicate;
+@implementation NSArray (WYJConversion)
+- (NSString *)toString {
+    return [self toStringBy:@","];
+}
+- (NSString *)toStringBy:(NSString *)string {
+    return [self componentsJoinedByString:string];
+}
 @end
-
-

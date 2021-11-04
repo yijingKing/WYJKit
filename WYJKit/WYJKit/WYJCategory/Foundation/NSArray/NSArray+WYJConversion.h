@@ -9,27 +9,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (WYJHGBTransForm)
+NS_ASSUME_NONNULL_BEGIN
 
-/**
- 十六进制转换为普通字符串的
- @return 普通字符串
- */
-- (NSString *)stringFromHexString;
-/**
- 普通字符串转换为十六进制的
- 
- @return 十六进制字符串
- */
-- (NSString *)hexString;
-
-/**
- *  身份证号码转生日
- *
- *
- *  @return 生日
- */
--(NSString *)idCardNumTransToBirthday;
-
-
+@interface NSArray (WYJConversion)
+///转成字符串,默认","拼接
+- (NSString *)toString;
+- (NSString *)toStringBy:(NSString *)string;
 @end
+
+NS_ASSUME_NONNULL_END
