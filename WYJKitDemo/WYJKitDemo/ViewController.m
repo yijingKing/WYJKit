@@ -29,6 +29,15 @@
     [self.view addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
         NSLog(@"1231232");
     }];
+    
+    UIButton * button = [UIButton createWithFrame:CGRectMake(100, 100, 100, 100) title:@"倒计时" titleColor:UIColor.redColor];
+    [self.view addSubview:button];
+    button.backgroundColor = UIColor.blueColor;
+    [button startTime:10 completion:^(NSString * _Nonnull time) {
+        NSLog(@"%@", time);
+    } stopCompletion:^{
+        NSLog(@"完成");
+    }];
 }
 
 

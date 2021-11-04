@@ -26,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** end editing */
 @property (nonatomic, assign) BOOL endEditing;
-- (UIViewController *)yi;
 
 #pragma make ------ 设置导航栏标题 ------
 - (void)setNavTitle:(NSString *)title;

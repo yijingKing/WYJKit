@@ -6,11 +6,15 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#ifndef UIButtonCategoryHeader_h
-#define UIButtonCategoryHeader_h
+#import <UIKit/UIKit.h>
 
-#import "UIButton+WYJAdd.h"
-#import "UIButton+WYJInit.h"
-#import "UIButton+WYJTouch.h"
-#import "UIButton+WYJCountDown.h"
-#endif /* UIButtonCategoryHeader_h */
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIButton (WYJTouch)
+/**
+ 设置按钮额外点击区域
+ */
+@property (nonatomic, assign) UIEdgeInsets touchAreaInsets;
+@end
+
+NS_ASSUME_NONNULL_END

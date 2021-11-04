@@ -41,9 +41,6 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 @end
 
 @implementation UIViewController (YJAdd)
-- (UIViewController *)yi {
-    return self;
-}
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
