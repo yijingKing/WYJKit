@@ -7,9 +7,9 @@
  ********************************************************************************/
 
 
-#import "NSString+YJConversion.h"
+#import "NSString+WYJConversion.h"
 
-@implementation NSString (YJConversion)
+@implementation NSString (WYJConversion)
 
 /// 阿拉伯数字转换成中文
 + (NSString *)digitalConversionNumber:(int)number {

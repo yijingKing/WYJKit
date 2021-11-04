@@ -6,11 +6,11 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import "NSString+Date.h"
+#import "NSString+WYJDate.h"
 
-@implementation NSString (Date)
+@implementation NSString (WYJDate)
 #pragma mark ---- 将时间戳转换成时间
-- (NSString *)toTimeFromTimestamp:(NSString  *)formatterstr {
+- (NSString *)dateFromTimestamp:(NSString  *)formatterstr {
     //将对象类型的时间转换为NSDate类型
     double time = self.doubleValue;
     NSDate * myDate=[NSDate dateWithTimeIntervalSince1970:time];
@@ -24,4 +24,6 @@
     NSString *timeStr=[formatter stringFromDate:myDate];
     return timeStr;
 }
+
+
 @end

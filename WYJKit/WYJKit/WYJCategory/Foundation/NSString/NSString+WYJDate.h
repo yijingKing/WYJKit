@@ -8,11 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-
-
-@interface NSString (Date)
+@interface NSString (WYJDate)
 #pragma mark ---- 将时间戳转换成时间
-- (nullable NSString *)toTimeFromTimestamp:(NSString *)formatterstr;
+- (nullable NSString *)dateFromTimestamp:(nullable NSString *)formatterstr;
 @end
-
 

@@ -7,13 +7,10 @@
  ********************************************************************************/
 
 
-#import "NSString+YJMD5.h"
+#import "NSString+WYJMD5.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (YJMD5)
-- (NSString *)yi {
-    return self;
-}
+@implementation NSString (WYJMD5)
 - (NSString *)MD5Bits16LowercaseEncryption
 {
     return [NSString MD5_NB16BitEncry:self isUppercase:NO];

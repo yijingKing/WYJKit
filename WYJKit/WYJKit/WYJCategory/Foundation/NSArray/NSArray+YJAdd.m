@@ -14,7 +14,4 @@
     NSSet * set = [NSSet setWithArray:self];
     return [set allObjects];
 }
-- (NSArray *)yi {
-    return self;
-}
 @end

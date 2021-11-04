@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
-
-@interface NSString (YJRegular)
+@interface NSString (WYJRegular)
 /** 是否是数字 */
 @property (nonatomic, assign, readonly)BOOL isNumber;
 /** 是否是手机号 */

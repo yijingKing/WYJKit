@@ -7,10 +7,10 @@
  ********************************************************************************/
 
 
-#import "NSString+YJAdd.h"
+#import "NSString+WYJAdd.h"
 
 
-@implementation NSString (YJAdd)
+@implementation NSString (WYJAdd)
 
 + (BOOL)judgeEmpty:(NSString *)str {
     if (!str) {

@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface NSString (YJAdd)
+@interface NSString (WYJAdd)
 /** HTML转成富文本 */
 @property (nonatomic, copy,readonly)NSAttributedString * HTMLAttributedString;
 /** 首字母转换成大写 */

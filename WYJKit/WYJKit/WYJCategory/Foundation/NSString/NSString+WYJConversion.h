@@ -1,5 +1,5 @@
 /*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
  
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
@@ -10,13 +10,13 @@
 #import <Foundation/Foundation.h>
 
 
-typedef NS_ENUM(NSUInteger,ArraySortingType) {
-    ArraySortingTypeReverse = 0,//降序
-    ArraySortingTypeUsing//升序
-};
-
-@interface NSArray (YJAdd)
-@property (nonatomic, strong, readonly)NSArray * removeDuplicate;
+@interface NSString (WYJConversion)
+/// 阿拉伯数字转换成中文
++ (NSString *)digitalConversionNumber:(int)number;
+    
+///汉语数字转阿拉伯数字
++(NSString *)chaptersDealWithString:(NSString *)chapterStr;
+    
 @end
 
 

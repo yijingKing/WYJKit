@@ -6,18 +6,16 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
-
-@interface NSString (YJConversion)
-/// 阿拉伯数字转换成中文
-+ (NSString *)digitalConversionNumber:(int)number;
-    
-///汉语数字转阿拉伯数字
-+(NSString *)chaptersDealWithString:(NSString *)chapterStr;
-    
+@interface NSString (WYJEncode)
+//编码
+- (NSString *)urlEncodeWithUTF8;
+- (NSString *)urlEncodeWithUTF8:(NSCharacterSet *)characterSet;
+//解码
+- (NSString *)urlDecodeWithUTF8;
 @end
 
-
+NS_ASSUME_NONNULL_END

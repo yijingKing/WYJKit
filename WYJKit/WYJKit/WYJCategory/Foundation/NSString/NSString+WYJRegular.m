@@ -7,9 +7,9 @@
  ********************************************************************************/
 
 
-#import "NSString+YJRegular.h"
+#import "NSString+WYJRegular.h"
 
-@implementation NSString (YJRegular)
+@implementation NSString (WYJRegular)
 //最终正则匹配结果
 +(BOOL)regexPatternResultWithRegex:(NSString *)regex TargetString:(NSString *)targetString{
     

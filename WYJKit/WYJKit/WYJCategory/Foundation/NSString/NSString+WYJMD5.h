@@ -6,12 +6,9 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-
 #import <Foundation/Foundation.h>
 
-
-
-@interface NSString (YJMD5)
+@interface NSString (WYJMD5)
 /** 16位MD5加密--小写 */
 @property (nonatomic, copy,readonly)NSString * MD5Bits16LowercaseEncryption;
 /** 16位MD5加密--大写 */
@@ -23,7 +20,6 @@
 /** base64 decryption */
 @property (nonatomic, copy,readonly)NSString * base64Decryption;
 
-
 + (NSString *)MD5_16BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase;
 + (NSString *)MD5_NB16BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase;
 + (NSString *)MD5_32BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase;
@@ -32,7 +28,6 @@
 +(NSString *)base64EncodingWithData:(NSData *)sourceData;
 //***base64解密***//
 +(id)base64EncodingWithString:(NSString *)sourceString;
-- (NSString *)yi;
 @end
 
 
