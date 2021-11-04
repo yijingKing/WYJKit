@@ -4,11 +4,10 @@
  Author:        ╰莪呮想好好宠Nǐつ (kang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
- FileContent:   单例,跳转,block
  ********************************************************************************/
 
-#ifndef WYJHandy_h
-#define WYJHandy_h
+#ifndef WYJHandyMacro_h
+#define WYJHandyMacro_h
 
 
 //单例宏
@@ -64,4 +63,4 @@ static id _instance; \
 
 
 
-#endif /* WYJHandy_h */
+#endif /* WYJHandyMacro_h */

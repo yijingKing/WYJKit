@@ -10,8 +10,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
-
 @interface NSString (YJAdd)
 /** HTML转成富文本 */
 @property (nonatomic, copy,readonly)NSAttributedString * HTMLAttributedString;
@@ -77,7 +75,6 @@
 - (NSComparisonResult)compareByCaseInsensitive:(NSString *)anotherCom;
 /** 区分大小写 */
 - (NSComparisonResult)compareByCaseSensitive:(NSString *)anotherCom;
-- (NSString *)yi;
 @end
 
 

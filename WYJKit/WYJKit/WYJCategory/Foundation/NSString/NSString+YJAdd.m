@@ -284,8 +284,5 @@
     UIImage *photo = [UIImage imageWithData:imageData];
     return photo;
 }
-- (NSString *)yi {
-    return self;
-}
 
 @end

@@ -4,22 +4,14 @@
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
- FileContent:   总头文件
  ********************************************************************************/
 
-#ifndef WYJKitHeader_h
-#define WYJKitHeader_h
+#import <UIKit/UIKit.h>
 
-#import "WYJObjectMacro.h"
-#import "WYJSystemMacro.h"
-#import "WYJHandyMacro.h"
-#import "WYJFrameMacro.h"
-#import "WYJStringMacro.h"
+NS_ASSUME_NONNULL_BEGIN
 
+@interface UITextField (WYJInit)
 
-#import "UIKitCagoryHeader.h"
-#import "FoundationHeader.h"
+@end
 
-
-
-#endif /* WYJKitHeader_h */
+NS_ASSUME_NONNULL_END

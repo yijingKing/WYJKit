@@ -5,8 +5,10 @@
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
+
 #ifndef UITextFieldHeader_h
 #define UITextFieldHeader_h
 
 #import "UITextField+WYJAdd.h"
+#import "UITextField+WYJInit.h"
 #endif /* UITextFieldHeader_h */
