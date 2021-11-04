@@ -21,4 +21,5 @@
 #import "UITextViewHeader.h"
 #import "UITextFieldHeader.h"
 #import "UIViewControllerHeader.h"
+#import "UILabelHeader.h"
 #endif /* UIKitCagoryHeader_h */

@@ -44,7 +44,7 @@
     } stopCompletion:^{
         NSLog(@"完成");
     }];
-    
+    UILabel * label = [UILabel createWithText:@"" color:UIColor.redColor font:nil];
     
 }
 
