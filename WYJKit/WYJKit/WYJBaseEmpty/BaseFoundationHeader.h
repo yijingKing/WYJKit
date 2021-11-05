@@ -6,13 +6,12 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJFileManager : NSObject
-+(UIImage *)yi_getDocumentImageName:(NSString *)name;
-+(NSString *)yi_saveDocumentsImage:(UIImage *)image imgName:(NSString *)name;
-@end
+#ifndef BaseFoundationHeader_h
+#define BaseFoundationHeader_h
 
-NS_ASSUME_NONNULL_END
+#import "BaseTableViewHeader.h"
+#import "BaseCollectionViewHeader.h"
+#import "BaseViewControllerHeader.h"
+
+#endif /* BaseFoundationHeader_h */

@@ -8,7 +8,6 @@
 #import "SceneDelegate.h"
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "WYJBaseTabBarController.h"
 @interface SceneDelegate ()
 
 @end
@@ -25,7 +24,7 @@
     
     self.window.backgroundColor = UIColor.whiteColor;
     
-    self.window.rootViewController = [UITableViewController new];
+    self.window.rootViewController = [ViewController new];
     
 }
 

@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSDictionary *)mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect;
 ///裁剪图片
 - (nullable UIImage *)cropSquareImageRect:(CGRect)rect;
-///图片是怎样就怎样 不会自动渲染
+///图片不自动渲染
 + (nullable UIImage *)imageWithNamed:(nullable NSString *)name;
 @end
 

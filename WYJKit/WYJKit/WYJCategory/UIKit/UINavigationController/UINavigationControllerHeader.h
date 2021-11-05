@@ -1,14 +1,14 @@
 /*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
+ Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
  
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
-#import "WYJSystemPermissions.h"
 
-@implementation WYJSystemPermissions
+#ifndef UINavigationControllerHeader_h
+#define UINavigationControllerHeader_h
 
-
-@end
+#import "UINavigationController+WYJAdd.h"
+#endif /* UINavigationControllerHeader_h */

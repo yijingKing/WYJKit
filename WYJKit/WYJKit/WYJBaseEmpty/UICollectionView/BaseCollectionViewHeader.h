@@ -7,15 +7,10 @@
  ********************************************************************************/
 
 
-#ifndef WYJStringMacro_h
-#define WYJStringMacro_h
+#ifndef BaseCollectionViewHeader_h
+#define BaseCollectionViewHeader_h
 
-/**
- 字符串判空
- */
-#ifndef WYJStringIsEmpty
-#define WYJStringIsEmpty(string) ([string isKindOfClass:[NSNull class]] || string == nil || [string length] < 1 ? YES : NO )
-#endif
-
-
-#endif /* WYJStringMacro_h */
+#import "WYJBaseCollectionView.h"
+#import "WYJBaseCollectionView+Delegate.h"
+#import "WYJBaseCollectionViewDelegate.h"
+#endif /* BaseCollectionViewHeader_h */

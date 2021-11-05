@@ -15,7 +15,7 @@
     if (self.numberOfSectionsInCollectionView) {
         return self.numberOfSectionsInCollectionView(collectionView);
     }
-    return 1;
+    return 0;
 }
 //定义展示的UICollectionViewCell的个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -23,7 +23,7 @@
     if (self.numberOfItemsInSection) {
         return self.numberOfItemsInSection(collectionView,section);
     }
-    return 1;
+    return 0;
 }
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -92,4 +92,10 @@
     }
 }
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.willDisplayCell) {
+        self.willDisplayCell(collectionView, cell, indexPath);
+    }
+    
+}
 @end

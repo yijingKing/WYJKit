@@ -4,22 +4,12 @@
  Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
  E-mail:        1091676312@qq.com
  GitHub:        https://github.com/MemoryKing
- FileContent:   总头文件
  ********************************************************************************/
 
-#ifndef WYJKitHeader_h
-#define WYJKitHeader_h
 
-#import "WYJObjectMacro.h"
-#import "WYJSystemMacro.h"
-#import "WYJHandyMacro.h"
-#import "WYJFrameMacro.h"
-#import "WYJEmptyMacro.h"
+#ifndef BaseViewControllerHeader_h
+#define BaseViewControllerHeader_h
 
+#import "WYJBaseViewController.h"
 
-#import "UIKitCagoryHeader.h"
-#import "FoundationHeader.h"
-#import "BaseFoundationHeader.h"
-
-
-#endif /* WYJKitHeader_h */
+#endif /* BaseViewControllerHeader_h */

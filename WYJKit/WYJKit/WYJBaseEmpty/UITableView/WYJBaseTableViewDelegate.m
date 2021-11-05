@@ -34,6 +34,11 @@
     }
     return UITableViewCell.alloc.init;
 }
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.willDisplayCell) {
+        self.willDisplayCell(tableView,cell,indexPath);
+    }
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.didSelectRowAtIndexPath) {
         self.didSelectRowAtIndexPath(tableView,indexPath);

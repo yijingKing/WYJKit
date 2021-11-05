@@ -12,71 +12,55 @@
 @interface WYJBaseTableView : UITableView
 @property (strong, nonatomic)WYJBaseTableViewDelegate * baseDelegate;
 #pragma make ------ empty ------
-@property (nonatomic, copy)NSAttributedString * emptyTitleAttributedString;
+/// 空页面文本
 @property (nonatomic, copy)NSString * emptyTitle;
+/// 空页面文本字体
 @property (nonatomic, strong)UIFont * emptyTitleFont;
+/// 空页面文本颜色
 @property (nonatomic, strong)UIColor * emptyTitleColor;
+/// 空页面富文本
+@property (nonatomic, copy)NSAttributedString * emptyTitleAttributedString;
+/// 空页面图片
 @property (nonatomic, strong)UIImage * emptyImage;
-
+/// 空页面描述
 @property (nonatomic, copy)NSString * emptyDescription;
+/// 空页面描述字体
 @property (nonatomic, strong)UIFont * emptyDescriptionFont;
+/// 空页面描述文本颜色
 @property (nonatomic, strong)UIColor * emptyDescriptionColor;
+/// 空页面描述富文本
 @property (nonatomic, copy)NSAttributedString * emptyDescriptionAttributedString;
-
+/// 空页面背景色
 @property (nonatomic, strong)UIColor * emptyBackgroundColor;
-@property (nonatomic, copy)NSArray * dataSoureBaseArray;
 
 #pragma make ------ refresh heder------
+/// 影藏刷新时间
 @property (nonatomic, assign)BOOL hiddenTime;
+/// 影藏刷新状态
 @property (nonatomic, assign)BOOL hiddenState;
-- (WYJBaseTableView *)yi;
-/**
- empty text
- @param msg text
- */
+
+/// 空界面文本
 - (void)showNoSourcePageWithEmpty:(NSString *)msg;
 
-/**
- empty button
- @param string text
- @param click event
- */
+/// 空界面按钮
 - (void)showButtonTitleForEmpty:(NSString *)string Click:(void(^)(void))click;
 
-/**
- header and footer refresh
- */
+/// 刷新和加载
 - (void)refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock footerWithRefreshingBlock:(void(^)(void))footBlock;
 
-/**
- normal refresh
- */
+/// 默认刷新
 - (void)refreshNormakHeaderWithRefreshingBlock:(void(^)(void))headerBlock;
 
-/**
- git refresh (ongoing...)
- */
+/// gif刷新
 - (void)refreshGifHeaderWithRefreshingBlock:(void(^)(void))headerBlock;
 
-
-/**
- footer refresh
- */
+/// 加载
 - (void)refreshFooterWithRefreshingBlock:(void(^)(void))footBlock;
 
-/**
- show nor more data
- */
-- (void)endRefreshingWithNoMoreData;
-
-/**
- end refresh
- */
+/// 结束刷新状态
 - (void)endRefresh;
 
-/**
- end refresh and no more data
- */
+/// 结束刷新并加载无数据
 - (void)endRefreshAndNoMoreData;
 
 @end

@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#import "WYJKitHeader.h"
+
 @interface ViewController ()
 
 @end
@@ -22,7 +22,7 @@
         
     }];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = UIColor.redColor;
 //    UIButton * button = [UIButton buttonWithType:(UIButtonTypeCustom)];
 //    button.frame = self.view.frame;
 //    button.backgroundColor = UIColor.grayColor;
@@ -30,22 +30,33 @@
 //    [button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
 //    [button setBackgroundImage:[UIImage imageWithColor:UIColor.blueColor] forState:normal];
 //    [self.view addSubview:button];
-    NSLog(@"%lf",WYJUIManager.shared.width);
-//    UIButton cre
-    [self.view addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-        NSLog(@"1231232");
+//    NSLog(@"%lf",WYJUIManager.shared.width);
+//    [self.view addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+//        NSLog(@"1231232");
+//    }];
+//
+//    UIButton * button = [UIButton createWithFrame:CGRectMake(100, 100, 100, 100) title:@"倒计时" titleColor:UIColor.redColor];
+//    [self.view addSubview:button];
+//    button.backgroundColor = UIColor.blueColor;
+//    [button startTime:10 completion:^(NSString * _Nonnull time) {
+//        NSLog(@"%@", time);
+//    } stopCompletion:^{
+//        NSLog(@"完成");
+//    }];
+//    UILabel * label = [UILabel createWithText:@"" color:UIColor.redColor font:nil];
+    
+    self.dataSource = [NSMutableArray arrayWithArray:@[@[@"1",@"1",@"1"],@[@"1",@"1",@"1",@"1",@"1"]]];
+    [self addTableView];
+    
+    [self.mainTableView heightForRowAtIndexPath:^CGFloat(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+        return 99;
     }];
     
-    UIButton * button = [UIButton createWithFrame:CGRectMake(100, 100, 100, 100) title:@"倒计时" titleColor:UIColor.redColor];
-    [self.view addSubview:button];
-    button.backgroundColor = UIColor.blueColor;
-    [button startTime:10 completion:^(NSString * _Nonnull time) {
-        NSLog(@"%@", time);
-    } stopCompletion:^{
-        NSLog(@"完成");
+    [self.mainTableView cellForRowAtIndexPath:^UITableViewCell * _Nullable(UITableView * _Nullable tableView, NSIndexPath * _Nullable indexPath) {
+        UITableViewCell * cell = UITableViewCell.alloc .init;
+        cell.textLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row];
+        return cell;
     }];
-    UILabel * label = [UILabel createWithText:@"" color:UIColor.redColor font:nil];
-    
 }
 
 

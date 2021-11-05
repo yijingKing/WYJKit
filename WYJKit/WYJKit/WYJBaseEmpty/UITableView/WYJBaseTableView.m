@@ -66,7 +66,7 @@ typedef enum : NSUInteger {
         if (@available(iOS 11.0, *)) {
             self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {
-            // Fallback on earlier versions
+//            self.automaticallyAdjustsScrollViewInsets = NO;
         }
         self.emptyMsg = @"暂无数据";
         self.emptyDataSetSource = self;
@@ -76,6 +76,11 @@ typedef enum : NSUInteger {
         [self showNoSourcePageWithEmpty:self.emptyMsg];
         self.dataSource = self.baseDelegate;
         self.delegate = self.baseDelegate;
+        #ifdef __IPHONE_15_0
+        if (@available(iOS 15.0, *)) {
+            self.sectionHeaderTopPadding = 0;
+        }
+        #endif
     }
     return self;
 }
