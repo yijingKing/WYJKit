@@ -8,6 +8,7 @@
 #import "SceneDelegate.h"
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "WYJBaseTabBarController.h"
 @interface SceneDelegate ()
 
 @end
@@ -20,9 +21,11 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
+    
+    
     self.window.backgroundColor = UIColor.whiteColor;
     
-    self.window.rootViewController = [UINavigationController.alloc initWithRootViewController:[ViewController new]];
+    self.window.rootViewController = [UITableViewController new];
     
 }
 

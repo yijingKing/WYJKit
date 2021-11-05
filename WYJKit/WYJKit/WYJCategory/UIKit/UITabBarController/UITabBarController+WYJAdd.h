@@ -6,14 +6,18 @@
  GitHub:        https://github.com/MemoryKing
  ********************************************************************************/
 
+
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJBaseTabBarController : UITabBarController
+@interface UITabBarController (WYJAdd)
+//修改tabbar顶部分割线颜色
+-(void)shadowLineColor:(UIColor *)lineColor;
 //封装添加子控制器的方法
-- (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage;
+- (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage;
 
+- (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage isNav:(BOOL)isNav;
 @end
 
 NS_ASSUME_NONNULL_END

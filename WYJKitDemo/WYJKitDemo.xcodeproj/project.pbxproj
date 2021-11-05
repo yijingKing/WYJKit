@@ -10,7 +10,6 @@
 		382BDC15874F214634D3A232 /* Pods_WYJKitDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C94483B1B623EB7DDCA81A /* Pods_WYJKitDemoTests.framework */; };
 		7F10928527337501002387AD /* UIButton+WYJTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F10928427337501002387AD /* UIButton+WYJTouch.m */; };
 		7F109288273375CD002387AD /* UIButton+WYJCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F109287273375CD002387AD /* UIButton+WYJCountDown.m */; };
-		7F1744F12733D8D100ABDF9C /* WYJBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1744C92733D8D100ABDF9C /* WYJBaseTabBarController.m */; };
 		7F1744F22733D8D100ABDF9C /* WYJBaseCollectionView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1744CB2733D8D100ABDF9C /* WYJBaseCollectionView+Delegate.m */; };
 		7F1744F32733D8D100ABDF9C /* WYJBaseCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1744CC2733D8D100ABDF9C /* WYJBaseCollectionViewDelegate.m */; };
 		7F1744F42733D8D100ABDF9C /* WYJBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1744D02733D8D100ABDF9C /* WYJBaseCollectionView.m */; };
@@ -31,6 +30,7 @@
 		7F25612A27340FE800582D95 /* NSString+WYJHGBTransForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F25612827340FE800582D95 /* NSString+WYJHGBTransForm.m */; };
 		7F25612D273412EB00582D95 /* NSString+WYJEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F25612C273412EB00582D95 /* NSString+WYJEncode.m */; };
 		7F256131273418C700582D95 /* NSArray+WYJConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F256130273418C700582D95 /* NSArray+WYJConversion.m */; };
+		7F85DEEB2734C19F000390E3 /* UITabBarController+WYJAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F85DEEA2734C19F000390E3 /* UITabBarController+WYJAdd.m */; };
 		C3FD77C6CBFA5F657AC2A2BB /* Pods_WYJKitDemo_WYJKitDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66681F8BD2EAA606C03BBBE /* Pods_WYJKitDemo_WYJKitDemoUITests.framework */; };
 		D1F87EFB1C4D24462E08B78A /* Pods_WYJKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EBFA619975621472F674A8 /* Pods_WYJKitDemo.framework */; };
 		F7161089273281250062AD3D /* UIView+WYJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = F7161088273281250062AD3D /* UIView+WYJBlock.m */; };
@@ -102,8 +102,6 @@
 		7F109286273375CD002387AD /* UIButton+WYJCountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+WYJCountDown.h"; sourceTree = "<group>"; };
 		7F109287273375CD002387AD /* UIButton+WYJCountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WYJCountDown.m"; sourceTree = "<group>"; };
 		7F1744C52733D27800ABDF9C /* UIViewControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewControllerHeader.h; sourceTree = "<group>"; };
-		7F1744C82733D8D100ABDF9C /* WYJBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJBaseTabBarController.h; sourceTree = "<group>"; };
-		7F1744C92733D8D100ABDF9C /* WYJBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJBaseTabBarController.m; sourceTree = "<group>"; };
 		7F1744CB2733D8D100ABDF9C /* WYJBaseCollectionView+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WYJBaseCollectionView+Delegate.m"; sourceTree = "<group>"; };
 		7F1744CC2733D8D100ABDF9C /* WYJBaseCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJBaseCollectionViewDelegate.m; sourceTree = "<group>"; };
 		7F1744CD2733D8D100ABDF9C /* WYJBaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJBaseCollectionView.h; sourceTree = "<group>"; };
@@ -150,6 +148,9 @@
 		7F256130273418C700582D95 /* NSArray+WYJConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WYJConversion.m"; sourceTree = "<group>"; };
 		7F256132273419A600582D95 /* NSMutableArrayHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSMutableArrayHeader.h; sourceTree = "<group>"; };
 		7F25613327341A7800582D95 /* NSDateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDateHeader.h; sourceTree = "<group>"; };
+		7F85DEE92734C19F000390E3 /* UITabBarController+WYJAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+WYJAdd.h"; sourceTree = "<group>"; };
+		7F85DEEA2734C19F000390E3 /* UITabBarController+WYJAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+WYJAdd.m"; sourceTree = "<group>"; };
+		7F85DEEC2734C1B0000390E3 /* UITabBarControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITabBarControllerHeader.h; sourceTree = "<group>"; };
 		9F1BA5D44DE3FF254F289DE0 /* Pods-WYJKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYJKitDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-WYJKitDemoTests/Pods-WYJKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B66681F8BD2EAA606C03BBBE /* Pods_WYJKitDemo_WYJKitDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WYJKitDemo_WYJKitDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7161080273278E60062AD3D /* UIFontHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFontHeader.h; sourceTree = "<group>"; };
@@ -283,7 +284,6 @@
 		7F1744C62733D8D100ABDF9C /* WBaseEmpty */ = {
 			isa = PBXGroup;
 			children = (
-				7F1744C72733D8D100ABDF9C /* Tabbar */,
 				7F1744CA2733D8D100ABDF9C /* UICollectionView */,
 				7F1744D12733D8D100ABDF9C /* UITableView */,
 				7F1744DC2733D8D100ABDF9C /* ViewController */,
@@ -291,15 +291,6 @@
 			);
 			name = WBaseEmpty;
 			path = WYJKit/WBaseEmpty;
-			sourceTree = "<group>";
-		};
-		7F1744C72733D8D100ABDF9C /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				7F1744C82733D8D100ABDF9C /* WYJBaseTabBarController.h */,
-				7F1744C92733D8D100ABDF9C /* WYJBaseTabBarController.m */,
-			);
-			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		7F1744CA2733D8D100ABDF9C /* UICollectionView */ = {
@@ -408,6 +399,16 @@
 				7F25611D2734039B00582D95 /* UILabel+WYJInit.m */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		7F85DEE82734C183000390E3 /* UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				7F85DEEC2734C1B0000390E3 /* UITabBarControllerHeader.h */,
+				7F85DEE92734C19F000390E3 /* UITabBarController+WYJAdd.h */,
+				7F85DEEA2734C19F000390E3 /* UITabBarController+WYJAdd.m */,
+			);
+			path = UITabBarController;
 			sourceTree = "<group>";
 		};
 		8B68FB4E12A3F376143DB4CC /* Pods */ = {
@@ -634,6 +635,7 @@
 				F7E08B9627313BEC00361311 /* UITextField */,
 				F7E08B9327313BEC00361311 /* UIViewController */,
 				7F25611B2734036300582D95 /* UILabel */,
+				7F85DEE82734C183000390E3 /* UITabBarController */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1057,6 +1059,7 @@
 				F7E08BA727313BEC00361311 /* UIViewController+YJAdd.m in Sources */,
 				7F109288273375CD002387AD /* UIButton+WYJCountDown.m in Sources */,
 				F7E08B5D27313B2300361311 /* NSString+WYJMD5.m in Sources */,
+				7F85DEEB2734C19F000390E3 /* UITabBarController+WYJAdd.m in Sources */,
 				F7E08B6227313B2300361311 /* NSDate+WYJConversion.m in Sources */,
 				7F1744F82733D8D100ABDF9C /* WYJTableViewCell.m in Sources */,
 				7F1744FC2733D8D100ABDF9C /* WYJCountdown.m in Sources */,
@@ -1069,7 +1072,6 @@
 				7F1744F62733D8D100ABDF9C /* WYJBaseTableView.m in Sources */,
 				7F1744FE2733D8D100ABDF9C /* WYJSystemService.m in Sources */,
 				F7E08BA027313BEC00361311 /* UIColor+WYJAdd.m in Sources */,
-				7F1744F12733D8D100ABDF9C /* WYJBaseTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
