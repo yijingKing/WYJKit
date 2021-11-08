@@ -283,7 +283,7 @@
 		7F1744C62733D8D100ABDF9C /* WYJBaseEmpty */ = {
 			isa = PBXGroup;
 			children = (
-				7F85DEFC2734DC9C000390E3 /* BaseFoundationHeader.h */,
+				7F1F8C002738CEC70018A9AB /* Header */,
 				7F1F8BFC2738B6490018A9AB /* BaseView */,
 				7F1744D12733D8D100ABDF9C /* UITableView */,
 				7F1744CA2733D8D100ABDF9C /* UICollectionView */,
@@ -346,6 +346,14 @@
 				7F1F8BFE2738B6A70018A9AB /* WYJBaseView.m */,
 			);
 			path = BaseView;
+			sourceTree = "<group>";
+		};
+		7F1F8C002738CEC70018A9AB /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				7F85DEFC2734DC9C000390E3 /* BaseFoundationHeader.h */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		7F25611B2734036300582D95 /* UILabel */ = {
