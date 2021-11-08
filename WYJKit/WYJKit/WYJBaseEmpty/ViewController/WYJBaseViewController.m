@@ -12,6 +12,8 @@
 #import "WYJObjectMacro.h"
 #import "WYJEmptyMacro.h"
 #import "BaseTableViewHeader.h"
+#import "WYJBaseNavigationView.h"
+
 @interface WYJBaseViewController ()
 
 @property(nonatomic, copy)void (^block)(UIImage *);
@@ -149,7 +151,6 @@
         make.left.right.mas_equalTo(self.view);
         make.bottomMargin.mas_equalTo(self.view);
     }];
-    
     
     @weakify(self);
     if (self.isUseRefreshHeader) {

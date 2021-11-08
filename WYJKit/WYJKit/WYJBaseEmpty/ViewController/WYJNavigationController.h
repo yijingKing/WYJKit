@@ -7,9 +7,12 @@
  ********************************************************************************/
 
 
-#ifndef BaseViewControllerHeader_h
-#define BaseViewControllerHeader_h
+#import <UIKit/UIKit.h>
 
-#import "WYJBaseViewController.h"
-#import "WYJBaseNavigationView.h"
-#endif /* BaseViewControllerHeader_h */
+NS_ASSUME_NONNULL_BEGIN
+
+@interface WYJNavigationController : UINavigationController
+
+@end
+
+NS_ASSUME_NONNULL_END

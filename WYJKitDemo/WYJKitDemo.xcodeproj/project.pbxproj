@@ -20,6 +20,8 @@
 		7F1744F92733D8D100ABDF9C /* WYJBaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1744DB2733D8D100ABDF9C /* WYJBaseTableViewDelegate.m */; };
 		7F1744FA2733D8D100ABDF9C /* WYJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1744DD2733D8D100ABDF9C /* WYJBaseViewController.m */; };
 		7F1744FB2733D8D100ABDF9C /* WYJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1744E02733D8D100ABDF9C /* WYJNavigationController.m */; };
+		7F1F8BFB2738B5FE0018A9AB /* WYJBaseNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F8BFA2738B5FE0018A9AB /* WYJBaseNavigationView.m */; };
+		7F1F8BFF2738B6A70018A9AB /* WYJBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F8BFE2738B6A70018A9AB /* WYJBaseView.m */; };
 		7F25611E2734039B00582D95 /* UILabel+WYJInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F25611D2734039B00582D95 /* UILabel+WYJInit.m */; };
 		7F2561222734075E00582D95 /* UITextField+WYJInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2561212734075E00582D95 /* UITextField+WYJInit.m */; };
 		7F25612A27340FE800582D95 /* NSString+WYJHGBTransForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F25612827340FE800582D95 /* NSString+WYJHGBTransForm.m */; };
@@ -118,6 +120,10 @@
 		7F1744DE2733D8D100ABDF9C /* WYJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJNavigationController.h; sourceTree = "<group>"; };
 		7F1744DF2733D8D100ABDF9C /* WYJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJBaseViewController.h; sourceTree = "<group>"; };
 		7F1744E02733D8D100ABDF9C /* WYJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJNavigationController.m; sourceTree = "<group>"; };
+		7F1F8BF92738B5FE0018A9AB /* WYJBaseNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJBaseNavigationView.h; sourceTree = "<group>"; };
+		7F1F8BFA2738B5FE0018A9AB /* WYJBaseNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJBaseNavigationView.m; sourceTree = "<group>"; };
+		7F1F8BFD2738B6A70018A9AB /* WYJBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJBaseView.h; sourceTree = "<group>"; };
+		7F1F8BFE2738B6A70018A9AB /* WYJBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJBaseView.m; sourceTree = "<group>"; };
 		7F25611C2734039B00582D95 /* UILabel+WYJInit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+WYJInit.h"; sourceTree = "<group>"; };
 		7F25611D2734039B00582D95 /* UILabel+WYJInit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WYJInit.m"; sourceTree = "<group>"; };
 		7F25611F273403AC00582D95 /* UILabelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILabelHeader.h; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				7F85DEFC2734DC9C000390E3 /* BaseFoundationHeader.h */,
+				7F1F8BFC2738B6490018A9AB /* BaseView */,
 				7F1744D12733D8D100ABDF9C /* UITableView */,
 				7F1744CA2733D8D100ABDF9C /* UICollectionView */,
 				7F1744DC2733D8D100ABDF9C /* ViewController */,
@@ -326,8 +333,19 @@
 				7F1744DD2733D8D100ABDF9C /* WYJBaseViewController.m */,
 				7F1744DE2733D8D100ABDF9C /* WYJNavigationController.h */,
 				7F1744E02733D8D100ABDF9C /* WYJNavigationController.m */,
+				7F1F8BF92738B5FE0018A9AB /* WYJBaseNavigationView.h */,
+				7F1F8BFA2738B5FE0018A9AB /* WYJBaseNavigationView.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7F1F8BFC2738B6490018A9AB /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				7F1F8BFD2738B6A70018A9AB /* WYJBaseView.h */,
+				7F1F8BFE2738B6A70018A9AB /* WYJBaseView.m */,
+			);
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 		7F25611B2734036300582D95 /* UILabel */ = {
@@ -997,6 +1015,7 @@
 				7F25611E2734039B00582D95 /* UILabel+WYJInit.m in Sources */,
 				F7E08B9C27313BEC00361311 /* UIResponder+WYJConfigure.m in Sources */,
 				7F10928527337501002387AD /* UIButton+WYJTouch.m in Sources */,
+				7F1F8BFB2738B5FE0018A9AB /* WYJBaseNavigationView.m in Sources */,
 				7F1744F92733D8D100ABDF9C /* WYJBaseTableViewDelegate.m in Sources */,
 				F7E08B9D27313BEC00361311 /* UIButton+WYJInit.m in Sources */,
 				7F1744F32733D8D100ABDF9C /* WYJBaseCollectionViewDelegate.m in Sources */,
@@ -1006,6 +1025,7 @@
 				7F1744FB2733D8D100ABDF9C /* WYJNavigationController.m in Sources */,
 				F7E08BA727313BEC00361311 /* UIViewController+YJAdd.m in Sources */,
 				7F109288273375CD002387AD /* UIButton+WYJCountDown.m in Sources */,
+				7F1F8BFF2738B6A70018A9AB /* WYJBaseView.m in Sources */,
 				F7E08B5D27313B2300361311 /* NSString+WYJMD5.m in Sources */,
 				7F85DEEB2734C19F000390E3 /* UITabBarController+WYJAdd.m in Sources */,
 				F7E08B6227313B2300361311 /* NSDate+WYJConversion.m in Sources */,

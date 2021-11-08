@@ -7,12 +7,30 @@
  ********************************************************************************/
 
 
-#ifndef BaseFoundationHeader_h
-#define BaseFoundationHeader_h
-
-#import "BaseTableViewHeader.h"
-#import "BaseCollectionViewHeader.h"
-#import "BaseViewControllerHeader.h"
-#import "WYJBaseNavigationView.h"
 #import "WYJBaseView.h"
-#endif /* BaseFoundationHeader_h */
+
+@implementation WYJBaseView
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        [self initSubviews];
+        [self makeContraints];
+    }
+    return self;
+}
+
+- (void)initSubviews{
+    
+}
+
+- (void)makeContraints{
+    
+}
+
+- (void)setupWithData:(id)data{
+    
+}
+
+@end

@@ -7,9 +7,17 @@
  ********************************************************************************/
 
 
-#ifndef BaseViewControllerHeader_h
-#define BaseViewControllerHeader_h
+#import <UIKit/UIKit.h>
+#import "WYJBaseView.h"
+NS_ASSUME_NONNULL_BEGIN
 
-#import "WYJBaseViewController.h"
-#import "WYJBaseNavigationView.h"
-#endif /* BaseViewControllerHeader_h */
+@interface WYJBaseNavigationView : WYJBaseView
+
+/// 左侧钮
+/// @param size 大小
+/// @param image 图片
+/// @param title 文本
+- (void)setLeftItemWithSize:(CGSize *)size image:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor;
+@end
+
+NS_ASSUME_NONNULL_END

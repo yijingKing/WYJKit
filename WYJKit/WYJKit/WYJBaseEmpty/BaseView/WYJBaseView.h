@@ -7,9 +7,17 @@
  ********************************************************************************/
 
 
-#ifndef BaseViewControllerHeader_h
-#define BaseViewControllerHeader_h
+#import <UIKit/UIKit.h>
 
-#import "WYJBaseViewController.h"
-#import "WYJBaseNavigationView.h"
-#endif /* BaseViewControllerHeader_h */
+NS_ASSUME_NONNULL_BEGIN
+
+@interface WYJBaseView : UIView
+/// 界面布局
+- (void)initSubviews;
+/// 界面约束
+- (void)makeContraints;
+///数据
+- (void)setupWithData:(id)data;
+@end
+
+NS_ASSUME_NONNULL_END
