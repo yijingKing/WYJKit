@@ -32,8 +32,8 @@ c.public_header_files   = 'WYJKit/WYJCategory/**/**/**/*.{h}'
 c.source_files   = 'WYJKit/WYJCategory/**/**/**/*.{h,m}'
 end
 s.subspec 'WYJBaseEmpty' do |e|
-e.public_header_files   = 'WYJKit/WYJBaseEmpty/**/*.{h}'
-e.source_files          = 'WYJKit/WYJBaseEmpty/**/*.{h,m}'
+e.public_header_files   = 'WYJKit/WYJBaseEmpty/*.{h}'
+e.source_files          = 'WYJKit/WYJBaseEmpty/*.{h,m}'
 e.dependency 'DZNEmptyDataSet'
 e.dependency 'MJRefresh'
 end
