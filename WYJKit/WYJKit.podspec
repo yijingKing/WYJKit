@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '2.1.13'
+  s.version          = '2.1.15'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -21,20 +21,20 @@ s.dependency 'Masonry'
 s.dependency 'IQKeyboardManager'
 s.dependency 'DZNEmptyDataSet'
 s.dependency 'MJRefresh'
-s.public_header_files   = 'WYJKit/**/*.{h}'
-s.source_files = 'WYJKit/**/*.{h,m}'
+s.public_header_files   = 'WYJKit/WYJKitHeader.{h}'
+s.source_files = 'WYJKit/WYJKitHeader.{h}'
 
 s.subspec 'Macro' do |h|
-h.public_header_files   = 'WYJKit/Macro/*.h'
-h.source_files = 'WYJKit/Macro/*.h'
+h.public_header_files   = 'WYJKit/Macro/*.{h}'
+h.source_files = 'WYJKit/Macro/*.{h,m}'
 end
 #s.subspec 'WYJCategory' do |c|
-#c.public_header_files   = 'WYJKit/WYJCategory/**/**/**/*.{h}'
-#c.source_files   = 'WYJKit/WYJCategory/**/**/**/*.{h,m}'
+#c.public_header_files   = 'WYJKit/WYJCategory/**/**/*.{h}'
+#c.source_files   = 'WYJKit/WYJCategory/**/**/*.{h,m}'
 #end
 #s.subspec 'WYJBaseEmpty' do |e|
-#e.public_header_files   = 'WYJKit/WYJBaseEmpty/**/*.{h}'
-#e.source_files          = 'WYJKit/WYJBaseEmpty/**/*.{h,m}'
+e.public_header_files   = 'WYJKit/WYJBaseEmpty/**/**/*.{h}'
+e.source_files          = 'WYJKit/WYJBaseEmpty/**/**/*.{h,m}'
 #e.dependency 'DZNEmptyDataSet'
 #e.dependency 'MJRefresh'
 #end
