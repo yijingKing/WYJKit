@@ -283,34 +283,6 @@
 		7F1744C62733D8D100ABDF9C /* WYJBaseEmpty */ = {
 			isa = PBXGroup;
 			children = (
-				7F85DEFC2734DC9C000390E3 /* BaseFoundationHeader.h */,
-				7F1F8BFD2738B6A70018A9AB /* WYJBaseView.h */,
-				7F1F8BFE2738B6A70018A9AB /* WYJBaseView.m */,
-				7F85DEFD2734DD2F000390E3 /* BaseTableViewHeader.h */,
-				7F1744D42733D8D100ABDF9C /* WYJBaseTableView.h */,
-				7F1744D82733D8D100ABDF9C /* WYJBaseTableView.m */,
-				7F1744D32733D8D100ABDF9C /* WYJBaseTableView+Delegate.h */,
-				7F1744D72733D8D100ABDF9C /* WYJBaseTableView+Delegate.m */,
-				7F1744D52733D8D100ABDF9C /* WYJBaseTableViewDelegate.h */,
-				7F1744DB2733D8D100ABDF9C /* WYJBaseTableViewDelegate.m */,
-				7F1744D22733D8D100ABDF9C /* WYJTableView.h */,
-				7F1744D92733D8D100ABDF9C /* WYJTableView.m */,
-				7F1744D62733D8D100ABDF9C /* WYJTableViewCell.h */,
-				7F1744DA2733D8D100ABDF9C /* WYJTableViewCell.m */,
-				7F85DEFE2734DDCE000390E3 /* BaseCollectionViewHeader.h */,
-				7F1744CD2733D8D100ABDF9C /* WYJBaseCollectionView.h */,
-				7F1744D02733D8D100ABDF9C /* WYJBaseCollectionView.m */,
-				7F1744CE2733D8D100ABDF9C /* WYJBaseCollectionView+Delegate.h */,
-				7F1744CB2733D8D100ABDF9C /* WYJBaseCollectionView+Delegate.m */,
-				7F1744CF2733D8D100ABDF9C /* WYJBaseCollectionViewDelegate.h */,
-				7F1744CC2733D8D100ABDF9C /* WYJBaseCollectionViewDelegate.m */,
-				7F85DEFF2734DE5F000390E3 /* BaseViewControllerHeader.h */,
-				7F1744DF2733D8D100ABDF9C /* WYJBaseViewController.h */,
-				7F1744DD2733D8D100ABDF9C /* WYJBaseViewController.m */,
-				7F1744DE2733D8D100ABDF9C /* WYJNavigationController.h */,
-				7F1744E02733D8D100ABDF9C /* WYJNavigationController.m */,
-				7F1F8BF92738B5FE0018A9AB /* WYJBaseNavigationView.h */,
-				7F1F8BFA2738B5FE0018A9AB /* WYJBaseNavigationView.m */,
 				7F1F8C002738CEC70018A9AB /* Header */,
 				7F1F8BFC2738B6490018A9AB /* BaseView */,
 				7F1744D12733D8D100ABDF9C /* UITableView */,
@@ -324,6 +296,13 @@
 		7F1744CA2733D8D100ABDF9C /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				7F85DEFE2734DDCE000390E3 /* BaseCollectionViewHeader.h */,
+				7F1744CD2733D8D100ABDF9C /* WYJBaseCollectionView.h */,
+				7F1744D02733D8D100ABDF9C /* WYJBaseCollectionView.m */,
+				7F1744CE2733D8D100ABDF9C /* WYJBaseCollectionView+Delegate.h */,
+				7F1744CB2733D8D100ABDF9C /* WYJBaseCollectionView+Delegate.m */,
+				7F1744CF2733D8D100ABDF9C /* WYJBaseCollectionViewDelegate.h */,
+				7F1744CC2733D8D100ABDF9C /* WYJBaseCollectionViewDelegate.m */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -331,6 +310,17 @@
 		7F1744D12733D8D100ABDF9C /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				7F85DEFD2734DD2F000390E3 /* BaseTableViewHeader.h */,
+				7F1744D42733D8D100ABDF9C /* WYJBaseTableView.h */,
+				7F1744D82733D8D100ABDF9C /* WYJBaseTableView.m */,
+				7F1744D32733D8D100ABDF9C /* WYJBaseTableView+Delegate.h */,
+				7F1744D72733D8D100ABDF9C /* WYJBaseTableView+Delegate.m */,
+				7F1744D52733D8D100ABDF9C /* WYJBaseTableViewDelegate.h */,
+				7F1744DB2733D8D100ABDF9C /* WYJBaseTableViewDelegate.m */,
+				7F1744D22733D8D100ABDF9C /* WYJTableView.h */,
+				7F1744D92733D8D100ABDF9C /* WYJTableView.m */,
+				7F1744D62733D8D100ABDF9C /* WYJTableViewCell.h */,
+				7F1744DA2733D8D100ABDF9C /* WYJTableViewCell.m */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -338,6 +328,13 @@
 		7F1744DC2733D8D100ABDF9C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7F85DEFF2734DE5F000390E3 /* BaseViewControllerHeader.h */,
+				7F1744DF2733D8D100ABDF9C /* WYJBaseViewController.h */,
+				7F1744DD2733D8D100ABDF9C /* WYJBaseViewController.m */,
+				7F1744DE2733D8D100ABDF9C /* WYJNavigationController.h */,
+				7F1744E02733D8D100ABDF9C /* WYJNavigationController.m */,
+				7F1F8BF92738B5FE0018A9AB /* WYJBaseNavigationView.h */,
+				7F1F8BFA2738B5FE0018A9AB /* WYJBaseNavigationView.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -345,6 +342,8 @@
 		7F1F8BFC2738B6490018A9AB /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				7F1F8BFD2738B6A70018A9AB /* WYJBaseView.h */,
+				7F1F8BFE2738B6A70018A9AB /* WYJBaseView.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -352,6 +351,7 @@
 		7F1F8C002738CEC70018A9AB /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				7F85DEFC2734DC9C000390E3 /* BaseFoundationHeader.h */,
 			);
 			path = Header;
 			sourceTree = "<group>";
