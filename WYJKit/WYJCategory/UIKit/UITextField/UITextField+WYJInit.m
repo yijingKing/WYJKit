@@ -8,7 +8,7 @@
 
 #import "UITextField+WYJInit.h"
 #import "UITextField+WYJAdd.h"
-#import "WYJEmptyMacro.h"
+#import "WYJKitHeader.h"
 @implementation UITextField (WYJInit)
 /// 构建->位置-字体-颜色-占位字
 /// @param frame 位置

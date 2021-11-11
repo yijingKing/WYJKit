@@ -9,7 +9,7 @@
 #import "UIViewController+YJAdd.h"
 #import "WYJNavigationButton.h"
 #import <objc/runtime.h>
-#import "UIImageCategoryHeader.h"
+#import "WYJKitHeader.h"
 static const char itemKey;
 static const char ritemKey;
 

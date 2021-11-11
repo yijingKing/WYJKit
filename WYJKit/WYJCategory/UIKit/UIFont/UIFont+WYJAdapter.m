@@ -8,7 +8,7 @@
 
 #import "UIFont+WYJAdapter.h"
 #import <objc/runtime.h>
-#import "WYJFrameMacro.h"
+#import "WYJKitHeader.h"
 @implementation UIFont (WYJAdapter)
 +(void)load {
     //获取替换后的类方法

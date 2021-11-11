@@ -7,8 +7,7 @@
  ********************************************************************************/
 
 #import "UITextView+WYJAdd.h"
-#import "NSString+WYJAdd.h"
-
+#import "WYJKitHeader.h"
 @implementation UITextView (WYJAdd)
 - (void)setPromptFont:(UIFont *)promptFont {
     objc_setAssociatedObject(self, &@selector(promptFont), promptFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

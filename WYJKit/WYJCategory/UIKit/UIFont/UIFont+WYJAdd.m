@@ -8,7 +8,7 @@
 
 #import "UIFont+WYJAdd.h"
 #import <objc/runtime.h>
-#import "WYJFrameMacro.h"
+#import "WYJKitHeader.h"
 
 @implementation UIFont (WYJAdd)
 

@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#include "WYJHandyMacro.h"
-
-
 
 @interface WYJUIManager : NSObject
 

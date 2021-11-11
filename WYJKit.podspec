@@ -29,13 +29,11 @@ h.source_files = 'WYJKit/Macro/*'
 end
 
 s.subspec 'WYJCategory' do |c|
-s.dependency 'WYJKit/WYJKitHeader.h'
 c.public_header_files   = 'WYJKit/WYJCategory/**/**/*.{h}'
 c.source_files   = 'WYJKit/WYJCategory/**/**/*.{h,m}'
 end
 
 s.subspec 'WYJBase' do |e|
-s.dependency 'WYJKit/WYJKitHeader.h'
 e.public_header_files   = 'WYJKit/WYJBase/**/**/*.{h}'
 e.source_files          = 'WYJKit/WYJBase/**/**/*.{h,m}'
 e.dependency 'DZNEmptyDataSet'

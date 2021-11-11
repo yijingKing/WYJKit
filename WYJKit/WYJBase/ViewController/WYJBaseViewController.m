@@ -8,9 +8,7 @@
 
 #import "WYJBaseViewController.h"
 #import <Masonry/Masonry.h>
-#import "WYJFrameMacro.h"
-#import "WYJObjectMacro.h"
-#import "WYJEmptyMacro.h"
+#import "WYJKitHeader.h"
 #import "BaseTableViewHeader.h"
 #import "WYJBaseNavigationView.h"
 
