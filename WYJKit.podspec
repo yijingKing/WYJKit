@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '2.2.04'
+  s.version          = '2.2.05'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -29,11 +29,14 @@ h.source_files = 'WYJKit/Macro/*'
 end
 
 s.subspec 'WYJCategory' do |c|
+s.dependency 'WYJKit/Macro'
 c.public_header_files   = 'WYJKit/WYJCategory/**/**/*.{h}'
 c.source_files   = 'WYJKit/WYJCategory/**/**/*.{h,m}'
 end
 
 s.subspec 'WYJBase' do |e|
+s.dependency 'WYJKit/Macro'
+s.dependency 'WYJKit/WYJCategory'
 e.public_header_files   = 'WYJKit/WYJBase/**/**/*.{h}'
 e.source_files          = 'WYJKit/WYJBase/**/**/*.{h,m}'
 e.dependency 'DZNEmptyDataSet'
