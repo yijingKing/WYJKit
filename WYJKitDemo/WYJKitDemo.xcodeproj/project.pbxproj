@@ -36,7 +36,6 @@
 		F7E089E827312C2700361311 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E089E727312C2700361311 /* SceneDelegate.m */; };
 		F7E089EB27312C2700361311 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E089EA27312C2700361311 /* ViewController.m */; };
 		F7E089EE27312C2700361311 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E089EC27312C2700361311 /* Main.storyboard */; };
-		F7E089F127312C2700361311 /* WYJKitDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7E089EF27312C2700361311 /* WYJKitDemo.xcdatamodeld */; };
 		F7E089F327312C2B00361311 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7E089F227312C2B00361311 /* Assets.xcassets */; };
 		F7E089F627312C2B00361311 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E089F427312C2B00361311 /* LaunchScreen.storyboard */; };
 		F7E089F927312C2B00361311 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E089F827312C2B00361311 /* main.m */; };
@@ -173,7 +172,6 @@
 		F7E089E927312C2700361311 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F7E089EA27312C2700361311 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F7E089ED27312C2700361311 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F7E089F027312C2700361311 /* WYJKitDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WYJKitDemo.xcdatamodel; sourceTree = "<group>"; };
 		F7E089F227312C2B00361311 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7E089F527312C2B00361311 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7E089F727312C2B00361311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -280,7 +278,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7F1744C62733D8D100ABDF9C /* WYJBaseEmpty */ = {
+		7F1744C62733D8D100ABDF9C /* WYJBase */ = {
 			isa = PBXGroup;
 			children = (
 				7F1F8C002738CEC70018A9AB /* Header */,
@@ -289,8 +287,8 @@
 				7F1744CA2733D8D100ABDF9C /* UICollectionView */,
 				7F1744DC2733D8D100ABDF9C /* ViewController */,
 			);
-			name = WYJBaseEmpty;
-			path = WYJKit/WYJBaseEmpty;
+			name = WYJBase;
+			path = WYJKit/WYJBase;
 			sourceTree = "<group>";
 		};
 		7F1744CA2733D8D100ABDF9C /* UICollectionView */ = {
@@ -467,7 +465,6 @@
 				F7E089F427312C2B00361311 /* LaunchScreen.storyboard */,
 				F7E089F727312C2B00361311 /* Info.plist */,
 				F7E089F827312C2B00361311 /* main.m */,
-				F7E089EF27312C2700361311 /* WYJKitDemo.xcdatamodeld */,
 			);
 			path = WYJKitDemo;
 			sourceTree = "<group>";
@@ -495,7 +492,7 @@
 				F7F6745527322935005FFA05 /* WYJKitHeader.h */,
 				F7E08B6427313B3D00361311 /* Macro */,
 				F7E08B0227313B2300361311 /* WYJCategory */,
-				7F1744C62733D8D100ABDF9C /* WYJBaseEmpty */,
+				7F1744C62733D8D100ABDF9C /* WYJBase */,
 				F7E08A9B273138D400361311 /* WYJKit.podspec */,
 			);
 			name = WYJKit;
@@ -1016,7 +1013,6 @@
 				F7E08BA127313BEC00361311 /* UIView+WYJAdd.m in Sources */,
 				7F25612A27340FE800582D95 /* NSString+WYJHGBTransForm.m in Sources */,
 				F7E08B9B27313BEC00361311 /* UIApplication+WYJAdd.m in Sources */,
-				F7E089F127312C2700361311 /* WYJKitDemo.xcdatamodeld in Sources */,
 				7F85DEFB2734D895000390E3 /* UINavigationController+WYJAdd.m in Sources */,
 				F7E08B5B27313B2300361311 /* NSString+WYJConversion.m in Sources */,
 				7F2561222734075E00582D95 /* UITextField+WYJInit.m in Sources */,
@@ -1403,19 +1399,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F7E089EF27312C2700361311 /* WYJKitDemo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F7E089F027312C2700361311 /* WYJKitDemo.xcdatamodel */,
-			);
-			currentVersion = F7E089F027312C2700361311 /* WYJKitDemo.xcdatamodel */;
-			path = WYJKitDemo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F7E089D827312C2700361311 /* Project object */;
 }

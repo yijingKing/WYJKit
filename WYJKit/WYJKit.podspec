@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '2.2.0'
+  s.version          = '2.2.01'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -24,10 +24,11 @@ s.dependency 'MJRefresh'
 s.public_header_files   = 'WYJKit/**/*.{h}'
 s.source_files = 'WYJKit/**/*.{h,m}'
 
-#s.subspec 'Macro' do |h|
-#h.public_header_files   = 'WYJKit/Macro/*.{h}'
-#h.source_files = 'WYJKit/Macro/*.{h,m}'
-#end
+s.subspec 'Macro' do |h|
+#h.public_header_files   = 'WYJKit/Macro/**/*'
+h.source_files = 'WYJKit/Macro/**/*'
+end
+
 #s.subspec 'WYJCategory' do |c|
 #c.public_header_files   = 'WYJKit/WYJCategory/**/*.{h}'
 #c.source_files   = 'WYJKit/WYJCategory/**/*.{h,m}'
