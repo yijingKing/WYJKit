@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '2.2.03'
+  s.version          = '2.2.04'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -33,9 +33,9 @@ c.public_header_files   = 'WYJKit/WYJCategory/**/**/*.{h}'
 c.source_files   = 'WYJKit/WYJCategory/**/**/*.{h,m}'
 end
 
-s.subspec 'WYJBaseEmpty' do |e|
-e.public_header_files   = 'WYJKit/WYJBaseEmpty/**/**/*.{h}'
-e.source_files          = 'WYJKit/WYJBaseEmpty/**/**/*.{h,m}'
+s.subspec 'WYJBase' do |e|
+e.public_header_files   = 'WYJKit/WYJBase/**/**/*.{h}'
+e.source_files          = 'WYJKit/WYJBase/**/**/*.{h,m}'
 e.dependency 'DZNEmptyDataSet'
 e.dependency 'MJRefresh'
 end
