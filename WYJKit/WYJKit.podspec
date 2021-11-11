@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '2.2.01'
+  s.version          = '2.2.02'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -25,8 +25,8 @@ s.public_header_files   = 'WYJKit/**/*.{h}'
 s.source_files = 'WYJKit/**/*.{h,m}'
 
 s.subspec 'Macro' do |h|
-#h.public_header_files   = 'WYJKit/Macro/**/*'
-h.source_files = 'WYJKit/Macro/**/*'
+#h.public_header_files   = 'WYJKit/Macro/*'
+h.source_files = 'WYJKit/Macro/*'
 end
 
 #s.subspec 'WYJCategory' do |c|
