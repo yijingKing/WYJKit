@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '2.2.06'
+  s.version          = '2.2.07'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
