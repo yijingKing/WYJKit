@@ -1,18 +1,15 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
-
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 #import "UIView+WYJPageRouter.h"
 #import "UIView+WYJAdd.h"
 @implementation UIView (WYJPageRouter)
 
 - (void)push:(UIViewController *)vc {
-    UIViewController * currentC = self.viewController;
+    UIViewController * currentC = self.yi_viewController;
     
     if([currentC isKindOfClass:[UINavigationController class]]) {
         UINavigationController * nav = (UINavigationController *)currentC;
@@ -31,7 +28,7 @@
 }
 
 - (void)pop {
-    UIViewController * currentC = self.viewController;
+    UIViewController * currentC = self.yi_viewController;
     if([currentC isKindOfClass:[UINavigationController class]]) {
         [((UINavigationController *)currentC) popViewControllerAnimated:YES];
     }
@@ -45,7 +42,7 @@
 }
 
 - (void)popToRootWithAnimated:(BOOL)animated {
-    UIViewController * currentC = self.viewController;
+    UIViewController * currentC = self.yi_viewController;
     if([currentC isKindOfClass:[UINavigationController class]]) {
         [((UINavigationController *)currentC) popToRootViewControllerAnimated:YES];
     }
@@ -59,7 +56,7 @@
 }
 
 - (void)present:(UIViewController *)vc animated:(BOOL)animated {
-    [self.viewController presentViewController:vc animated:animated completion:nil];
+    [self.yi_viewController presentViewController:vc animated:animated completion:nil];
 }
 
 - (void)dismiss {
@@ -75,7 +72,7 @@
 }
 
 - (void)dismissAnimated:(BOOL)animated completion:(void(^)(void))completion {
-    [self.viewController dismissViewControllerAnimated:animated completion:completion];
+    [self.yi_viewController dismissViewControllerAnimated:animated completion:completion];
 }
 
 -(UIWindow*)getCurrentWindow {

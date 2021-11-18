@@ -1,11 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
-
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 #import <UIKit/UIKit.h>
 
 @interface UIView (WYJConvenience)
@@ -20,7 +17,7 @@
 @property (nonatomic) CGPoint origin;
 @property (nonatomic) CGSize  size;
 
-- (void)addSubviews:(id)array;
+- (void)yi_addSubviews:(NSArray <UIView *>*)array;
 
 @end
 

@@ -1,10 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 #import "UIViewController+YJAdd.h"
 #import "WYJNavigationButton.h"
@@ -15,15 +13,6 @@ static const char ritemKey;
 
 static const char leftItemsKey;
 static const char rightItemsKey;
-//static const char titleItemsKey;
-
-static const char NavBackgroundColorKey;
-static const char HidderShadowKey;
-static const char titleColorKey;
-static const char BackgroundColorKey;
-static const char EndEditKey;
-static const char HiddenNavigationBarKey;
-static const char AnimatedKey;
 
 typedef void(^NavBlock)(void);
 
@@ -36,35 +25,10 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 
 @interface UIViewController ()
 
-@property (nonatomic, assign) BOOL animated;
 
 @end
 
 @implementation UIViewController (YJAdd)
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        SEL originalSelector = @selector(viewWillAppear:);
-        SEL swizzledSelector = @selector(at_viewWillAppear:);
-        
-        Method originalMethod = class_getInstanceMethod(class, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
-        BOOL success = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-        if (success) {
-            class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod);
-        }
-    });
-}
-
-- (void)at_viewWillAppear:(BOOL)animated {
-    [self at_viewWillAppear:animated];
-    self.animated = animated;
-}
 
 #pragma make ------ 导航返回按钮 ------
 - (void)setBackItem:(UIImage *)image {
@@ -103,7 +67,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 
 #pragma make ------ 导航标题 ------
 - (void)setNavTitle:(NSString *)title {
-    [self setNavTitle:title color: self.titleColor ?: UIColor.blackColor];
+    [self setNavTitle:title color: UIColor.blackColor];
 }
 
 - (void)setNavTitle:(NSString *)title color:(UIColor *)color {
@@ -121,11 +85,11 @@ typedef void(^RightNavItemsBlock)(NSInteger);
         self.navigationController.navigationBar.translucent = NO;
         if (backgroundColor == UIColor.clearColor) {
             self.navigationController.navigationBar.translucent = YES;
-            appearance.backgroundImage = [UIImage imageWithColor:UIColor.clearColor];
+            appearance.backgroundImage = [UIImage yi_imageWithColor:UIColor.clearColor];
         } else {
             appearance.backgroundColor = backgroundColor;
         }
-        appearance.shadowImage = [UIImage imageWithColor:UIColor.clearColor];
+        appearance.shadowImage = [UIImage yi_imageWithColor:UIColor.clearColor];
         appearance.shadowColor = UIColor.clearColor;
         appearance.titleTextAttributes = @{NSForegroundColorAttributeName: color,NSFontAttributeName:font};
         [self addNavigationBarAppearance:appearance];
@@ -554,80 +518,11 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     return vcArray.copy;
 }
 
--(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.navigationController.viewControllers.count > 0 ) {
         viewController.hidesBottomBarWhenPushed = YES;
     }
     [self.navigationController pushViewController:viewController animated:animated];
-}
-
-#pragma make ------ 扩展属性 ------
-/** 标题颜色 */
-- (void)setTitleColor:(UIColor *)titleColor {
-    objc_setAssociatedObject(self, &titleColorKey, titleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIColor *)titleColor {
-    return objc_getAssociatedObject(self, &titleColorKey);
-}
-
-- (void)setNavBackgroundColor:(UIColor *)navBackgroundColor {
-    objc_setAssociatedObject(self, &NavBackgroundColorKey, navBackgroundColor, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    self.navigationController.navigationBar.barTintColor = navBackgroundColor;
-    self.navigationController.navigationBar.translucent = NO;
-    if (self.hiddenShadow) {
-        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    }
-}
-
-- (UIColor *)navBackgroundColor {
-    return objc_getAssociatedObject(self, &NavBackgroundColorKey);
-}
-
-- (void)setHiddenShadow:(BOOL)hiddenShadow{
-    objc_setAssociatedObject(self, &HidderShadowKey, @(hiddenShadow), OBJC_ASSOCIATION_ASSIGN);
-    if (hiddenShadow) {
-        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    }
-}
-
-- (BOOL)hiddenShadow {
-    return [objc_getAssociatedObject(self, &HidderShadowKey) boolValue];
-}
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
-    objc_setAssociatedObject(self, &BackgroundColorKey, backgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    self.view.backgroundColor = backgroundColor;
-}
-
-- (UIColor *)backgroundColor {
-    return objc_getAssociatedObject(self, &BackgroundColorKey);
-}
-
-- (void)setEndEditing:(BOOL)endEditing {
-    objc_setAssociatedObject(self, &EndEditKey, @(endEditing), OBJC_ASSOCIATION_ASSIGN);
-}
-
-- (BOOL)endEditing {
-    return [objc_getAssociatedObject(self, &EndEditKey) boolValue];
-}
-
-- (void)setHiddenNavigationBar:(BOOL)hiddenNavigationBar {
-    objc_setAssociatedObject(self, &HiddenNavigationBarKey, @(hiddenNavigationBar), OBJC_ASSOCIATION_ASSIGN);
-    [self.navigationController setNavigationBarHidden:hiddenNavigationBar animated:self.animated];
-}
-
-- (BOOL)hiddenNavigationBar {
-    return [objc_getAssociatedObject(self, &HiddenNavigationBarKey) boolValue];
-}
-
-- (BOOL)animated {
-    return [objc_getAssociatedObject(self, &AnimatedKey) boolValue];
-}
-
-- (void)setAnimated:(BOOL)animated {
-    objc_setAssociatedObject(self, &AnimatedKey, @(animated), OBJC_ASSOCIATION_ASSIGN);
 }
 
 @end

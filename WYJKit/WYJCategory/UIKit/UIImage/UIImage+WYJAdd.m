@@ -1,10 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 
 #import "UIImage+WYJAdd.h"
@@ -13,13 +11,14 @@
 
 @implementation UIImage (WYJAdd)
 
-- (nullable NSString *)base64String {
+- (nullable NSString *)yi_base64String {
     NSData * imagedata = UIImagePNGRepresentation(self);
     NSString * image64 = [imagedata base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
     return image64;
 }
 
-+ (nullable UIImage *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType {
++ (nullable UIImage *)yi_imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(WYJGradientType)gradientType {
     NSMutableArray *ar = [NSMutableArray array];
     for(UIColor *c in colors) {
         [ar addObject:(id)c.CGColor];
@@ -32,19 +31,19 @@
     CGPoint start;
     CGPoint end;
     switch (gradientType) {
-        case GradientTypeTopToBottom:
+        case WYJGradientTypeTopToBottom:
             start = CGPointMake(0.0, 0.0);
             end = CGPointMake(0.0, size.height);
             break;
-        case GradientTypeLeftToRight:
+        case WYJGradientTypeLeftToRight:
             start = CGPointMake(0.0, 0.0);
             end = CGPointMake(size.width, 0.0);
             break;
-        case GradientTypeUpLeftToBottomRight:
+        case WYJGradientTypeUpLeftToBottomRight:
             start = CGPointMake(0.0, 0.0);
             end = CGPointMake(size.width, size.height);
             break;
-        case GradientTypeUpRightToBottomLeft:
+        case WYJGradientTypeUpRightToBottomLeft:
             start = CGPointMake(size.width, 0.0);
             end = CGPointMake(0.0, size.height);
             break;
@@ -61,7 +60,7 @@
 }
 
 
-- (nullable UIImage *)imageByRoundCornerRadius:(CGFloat)radius
+- (nullable UIImage *)yi_imageByRoundCornerRadius:(CGFloat)radius
                               corners:(UIRectCorner)corners
                           borderWidth:(CGFloat)borderWidth
                           borderColor:(UIColor *)borderColor
@@ -113,7 +112,7 @@
 
 
 /// 获取图片、区域的主色
-+ (nullable NSDictionary *)mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect {
++ (nullable NSDictionary *)yi_mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect {
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1
     int bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedLast;
@@ -127,7 +126,7 @@
     }
     
     if (rect.size.width > 0 && rect.size.height > 0) {
-        image = [image cropSquareImageRect:rect];
+        image = [image yi_cropSquareImageRect:rect];
     }
     
     //第一步 先把图片缩小 加快计算速度. 但越小结果误差可能越大
@@ -191,7 +190,7 @@
     return dic;
 }
 ///裁剪图片
-- (nullable UIImage *)cropSquareImageRect:(CGRect)rect {
+- (nullable UIImage *)yi_cropSquareImageRect:(CGRect)rect {
     CGImageRef sourceImageRef = [self CGImage];
     CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);
     UIImage *newImage = [UIImage imageWithCGImage:newImageRef];

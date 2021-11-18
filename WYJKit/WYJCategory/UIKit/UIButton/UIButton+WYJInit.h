@@ -1,11 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
-
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 #import <UIKit/UIKit.h>
 
 @interface UIButton (WYJInit)
@@ -13,7 +10,7 @@
 /// @param frame 位置
 /// @param title 文本
 /// @param titleColor 文本颜色
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         title:(NSString *)title
                    titleColor:(UIColor *)titleColor;
 /// 创建->位置-文本-颜色-字体
@@ -21,7 +18,7 @@
 /// @param title 文本
 /// @param titleColor 文本颜色
 /// @param font 文本字体
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         title:(NSString *)title
                    titleColor:(UIColor *)titleColor
                          font:(UIFont *)font;
@@ -32,7 +29,7 @@
 /// @param font 文本字体
 /// @param target 目标
 /// @param action 函数
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         title:(NSString *)title
                    titleColor:(UIColor *)titleColor
                          font:(UIFont *)font
@@ -47,7 +44,7 @@
 /// @param bgColor 背景颜色
 /// @param target 目标
 /// @param action 函数
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         title:(NSString *)title
                    titleColor:(UIColor *)titleColor
                          font:(UIFont *)font
@@ -65,7 +62,7 @@
 /// @param cornerRadius 圆角
 /// @param target 目标
 /// @param action 函数
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                       title:(NSString *)title
                  titleColor:(UIColor *)titleColor
                        font:(UIFont *)font
@@ -79,7 +76,7 @@
 /// @param frame 位置
 /// @param image 图片
 /// @param selectedImage 选中图片
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         image:(UIImage *)image
                 selectedImage:(UIImage *)selectedImage;
 /// 创建->位置-图片-选中图片-目标-函数
@@ -88,7 +85,7 @@
 /// @param selectedImage 选中图片
 /// @param target 目标
 /// @param action 函数
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         image:(UIImage *)image
                 selectedImage:(UIImage *)selectedImage
                        target:(id)target
@@ -101,7 +98,7 @@
 /// @param cornerRadius 圆角
 /// @param target 目标
 /// @param action 函数
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         image:(UIImage *)image
                 selectedImage:(UIImage *)selectedImage
                    buttonType:(UIButtonType)buttonType
@@ -117,7 +114,7 @@
 /// @param image 图片
 /// @param selectedImage 选中图片
 /// @param font 字体
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         title:(NSString *)title
                    titleColor:(UIColor *)titleColor
                 selectedTitle:(NSString *)selectedTitle
@@ -138,7 +135,7 @@
 /// @param cornerRadius 圆角
 /// @param target 目标
 /// @param action 函数
-+ (UIButton *)createWithFrame:(CGRect)frame
++ (UIButton *)yi_createWithFrame:(CGRect)frame
                         title:(NSString *)title
                    titleColor:(UIColor *)titleColor
                 selectedTitle:(NSString *)selectedTitle

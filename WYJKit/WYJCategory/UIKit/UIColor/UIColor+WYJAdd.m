@@ -1,10 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 
 #import "UIColor+WYJAdd.h"
@@ -12,7 +10,7 @@
 
 @implementation UIColor (WYJAdd)
 
-+ (UIColor *)hexStr:(NSString *)hexStr alpha:(CGFloat)a {
++ (UIColor *)yi_hexStr:(NSString *)hexStr alpha:(CGFloat)a {
     //删除字符串中的空格
     NSString *cString = [[hexStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     // String should be 6 or 8 characters
@@ -52,11 +50,11 @@
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:a];
 }
 
-+ (UIColor *)hexStr:(NSString *)hexStr {
-    return [UIColor hexStr:hexStr alpha:1.0];
++ (UIColor *)yi_hexStr:(NSString *)hexStr {
+    return [UIColor yi_hexStr:hexStr alpha:1.0];
 }
 
-+ (UIColor *)randomColor {
++ (UIColor *)yi_randomColor {
     NSInteger aRedValue = arc4random() % 255;
     NSInteger aGreenValue = arc4random() % 255;
     NSInteger aBlueValue = arc4random() % 255;
@@ -73,7 +71,7 @@
  *
  *  @return 渐变颜色
  */
-+ (nullable UIColor*)gradientFromColor:(UIColor*)color toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length
++ (nullable UIColor*)yi_gradientFromColor:(UIColor*)color toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length
 {
     CGSize size = CGSizeZero;
     if (isHorizontal) {
@@ -106,7 +104,7 @@
 }
 
 //判断颜色深浅
-- (BOOL)isDarkColor {
+- (BOOL)yi_isDarkColor {
     const CGFloat *componentColors = CGColorGetComponents(self.CGColor);
     CGFloat colorBrightness = ((componentColors[0] * 299) + (componentColors[1] * 587) + (componentColors[2] * 114)) / 1000;
     if (colorBrightness < 0.5){

@@ -1,31 +1,28 @@
 //
 //  UIButton+WYJTouch.m
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
-
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 #import "UIButton+WYJTouch.h"
 #import <objc/runtime.h>
 
 @implementation UIButton (WYJTouch)
 
-- (UIEdgeInsets)touchAreaInsets {
-    return [objc_getAssociatedObject(self, @selector(touchAreaInsets)) UIEdgeInsetsValue];
+- (UIEdgeInsets)yi_touchAreaInsets {
+    return [objc_getAssociatedObject(self, @selector(yi_touchAreaInsets)) UIEdgeInsetsValue];
 }
 /**
  *  @brief  设置按钮额外热区
  */
-- (void)setTouchAreaInsets:(UIEdgeInsets)touchAreaInsets {
-    NSValue *value = [NSValue valueWithUIEdgeInsets:touchAreaInsets];
-    objc_setAssociatedObject(self, @selector(touchAreaInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setYi_touchAreaInsets:(UIEdgeInsets)yi_touchAreaInsets {
+    NSValue *value = [NSValue valueWithUIEdgeInsets:yi_touchAreaInsets];
+    objc_setAssociatedObject(self, @selector(yi_touchAreaInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    UIEdgeInsets touchAreaInsets = self.touchAreaInsets;
+    UIEdgeInsets touchAreaInsets = self.yi_touchAreaInsets;
     CGRect bounds = self.bounds;
     bounds = CGRectMake(bounds.origin.x - touchAreaInsets.left,
                         bounds.origin.y - touchAreaInsets.top,

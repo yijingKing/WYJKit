@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-
+#import "OneViewController.h"
 @interface ViewController ()
 
 @end
@@ -35,29 +35,32 @@
 //        NSLog(@"1231232");
 //    }];
 //
-//    UIButton * button = [UIButton createWithFrame:CGRectMake(100, 100, 100, 100) title:@"倒计时" titleColor:UIColor.redColor];
-//    [self.view addSubview:button];
-//    button.backgroundColor = UIColor.blueColor;
-//    [button startTime:10 completion:^(NSString * _Nonnull time) {
-//        NSLog(@"%@", time);
-//    } stopCompletion:^{
-//        NSLog(@"完成");
-//    }];
+    UIButton * button = [UIButton yi_createWithFrame:CGRectMake(100, 100, 100, 100) title:@"倒计时" titleColor:UIColor.redColor];
+    button.yi_font = PFRFontWithSizes(30);
+    [self.view addSubview:button];
+    button.backgroundColor = UIColor.blueColor;
+    [button yi_startTime:10 completion:^(NSString * _Nonnull time) {
+        NSLog(@"%@", time);
+    } stopCompletion:^{
+        NSLog(@"完成");
+    }];
 //    UILabel * label = [UILabel createWithText:@"" color:UIColor.redColor font:nil];
     
-    self.dataSource = [NSMutableArray arrayWithArray:@[@[@"1",@"1",@"1"],@[@"1",@"1",@"1",@"1",@"1"]]];
-    [self addTableView];
-    
-    [self.mainTableView heightForRowAtIndexPath:^CGFloat(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
-        return 99;
-    }];
-    
-    [self.mainTableView cellForRowAtIndexPath:^UITableViewCell * _Nullable(UITableView * _Nullable tableView, NSIndexPath * _Nullable indexPath) {
-        UITableViewCell * cell = UITableViewCell.alloc .init;
-        cell.textLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row];
-        return cell;
-    }];
+//    self.dataSource = [NSMutableArray arrayWithArray:@[@[@"1",@"1",@"1"],@[@"1",@"1",@"1",@"1",@"1"]]];
+//    [self addTableView];
+//    
+//    [self.mainTableView heightForRowAtIndexPath:^CGFloat(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+//        return 99;
+//    }];
+//    
+//    [self.mainTableView cellForRowAtIndexPath:^UITableViewCell * _Nullable(UITableView * _Nullable tableView, NSIndexPath * _Nullable indexPath) {
+//        UITableViewCell * cell = UITableViewCell.alloc .init;
+//        cell.textLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row];
+//        return cell;
+//    }];
 }
 
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self pushViewController:OneViewController.alloc.init animated:YES];
+}
 @end

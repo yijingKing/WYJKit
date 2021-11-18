@@ -1,27 +1,24 @@
-/*
-  Created by 祎 on 2021
-  Copyright © 2021年 祎. All rights reserved.
-  GitHub: https://github.com/MemoryKing
-*/
+//
+//  TwoViewController.m
+//  WYJKitDemo
+//
+//  Created by 王祎境 on 2021/11/15.
+//
 
-#import "WYJNavigationController.h"
+#import "TwoViewController.h"
 
-@interface WYJNavigationController ()
+@interface TwoViewController ()
 
 @end
 
-@implementation WYJNavigationController
+@implementation TwoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"two";
+    self.view.backgroundColor = UIColor.grayColor;
 }
-
-
-- (UIViewController *)childViewControllerForStatusBarStyle {
-    return self.topViewController;
-}
-
 
 /*
 #pragma mark - Navigation

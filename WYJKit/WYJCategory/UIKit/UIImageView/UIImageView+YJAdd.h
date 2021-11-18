@@ -1,19 +1,17 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 #import <UIKit/UIKit.h>
 
 @interface UIImageView (YJAdd)
 
 /** image name */
-@property (nonatomic, copy)NSString * imageName;
+@property (nonatomic, copy)NSString * yi_imageName;
 
-@property (nonatomic, copy)NSString * base64Image;
+@property (nonatomic, copy)NSString * yi_base64Image;
 
 @end
 

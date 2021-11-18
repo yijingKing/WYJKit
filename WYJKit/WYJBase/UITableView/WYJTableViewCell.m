@@ -1,10 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 
 #import "WYJTableViewCell.h"
@@ -21,8 +19,26 @@
     }
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     [self addSubview:self.dividerView];
+    [self initSubviews];
+    [self makeContraints];
     return self;
 }
+
+
+- (void)initSubviews {
+    
+}
+
+- (void)makeContraints {
+    
+}
+
+- (void)configurationData:(id)data {
+    
+}
+
+
+#pragma mark - Lazy loading
 
 
 - (void)drawRect:(CGRect)rect {
@@ -50,7 +66,9 @@
 
     // Configure the view for the selected state
 }
-- (WYJTableViewCell *)yi {
-    return self;
+
++ (NSString *)yi_reuseIdentifier {
+    return NSStringFromClass(self);
 }
+
 @end

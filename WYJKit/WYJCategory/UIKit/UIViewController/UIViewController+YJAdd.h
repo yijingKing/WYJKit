@@ -1,31 +1,12 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (YJAdd)
-/** title color */
-@property (nonatomic, strong) UIColor * titleColor;
-
-/** hidden navigation shadow */
-@property (nonatomic, assign) BOOL hiddenShadow;
-
-/** hidden navigation */
-@property (nonatomic, assign) BOOL hiddenNavigationBar;
-
-/** navigation background color */
-@property (nonatomic, strong) UIColor * navBackgroundColor;
-
-/** background color */
-@property (nonatomic, strong) UIColor * backgroundColor;
-
-/** end editing */
-@property (nonatomic, assign) BOOL endEditing;
 
 #pragma make ------ 设置导航栏标题 ------
 - (void)setNavTitle:(NSString *)title;

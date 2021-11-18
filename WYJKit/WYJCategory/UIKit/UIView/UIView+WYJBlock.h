@@ -1,11 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
-
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 #import <UIKit/UIKit.h>
 
 typedef void (^WYJGestureActionBlock)(UIGestureRecognizer * gestureRecoginzer);
@@ -15,13 +12,13 @@ typedef void (^WYJGestureActionBlock)(UIGestureRecognizer * gestureRecoginzer);
  *
  *  @param block 代码块
  */
-- (void)addTapActionWithBlock:(WYJGestureActionBlock)block;
+- (void)yi_addTapActionWithBlock:(WYJGestureActionBlock)block;
 /**
  *  @brief  添加长按手势
  *
  *  @param block 代码块
  */
-- (void)addLongPressActionWithBlock:(WYJGestureActionBlock)block;
+- (void)yi_addLongPressActionWithBlock:(WYJGestureActionBlock)block;
 @end
 
 

@@ -1,10 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 
 #import "UIImageView+YJAdd.h"
@@ -16,7 +14,7 @@ static const char ImageClickBlockKey;
 
 @implementation UIImageView (YJAdd)
 
-@dynamic imageName;
+@dynamic yi_imageName;
 - (void)addTouchUpInside:(void (^)(void))block {
     if (block) {
         objc_setAssociatedObject(self, &ImageClickBlockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -30,24 +28,24 @@ static const char ImageClickBlockKey;
     block();
 }
 
-- (void)setImageName:(NSString *)imageName {
-    objc_setAssociatedObject(self, &@selector(imageName), imageName, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setYi_imageName:(NSString *)imageName {
+    objc_setAssociatedObject(self, &@selector(yi_imageName), imageName, OBJC_ASSOCIATION_COPY_NONATOMIC);
     self.image = [UIImage imageNamed:imageName];
 }
 
-- (NSString *)imageName {
-    return objc_getAssociatedObject(self, &@selector(imageName));
+- (NSString *)yi_imageName {
+    return objc_getAssociatedObject(self, &@selector(yi_imageName));
 }
 
-- (void)setBase64Image:(NSString *)base64Image {
-    objc_setAssociatedObject(self, @selector(base64Image), base64Image, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setYi_base64Image:(NSString *)base64Image {
+    objc_setAssociatedObject(self, @selector(yi_base64Image), base64Image, OBJC_ASSOCIATION_COPY_NONATOMIC);
     NSData * imageData =[[NSData alloc] initWithBase64EncodedString:base64Image options:NSDataBase64DecodingIgnoreUnknownCharacters];
     UIImage *photo = [UIImage imageWithData:imageData];
     self.image = photo;
 }
 
-- (NSString *)base64Image {
-    return objc_getAssociatedObject(self, &@selector(base64Image));
+- (NSString *)yi_base64Image {
+    return objc_getAssociatedObject(self, &@selector(yi_base64Image));
 }
 
 @end

@@ -1,10 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 #import <UIKit/UIKit.h>
 
@@ -17,7 +15,7 @@
 #define WRGBACOLOR(r,g,b,a)                  [UIColor colorWithRed:r / 255.0 green:g / 255.0  blue:b / 255.0 alpha:a]
 #endif
 #ifndef WHexColor
-#define WHexColor(_hex_)                     [UIColor hexStr:((__bridge NSString *)CFSTR(#_hex_))]
+#define WHexColor(_hex_)                     [UIColor yi_hexStr:((__bridge NSString *)CFSTR(#_hex_))]
 #endif
 #ifndef WHSVCOLOR
 #define WHSVCOLOR(h,s,v)                     [UIColor colorWithHue:h saturation:s value:v alpha:1]
@@ -34,13 +32,13 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface UIColor (WYJAdd)
 
-+ (UIColor *)hexStr:(NSString *)hexStr alpha:(CGFloat)a;
++ (UIColor *)yi_hexStr:(NSString *)hexStr alpha:(CGFloat)a;
 
-+ (UIColor *)hexStr:(NSString *)hexStr;
++ (UIColor *)yi_hexStr:(NSString *)hexStr;
 
-+ (UIColor *)randomColor;
++ (UIColor *)yi_randomColor;
 ///判断颜色深浅
-- (BOOL)isDarkColor;
+- (BOOL)yi_isDarkColor;
 
 /**
  *  @brief  渐变颜色(横向渐变, 纵向渐变,length为渐变长度)
@@ -52,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 渐变颜色
  */
-+ (nullable UIColor*)gradientFromColor:(UIColor*)color toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length;
++ (nullable UIColor*)yi_gradientFromColor:(UIColor*)color toColor:(UIColor*)toColor isHorizontal:(BOOL)isHorizontal Length:(int)length;
 @end
 NS_ASSUME_NONNULL_END
 

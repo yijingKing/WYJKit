@@ -4,8 +4,6 @@
  File name:     UIFont+WYJKit.h
  Author:        Eugene King (Wang Yijing)
  E-mail:        1091676312@qq.com
- History:
- 2019-03-12:finishing
  ********************************************************************************/
 
 #import <UIKit/UIKit.h>

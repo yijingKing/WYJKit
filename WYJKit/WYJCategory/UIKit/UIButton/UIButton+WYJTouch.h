@@ -1,11 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
-
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  设置按钮额外点击区域
  */
-@property (nonatomic, assign) UIEdgeInsets touchAreaInsets;
+@property (nonatomic, assign) UIEdgeInsets yi_touchAreaInsets;
 @end
 
 NS_ASSUME_NONNULL_END

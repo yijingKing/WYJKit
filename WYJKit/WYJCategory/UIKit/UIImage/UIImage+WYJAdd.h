@@ -1,25 +1,23 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 
 #import <UIKit/UIKit.h>
 
 typedef enum  {
-    GradientTypeTopToBottom ,       //从上到小
-    GradientTypeLeftToRight ,       //从左到右
-    GradientTypeUpLeftToBottomRight ,   //左上到右下
-    GradientTypeUpRightToBottomLeft    //右上到左下
-} GradientType;
+    WYJGradientTypeTopToBottom ,       //从上到小
+    WYJGradientTypeLeftToRight ,       //从左到右
+    WYJGradientTypeUpLeftToBottomRight ,   //左上到右下
+    WYJGradientTypeUpRightToBottomLeft    //右上到左下
+} WYJGradientType;
 
 NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (WYJAdd)
 /** image conversion base64 */
-@property (nonatomic, copy, readonly,nullable)NSString * base64String;
+@property (nonatomic, copy, readonly,nullable)NSString * yi_base64String;
 
 /**
  渐变色
@@ -28,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param gradientType direction
  @return image
  */
-+ (nullable UIImage *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType;
++ (nullable UIImage *)yi_imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(WYJGradientType)gradientType;
 
 
 /**
@@ -44,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param borderLineJoin 边界线
  */
-- (nullable UIImage *)imageByRoundCornerRadius:(CGFloat)radius
+- (nullable UIImage *)yi_imageByRoundCornerRadius:(CGFloat)radius
                                        corners:(UIRectCorner)corners
                                    borderWidth:(CGFloat)borderWidth
                                    borderColor:(nullable UIColor *)borderColor
@@ -54,9 +52,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param image 图片
 /// @param scale 缩放比例
 /// @param rect 位置
-+ (nullable NSDictionary *)mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect;
++ (nullable NSDictionary *)yi_mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect;
 ///裁剪图片
-- (nullable UIImage *)cropSquareImageRect:(CGRect)rect;
+- (nullable UIImage *)yi_cropSquareImageRect:(CGRect)rect;
 ///图片不自动渲染
 + (nullable UIImage *)imageWithNamed:(nullable NSString *)name;
 @end

@@ -1,10 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 
 #import "UIView+WYJAdd.h"
@@ -13,37 +11,37 @@
 
 @implementation UIView (WYJAdd)
 
-- (void)roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size {
+- (void)yi_roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size {
     UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCon cornerRadii:size];
     CAShapeLayer* shape = [[CAShapeLayer alloc] init];
     [shape setPath:rounded.CGPath];
     self.layer.mask = shape;
 }
 
-- (void)shadowsColor:(UIColor *)color size:(CGSize)size radius:(CGFloat)radius opacity:(CGFloat)opacity {
+- (void)yi_shadowsColor:(UIColor *)color size:(CGSize)size radius:(CGFloat)radius opacity:(CGFloat)opacity {
     self.layer.shadowColor = color.CGColor;
     self.layer.shadowOffset = size;
     self.layer.shadowRadius = radius;
     self.layer.shadowOpacity = opacity;
 }
 
-- (nullable UIView *)imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(GradientType)gradientType {
+- (nullable UIView *)yi_imageFromSize:(CGSize)size Colors:(NSArray*)colors byGradientType:(WYJGradientType)gradientType {
     
-    UIImage * image = [UIImage imageFromSize:size Colors:colors byGradientType:gradientType];
+    UIImage * image = [UIImage yi_imageFromSize:size Colors:colors byGradientType:gradientType];
     
     UIColor * color = [UIColor colorWithPatternImage:image];
     self.backgroundColor = color;
     return self;
 }
 
-- (void)removeAllSubviews {
+- (void)yi_removeAllSubviews {
     //[self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     while (self.subviews.count) {
         [self.subviews.lastObject removeFromSuperview];
     }
 }
 
-- (nullable UIViewController *)viewController {
+- (nullable UIViewController *)yi_viewController {
     for (UIView *view = self; view; view = view.superview) {
         UIResponder *nextResponder = [view nextResponder];
         if ([nextResponder isKindOfClass:[UIViewController class]]) {

@@ -1,10 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 
 #import <UIKit/UIKit.h>
@@ -25,39 +23,39 @@ typedef NS_ENUM(NSUInteger, WYJImagePosition) {
 
 @interface UIButton (WYJAdd)
 /** title font */
-@property (nonatomic, assign) CGFloat titleFont;
+@property (nonatomic, assign) CGFloat yi_titleFont;
 /** title font */
-@property (nonatomic, assign) UIFont * font;
+@property (nonatomic, assign) UIFont * yi_font;
 /** title Alignement */
-@property (nonatomic, assign) WYJTextAlignement textAlignement;
+@property (nonatomic, assign) WYJTextAlignement yi_textAlignement;
 
 /** title normal status */
-@property (nonatomic, copy) NSString * titleText;
+@property (nonatomic, copy) NSString * yi_titleText;
 /** title color normal status */
-@property (nonatomic, strong) UIColor * titleColor;
+@property (nonatomic, strong) UIColor * yi_titleColor;
 /** image normal status */
-@property (nonatomic, strong) UIImage * image;
+@property (nonatomic, strong) UIImage * yi_image;
 /** background image normal status */
-@property (nonatomic, strong) UIImage * backgroundImage;
+@property (nonatomic, strong) UIImage * yi_backgroundImage;
 /** attributed normal status */
-@property (nonatomic, copy) NSAttributedString * attributedText;
+@property (nonatomic, copy) NSAttributedString * yi_attributedText;
 
 /** title select status */
-@property (nonatomic, copy) NSString * selectTitle;
+@property (nonatomic, copy) NSString * yi_selectTitle;
 /** title color select status */
-@property (nonatomic, strong) UIColor * selectTitleColor;
+@property (nonatomic, strong) UIColor * yi_selectTitleColor;
 /** image select status */
-@property (nonatomic, strong) UIImage * selectImage;
+@property (nonatomic, strong) UIImage * yi_selectImage;
 /** background image select status */
-@property (nonatomic, strong) UIImage * selectBackgroundImage;
+@property (nonatomic, strong) UIImage * yi_selectBackgroundImage;
 /** attributed select status */
-@property (nonatomic, copy) NSAttributedString * selectAttributedText;
+@property (nonatomic, copy) NSAttributedString * yi_selectAttributedText;
 
 /** touch up inside */
-- (void)addTargetUpInside:(nullable id)tat action:(nonnull SEL)sel;
+- (void)yi_addTargetUpInside:(nullable id)tat action:(nonnull SEL)sel;
 
 /** image and title position */
-- (void)imagePosition:(WYJImagePosition)postitionStatus spacing:(CGFloat)spacing;
+- (void)yi_imagePosition:(WYJImagePosition)postitionStatus spacing:(CGFloat)spacing;
 @end
 
 

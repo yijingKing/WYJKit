@@ -88,7 +88,7 @@
 #endif
 // 设置Debug模式下打印log,release模式下不打印
 #ifdef DEBUG
-#	define WYJLog(format, ...)   NSLog((@"[DEBUG] %s [第%d行] " format), __PRETTY_FUNCTION__,__LINE__, ##__VA_ARGS__);
+#	define WYJDEBUG(format, ...)   NSLog((@"[DEBUG] %s [第%d行] " format), __PRETTY_FUNCTION__,__LINE__, ##__VA_ARGS__);
 #else
 #   define NSLog(...)
 #	define NSLog(...)

@@ -1,27 +1,24 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
-
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 #import "UIResponder+WYJConfigure.h"
 #import "WYJKitHeader.h"
 
 @implementation UIResponder (WYJConfigure)
 #pragma make ------  热更新 ------
-- (void)hotReload {
+- (void)yi_hotReload {
 #if DEBUG
     [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
 #endif
 }
 
 #pragma make ------  键盘收回管理 ------
--(void)configureBoardManager {
-    [self configureBoardManager:nil];
+-(void)yi_configureBoardManager {
+    [self yi_configureBoardManager:nil];
 }
--(void)configureBoardManager:(void(^_Nullable)(IQKeyboardManager *_Nullable))block {
+-(void)yi_configureBoardManager:(void(^_Nullable)(IQKeyboardManager *_Nullable))block {
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;// 控制整个功能是否启用
     manager.shouldResignOnTouchOutside = YES;// 控制点击背景是否收起键盘

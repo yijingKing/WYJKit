@@ -1,63 +1,61 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 
 #import "UIApplication+WYJAdd.h"
 
 @implementation UIApplication (WYJAdd)
 
-- (NSURL *)documentsURL {
+- (NSURL *)yi_documentsURL {
     return [[[NSFileManager defaultManager]
              URLsForDirectory:NSDocumentDirectory
              inDomains:NSUserDomainMask] lastObject];
 }
 
-- (NSString *)documentsPath {
+- (NSString *)yi_documentsPath {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
 }
 
-- (NSURL *)cachesURL {
+- (NSURL *)yi_cachesURL {
     return [[[NSFileManager defaultManager]
              URLsForDirectory:NSCachesDirectory
              inDomains:NSUserDomainMask] lastObject];
 }
 
-- (NSString *)cachesPath {
+- (NSString *)yi_cachesPath {
     return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
 }
 
-- (NSURL *)libraryURL {
+- (NSURL *)yi_libraryURL {
     return [[[NSFileManager defaultManager]
              URLsForDirectory:NSLibraryDirectory
              inDomains:NSUserDomainMask] lastObject];
 }
 
-- (NSString *)libraryPath {
+- (NSString *)yi_libraryPath {
     return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject];
 }
 
-- (nullable NSString *)appBundleName {
+- (nullable NSString *)yi_appBundleName {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
 }
 
-- (nullable NSString *)appDisplayName {
+- (nullable NSString *)yi_appDisplayName {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
 }
 
-- (nullable NSString *)appBundleID {
+- (nullable NSString *)yi_appBundleID {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
 }
 
-- (nullable NSString *)appVersion {
+- (nullable NSString *)yi_appVersion {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
 
-- (nullable NSString *)appBuildVersion {
+- (nullable NSString *)yi_appBuildVersion {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 }
 
@@ -66,8 +64,8 @@
 
 
 NSString * WAppDisplayName(void) {
-    return UIApplication.sharedApplication.appDisplayName;
+    return UIApplication.sharedApplication.yi_appDisplayName;
 }
 NSString * WAppVersion(void) {
-    return UIApplication.sharedApplication.appVersion;
+    return UIApplication.sharedApplication.yi_appVersion;
 }
