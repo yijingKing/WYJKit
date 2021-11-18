@@ -29,7 +29,7 @@
             //满足则给当前cell的frame属性赋值
             //不满足的cell会根据系统布局换行
             CGRect frame = currentLayoutAttributes.frame;
-            frame.origin.x = preX + self.maximumSpacing;
+            frame.origin.x = preX + self.yi_maximumSpacing;
             currentLayoutAttributes.frame = frame;
         }
     }
