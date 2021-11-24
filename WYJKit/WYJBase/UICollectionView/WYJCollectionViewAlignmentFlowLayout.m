@@ -1,9 +1,8 @@
-//
-//  WYJCollectionViewAlignmentFlowLayout.m
-//  WYJKitDemo
-//
-//  Created by 祎 on 2021/11/18.
-//
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 #import "WYJCollectionViewAlignmentFlowLayout.h"
 
@@ -12,7 +11,6 @@
 - (NSArray *) layoutAttributesForElementsInRect:(CGRect)rect {
     // 获取系统帮我们计算好的Attributes
     NSArray *answer = [super layoutAttributesForElementsInRect:rect];
-    // 遍历结果
     for(int i = 1; i < [answer count]; ++i) {
         // 获取cell的Attribute，根据上一个cell获取最大的x，定义为origin
         UICollectionViewLayoutAttributes *currentLayoutAttributes = answer[i];

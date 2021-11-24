@@ -10,4 +10,5 @@
 #import "UIButton+WYJInit.h"
 #import "UIButton+WYJTouch.h"
 #import "UIButton+WYJCountDown.h"
+#import "UIButton+WYJInterval.h"
 #endif /* UIButtonCategoryHeader_h */

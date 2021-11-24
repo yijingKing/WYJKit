@@ -8,9 +8,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJCollectionViewAlignmentFlowLayout : UICollectionViewFlowLayout
-// 设置cell最大间距
-@property (nonatomic,assign) NSInteger yi_maximumSpacing;
+@interface UIButton (WYJInterval)
+/// 两次点击间隔时间
+@property (nonatomic,assign) NSTimeInterval yi_eventInterval;
 
 @end
 

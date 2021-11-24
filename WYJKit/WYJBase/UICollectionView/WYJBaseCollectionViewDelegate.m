@@ -3,6 +3,7 @@
   Copyright © 2021年 祎. All rights reserved.
   GitHub: https://github.com/MemoryKing
 */
+
 #import "WYJBaseCollectionViewDelegate.h"
 
 @implementation WYJBaseCollectionViewDelegate

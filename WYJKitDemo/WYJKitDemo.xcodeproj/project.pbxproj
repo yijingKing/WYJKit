@@ -10,6 +10,7 @@
 		382BDC15874F214634D3A232 /* Pods_WYJKitDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C94483B1B623EB7DDCA81A /* Pods_WYJKitDemoTests.framework */; };
 		7F41DFC6274245BB002CAE5F /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F41DFC5274245BB002CAE5F /* OneViewController.m */; };
 		7F41DFC9274245CF002CAE5F /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F41DFC8274245CF002CAE5F /* TwoViewController.m */; };
+		7F4BBD3F274DD1EB009C774B /* UIButton+WYJInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BBD3E274DD1EB009C774B /* UIButton+WYJInterval.m */; };
 		7F87AB00273CE7270079BB0C /* UIImage+WYJInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F87AA60273CE7270079BB0C /* UIImage+WYJInit.m */; };
 		7F87AB01273CE7270079BB0C /* UIImage+WYJAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F87AA61273CE7270079BB0C /* UIImage+WYJAdd.m */; };
 		7F87AB02273CE7270079BB0C /* UILabel+WYJInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F87AA66273CE7270079BB0C /* UILabel+WYJInit.m */; };
@@ -101,6 +102,8 @@
 		7F41DFC5274245BB002CAE5F /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		7F41DFC7274245CF002CAE5F /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
 		7F41DFC8274245CF002CAE5F /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		7F4BBD3D274DD1EB009C774B /* UIButton+WYJInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+WYJInterval.h"; sourceTree = "<group>"; };
+		7F4BBD3E274DD1EB009C774B /* UIButton+WYJInterval.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WYJInterval.m"; sourceTree = "<group>"; };
 		7F87AA5B273CE7270079BB0C /* WYJKitHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJKitHeader.h; sourceTree = "<group>"; };
 		7F87AA5F273CE7270079BB0C /* UIImage+WYJAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WYJAdd.h"; sourceTree = "<group>"; };
 		7F87AA60273CE7270079BB0C /* UIImage+WYJInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WYJInit.m"; sourceTree = "<group>"; };
@@ -384,6 +387,8 @@
 				7F87AA71273CE7270079BB0C /* UIButton+WYJTouch.h */,
 				7F87AA76273CE7270079BB0C /* UIButton+WYJTouch.m */,
 				7F87AA78273CE7270079BB0C /* UIButtonCategoryHeader.h */,
+				7F4BBD3D274DD1EB009C774B /* UIButton+WYJInterval.h */,
+				7F4BBD3E274DD1EB009C774B /* UIButton+WYJInterval.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -1012,6 +1017,7 @@
 				7F87AB07273CE7270079BB0C /* UIButton+WYJTouch.m in Sources */,
 				7F87AB28273CE7270079BB0C /* WYJBaseCollectionView.m in Sources */,
 				7F87AB0F273CE7270079BB0C /* UIFont+WYJAdapter.m in Sources */,
+				7F4BBD3F274DD1EB009C774B /* UIButton+WYJInterval.m in Sources */,
 				7F87AB1C273CE7270079BB0C /* NSString+WYJHGBTransForm.m in Sources */,
 				7F87AB02273CE7270079BB0C /* UILabel+WYJInit.m in Sources */,
 				7F87AB2F273CE7270079BB0C /* WYJNavigationController.m in Sources */,
