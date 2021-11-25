@@ -25,4 +25,6 @@
 #import "UITabBarControllerHeader.h"
 #import "UINavigationControllerHeader.h"
 
+#import "UIControlHeader.h"
+
 #endif /* UIKitCagoryHeader_h */

@@ -7,7 +7,7 @@
 
 @interface NSDate (WYJConversion)
 #pragma mark --- 将时间转换成时间戳
-- (nullable NSString *)toTimestampFromTime:(nullable NSString *)formatterStr;
+- (nullable NSString *)yi_toTimestampFromTime:(nullable NSString *)formatterStr;
 
 @end
 

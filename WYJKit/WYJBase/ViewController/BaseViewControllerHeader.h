@@ -8,5 +8,5 @@
 #define BaseViewControllerHeader_h
 
 #import "WYJBaseViewController.h"
-#import "WYJBaseNavigationView.h"
+#import "WYJNavigationView.h"
 #endif /* BaseViewControllerHeader_h */

@@ -1,11 +1,8 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- FileContent:   总头文件
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+  GitHub: https://github.com/MemoryKing
+*/
 
 #ifndef WYJKitHeader_h
 #define WYJKitHeader_h
@@ -15,11 +12,11 @@
 #import "WYJHandyMacro.h"
 #import "WYJFrameMacro.h"
 #import "WYJEmptyMacro.h"
-
+#import "WYJConversionHeader.h"
 
 #import "UIKitCagoryHeader.h"
 #import "FoundationHeader.h"
 #import "BaseFoundationHeader.h"
 
-
+#import "WYJToolUIHeader.h"
 #endif /* WYJKitHeader_h */

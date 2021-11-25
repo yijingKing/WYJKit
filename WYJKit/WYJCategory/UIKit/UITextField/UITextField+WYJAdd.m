@@ -57,7 +57,7 @@
 }
 
 - (NSString *)lastTextStr {
-    return [NSString emptyStr:objc_getAssociatedObject(self, _cmd)];
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 /**

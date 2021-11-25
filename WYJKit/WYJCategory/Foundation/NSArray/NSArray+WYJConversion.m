@@ -7,10 +7,10 @@
 #import "NSArray+WYJConversion.h"
 
 @implementation NSArray (WYJConversion)
-- (NSString *)toString {
-    return [self toStringBy:@","];
+- (NSString *)yi_toString {
+    return [self yi_toStringBy:@","];
 }
-- (NSString *)toStringBy:(NSString *)string {
+- (NSString *)yi_toStringBy:(NSString *)string {
     return [self componentsJoinedByString:string];
 }
 @end

@@ -7,7 +7,7 @@
 
 @implementation NSString (WYJDate)
 #pragma mark ---- 将时间戳转换成时间
-- (NSString *)dateFromTimestamp:(NSString  *)formatterstr {
+- (NSString *)yi_dateFromTimestamp:(NSString  *)formatterstr {
     //将对象类型的时间转换为NSDate类型
     double time = self.doubleValue;
     NSDate * myDate=[NSDate dateWithTimeIntervalSince1970:time];
@@ -22,7 +22,7 @@
     return timeStr;
 }
 
-- (NSDate *)dateFromStringFormat:(NSString *)format {
+- (NSDate *)yi_dateFromStringFormat:(NSString *)format {
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:format];
     return [formatter dateFromString:self];

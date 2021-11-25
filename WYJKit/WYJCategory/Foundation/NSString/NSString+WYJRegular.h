@@ -8,19 +8,19 @@
 
 @interface NSString (WYJRegular)
 /** 是否是数字 */
-@property (nonatomic, assign, readonly)BOOL isNumber;
+@property (nonatomic, assign, readonly)BOOL yi_isNumber;
 /** 是否是手机号 */
-@property (nonatomic, assign, readonly)BOOL isTelephone;
+@property (nonatomic, assign, readonly)BOOL yi_isTelephone;
 /** 是否是邮箱 */
-@property (nonatomic, assign, readonly)BOOL isEmail;
+@property (nonatomic, assign, readonly)BOOL yi_isEmail;
 /** 是否是邮箱 */
-@property (nonatomic, assign, readonly)BOOL isTheInteger;
+@property (nonatomic, assign, readonly)BOOL yi_isTheInteger;
 /** 是否是钱(最多两位小数) */
-@property (nonatomic, assign, readonly)BOOL isMoney;
+@property (nonatomic, assign, readonly)BOOL yi_isMoney;
 /** 是否是中文 */
-@property (nonatomic, assign, readonly)BOOL isChinese;
+@property (nonatomic, assign, readonly)BOOL yi_isChinese;
 /** 是否是有效的URL */
-@property (nonatomic, assign, readonly)BOOL isURL;
+@property (nonatomic, assign, readonly)BOOL yi_isURL;
 
 @end
 

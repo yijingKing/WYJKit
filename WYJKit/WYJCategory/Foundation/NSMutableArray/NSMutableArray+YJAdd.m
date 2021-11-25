@@ -9,7 +9,7 @@
 
 @implementation NSMutableArray (YJAdd)
 
-- (NSMutableArray *)removeDuplicates {
+- (NSMutableArray *)yi_removeDuplicates {
     NSSet * set = [NSSet setWithArray:self];
     NSMutableArray * array = [NSMutableArray arrayWithArray:set.allObjects];
     return array;

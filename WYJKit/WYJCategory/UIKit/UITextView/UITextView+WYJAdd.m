@@ -146,7 +146,7 @@
     if (!self.font) {
         self.font = [UIFont systemFontOfSize:16];
     }
-    CGFloat textHeight = [self.yi_placeholder heightWithFontConstrainedToWidth:rect.size.width font:self.yi_promptFont?:self.font];
+    CGFloat textHeight = [self.yi_placeholder yi_heightWithFontConstrainedToWidth:rect.size.width font:self.yi_promptFont?:self.font];
     //画最大字符文本,添加文本显示边界
     if((self.yi_maximumLimit > 0) && (self.yi_characterLengthPrompt == YES)) {
         //设置文字属性

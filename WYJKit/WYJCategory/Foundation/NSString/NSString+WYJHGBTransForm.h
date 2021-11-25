@@ -12,13 +12,13 @@
  十六进制转换为普通字符串的
  @return 普通字符串
  */
-- (NSString *)stringFromHexString;
+- (NSString *)yi_stringFromHexString;
 /**
  普通字符串转换为十六进制的
  
  @return 十六进制字符串
  */
-- (NSString *)hexString;
+- (NSString *)yi_hexString;
 
 /**
  *  身份证号码转生日
@@ -26,7 +26,7 @@
  *
  *  @return 生日
  */
--(NSString *)idCardNumTransToBirthday;
+-(NSString *)yi_idCardNumTransToBirthday;
 
 
 @end

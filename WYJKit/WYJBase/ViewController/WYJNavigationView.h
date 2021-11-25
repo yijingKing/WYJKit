@@ -8,7 +8,7 @@
 #import "WYJBaseView.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJBaseNavigationView : WYJBaseView
+@interface WYJNavigationView : WYJBaseView
 
 /// 左侧钮
 /// @param size 大小

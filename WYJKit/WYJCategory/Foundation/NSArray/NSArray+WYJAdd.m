@@ -8,7 +8,7 @@
 
 @implementation NSArray (WYJAdd)
 
-- (NSArray *)removeDuplicate {
+- (NSArray *)yi_removeDuplicate {
     NSSet * set = [NSSet setWithArray:self];
     return [set allObjects];
 }

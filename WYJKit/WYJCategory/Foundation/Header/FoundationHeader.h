@@ -10,4 +10,6 @@
 #import "NSArrayHeader.h"
 #import "NSMutableArrayHeader.h"
 #import "NSDateHeader.h"
+#import "NSDataHeader.h"
+
 #endif /* FoundationHeader_h */

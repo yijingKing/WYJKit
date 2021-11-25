@@ -7,16 +7,16 @@
 
 @implementation NSString (WYJEncode)
 //编码
-- (NSString *)urlEncodeWithUTF8 {
-    return [self urlEncodeWithUTF8:NSCharacterSet.URLQueryAllowedCharacterSet];
+- (NSString *)yi_urlEncodeWithUTF8 {
+    return [self yi_urlEncodeWithUTF8:NSCharacterSet.URLQueryAllowedCharacterSet];
 }
-- (NSString *)urlEncodeWithUTF8:(NSCharacterSet *)characterSet {
+- (NSString *)yi_urlEncodeWithUTF8:(NSCharacterSet *)characterSet {
     NSString *encoderStr = [self stringByAddingPercentEncodingWithAllowedCharacters:characterSet];
     return encoderStr;
 }
 
 //解码
-- (NSString *)urlDecodeWithUTF8 {
+- (NSString *)yi_urlDecodeWithUTF8 {
     return [self stringByRemovingPercentEncoding];
 }
 @end

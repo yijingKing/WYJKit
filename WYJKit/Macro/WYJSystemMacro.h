@@ -90,7 +90,6 @@
 #ifdef DEBUG
 #	define WYJDEBUG(format, ...)   NSLog((@"[DEBUG] %s [第%d行] " format), __PRETTY_FUNCTION__,__LINE__, ##__VA_ARGS__);
 #else
-#   define NSLog(...)
 #	define NSLog(...)
 #endif
 

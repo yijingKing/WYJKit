@@ -8,7 +8,7 @@
 #import <Masonry/Masonry.h>
 #import "WYJKitHeader.h"
 #import "BaseTableViewHeader.h"
-#import "WYJBaseNavigationView.h"
+#import "WYJNavigationView.h"
 
 @interface WYJBaseViewController ()
 

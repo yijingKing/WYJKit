@@ -12,7 +12,7 @@
  十六进制转换为普通字符串的
  @return 普通字符串
  */
-- (NSString *)stringFromHexString{ //
+- (NSString *)yi_stringFromHexString{ //
     
     char *myBuffer = (char *)malloc((int)[self length] / 2 + 1);
     bzero(myBuffer, [self length] / 2 + 1);
@@ -36,7 +36,7 @@
 
  @return 十六进制字符串
  */
-- (NSString *)hexString{
+- (NSString *)yi_hexString{
     NSData *myD = [self dataUsingEncoding:NSUTF8StringEncoding];
     Byte *bytes = (Byte *)[myD bytes];
     //下面是Byte 转换为16进制。
@@ -63,7 +63,7 @@
  *
  *  @return 生日
  */
--(NSString *)idCardNumTransToBirthday{
+-(NSString *)yi_idCardNumTransToBirthday{
     if(self==nil){
         return nil;
     }

@@ -9,10 +9,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (WYJEncode)
 //编码
-- (NSString *)urlEncodeWithUTF8;
-- (NSString *)urlEncodeWithUTF8:(NSCharacterSet *)characterSet;
+- (NSString *)yi_urlEncodeWithUTF8;
+- (NSString *)yi_urlEncodeWithUTF8:(NSCharacterSet *)characterSet;
 //解码
-- (NSString *)urlDecodeWithUTF8;
+- (NSString *)yi_urlDecodeWithUTF8;
 @end
 
 NS_ASSUME_NONNULL_END

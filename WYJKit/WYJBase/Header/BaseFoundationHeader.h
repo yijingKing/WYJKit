@@ -10,6 +10,6 @@
 #import "BaseTableViewHeader.h"
 #import "BaseCollectionViewHeader.h"
 #import "BaseViewControllerHeader.h"
-#import "WYJBaseNavigationView.h"
+#import "WYJNavigationView.h"
 #import "WYJBaseView.h"
 #endif /* BaseFoundationHeader_h */

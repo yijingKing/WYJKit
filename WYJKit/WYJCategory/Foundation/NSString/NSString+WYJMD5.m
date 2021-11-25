@@ -6,33 +6,35 @@
 
 
 #import "NSString+WYJMD5.h"
+#import "NSString+WYJBase64.h"
+#import "NSData+WYJConversion.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (WYJMD5)
-- (NSString *)MD5Bits16LowercaseEncryption
+- (NSString *)yi_MD5Bits16LowercaseEncryption
 {
-    return [NSString MD5_NB16BitEncry:self isUppercase:NO];
+    return [NSString yi_MD5_NB16BitEncry:self isUppercase:NO];
 }
-- (NSString *)MD5Bits16UppercaseEncryption
+- (NSString *)yi_MD5Bits16UppercaseEncryption
 {
-    return [NSString MD5_NB16BitEncry:self isUppercase:YES];
+    return [NSString yi_MD5_NB16BitEncry:self isUppercase:YES];
 }
-- (NSString *)MD5Bits32LowercaseEncryption
+- (NSString *)yi_MD5Bits32LowercaseEncryption
 {
-    return [NSString MD5_NB32BitEncry:self isUppercase:NO];
+    return [NSString yi_MD5_NB32BitEncry:self isUppercase:NO];
 }
-- (NSString *)MD5Bits32UppercaseEncryption
+- (NSString *)yi_MD5Bits32UppercaseEncryption
 {
-    return [NSString MD5_NB32BitEncry:self isUppercase:YES];
+    return [NSString yi_MD5_NB32BitEncry:self isUppercase:YES];
 }
 
-- (NSString *)base64Decryption {
-    return [NSString base64EncodingWithString:self];
+- (NSString *)yi_base64Decryption {
+    return [NSString yi_base64EncodingWithString:self].yi_toString;
 }
 
-+ (NSString *)MD5_16BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase {
++ (NSString *)yi_MD5_16BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase {
     //提取32位MD5散列的中间16位
-    NSString *md5_32Bit_String = [self MD5_32BitEncry:MD5String isUppercase:NO];
+    NSString *md5_32Bit_String = [self yi_MD5_32BitEncry:MD5String isUppercase:NO];
     NSString *result = [[md5_32Bit_String substringToIndex:24] substringFromIndex:8];//即9～25位
     
     if (isUppercase) {
@@ -42,10 +44,10 @@
     }
 }
 
-+ (NSString *)MD5_NB16BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase {
++ (NSString *)yi_MD5_NB16BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase {
     
     //提取32位MD5散列的中间16位
-    NSString *md5_32Bit_String=[self MD5_NB32BitEncry:MD5String isUppercase:NO];
+    NSString *md5_32Bit_String=[self yi_MD5_NB32BitEncry:MD5String isUppercase:NO];
     NSString *result = [[md5_32Bit_String substringToIndex:24] substringFromIndex:8];//即9～25位
     
     if (isUppercase) {
@@ -55,7 +57,7 @@
     }
 }
 
-+ (NSString *)MD5_32BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase {
++ (NSString *)yi_MD5_32BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase {
     
     const char *str = [MD5String UTF8String];
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
@@ -72,7 +74,7 @@
     }
 }
 
-+ (NSString *)MD5_NB32BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase {
++ (NSString *)yi_MD5_NB32BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase {
     
     const char *cStr = [MD5String UTF8String];
     
@@ -97,24 +99,5 @@
     }
 }
 
-//***base64加密***//
-+(NSString *)base64EncodingWithData:(NSData *)sourceData {
-    if (!sourceData) { //如果sourceData则返回nil，不进行加密。
-        return nil;
-    }
-    NSString *resultString = [sourceData base64EncodedStringWithOptions: NSDataBase64Encoding64CharacterLineLength];
-    return resultString;
-    
-}
 
-//***base64解密***//
-+(id)base64EncodingWithString:(NSString *)sourceString{
-    if (!sourceString)
-    {
-        return nil;//如果sourceString则返回nil，不进行解密。
-    }
-    NSData *resultData = [[NSData alloc]initWithBase64EncodedString:sourceString options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return resultData;
-    
-}
 @end

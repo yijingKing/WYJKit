@@ -10,21 +10,20 @@
 
 @interface NSString (WYJAdd)
 /** HTML转成富文本 */
-@property (nonatomic, copy,readonly)NSAttributedString * HTMLAttributedString;
+@property (nonatomic, copy,readonly)NSAttributedString * yi_HTMLAttributedString;
 /** 首字母转换成大写 */
-@property (nonatomic, copy,readonly) NSString * firstCharUpper;
+@property (nonatomic, copy,readonly) NSString * yi_firstCharUpper;
 /** 首字母转换成小写 */
-@property (nonatomic, copy,readonly) NSString * firstCharLower;
+@property (nonatomic, copy,readonly) NSString * yi_firstCharLower;
 /** json 转 dictionary */
-@property (nonatomic, copy,readonly)NSDictionary * jsonConversionDictionary;
-/** base64 转 image */
-@property (nonatomic, copy, readonly)UIImage * base64ToImage;
+@property (nonatomic, copy,readonly)NSDictionary * yi_jsonConversionDictionary;
+
 
 /** string judge empty */
-+ (BOOL)judgeEmpty:(NSString *)str;
++ (BOOL)yi_judgeEmpty:(NSString *)str;
 
 /** dateString from formatter */
-- (NSString *)dateStringFromFormat:(NSString *)format;
+- (NSString *)yi_dateStringFromFormat:(NSString *)format;
 
 /*
  *  @brief 计算文字的宽度
@@ -32,7 +31,7 @@
  *  param font   字体(默认为系统字体)
  *  param height 约束高度
  */
-- (CGFloat)widthWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font;
+- (CGFloat)yi_widthWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font;
 
 /**
  *  @brief 计算文字的高度
@@ -40,7 +39,7 @@
  *  param font  字体(默认为系统字体)
  *  param width 约束宽度
  */
-- (CGFloat)heightWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font;
+- (CGFloat)yi_heightWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font;
 
 /**
  *  @brief 计算文字的大小
@@ -48,7 +47,7 @@
  *  param font   字体(默认为系统字体)
  *  param height 约束高度
  */
-- (CGSize)sizeWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font;
+- (CGSize)yi_sizeWithFontConstrainedToHeight:(CGFloat)height font:(UIFont *)font;
 
 /**
  *  @brief 计算文字的大小
@@ -56,12 +55,8 @@
  *  param font  字体(默认为系统字体)
  *  param width 约束宽度
  */
-- (CGSize)sizeWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font;
+- (CGSize)yi_sizeWithFontConstrainedToWidth:(CGFloat)width font:(UIFont *)font;
 
-/**
- 验证非空字符串
- */
-+ (NSString *)emptyStr:(NSString *)str;
 
 /** 拼接字符串判空 */
 + (instancetype)stringWithFormatNoNull:(NSString *)format, ... ;

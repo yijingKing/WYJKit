@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "OneViewController.h"
+
 @interface ViewController ()
 
 @end
@@ -39,11 +40,13 @@
     button.yi_font = PFRFontWithSizes(30);
     [self.view addSubview:button];
     button.backgroundColor = UIColor.blueColor;
-    [button yi_startTime:10 completion:^(NSString * _Nonnull time) {
-        NSLog(@"%@", time);
-    } stopCompletion:^{
-        NSLog(@"完成");
-    }];
+//    [button yi_startTime:10 completion:^(NSString * _Nonnull time) {
+//        NSLog(@"%@", time);
+//    } stopCompletion:^{
+//        NSLog(@"完成");
+//    }];
+    [button yi_addTargetUpInside:self action:@selector(buttonClick:)];
+    button.yi_eventInterval = 2;
 //    UILabel * label = [UILabel createWithText:@"" color:UIColor.redColor font:nil];
     
 //    self.dataSource = [NSMutableArray arrayWithArray:@[@[@"1",@"1",@"1"],@[@"1",@"1",@"1",@"1",@"1"]]];
@@ -59,7 +62,9 @@
 //        return cell;
 //    }];
 }
-
+- (void)buttonClick:(UIButton *)sender {
+    WYJDEBUG(@"111111");
+}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self pushViewController:OneViewController.alloc.init animated:YES];
 }

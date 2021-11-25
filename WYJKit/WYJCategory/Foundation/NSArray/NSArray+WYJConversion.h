@@ -10,8 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSArray (WYJConversion)
 ///转成字符串,默认","拼接
-- (NSString *)toString;
-- (NSString *)toStringBy:(NSString *)string;
+- (NSString *)yi_toString;
+- (NSString *)yi_toStringBy:(NSString *)string;
 @end
 
 NS_ASSUME_NONNULL_END

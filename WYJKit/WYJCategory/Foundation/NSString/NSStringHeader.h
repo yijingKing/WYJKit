@@ -13,4 +13,6 @@
 #import "NSString+WYJRegular.h"
 #import "NSString+WYJHGBTransForm.h"
 #import "NSString+WYJEncode.h"
+#import "NSString+WYJBase64.h"
+#import "NSString+WYJGB2312.h"
 #endif /* NSStringHeader_h */
