@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		382BDC15874F214634D3A232 /* Pods_WYJKitDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C94483B1B623EB7DDCA81A /* Pods_WYJKitDemoTests.framework */; };
+		7F408292274F725B0072B088 /* WYJKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7F408291274F725B0072B088 /* WYJKit.podspec */; };
 		7F41DFC6274245BB002CAE5F /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F41DFC5274245BB002CAE5F /* OneViewController.m */; };
 		7F41DFC9274245CF002CAE5F /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F41DFC8274245CF002CAE5F /* TwoViewController.m */; };
 		7F42E9D4274F2E7800B0D417 /* UIControl+WYJEventInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F42E9D2274F2E7800B0D417 /* UIControl+WYJEventInterval.m */; };
@@ -102,6 +103,7 @@
 		63EBFA619975621472F674A8 /* Pods_WYJKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WYJKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D516491EA0DACED18EC0A5D /* Pods-WYJKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYJKitDemoTests.release.xcconfig"; path = "Target Support Files/Pods-WYJKitDemoTests/Pods-WYJKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7841BDE910C126A6D28EE1F7 /* Pods-WYJKitDemo-WYJKitDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYJKitDemo-WYJKitDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-WYJKitDemo-WYJKitDemoUITests/Pods-WYJKitDemo-WYJKitDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F408291274F725B0072B088 /* WYJKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WYJKit.podspec; path = ../WYJKit.podspec; sourceTree = "<group>"; };
 		7F41DFC4274245BA002CAE5F /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		7F41DFC5274245BB002CAE5F /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		7F41DFC7274245CF002CAE5F /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 		7F42E9D2274F2E7800B0D417 /* UIControl+WYJEventInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+WYJEventInterval.m"; sourceTree = "<group>"; };
 		7F42E9D3274F2E7800B0D417 /* UIControl+WYJEventInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+WYJEventInterval.h"; sourceTree = "<group>"; };
 		7F42E9D6274F2E8800B0D417 /* UIControlHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIControlHeader.h; sourceTree = "<group>"; };
-		7F42E9D8274F642500B0D417 /* WYJConversionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJConversionHeader.h; sourceTree = "<group>"; };
+		7F42E9D8274F642500B0D417 /* WYJConvenientHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJConvenientHeader.h; sourceTree = "<group>"; };
 		7F4BBD41274DD973009C774B /* WYJGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJGradientLabel.m; sourceTree = "<group>"; };
 		7F4BBD42274DD973009C774B /* WYJGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJGradientLabel.h; sourceTree = "<group>"; };
 		7F4BBD44274DD988009C774B /* WYJToolUIHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJToolUIHeader.h; sourceTree = "<group>"; };
@@ -305,6 +307,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F408278274F70080072B088 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		7F42E9D5274F2E8000B0D417 /* UIControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -731,7 +740,7 @@
 				7F87AAFD273CE7270079BB0C /* WYJSystemMacro.h */,
 				7F87AAFE273CE7270079BB0C /* WYJFrameMacro.h */,
 				7F87AAFF273CE7270079BB0C /* WYJHandyMacro.h */,
-				7F42E9D8274F642500B0D417 /* WYJConversionHeader.h */,
+				7F42E9D8274F642500B0D417 /* WYJConvenientHeader.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -767,6 +776,7 @@
 		F7E089D727312C2700361311 = {
 			isa = PBXGroup;
 			children = (
+				7F408291274F725B0072B088 /* WYJKit.podspec */,
 				7F87AA5A273CE7270079BB0C /* WYJKit */,
 				F7E089E227312C2700361311 /* WYJKitDemo */,
 				F7E08A0127312C2B00361311 /* WYJKitDemoTests */,
@@ -790,6 +800,7 @@
 		F7E089E227312C2700361311 /* WYJKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7F408278274F70080072B088 /* New Group */,
 				F7E089E327312C2700361311 /* AppDelegate.h */,
 				F7E089E427312C2700361311 /* AppDelegate.m */,
 				F7E089E627312C2700361311 /* SceneDelegate.h */,
@@ -935,6 +946,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F408292274F725B0072B088 /* WYJKit.podspec in Resources */,
 				F7E089F627312C2B00361311 /* LaunchScreen.storyboard in Resources */,
 				F7E089F327312C2B00361311 /* Assets.xcassets in Resources */,
 				F7E089EE27312C2700361311 /* Main.storyboard in Resources */,

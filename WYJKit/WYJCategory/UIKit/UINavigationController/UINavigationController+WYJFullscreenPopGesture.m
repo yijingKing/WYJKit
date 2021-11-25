@@ -78,7 +78,6 @@ typedef void (^_WYJViewControllerWillAppearInjectBlock)(UIViewController *viewCo
         self.yi_willAppearInjectBlock(self, animated);
     }
 }
-
 - (_WYJViewControllerWillAppearInjectBlock)yi_willAppearInjectBlock {
     return objc_getAssociatedObject(self, _cmd);
 }

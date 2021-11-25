@@ -71,4 +71,23 @@
 #define oc_guard(__wish__) if (__wish__);
 #endif
 
+#ifndef wApplication
+#define wApplication            [UIApplication sharedApplication]
+#endif
+#ifndef wKeyWindow
+#define wKeyWindow              [UIApplication sharedApplication].keyWindow
+#endif
+#ifndef wAppDelegate
+#define wAppDelegate            [UIApplication sharedApplication].delegate
+#endif
+#ifndef wUserDefaults
+#define wUserDefaults           [NSUserDefaults standardUserDefaults]
+#endif
+#ifndef wNotificationCenter
+#define wNotificationCenter     [NSNotificationCenter defaultCenter]
+#endif
+#ifndef wAppVersion
+#define wAppVersion             [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#endif
+
 #endif /* WYJObjectMacro_h */

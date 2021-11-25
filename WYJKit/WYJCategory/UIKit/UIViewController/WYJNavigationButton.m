@@ -1,10 +1,8 @@
-//
-//  WYJNavigationButton.m
-//  iOS_WYJCodeWarehouse
-//
-//  Created by ╰莪呮想好好宠Nǐつ on 2018/11/14.
-//  Copyright © 2018 ╰莪呮想好好宠Nǐつ. All rights reserved.
-//
+/*
+ Created by 祎 on 2021
+ Copyright © 2021年 祎. All rights reserved.
+ GitHub: https://github.com/MemoryKing
+ */
 
 #import "WYJNavigationButton.h"
 

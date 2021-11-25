@@ -12,7 +12,7 @@
 #import "WYJHandyMacro.h"
 #import "WYJFrameMacro.h"
 #import "WYJEmptyMacro.h"
-#import "WYJConversionHeader.h"
+#import "WYJConvenientHeader.h"
 
 #import "UIKitCagoryHeader.h"
 #import "FoundationHeader.h"

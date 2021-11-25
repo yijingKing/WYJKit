@@ -27,7 +27,9 @@
     NSLog(@"injected--%@",self);
     [self viewDidLoad];
 }
-
+- (void)dealloc {
+    WYJDEBUG(@"VC释放---:%@",[self class]);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
