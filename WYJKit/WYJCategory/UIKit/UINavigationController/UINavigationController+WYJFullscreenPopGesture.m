@@ -73,7 +73,7 @@ typedef void (^_WYJViewControllerWillAppearInjectBlock)(UIViewController *viewCo
 
 - (void)yi_viewWillAppear:(BOOL)animated {
     [self yi_viewWillAppear:animated];
-    WYJDEBUG(@"当前控制器--->%@", NSStringFromClass([self class]));
+    NSLog(@"当前控制器--->%@", NSStringFromClass([self class]));
     if (self.yi_willAppearInjectBlock) {
         self.yi_willAppearInjectBlock(self, animated);
     }
