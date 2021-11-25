@@ -6,7 +6,7 @@
 
 #import "WYJBaseViewController.h"
 #import <Masonry/Masonry.h>
-#import "WYJSystemMacro.h"
+#import "WYJMacroHeader.h"
 #import "BaseTableViewHeader.h"
 #import "WYJNavigationView.h"
 

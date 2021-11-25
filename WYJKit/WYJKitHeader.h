@@ -7,11 +7,8 @@
 #ifndef WYJKitHeader_h
 #define WYJKitHeader_h
 
-#import "WYJObjectMacro.h"
-#import "WYJSystemMacro.h"
-#import "WYJHandyMacro.h"
-#import "WYJFrameMacro.h"
-#import "WYJEmptyMacro.h"
+#import "WYJMacroHeader.h"
+
 #import "WYJConvenientHeader.h"
 
 #import "UIKitCagoryHeader.h"
