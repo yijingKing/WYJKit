@@ -28,7 +28,7 @@
     [self viewDidLoad];
 }
 - (void)dealloc {
-    WYJDEBUG(@"VC释放---:%@",[self class]);
+    NSLog(@"VC释放---:%@",[self class]);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
