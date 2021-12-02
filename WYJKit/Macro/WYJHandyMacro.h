@@ -1,22 +1,19 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ 
- 
- Author:        ╰莪呮想好好宠Nǐつ (kang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- ********************************************************************************/
+/*
+ Created by 祎 on 2021
+ Copyright © 2021年 祎. All rights reserved.
+ */
 
 #ifndef WYJHandyMacro_h
 #define WYJHandyMacro_h
 
 
 //单例宏
-#ifndef kSINGLETON_H
-#define kSINGLETON_H \
+#ifndef YJSINGLETON_H
+#define YJSINGLETON_H \
 + (instancetype)shared;
 #endif
-#ifndef kSINGLETON_M
-#define kSINGLETON_M  \
+#ifndef YJSINGLETON_M
+#define YJSINGLETON_M  \
 static id _instance; \
 + (instancetype)allocWithZone:(struct _NSZone *)zone \
 { \
@@ -41,13 +38,13 @@ static id _instance; \
 #endif
 
 //push跳转
-#ifndef kPushViekController
-#define  kPushViekController(VC)        [self.navigationController pushViekController:VC animated:YES];
+#ifndef  YJPushViekController
+#define  YJPushViekController(VC)        [self.navigationController pushViekController:VC animated:YES];
 #endif
 
 //pop跳转
-#ifndef kPopViekController
-#define kPopViekController       [self.navigationController popViekControllerAnimated:YES];
+#ifndef YJPopViekController
+#define YJPopViekController       [self.navigationController popViekControllerAnimated:YES];
 #endif
 
 /**

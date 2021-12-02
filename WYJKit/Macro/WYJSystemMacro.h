@@ -33,53 +33,53 @@
 
 #pragma mark ---- iOS 版本 定义 --------
 //操作系统版本
-#ifndef kSYSTEMVERSION
-    #define kSYSTEMVERSION   [UIDevice currentDevice].systemVersion
+#ifndef YJSYSTEMVERSION
+    #define YJSYSTEMVERSION   [UIDevice currentDevice].systemVersion
 #endif
 
 //大于多少版本
 #ifndef iOS7OrLater
-#define iOS7OrLater ([kSYSTEMVERSION floatValue] >= 7.0)
+#define iOS7OrLater ([YJSYSTEMVERSION floatValue] >= 7.0)
 #endif
 #ifndef iOS8OrLater
-#define iOS8OrLater ([kSYSTEMVERSION floatValue] >= 8.0)
+#define iOS8OrLater ([YJSYSTEMVERSION floatValue] >= 8.0)
 #endif
 #ifndef iOS9OrLater
-#define iOS9OrLater ([kSYSTEMVERSION floatValue] >= 9.0)
+#define iOS9OrLater ([YJSYSTEMVERSION floatValue] >= 9.0)
 #endif
 #ifndef iOS10OrLater
-#define iOS10OrLater ([kSYSTEMVERSION floatValue] >= 10.0)
+#define iOS10OrLater ([YJSYSTEMVERSION floatValue] >= 10.0)
 #endif
 #ifndef iOS11OrLater
-#define iOS11OrLater ([kSYSTEMVERSION floatValue] >= 11.0)
+#define iOS11OrLater ([YJSYSTEMVERSION floatValue] >= 11.0)
 #endif
 #ifndef iOS12OrLater
-#define iOS12OrLater ([kSYSTEMVERSION floatValue] >= 12.0)
+#define iOS12OrLater ([YJSYSTEMVERSION floatValue] >= 12.0)
 #endif
 #ifndef iOS13OrLater
-#define iOS13OrLater ([kSYSTEMVERSION floatValue] >= 13.0)
+#define iOS13OrLater ([YJSYSTEMVERSION floatValue] >= 13.0)
 #endif
 #ifndef iOS14OrLater
-#define iOS14OrLater ([kSYSTEMVERSION floatValue] >= 14.0)
+#define iOS14OrLater ([YJSYSTEMVERSION floatValue] >= 14.0)
 #endif
 #ifndef iOS15OrLater
-#define iOS15OrLater ([kSYSTEMVERSION floatValue] >= 15.0)
+#define iOS15OrLater ([YJSYSTEMVERSION floatValue] >= 15.0)
 #endif
 
 #ifndef kSYSTEM_VERSION_EQUAL_TO
-#define kSYSTEM_VERSION_EQUAL_TO(v)                  ([kSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedSame)
+#define kSYSTEM_VERSION_EQUAL_TO(v)                  ([YJSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedSame)
 #endif
 #ifndef kSYSTEM_VERSION_GREATER_THAN
-#define kSYSTEM_VERSION_GREATER_THAN(v)              ([kSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define kSYSTEM_VERSION_GREATER_THAN(v)              ([YJSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedDescending)
 #endif
 #ifndef kSYSTEM_VERSION_GREATER_THAN_OR_EQUAL
-#define kSYSTEM_VERSION_GREATER_THAN_OR_EQUAL(v)  ([kSYSTEMVERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define kSYSTEM_VERSION_GREATER_THAN_OR_EQUAL(v)  ([YJSYSTEMVERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
 #endif
 #ifndef kSYSTEM_VERSION_LESS_THAN
-#define kSYSTEM_VERSION_LESS_THAN(v)                 ([kSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define kSYSTEM_VERSION_LESS_THAN(v)                 ([YJSYSTEMVERSION compare:v options:NSNumericSearch] == NSOrderedAscending)
 #endif
 #ifndef kSYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO
-#define kSYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([kSYSTEMVERSION compare:v options:NSNumericSearch] != NSOrderedDescending)
+#define kSYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([YJSYSTEMVERSION compare:v options:NSNumericSearch] != NSOrderedDescending)
 #endif
 
 //  iOS 支持
@@ -87,10 +87,10 @@
 #define kSUPPORT_IPHONE_OS_VERSION(version) ( __IPHONE_OS_VERSION_MIN_REQUIRED <= version && __IPHONE_OS_VERSION_MAX_ALLOkED >= version)
 #endif
 // 设置Debug模式下打印log,release模式下不打印
-#ifdef DEBUG
-#	define WYJDEBUG(format, ...)   NSLog((@"[DEBUG] %s [第%d行] " format), __PRETTY_FUNCTION__,__LINE__, ##__VA_ARGS__);
+#ifdef WYJDEBUG
+#define WYJDEBUG(format, ...)   NSLog((@"[DEBUG] %s [第%d行] " format), __PRETTY_FUNCTION__,__LINE__, ##__VA_ARGS__);
 #else
-#	define NSLog(...)
+#define NSLog(...)
 #endif
 
 

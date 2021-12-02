@@ -308,13 +308,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7F408278274F70080072B088 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		7F42E9D5274F2E8000B0D417 /* UIControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,7 +645,6 @@
 			isa = PBXGroup;
 			children = (
 				7F87AAD2273CE7270079BB0C /* BaseView */,
-				7F87AAD5273CE7270079BB0C /* Tabbar */,
 				7F87AAD6273CE7270079BB0C /* UICollectionView */,
 				7F87AADE273CE7270079BB0C /* UITableView */,
 				7F87AAEA273CE7270079BB0C /* ViewController */,
@@ -668,13 +660,6 @@
 				7F87AAD3273CE7270079BB0C /* WYJBaseView.m */,
 			);
 			path = BaseView;
-			sourceTree = "<group>";
-		};
-		7F87AAD5273CE7270079BB0C /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		7F87AAD6273CE7270079BB0C /* UICollectionView */ = {
@@ -802,7 +787,6 @@
 		F7E089E227312C2700361311 /* WYJKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				7F408278274F70080072B088 /* New Group */,
 				F7E089E327312C2700361311 /* AppDelegate.h */,
 				F7E089E427312C2700361311 /* AppDelegate.m */,
 				F7E089E627312C2700361311 /* SceneDelegate.h */,

@@ -24,8 +24,8 @@
 #endif
 
 //弱引用
-#ifndef kWEAKSELF
-#define kWEAKSELF typeof(self) __weak weakSelf = self;
+#ifndef YJWEAKSELF
+#define YJWEAKSELF typeof(self) __weak weakSelf = self;
 #endif
 
 #ifndef weakify
@@ -45,8 +45,8 @@
 #endif
 
 //强引用
-#ifndef kSTRONGSELF
-    #define kSTRONGSELF typeof(weakSelf) __strong strongSelf = weakSelf;
+#ifndef YJSTRONGSELF
+    #define YJSTRONGSELF typeof(weakSelf) __strong strongSelf = weakSelf;
 #endif
 
 #ifndef strongify
@@ -71,23 +71,23 @@
 #define oc_guard(__wish__) if (__wish__);
 #endif
 
-#ifndef wApplication
-#define wApplication            [UIApplication sharedApplication]
+#ifndef YJApplication
+#define YJApplication            [UIApplication sharedApplication]
 #endif
-#ifndef wKeyWindow
-#define wKeyWindow              [UIApplication sharedApplication].keyWindow
+#ifndef YJKeyWindow
+#define YJKeyWindow              [UIApplication sharedApplication].keyWindow
 #endif
-#ifndef wAppDelegate
-#define wAppDelegate            [UIApplication sharedApplication].delegate
+#ifndef YJAppDelegate
+#define YJAppDelegate            [UIApplication sharedApplication].delegate
 #endif
-#ifndef wUserDefaults
-#define wUserDefaults           [NSUserDefaults standardUserDefaults]
+#ifndef YJUserDefaults
+#define YJUserDefaults           [NSUserDefaults standardUserDefaults]
 #endif
-#ifndef wNotificationCenter
-#define wNotificationCenter     [NSNotificationCenter defaultCenter]
+#ifndef YJNotificationCenter
+#define YJNotificationCenter     [NSNotificationCenter defaultCenter]
 #endif
-#ifndef wAppVersion
-#define wAppVersion             [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#ifndef YJAppVersion
+#define YJAppVersion             [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #endif
 
 #endif /* WYJObjectMacro_h */
