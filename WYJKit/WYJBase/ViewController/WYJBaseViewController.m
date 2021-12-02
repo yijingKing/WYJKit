@@ -68,7 +68,7 @@
     self.mainTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     [self.view addSubview:self.mainTableView];
     [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.navigationController ? kStatusAndNavHeight : kStatusHeight);
+        make.top.mas_equalTo(self.navigationController ? YJStatusAndNavHeight : YJStatusHeight);
         make.left.right.mas_equalTo(self.view);
         make.bottomMargin.mas_equalTo(self.view);
     }];
@@ -110,7 +110,7 @@
     @weakify(self);
     [self.mainTableView numberForSection:^NSInteger(UITableView * _Nonnull tableView) {
         @strongify(self);
-        if (WYJArrayNotEmpty(self.dataSource)) {
+        if (YJArrayNotEmpty(self.dataSource)) {
             if (![self.dataSource.firstObject isKindOfClass:NSArray.class]) {
                 return 1;
             }
@@ -119,7 +119,7 @@
     }];
     [self.mainTableView numberOfRowsInSection:^NSInteger(UITableView * _Nonnull tableView, NSInteger section) {
         @strongify(self);
-        if (WYJArrayNotEmpty(self.dataSource)) {
+        if (YJArrayNotEmpty(self.dataSource)) {
             if ([self.dataSource.firstObject isKindOfClass:NSArray.class]) {
                 return [self.dataSource[section] count];
             }
@@ -149,7 +149,7 @@
     [self.mainCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
 
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.navigationController ? kStatusAndNavHeight : kStatusHeight);
+        make.top.mas_equalTo(self.navigationController ? YJStatusAndNavHeight : YJStatusHeight);
         make.left.right.mas_equalTo(self.view);
         make.bottomMargin.mas_equalTo(self.view);
     }];
@@ -191,7 +191,7 @@
     @weakify(self);
     [self.mainCollectionView numberOfSectionsInCollectionView:^NSInteger(UICollectionView * _Nonnull collectionView) {
         @strongify(self);
-        if (WYJArrayNotEmpty(self.dataSource)) {
+        if (YJArrayNotEmpty(self.dataSource)) {
             if (![self.dataSource.firstObject isKindOfClass:NSArray.class]) {
                 return 1;
             }
@@ -200,7 +200,7 @@
     }];
     [self.mainCollectionView numberOfItemsInSection:^NSInteger(UICollectionView * _Nonnull collectionView, NSInteger section) {
         @strongify(self);
-        if (WYJArrayNotEmpty(self.dataSource)) {
+        if (YJArrayNotEmpty(self.dataSource)) {
             if ([self.dataSource.firstObject isKindOfClass:NSArray.class]) {
                 return [self.dataSource[section] count];
             }

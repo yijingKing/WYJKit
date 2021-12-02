@@ -19,7 +19,7 @@
         [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(12);
             make.top.bottom.mas_equalTo(self);
-            make.width.mas_equalTo(kRatioSize(44));
+            make.width.mas_equalTo(44);
         }];
     }
     return self;

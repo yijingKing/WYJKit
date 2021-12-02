@@ -13,9 +13,22 @@
         self.backgroundColor = [UIColor whiteColor];
         [self initSubviews];
         [self makeContraints];
+        
+        ///添加单击手势监听
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGesture:)];
+        singleTap.numberOfTouchesRequired = 1; //手指数
+        singleTap.numberOfTapsRequired = 1; //tap次数
+        [self addGestureRecognizer:singleTap];
     }
     return self;
 }
+
+- (void)tapGesture:(UITapGestureRecognizer *)tap {
+    if (self.tapClickBlock) {
+        self.tapClickBlock();
+    }
+}
+
 
 - (void)initSubviews {
     

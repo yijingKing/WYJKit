@@ -33,7 +33,7 @@
 
 ///图片
 #ifndef YJIMAGENAME
-#define YJIMAGENAME(name)                [UIImage imageWithNamed:name];
+#define YJIMAGENAME(name)                   [UIImage imageWithNamed:name];
 #endif
 
 

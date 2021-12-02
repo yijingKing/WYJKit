@@ -45,7 +45,7 @@
 //    } stopCompletion:^{
 //        NSLog(@"完成");
 //    }];
-    [button yi_addTargetUpInside:self action:@selector(buttonClick:)];
+//    [button yi_addTargetUpInside:self action:@selector(buttonClick:)];
     button.yi_eventInterval = 2;
 //    UILabel * label = [UILabel createWithText:@"" color:UIColor.redColor font:nil];
     
@@ -67,7 +67,7 @@
     
 }
 - (void)buttonClick:(UIButton *)sender {
-    WYJDEBUG(@"111111");
+    YJDEBUG(@"1111");
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self pushViewController:OneViewController.alloc.init animated:YES];

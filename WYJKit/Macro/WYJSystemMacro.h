@@ -87,8 +87,8 @@
 #define kSUPPORT_IPHONE_OS_VERSION(version) ( __IPHONE_OS_VERSION_MIN_REQUIRED <= version && __IPHONE_OS_VERSION_MAX_ALLOkED >= version)
 #endif
 // 设置Debug模式下打印log,release模式下不打印
-#ifdef WYJDEBUG
-#define WYJDEBUG(format, ...)   NSLog((@"[DEBUG] %s [第%d行] " format), __PRETTY_FUNCTION__,__LINE__, ##__VA_ARGS__);
+#ifdef DEBUG
+#define YJDEBUG(format, ...)   NSLog((@"[DEBUG] %s [第%d行] " format), __PRETTY_FUNCTION__,__LINE__, ##__VA_ARGS__);
 #else
 #define NSLog(...)
 #endif

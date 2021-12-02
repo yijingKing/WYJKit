@@ -35,7 +35,7 @@
 }
 
 + (UIFont *)fontAdapter:(CGFloat)font {
-    return [UIFont systemFontOfSize:font * kProportion];
+    return [UIFont systemFontOfSize:font * YJProportion];
 }
 
 

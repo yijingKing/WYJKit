@@ -32,19 +32,19 @@
 
 +(UIFont *)_systemFontOfSize:(CGFloat)fontSize{
     UIFont *newFont = nil;
-    newFont = [UIFont _systemFontOfSize:fontSize * kProportion];
+    newFont = [UIFont _systemFontOfSize:fontSize * YJProportion];
     return newFont;
 }
 
 +(UIFont *)_boldSystemFontOfSize:(CGFloat)fontSize{
     UIFont *newFont = nil;
-    newFont = [UIFont _boldSystemFontOfSize:fontSize * kProportion];
+    newFont = [UIFont _boldSystemFontOfSize:fontSize * YJProportion];
     return newFont;
 }
 
 +(UIFont *)_fontWithName:(NSString *)name size:(CGFloat)fontSize{
     UIFont *newFont = nil;
-    newFont = [UIFont _fontWithName:name size:fontSize * kProportion];
+    newFont = [UIFont _fontWithName:name size:fontSize * YJProportion];
     return newFont;
 }
 

@@ -8,6 +8,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WYJBaseView : UIView
+
+/// 点击回调
+@property (nonatomic,copy) void (^tapClickBlock)(void);
+
+
+
+
 /// 界面布局
 - (void)initSubviews;
 /// 界面约束
