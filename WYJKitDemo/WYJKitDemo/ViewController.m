@@ -62,8 +62,12 @@
 //        return cell;
 //    }];
     
-    
-    
+//
+//    WYJBaseView * baseView = [WYJBaseView.alloc initWithFrame:self.view.bounds];
+//    [self.view addSubview:baseView];
+//    baseView.tapClickBlock = ^{
+//        YJDEBUG(@"taptaptap");
+//    };
     
 }
 - (void)buttonClick:(UIButton *)sender {

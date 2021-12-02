@@ -10,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WYJBaseView : UIView
 
 /// 点击回调
-@property (nonatomic,copy) void (^tapClickBlock)(void);
+@property (nonatomic,copy) void (^yi_tapClickBlock)(void);
 
 
 

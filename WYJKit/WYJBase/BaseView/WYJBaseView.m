@@ -24,8 +24,8 @@
 }
 
 - (void)tapGesture:(UITapGestureRecognizer *)tap {
-    if (self.tapClickBlock) {
-        self.tapClickBlock();
+    if (self.yi_tapClickBlock) {
+        self.yi_tapClickBlock();
     }
 }
 
