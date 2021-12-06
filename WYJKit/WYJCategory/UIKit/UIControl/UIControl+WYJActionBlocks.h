@@ -1,7 +1,5 @@
 //
 //  UIControl+WYJActionBlocks.h
-//  WYJKitDemo
-//
 //  Created by 祎 on 2021/12/6.
 //
 

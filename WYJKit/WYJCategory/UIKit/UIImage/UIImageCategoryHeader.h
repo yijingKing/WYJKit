@@ -7,4 +7,6 @@
 
 #import "UIImage+WYJAdd.h"
 #import "UIImage+WYJInit.h"
+#import "UIImage+WYJCompress.h"
+
 #endif /* UIImageCategoryHeader_h */

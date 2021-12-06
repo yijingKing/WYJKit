@@ -1,7 +1,5 @@
 //
 //  WYJMacroHeader.h
-//  WYJKitDemo
-//
 //  Created by 祎 on 2021/11/25.
 //
 

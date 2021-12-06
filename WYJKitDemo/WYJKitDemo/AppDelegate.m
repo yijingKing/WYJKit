@@ -1,7 +1,6 @@
 //
 //  AppDelegate.m
-//  WYJKitDemo
-//
+
 //  Created by PZ-IMAC-1 on 2021/11/2.
 //
 
