@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 界面布局
 - (void)initSubviews;
 /// 界面约束
-- (void)makeContraints;
+- (void)makeConstraint;
 /// p配置数据
 - (void)configurationData:(id)data;
 @end

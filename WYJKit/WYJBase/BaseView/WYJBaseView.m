@@ -12,7 +12,7 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         [self initSubviews];
-        [self makeContraints];
+        [self makeConstraint];
         
         ///添加单击手势监听
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGesture:)];
@@ -29,12 +29,11 @@
     }
 }
 
-
 - (void)initSubviews {
     
 }
 
-- (void)makeContraints {
+- (void)makeConstraint {
     
 }
 

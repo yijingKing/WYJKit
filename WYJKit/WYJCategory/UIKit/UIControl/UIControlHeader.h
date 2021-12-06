@@ -7,4 +7,7 @@
 #define UIControlHeader_h
 
 #import "UIControl+WYJEventInterval.h"
+#import "UIControl+WYJActionBlocks.h"
+#import "UIControl+WYJBlock.h"
+
 #endif /* UIControlHeader_h */
