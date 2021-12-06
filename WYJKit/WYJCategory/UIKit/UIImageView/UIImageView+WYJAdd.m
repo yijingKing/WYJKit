@@ -4,14 +4,14 @@
 */
 
 
-#import "UIImageView+YJAdd.h"
+#import "UIImageView+WYJAdd.h"
 #import <objc/runtime.h>
 
 typedef void(^ImageClickBlock)(void);
 
 static const char ImageClickBlockKey;
 
-@implementation UIImageView (YJAdd)
+@implementation UIImageView (WYJAdd)
 
 @dynamic yi_imageName;
 - (void)addTouchUpInside:(void (^)(void))block {

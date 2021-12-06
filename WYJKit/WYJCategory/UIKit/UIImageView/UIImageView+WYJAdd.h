@@ -5,7 +5,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImageView (YJAdd)
+@interface UIImageView (WYJAdd)
 
 /** image name */
 @property (nonatomic, copy)NSString * yi_imageName;

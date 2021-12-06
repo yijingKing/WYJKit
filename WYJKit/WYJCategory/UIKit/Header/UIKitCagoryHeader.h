@@ -26,5 +26,5 @@
 #import "UINavigationControllerHeader.h"
 
 #import "UIControlHeader.h"
-
+#import "UIImageViewHeader.h"
 #endif /* UIKitCagoryHeader_h */
