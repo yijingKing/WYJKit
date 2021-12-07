@@ -574,10 +574,10 @@
 			isa = PBXGroup;
 			children = (
 				7F87AAA9273CE7270079BB0C /* UITextFieldHeader.h */,
-				7F87AAAA273CE7270079BB0C /* UITextField+WYJInit.m */,
 				7F87AAAB273CE7270079BB0C /* UITextField+WYJAdd.h */,
-				7F87AAAC273CE7270079BB0C /* UITextField+WYJInit.h */,
 				7F87AAAD273CE7270079BB0C /* UITextField+WYJAdd.m */,
+				7F87AAAC273CE7270079BB0C /* UITextField+WYJInit.h */,
+				7F87AAAA273CE7270079BB0C /* UITextField+WYJInit.m */,
 			);
 			path = UITextField;
 			sourceTree = "<group>";

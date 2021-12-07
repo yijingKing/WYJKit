@@ -7,27 +7,27 @@
 #import "UIImageView+WYJAddition.h"
 
 @implementation UIImageView (WYJAddition)
-+ (id)imageViewWithImageNamed:(NSString*)imageName {
++ (id)yi_imageViewWithImageNamed:(NSString*)imageName {
     return [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
 }
-+ (id)imageViewWithFrame:(CGRect)frame {
++ (id)yi_imageViewWithFrame:(CGRect)frame {
     return [[UIImageView alloc] initWithFrame:frame];
 }
-+ (id)imageViewWithStretchableImage:(NSString*)imageName Frame:(CGRect)frame {
++ (id)yi_imageViewWithStretchableImage:(NSString*)imageName Frame:(CGRect)frame {
     UIImage *image =[UIImage imageNamed:imageName];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
     imageView.image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
     return imageView;
 }
-- (void) setImageWithStretchableImage:(NSString*)imageName {
+- (void)yi_setImageWithStretchableImage:(NSString*)imageName {
     UIImage *image =[UIImage imageNamed:imageName];
     self.image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
 }
-+ (id) imageViewWithImageArray:(NSArray *)imageArray duration:(NSTimeInterval)duration {
++ (id)yi_imageViewWithImageArray:(NSArray *)imageArray duration:(NSTimeInterval)duration {
     if (imageArray && !([imageArray count]>0)) {
         return nil;
     }
-    UIImageView *imageView = [UIImageView imageViewWithImageNamed:[imageArray objectAtIndex:0]];
+    UIImageView *imageView = [UIImageView yi_imageViewWithImageNamed:[imageArray objectAtIndex:0]];
     NSMutableArray *images = [NSMutableArray array];
     for (NSInteger i = 0; i < imageArray.count; i++) {
         UIImage *image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
@@ -40,7 +40,7 @@
     return imageView;
 }
 // 画水印
-- (void) setImage:(UIImage *)image withWaterMark:(UIImage *)mark inRect:(CGRect)rect {
+- (void)yi_setImage:(UIImage *)image withWaterMark:(UIImage *)mark inRect:(CGRect)rect {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0) {
         UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
     }
@@ -52,7 +52,7 @@
     UIGraphicsEndImageContext();
     self.image = newPic;
 }
-- (void) setImage:(UIImage *)image withStringWaterMark:(NSString *)markString inRect:(CGRect)rect color:(UIColor *)color font:(UIFont *)font {
+- (void)yi_setImage:(UIImage *)image withStringWaterMark:(NSString *)markString inRect:(CGRect)rect color:(UIColor *)color font:(UIFont *)font {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0) {
         UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
     }
@@ -75,7 +75,7 @@
     UIGraphicsEndImageContext();
     self.image = newPic;
 }
-- (void) setImage:(UIImage *)image withStringWaterMark:(NSString *)markString atPoint:(CGPoint)point color:(UIColor *)color font:(UIFont *)font {
+- (void)yi_setImage:(UIImage *)image withStringWaterMark:(NSString *)markString atPoint:(CGPoint)point color:(UIColor *)color font:(UIFont *)font {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0) {
         UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0); // 0.0 for scale means "scale for device's main screen".
     }
