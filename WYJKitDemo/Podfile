@@ -12,6 +12,14 @@ pod 'Masonry'
 #pod 'YYKit'
 pod 'FLEX','4.6.0', :configurations => ['Debug']#调试神器(模拟器按s,会出现视图层级关系)
 pod 'QMUIKit' #功能说明 https://qmuiteam.com/ios/documents/
+
+
+
+pod 'ReactiveObjC'
+
+
+
+
   target 'WYJKitDemoTests' do
     inherit! :search_paths
     # Pods for testing

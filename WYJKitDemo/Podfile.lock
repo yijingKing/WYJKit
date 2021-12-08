@@ -312,6 +312,7 @@ PODS:
     - QMUIKit/QMUICore
     - QMUIKit/QMUILog
   - QMUIKit/QMUIWeakObjectContainer (4.1.3)
+  - ReactiveObjC (3.1.1)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
@@ -320,6 +321,7 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - QMUIKit
+  - ReactiveObjC
 
 SPEC REPOS:
   trunk:
@@ -329,6 +331,7 @@ SPEC REPOS:
     - Masonry
     - MJRefresh
     - QMUIKit
+    - ReactiveObjC
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -337,7 +340,8 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
   QMUIKit: 1063a99f90aedd6e2dd65026ce0df46e6785e67b
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
 
-PODFILE CHECKSUM: 0b240c57bc7b7f4214f7ed4f7050e26347228113
+PODFILE CHECKSUM: 8a7a7c2f486368ff9fa3949d4fb32a677dd9222c
 
 COCOAPODS: 1.11.2

@@ -6,8 +6,9 @@
 
 #import "ViewController.h"
 #import "OneViewController.h"
-
+#import <ReactiveObjC.h>
 @interface ViewController ()
+@property (nonatomic,strong) UILabel *label;
 
 @end
 
@@ -21,58 +22,55 @@
     [self setNavLeftItemWithTitle:@"返回" actionBlock:^{
         
     }];
-    // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.redColor;
-//    UIButton * button = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//    button.frame = self.view.frame;
-//    button.backgroundColor = UIColor.grayColor;
-//    [button setTitle:@"对对对" forState:(UIControlStateNormal)];
-//    [button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
-//    [button setBackgroundImage:[UIImage imageWithColor:UIColor.blueColor] forState:normal];
-//    [self.view addSubview:button];
-//    NSLog(@"%lf",WYJUIManager.shared.width);
-//    [self.view addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-//        NSLog(@"1231232");
-//    }];
-//
     UIButton * button = [UIButton yi_createWithFrame:CGRectMake(100, 100, 100, 100) title:@"倒计时" titleColor:UIColor.redColor];
     button.yi_font = PFRFontWithSizes(30);
     [self.view addSubview:button];
     button.backgroundColor = UIColor.blueColor;
-//    [button yi_startTime:10 completion:^(NSString * _Nonnull time) {
-//        NSLog(@"%@", time);
-//    } stopCompletion:^{
-//        NSLog(@"完成");
-//    }];
-//    [button yi_addTargetUpInside:self action:@selector(buttonClick:)];
-    button.yi_eventInterval = 2;
-//    UILabel * label = [UILabel createWithText:@"" color:UIColor.redColor font:nil];
     
-//    self.dataSource = [NSMutableArray arrayWithArray:@[@[@"1",@"1",@"1"],@[@"1",@"1",@"1",@"1",@"1"]]];
-//    [self addTableView];
-//    
-//    [self.mainTableView heightForRowAtIndexPath:^CGFloat(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
-//        return 99;
-//    }];
-//    
-//    [self.mainTableView cellForRowAtIndexPath:^UITableViewCell * _Nullable(UITableView * _Nullable tableView, NSIndexPath * _Nullable indexPath) {
-//        UITableViewCell * cell = UITableViewCell.alloc .init;
-//        cell.textLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row];
-//        return cell;
-//    }];
+    [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        YJDEBUG(@"1111");
+        self.label.text = @"mmmm";
+        [self buttonClick:button];
+    }];
     
-//
-//    WYJBaseView * baseView = [WYJBaseView.alloc initWithFrame:self.view.bounds];
-//    [self.view addSubview:baseView];
-//    baseView.tapClickBlock = ^{
-//        YJDEBUG(@"taptaptap");
-//    };
+    [self.view addSubview:self.label];
     
+    [RACObserve(self.label, text) subscribeNext:^(id  _Nullable x) {
+        YJDEBUG(@"label值改变");
+    }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        YJDEBUG(@"通知");
+    }];
+    [[self rac_signalForSelector:@selector(buttonClick:)] subscribeNext:^(RACTuple * _Nullable x) {
+        YJDEBUG(@"事件触发");
+    }];
+    
+    [[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSDate * _Nullable x) {
+        self.label.text = @"3";
+    }];
+    UITextField * tf = UITextField.alloc.init;
+    tf.frame = CGRectMake(100, 320, 100, 100);
+    [self.view addSubview:tf];
+//    RAC(button, backgroundColor) = [RACSignal combineLatest:@[tf.rac_textSignal.text] reduce:^id _Nullable(NSString * username){
+//            return (username.integerValue == 3) ? [UIColor redColor] : [UIColor grayColor];
+//        }];
 }
 - (void)buttonClick:(UIButton *)sender {
-    YJDEBUG(@"1111");
+    YJDEBUG(@"点击");
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self pushViewController:OneViewController.alloc.init animated:YES];
+//    [self pushViewController:OneViewController.alloc.init animated:YES];
+}
+
+
+- (UILabel *)label {
+    if (!_label) {
+        _label = UILabel.alloc.init;
+        _label.frame = CGRectMake(100, 220, 100, 100);
+        _label.backgroundColor = UIColor.grayColor;
+        _label.text = @"ddkkdkkd";
+    }
+    return _label;
 }
 @end
