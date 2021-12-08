@@ -17,13 +17,11 @@ DerivedData
 *.hmap
 *.xccheckout
 *.xcworkspace
+*.xcuserstate
 !default.xcworkspace
 
 #CocoaPods
 Pods
 !Podfile
 !Podfile.lock
-*.xcuserstate
-*.xcuserstate
-*.xcuserstate
-WYJKitDemo/WYJKitDemo.xcworkspace/xcuserdata/wangyijing.xcuserdatad/UserInterfaceState.xcuserstate
+
