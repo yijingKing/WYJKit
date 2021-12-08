@@ -1,7 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-WYJKitDemo/Pods-WYJKitDemo-frameworks.sh
-${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework
-${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
-${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
-${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
-${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework
-${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
