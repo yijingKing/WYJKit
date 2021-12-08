@@ -28,7 +28,7 @@ static char * const eventUnavailableKey = "eventUnavailableKey";
 #pragma mark - Action functions
 
 - (void)yi_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
-    if ([self isKindOfClass:UIButton.class]) {
+    if ([self isKindOfClass:UIButton.class] && self.yi_eventInterval > 0) {
         if (self.userInteractionEnabled == YES) {
             self.userInteractionEnabled = NO;
             [self yi_sendAction:action to:target forEvent:event];
