@@ -35,7 +35,7 @@
     }];
     
     [self.view addSubview:self.label];
-    //////
+    ///////
     [RACObserve(self.label, text) subscribeNext:^(id  _Nullable x) {
         YJDEBUG(@"label值改变");
     }];
