@@ -8,6 +8,8 @@
 #import "WYJBaseTableViewDelegate.h"
 @interface WYJBaseTableView : UITableView
 @property (strong, nonatomic)WYJBaseTableViewDelegate * baseDelegate;
+/// 是否开启空界面
+@property (nonatomic,assign) BOOL isUserEmpty;
 #pragma make ------ empty ------
 /// 空页面文本
 @property (nonatomic, copy)NSString * emptyTitle;

@@ -58,6 +58,7 @@
 
 - (void)initTableView:(UITableViewStyle)style {
     self.mainTableView = [WYJBaseTableView.alloc initWithFrame: CGRectZero style: style];
+    self.mainTableView.isUserEmpty = self.isUserEmpty;
     self.mainTableView.estimatedRowHeight = 44.0;
     self.mainTableView.estimatedSectionHeaderHeight = 0.01;
     self.mainTableView.estimatedSectionFooterHeight = 0.01;
@@ -142,6 +143,7 @@
 - (void)initCollectionView:(UICollectionViewFlowLayout *)flowLayout {
 
     self.mainCollectionView = [WYJBaseCollectionView.alloc initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    self.mainCollectionView.isUserEmpty = self.isUserEmpty;
     self.mainCollectionView.alwaysBounceVertical = YES;//当不够一屏的话也能滑动
     self.mainCollectionView.showsVerticalScrollIndicator = NO;
     self.mainCollectionView.showsHorizontalScrollIndicator = NO;

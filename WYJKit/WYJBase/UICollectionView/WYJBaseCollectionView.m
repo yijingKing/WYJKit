@@ -53,16 +53,24 @@ typedef enum : NSUInteger {
         } else {
             // Fallback on earlier versions
         }
-        self.emptyMsg = @"暂无数据";
-        self.emptyDataSetSource = self;
-        self.emptyDataSetDelegate = self;
         self.backgroundColor = UIColor.clearColor;
         self.isFirstShow = YES;
-        [self showNoSourcePageWithIsEmptyMsg:self.emptyMsg];
     }
     return self;
 }
-
+- (void)setIsUserEmpty:(BOOL)isUserEmpty {
+    if (isUserEmpty) {
+        self.emptyMsg = @"暂无数据";
+        self.emptyDataSetSource = self;
+        self.emptyDataSetDelegate = self;
+        [self showNoSourcePageWithIsEmptyMsg:self.emptyMsg];
+    } else {
+        self.emptyMsg = @"";
+        self.emptyDataSetSource = nil;
+        self.emptyDataSetDelegate = nil;
+        [self showNoSourcePageWithIsEmptyMsg:self.emptyMsg];
+    }
+}
 - (void)refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock footerWithRefreshingBlock:(void(^)(void))footBlock {
     if (headerBlock) {
         if (self.mj_header) {

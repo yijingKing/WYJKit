@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) WYJBaseTableView * mainTableView;
 @property (strong, nonatomic, nullable) WYJBaseCollectionView * mainCollectionView;
 @property (nonatomic,assign) UIStatusBarStyle barStyle;
-
+/// 是否开启空界面
+@property (nonatomic,assign) BOOL isUserEmpty;
 /// 是否开启下拉刷新
 @property (nonatomic,assign) BOOL isUseRefreshHeader;
 /// 是否开启上拉加载

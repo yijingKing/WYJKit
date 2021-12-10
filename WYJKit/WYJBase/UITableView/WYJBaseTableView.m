@@ -65,14 +65,12 @@ typedef enum : NSUInteger {
         } else {
 //            self.automaticallyAdjustsScrollViewInsets = NO;
         }
-        self.emptyMsg = @"暂无数据";
-        self.emptyDataSetSource = self;
-        self.emptyDataSetDelegate = self;
         self.isFirstShow = YES;
         self.backgroundColor = UIColor.clearColor;
-        [self showNoSourcePageWithEmpty:self.emptyMsg];
+        
         self.dataSource = self.baseDelegate;
         self.delegate = self.baseDelegate;
+        
         #ifdef __IPHONE_15_0
         if (@available(iOS 15.0, *)) {
             self.sectionHeaderTopPadding = 0;
@@ -80,6 +78,19 @@ typedef enum : NSUInteger {
         #endif
     }
     return self;
+}
+- (void)setIsUserEmpty:(BOOL)isUserEmpty {
+    if (isUserEmpty) {
+        self.emptyMsg = @"暂无数据";
+        self.emptyDataSetSource = self;
+        self.emptyDataSetDelegate = self;
+        [self showNoSourcePageWithEmpty:self.emptyMsg];
+    } else {
+        self.emptyMsg = @"";
+        self.emptyDataSetSource = nil;
+        self.emptyDataSetDelegate = nil;
+        [self showNoSourcePageWithEmpty:self.emptyMsg];
+    }
 }
 
 - (void)refreshHeaderWithRefreshingBlock:(void(^)(void))headerBlock footerWithRefreshingBlock:(void(^)(void))footBlock {
