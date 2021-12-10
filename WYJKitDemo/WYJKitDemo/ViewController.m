@@ -35,13 +35,15 @@
     }];
     
     [self.view addSubview:self.label];
-    ///////
+    
     [RACObserve(self.label, text) subscribeNext:^(id  _Nullable x) {
         YJDEBUG(@"label值改变");
     }];
+    
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         YJDEBUG(@"通知");
     }];
+    
     [[self rac_signalForSelector:@selector(buttonClick:)] subscribeNext:^(RACTuple * _Nullable x) {
         YJDEBUG(@"事件触发");
     }];
@@ -49,6 +51,7 @@
     [[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSDate * _Nullable x) {
         self.label.text = @"3";
     }];
+    
     UITextField * tf = UITextField.alloc.init;
     tf.frame = CGRectMake(100, 320, 100, 100);
     [self.view addSubview:tf];
@@ -59,6 +62,7 @@
 - (void)buttonClick:(UIButton *)sender {
     YJDEBUG(@"点击");
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self pushViewController:OneViewController.alloc.init animated:YES];
 }
