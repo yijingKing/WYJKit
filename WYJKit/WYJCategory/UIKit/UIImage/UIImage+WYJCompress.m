@@ -1,6 +1,6 @@
 //
 //  UIImage+WYJCompress.m
-//  Created by 祎 on 2021/12/6.
+//  Created by King on 2021
 //
 
 #import "UIImage+WYJCompress.h"

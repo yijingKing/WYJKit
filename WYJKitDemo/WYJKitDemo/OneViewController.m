@@ -1,18 +1,18 @@
 //
 //  OneViewController.m
 
-//  Created by 王祎境 on 2021/11/15.
+//  Created by 王King境 on 2021/11/15.
 //
 
 #import "OneViewController.h"
 #import "TwoViewController.h"
 #import <Masonry/Masonry.h>
+#import "DSNDJNSDJSD.h"
 @interface OneViewController ()
 
 @end
 
 @implementation OneViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -21,16 +21,8 @@
     self.view.backgroundColor = UIColor.blueColor;
 //    self.yi_prefersNavigationBarHidden = YES;
     [self setBackItem:[UIImage imageNamed:@"nav_back_black"] ];
-    WYJNavigationView * view = [WYJNavigationView.alloc init];
-    
-    [self.view addSubview:view];
-    
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(0);
-        make.left.right.mas_equalTo(self.view);
-        make.height.mas_equalTo(44);
-    }];
-    
+
+    self.view = DSNDJNSDJSD.alloc.init;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

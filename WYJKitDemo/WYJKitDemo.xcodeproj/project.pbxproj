@@ -21,6 +21,8 @@
 		7F4BBD47274DE2B0009C774B /* NSString+WYJBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BBD46274DE2B0009C774B /* NSString+WYJBase64.m */; };
 		7F4BBD4A274DE326009C774B /* NSString+WYJGB2312.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BBD49274DE326009C774B /* NSString+WYJGB2312.m */; };
 		7F4BBD4E274DE5D6009C774B /* NSData+WYJConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BBD4D274DE5D6009C774B /* NSData+WYJConversion.m */; };
+		7F86E93827635B2E00D10E4D /* DSNDJNSDJSD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F86E93727635B2E00D10E4D /* DSNDJNSDJSD.m */; };
+		7F86E93C276364C100D10E4D /* NSObject+WYJWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F86E93B276364C100D10E4D /* NSObject+WYJWindow.m */; };
 		7F87AB00273CE7270079BB0C /* UIImage+WYJInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F87AA60273CE7270079BB0C /* UIImage+WYJInit.m */; };
 		7F87AB01273CE7270079BB0C /* UIImage+WYJAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F87AA61273CE7270079BB0C /* UIImage+WYJAdd.m */; };
 		7F87AB02273CE7270079BB0C /* UILabel+WYJInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F87AA66273CE7270079BB0C /* UILabel+WYJInit.m */; };
@@ -139,6 +141,11 @@
 		7F4BBD4C274DE5D6009C774B /* NSData+WYJConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+WYJConversion.h"; sourceTree = "<group>"; };
 		7F4BBD4D274DE5D6009C774B /* NSData+WYJConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+WYJConversion.m"; sourceTree = "<group>"; };
 		7F4BBD4F274DE5F2009C774B /* NSDataHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDataHeader.h; sourceTree = "<group>"; };
+		7F86E93627635B2E00D10E4D /* DSNDJNSDJSD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSNDJNSDJSD.h; sourceTree = "<group>"; };
+		7F86E93727635B2E00D10E4D /* DSNDJNSDJSD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSNDJNSDJSD.m; sourceTree = "<group>"; };
+		7F86E93A276364C100D10E4D /* NSObject+WYJWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+WYJWindow.h"; sourceTree = "<group>"; };
+		7F86E93B276364C100D10E4D /* NSObject+WYJWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WYJWindow.m"; sourceTree = "<group>"; };
+		7F86E93D2763658300D10E4D /* NSObjectHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObjectHeader.h; sourceTree = "<group>"; };
 		7F87AA5B273CE7270079BB0C /* WYJKitHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJKitHeader.h; sourceTree = "<group>"; };
 		7F87AA5F273CE7270079BB0C /* UIImage+WYJAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WYJAdd.h"; sourceTree = "<group>"; };
 		7F87AA60273CE7270079BB0C /* UIImage+WYJInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WYJInit.m"; sourceTree = "<group>"; };
@@ -356,6 +363,16 @@
 				7F4BBD4D274DE5D6009C774B /* NSData+WYJConversion.m */,
 			);
 			path = NSData;
+			sourceTree = "<group>";
+		};
+		7F86E939276364A100D10E4D /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				7F86E93A276364C100D10E4D /* NSObject+WYJWindow.h */,
+				7F86E93B276364C100D10E4D /* NSObject+WYJWindow.m */,
+				7F86E93D2763658300D10E4D /* NSObjectHeader.h */,
+			);
+			path = NSObject;
 			sourceTree = "<group>";
 		};
 		7F87AA5A273CE7270079BB0C /* WYJKit */ = {
@@ -590,6 +607,7 @@
 		7F87AAAE273CE7270079BB0C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				7F86E939276364A100D10E4D /* NSObject */,
 				7F87AAC9273CE7270079BB0C /* Header */,
 				7F87AAAF273CE7270079BB0C /* NSString */,
 				7F87AABF273CE7270079BB0C /* NSArray */,
@@ -829,6 +847,8 @@
 				F7E089F427312C2B00361311 /* LaunchScreen.storyboard */,
 				F7E089F727312C2B00361311 /* Info.plist */,
 				F7E089F827312C2B00361311 /* main.m */,
+				7F86E93627635B2E00D10E4D /* DSNDJNSDJSD.h */,
+				7F86E93727635B2E00D10E4D /* DSNDJNSDJSD.m */,
 			);
 			path = WYJKitDemo;
 			sourceTree = "<group>";
@@ -1107,6 +1127,7 @@
 				7F87AB12273CE7270079BB0C /* UIImageView+WYJAdd.m in Sources */,
 				7F87AB0A273CE7270079BB0C /* UIView+WYJAdd.m in Sources */,
 				7F87AB2C273CE7270079BB0C /* WYJTableViewCell.m in Sources */,
+				7F86E93827635B2E00D10E4D /* DSNDJNSDJSD.m in Sources */,
 				7F87AB1F273CE7270079BB0C /* NSString+WYJDate.m in Sources */,
 				7F87AB26273CE7270079BB0C /* WYJBaseCollectionView+Delegate.m in Sources */,
 				7F87AB2D273CE7270079BB0C /* WYJBaseTableViewDelegate.m in Sources */,
@@ -1137,6 +1158,7 @@
 				7F87AB19273CE7270079BB0C /* NSString+WYJConversion.m in Sources */,
 				7F87AB11273CE7270079BB0C /* UITextView+WYJAdd.m in Sources */,
 				7F87AB25273CE7270079BB0C /* WYJBaseView.m in Sources */,
+				7F86E93C276364C100D10E4D /* NSObject+WYJWindow.m in Sources */,
 				7F87AB05273CE7270079BB0C /* UIButton+WYJAdd.m in Sources */,
 				7F87AB2E273CE7270079BB0C /* WYJBaseViewController.m in Sources */,
 				7F2E7AC0275E0D7A00E6BFAA /* UIImageView+WYJAddition.m in Sources */,

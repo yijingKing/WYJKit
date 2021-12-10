@@ -1,6 +1,6 @@
 /*
-  Created by 祎 on 2021
-  Copyright © 2021年 祎. All rights reserved.
+  Created by King on 2021
+  Copyright © 2021年 King. All rights reserved.
 */
 
 #import "WYJBaseCollectionView.h"
@@ -309,7 +309,7 @@ typedef enum : NSUInteger {
     }
 }
 
-- (void)setemptyTitleAttributedString:(NSAttributedString *)emptyTitleAttributedString {
+- (void)setEmptyTitleAttributedString:(NSAttributedString *)emptyTitleAttributedString {
     objc_setAssociatedObject(self, &@selector(emptyTitleAttributedString), emptyTitleAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -318,7 +318,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &@selector(emptyTitleAttributedString));
 }
 
-- (void)setemptyTitle:(NSString *)emptyTitle {
+- (void)setEmptyTitle:(NSString *)emptyTitle {
     objc_setAssociatedObject(self, &emptyTitleKey, emptyTitle, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -327,7 +327,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &emptyTitleKey);
 }
 
-- (void)setemptyTitleFont:(UIFont *)emptyTitleFont {
+- (void)setEmptyTitleFont:(UIFont *)emptyTitleFont {
     objc_setAssociatedObject(self, &@selector(emptyTitleFont), emptyTitleFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -336,7 +336,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &@selector(emptyTitleFont));
 }
 
-- (void)setemptyTitleColor:(UIColor *)emptyTitleColor {
+- (void)setEmptyTitleColor:(UIColor *)emptyTitleColor {
     objc_setAssociatedObject(self, &@selector(emptyTitleColor), emptyTitleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -345,7 +345,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &@selector(emptyTitleColor));
 }
 
-- (void)setemptyImage:(UIImage *)emptyImage {
+- (void)setEmptyImage:(UIImage *)emptyImage {
     objc_setAssociatedObject(self, &emptyImageKey, emptyImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -354,7 +354,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &emptyImageKey);
 }
 
-- (void)setemptyBackgroundColor:(UIColor *)emptyBackgroundColor {
+- (void)setEmptyBackgroundColor:(UIColor *)emptyBackgroundColor {
     objc_setAssociatedObject(self, &emptyBackgroundColorKey, emptyBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -363,7 +363,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &emptyBackgroundColorKey);
 }
 
-- (void)setemptyDescription:(NSString *)emptyDescription {
+- (void)setEmptyDescription:(NSString *)emptyDescription {
     objc_setAssociatedObject(self, &emptyDescriptionKey, emptyDescription, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -372,7 +372,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &emptyDescriptionKey);
 }
 
-- (void)setemptyDescriptionFont:(UIFont *)emptyDescriptionFont {
+- (void)setEmptyDescriptionFont:(UIFont *)emptyDescriptionFont {
     objc_setAssociatedObject(self, &@selector(emptyDescriptionFont), emptyDescriptionFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -380,7 +380,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &@selector(emptyDescriptionFont));
 }
 
-- (void)setemptyDescriptionColor:(UIColor *)emptyDescriptionColor {
+- (void)setEmptyDescriptionColor:(UIColor *)emptyDescriptionColor {
     objc_setAssociatedObject(self, &@selector(emptyDescriptionColor), emptyDescriptionColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self reloadEmptyDataSet];
 }
@@ -389,7 +389,7 @@ typedef enum : NSUInteger {
     return objc_getAssociatedObject(self, &@selector(emptyDescriptionColor));
 }
 
-- (void)setemptyDescriptionAttributedString:(NSAttributedString *)emptyDescriptionAttributedString {
+- (void)setEmptyDescriptionAttributedString:(NSAttributedString *)emptyDescriptionAttributedString {
     objc_setAssociatedObject(self, &emptyDescriptionAttributedString, emptyDescriptionAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self reloadEmptyDataSet];
 }

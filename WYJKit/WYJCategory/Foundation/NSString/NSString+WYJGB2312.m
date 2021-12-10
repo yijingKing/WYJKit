@@ -1,6 +1,6 @@
 /*
- Created by 祎 on 2021
- Copyright © 2021年 祎. All rights reserved.
+ Created by King on 2021
+ Copyright © 2021年 King. All rights reserved.
  */
 
 #import "NSString+WYJGB2312.h"

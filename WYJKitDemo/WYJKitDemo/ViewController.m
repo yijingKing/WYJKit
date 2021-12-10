@@ -48,9 +48,9 @@
         YJDEBUG(@"事件触发");
     }];
     
-    [[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSDate * _Nullable x) {
-        self.label.text = @"3";
-    }];
+//    [[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSDate * _Nullable x) {
+//        self.label.text = @"3";
+//    }];
     
     UITextField * tf = UITextField.alloc.init;
     tf.frame = CGRectMake(100, 320, 100, 100);
@@ -61,6 +61,7 @@
 }
 - (void)buttonClick:(UIButton *)sender {
     YJDEBUG(@"点击");
+    [self pushViewController:OneViewController.alloc.init animated:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

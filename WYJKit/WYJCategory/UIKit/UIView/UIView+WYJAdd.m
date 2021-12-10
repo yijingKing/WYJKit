@@ -1,12 +1,12 @@
 /*
-  Created by 祎 on 2021
-  Copyright © 2021年 祎. All rights reserved.
+  Created by King on 2021
+  Copyright © 2021年 King. All rights reserved.
 */
 
 
 #import "UIView+WYJAdd.h"
 #import <objc/runtime.h>
-
+#import "NSObject+WYJWindow.h"
 
 @implementation UIView (WYJAdd)
 
@@ -34,20 +34,16 @@
 }
 
 - (void)yi_removeAllSubviews {
-    //[self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     while (self.subviews.count) {
         [self.subviews.lastObject removeFromSuperview];
     }
 }
 
 - (nullable UIViewController *)yi_viewController {
-    for (UIView *view = self; view; view = view.superview) {
-        UIResponder *nextResponder = [view nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController *)nextResponder;
-        }
-    }
-    return nil;
+    return [self yi_currentViewController];
 }
+
+
+
 
 @end
