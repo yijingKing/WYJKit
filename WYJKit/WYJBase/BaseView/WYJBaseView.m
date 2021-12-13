@@ -85,6 +85,9 @@
         if (!self.isUseRefreshFooter) {
             return;
         }
+        if (!self.isAutoRequestMore) {
+            return;
+        }
         if (self.pageNow >= self.totalPage) {
             return;
         }
@@ -164,6 +167,9 @@
             return;
         }
         if (!self.isUseRefreshFooter) {
+            return;
+        }
+        if (!self.isAutoRequestMore) {
             return;
         }
         if (self.pageNow >= self.totalPage) {
