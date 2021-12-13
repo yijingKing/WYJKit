@@ -32,6 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 自动加载百分比(默认80%)
 @property (nonatomic,assign) CGFloat  loadingPercentage;
 #pragma mark ---  添加tableview ---
+///注册cell
+- (void)registTableViewCell:(Class)cell;
+///注册cell
+- (void)registTableViewCells:(NSArray <Class>*)cells;
 ///添加tableview
 - (void)addTableView;
 ///添加tableview

@@ -3,37 +3,57 @@
   Copyright © 2021年 King. All rights reserved.
 */
 #import "WYJBaseTableView+Delegate.h"
-
+#import "WYJKitHeader.h"
 @implementation WYJBaseTableView (Delegate)
 
-- (void)numberForSection:(WYJNumberForSection)numberForSectionBlock {
-    self.baseDelegate.numberForSectionBlock = numberForSectionBlock;
+- (void)yi_numberForSection:(WYJNumberForSection)numberForSectionBlock {
+    [self.baseDelegate setNumberForSectionBlock:^NSInteger(UITableView * _Nonnull tableView) {
+        return numberForSectionBlock(tableView);
+    }];
 }
-- (void)numberOfRowsInSection:(WYJNumberOfRowsInSection)numberOfRowsInSection {
-    self.baseDelegate.numberOfRowsInSection = numberOfRowsInSection;
+- (void)yi_numberOfRowsInSection:(WYJNumberOfRowsInSection)numberOfRowsInSection {
+    [self.baseDelegate setNumberOfRowsInSection:^NSInteger(UITableView * _Nonnull tableView, NSInteger section) {
+        return numberOfRowsInSection(tableView,section);
+    }];
 }
-- (void)cellForRowAtIndexPath:(WYJCellForRowAtIndexPath)cellForRowAtIndexPath {
-    self.baseDelegate.cellForRowAtIndexPath = cellForRowAtIndexPath;
+- (void)yi_cellForRowAtIndexPath:(WYJCellForRowAtIndexPath)cellForRowAtIndexPath {
+    [self.baseDelegate setCellForRowAtIndexPath:^UITableViewCell * _Nullable(UITableView * _Nullable tableView, NSIndexPath * _Nullable indexPath) {
+        return cellForRowAtIndexPath(tableView,indexPath);
+    }];
 }
-- (void)didSelectRowAtIndexPath:(WYJDidSelectRowAtIndexPath)didSelectRowAtIndexPath {
-    self.baseDelegate.didSelectRowAtIndexPath = didSelectRowAtIndexPath;
+- (void)yi_didSelectRowAtIndexPath:(WYJDidSelectRowAtIndexPath)didSelectRowAtIndexPath {
+    [self.baseDelegate setDidSelectRowAtIndexPath:^(UITableView * _Nullable tableView, NSIndexPath * _Nullable indexPath) {
+        didSelectRowAtIndexPath(tableView,indexPath);
+    }];
 }
-- (void)heightForRowAtIndexPath:(WYJHeightForRowAtIndexPath)heightForRowAtIndexPath {
-    self.baseDelegate.heightForRowAtIndexPath = heightForRowAtIndexPath;
+- (void)yi_heightForRowAtIndexPath:(WYJHeightForRowAtIndexPath)heightForRowAtIndexPath {
+    [self.baseDelegate setHeightForRowAtIndexPath:^CGFloat(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+        return heightForRowAtIndexPath(tableView,indexPath);
+    }];
 }
-- (void)heightForHeaderInSection:(WYJHeightForHeaderInSection)heightForHeaderInSection {
-    self.baseDelegate.heightForHeaderInSection = heightForHeaderInSection;
+- (void)yi_heightForHeaderInSection:(WYJHeightForHeaderInSection)heightForHeaderInSection {
+    [self.baseDelegate setHeightForHeaderInSection:^CGFloat(UITableView * _Nonnull tableView, NSInteger section) {
+        return heightForHeaderInSection(tableView,section);
+    }];
 }
-- (void)heightForFooterInSection:(WYJHeightForFooterInSection)heightForFooterInSection {
-    self.baseDelegate.heightForFooterInSection = heightForFooterInSection;
+- (void)yi_heightForFooterInSection:(WYJHeightForFooterInSection)heightForFooterInSection {
+    [self.baseDelegate setHeightForFooterInSection:^CGFloat(UITableView * _Nonnull tableView, NSInteger section) {
+        return heightForFooterInSection(tableView,section);
+    }];
 }
-- (void)viewForHeaderInSection:(WYJViewForHeaderInSection)viewForHeaderInSection {
-    self.baseDelegate.viewForHeaderInSection = viewForHeaderInSection;
+- (void)yi_viewForHeaderInSection:(WYJViewForHeaderInSection)viewForHeaderInSection {
+    [self.baseDelegate setViewForHeaderInSection:^UIView * _Nullable(UITableView * _Nonnull tableView, NSInteger section) {
+        return viewForHeaderInSection(tableView,section);
+    }];
 }
-- (void)viewForFooterInSection:(WYJViewForFooterInSection)viewForFooterInSection {
-    self.baseDelegate.viewForFooterInSection = viewForFooterInSection;
+- (void)yi_viewForFooterInSection:(WYJViewForFooterInSection)viewForFooterInSection {
+    [self.baseDelegate setViewForFooterInSection:^UIView * _Nullable(UITableView * _Nonnull tableView, NSInteger section) {
+        return viewForFooterInSection(tableView,section);
+    }];
 }
-- (void)willDisplayCell:(WYJWillDisplayCell)willDisplayCell {
-    self.baseDelegate.willDisplayCell = willDisplayCell;
+- (void)yi_willDisplayCell:(WYJWillDisplayCell)willDisplayCell {
+    [self.baseDelegate setWillDisplayCell:^(UITableView * _Nullable tableView, UITableViewCell * _Nonnull cell, NSIndexPath * _Nullable indexPath) {
+        willDisplayCell(tableView,cell,indexPath);
+    }];
 }
 @end

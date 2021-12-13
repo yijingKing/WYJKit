@@ -7,60 +7,86 @@
 @implementation WYJBaseCollectionView (Delegate)
 #pragma make ------ 区数 ------
 ///区数
-- (void)numberOfSectionsInCollectionView:(WYJNumberOfSectionsInCollectionView)numberOfSectionsInCollectionView {
-    self.baseDelegate.numberOfSectionsInCollectionView = numberOfSectionsInCollectionView;
+- (void)yi_numberOfSectionsInCollectionView:(WYJNumberOfSectionsInCollectionView)numberOfSectionsInCollectionView {
+    [self.baseDelegate setNumberOfSectionsInCollectionView:^NSInteger(UICollectionView * _Nonnull collectionView) {
+        return numberOfSectionsInCollectionView(collectionView);
+    }];
 }
 #pragma make ------ 行数 ------
 ///行数
-- (void)numberOfItemsInSection:(WYJNumberOfItemsInSection)numberOfItemsInSection {
+- (void)yi_numberOfItemsInSection:(WYJNumberOfItemsInSection)numberOfItemsInSection {
     self.baseDelegate.numberOfItemsInSection = numberOfItemsInSection;
+    [self.baseDelegate setNumberOfItemsInSection:^NSInteger(UICollectionView * _Nonnull collectionView, NSInteger section) {
+        return numberOfItemsInSection(collectionView,section);
+    }];
 }
 #pragma make ------ cell ------
 ///cell
-- (void)cellForItemAtIndexPath:(WYJCellForItemAtIndexPath)cellForItemAtIndexPath {
-    self.baseDelegate.cellForItemAtIndexPath = cellForItemAtIndexPath;
+- (void)yi_cellForItemAtIndexPath:(WYJCellForItemAtIndexPath)cellForItemAtIndexPath {
+    [self.baseDelegate setCellForItemAtIndexPath:^UICollectionViewCell * _Nullable(UICollectionView * _Nullable collectionView, NSIndexPath * _Nullable indexPath) {
+        return cellForItemAtIndexPath(collectionView,indexPath);
+    }];
 }
 #pragma make ------ 点击 ------
 ///点击
-- (void)didSelectItemAtIndexPath:(WYJDidSelectItemAtIndexPath)didSelectItemAtIndexPath {
-    self.baseDelegate.didSelectItemAtIndexPath = didSelectItemAtIndexPath;
+- (void)yi_didSelectItemAtIndexPath:(WYJDidSelectItemAtIndexPath)didSelectItemAtIndexPath {
+    [self.baseDelegate setDidSelectItemAtIndexPath:^(UICollectionView * _Nullable collectionView, NSIndexPath * _Nullable indexPath) {
+        didSelectItemAtIndexPath(collectionView,indexPath);
+    }];
 }
 #pragma make ------  ------
 ///行高
-- (void)sizeForItemAtIndexPath:(WYJSizeForItemAtIndexPath)sizeForItemAtIndexPath {
-    self.baseDelegate.sizeForItemAtIndexPath = sizeForItemAtIndexPath;
+- (void)yi_sizeForItemAtIndexPath:(WYJSizeForItemAtIndexPath)sizeForItemAtIndexPath {
+    [self.baseDelegate setSizeForItemAtIndexPath:^CGSize(UICollectionView * _Nonnull collectionView, UICollectionViewLayout * _Nonnull layout, NSIndexPath * _Nonnull indexPath) {
+        return sizeForItemAtIndexPath(collectionView,layout,indexPath);
+    }];
 }
 #pragma make ------ 区头 ------
 ///区头高
-- (void)referenceSizeForHeaderInSection:(WYJReferenceSizeForHeaderInSection)referenceSizeForHeaderInSection {
-    self.baseDelegate.referenceSizeForHeaderInSection = referenceSizeForHeaderInSection;
+- (void)yi_referenceSizeForHeaderInSection:(WYJReferenceSizeForHeaderInSection)referenceSizeForHeaderInSection {
+    [self.baseDelegate setReferenceSizeForHeaderInSection:^CGFloat(UICollectionView * _Nonnull collectionView, UICollectionViewLayout * _Nonnull layout, NSInteger section) {
+        return referenceSizeForHeaderInSection(collectionView,layout,section);
+    }];
 }
 #pragma make ------ 区尾 ------
 ///区尾高
-- (void)referenceSizeForFooterInSection:(WYJReferenceSizeForFooterInSection)referenceSizeForFooterInSection {
-    self.baseDelegate.referenceSizeForFooterInSection = referenceSizeForFooterInSection;
+- (void)yi_referenceSizeForFooterInSection:(WYJReferenceSizeForFooterInSection)referenceSizeForFooterInSection {
+    [self.baseDelegate setReferenceSizeForFooterInSection:^CGFloat(UICollectionView * _Nonnull collectionView, UICollectionViewLayout * _Nonnull layout, NSInteger section) {
+        return referenceSizeForFooterInSection(collectionView,layout,section);
+    }];
 }
 #pragma make ------ margin ------
 ///定义每个Section 的 margin
-- (void)insetForSectionAtIndex:(WYJInsetForSectionAtIndex)insetForSectionAtIndex {
-    self.baseDelegate.insetForSectionAtIndex = insetForSectionAtIndex;
+- (void)yi_insetForSectionAtIndex:(WYJInsetForSectionAtIndex)insetForSectionAtIndex {
+    [self.baseDelegate setInsetForSectionAtIndex:^UIEdgeInsets(UICollectionView * _Nonnull collectionView, UICollectionViewLayout * _Nonnull layout, NSInteger section) {
+        return insetForSectionAtIndex(collectionView,layout,section);
+    }];
 }
 #pragma make ------ 间距 ------
 ///每个item之间的间距
-- (void)minimumInteritemSpacingForSectionAtIndex:(WYJMinimumInteritemSpacingForSectionAtIndex)minimumInteritemSpacingForSectionAtIndex {
-    self.baseDelegate.minimumInteritemSpacingForSectionAtIndex = minimumInteritemSpacingForSectionAtIndex;
+- (void)yi_minimumInteritemSpacingForSectionAtIndex:(WYJMinimumInteritemSpacingForSectionAtIndex)minimumInteritemSpacingForSectionAtIndex {
+    [self.baseDelegate setMinimumInteritemSpacingForSectionAtIndex:^CGFloat(UICollectionView * _Nonnull collectionView, UICollectionViewLayout * _Nonnull layout, NSInteger section) {
+        return minimumInteritemSpacingForSectionAtIndex(collectionView,layout,section);
+    }];
 }
 #pragma make ------ 每个section中不同的item之间的行间距 ------
 ///每个section中不同的item之间的行间距
-- (void)minimumLineSpacingForSectionAtIndex:(WYJMinimumLineSpacingForSectionAtIndex)minimumLineSpacingForSectionAtIndex {
-    self.baseDelegate.minimumLineSpacingForSectionAtIndex = minimumLineSpacingForSectionAtIndex;
+- (void)yi_minimumLineSpacingForSectionAtIndex:(WYJMinimumLineSpacingForSectionAtIndex)minimumLineSpacingForSectionAtIndex {
+    [self.baseDelegate setMinimumLineSpacingForSectionAtIndex:^CGFloat(UICollectionView * _Nonnull collectionView, UICollectionViewLayout * _Nonnull layout, NSInteger section) {
+        return minimumLineSpacingForSectionAtIndex(collectionView,layout,section);
+    }];
 }
 #pragma make ------ 区视图 ------
 ///区视图
-- (void)viewForSupplementaryElementOfKind:(WYJViewForSupplementaryElementOfKind)viewForSupplementaryElementOfKind {
+- (void)yi_viewForSupplementaryElementOfKind:(WYJViewForSupplementaryElementOfKind)viewForSupplementaryElementOfKind {
     self.baseDelegate.viewForSupplementaryElementOfKind = viewForSupplementaryElementOfKind;
+    [self.baseDelegate setViewForSupplementaryElementOfKind:^UICollectionReusableView * _Nullable(UICollectionView * _Nonnull collectionView, NSString * _Nonnull kind, NSIndexPath * _Nonnull indexPath) {
+        return viewForSupplementaryElementOfKind(collectionView,kind,indexPath);
+    }];
 }
-- (void)willDisplayCell:(WYJWillDisplayCollectionViewCell)willDisplayCell {
-    self.baseDelegate.willDisplayCell = willDisplayCell;
+- (void)yi_willDisplayCell:(WYJWillDisplayCollectionViewCell)willDisplayCell {
+    [self.baseDelegate setWillDisplayCell:^(UICollectionView * _Nullable collectionView, UICollectionViewCell * _Nonnull cell, NSIndexPath * _Nullable indexPath) {
+        return willDisplayCell(collectionView,cell,indexPath);
+    }];
 }
 @end

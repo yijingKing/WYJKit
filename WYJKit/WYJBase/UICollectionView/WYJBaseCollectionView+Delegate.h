@@ -8,40 +8,40 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WYJBaseCollectionView (Delegate)
 #pragma make ------ 区数 ------
 ///区数
-- (void)numberOfSectionsInCollectionView:(WYJNumberOfSectionsInCollectionView)numberOfSectionsInCollectionView;
+- (void)yi_numberOfSectionsInCollectionView:(WYJNumberOfSectionsInCollectionView)numberOfSectionsInCollectionView;
 #pragma make ------ 行数 ------
 ///行数
-- (void)numberOfItemsInSection:(WYJNumberOfItemsInSection)numberOfItemsInSection;
+- (void)yi_numberOfItemsInSection:(WYJNumberOfItemsInSection)numberOfItemsInSection;
 #pragma make ------ cell ------
 ///cell
-- (void)cellForItemAtIndexPath:(WYJCellForItemAtIndexPath)cellForItemAtIndexPath;
+- (void)yi_cellForItemAtIndexPath:(WYJCellForItemAtIndexPath)cellForItemAtIndexPath;
 #pragma make ------ 点击 ------
 ///点击
-- (void)didSelectItemAtIndexPath:(WYJDidSelectItemAtIndexPath)didSelectItemAtIndexPath;
+- (void)yi_didSelectItemAtIndexPath:(WYJDidSelectItemAtIndexPath)didSelectItemAtIndexPath;
 #pragma make ------  ------
 ///行高
-- (void)sizeForItemAtIndexPath:(WYJSizeForItemAtIndexPath)sizeForItemAtIndexPath;
+- (void)yi_sizeForItemAtIndexPath:(WYJSizeForItemAtIndexPath)sizeForItemAtIndexPath;
 #pragma make ------ 区头 ------
 ///区头高
-- (void)referenceSizeForHeaderInSection:(WYJReferenceSizeForHeaderInSection)referenceSizeForHeaderInSection;
+- (void)yi_referenceSizeForHeaderInSection:(WYJReferenceSizeForHeaderInSection)referenceSizeForHeaderInSection;
 #pragma make ------ 区尾 ------
 ///区尾高
-- (void)referenceSizeForFooterInSection:(WYJReferenceSizeForFooterInSection)referenceSizeForFooterInSection;
+- (void)yi_referenceSizeForFooterInSection:(WYJReferenceSizeForFooterInSection)referenceSizeForFooterInSection;
 #pragma make ------ margin ------
 ///定义每个Section 的 margin
-- (void)insetForSectionAtIndex:(WYJInsetForSectionAtIndex)insetForSectionAtIndex;
+- (void)yi_insetForSectionAtIndex:(WYJInsetForSectionAtIndex)insetForSectionAtIndex;
 #pragma make ------ 间距 ------
 ///每个item之间的间距
-- (void)minimumInteritemSpacingForSectionAtIndex:(WYJMinimumInteritemSpacingForSectionAtIndex)minimumInteritemSpacingForSectionAtIndex;
+- (void)yi_minimumInteritemSpacingForSectionAtIndex:(WYJMinimumInteritemSpacingForSectionAtIndex)minimumInteritemSpacingForSectionAtIndex;
 #pragma make ------ 每个section中不同的item之间的行间距 ------
 ///每个section中不同的item之间的行间距
-- (void)minimumLineSpacingForSectionAtIndex:(WYJMinimumLineSpacingForSectionAtIndex)minimumLineSpacingForSectionAtIndex;
+- (void)yi_minimumLineSpacingForSectionAtIndex:(WYJMinimumLineSpacingForSectionAtIndex)minimumLineSpacingForSectionAtIndex;
 #pragma make ------ 区视图 ------
 ///区视图
-- (void)viewForSupplementaryElementOfKind:(WYJViewForSupplementaryElementOfKind)viewForSupplementaryElementOfKind;
+- (void)yi_viewForSupplementaryElementOfKind:(WYJViewForSupplementaryElementOfKind)viewForSupplementaryElementOfKind;
 
 
-- (void)willDisplayCell:(WYJWillDisplayCollectionViewCell)willDisplayCell;
+- (void)yi_willDisplayCell:(WYJWillDisplayCollectionViewCell)willDisplayCell;
 @end
 
 NS_ASSUME_NONNULL_END

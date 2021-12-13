@@ -33,8 +33,15 @@
     return self;
 }
 
-
 #pragma make ------ tableView ------
+- (void)registTableViewCell:(Class)cell {
+    [self.mainTableView registerClass:cell forCellReuseIdentifier:NSStringFromClass(cell)];
+}
+- (void)registTableViewCells:(NSArray <Class>*)cells {
+    for (Class cell in cells) {
+        [self.mainTableView registerClass:cell forCellReuseIdentifier:NSStringFromClass(cell)];
+    }
+}
 //MARK: --- tableView ---
 - (void) addTableView {
     [self initTableView:self.tableViewStyle];
@@ -73,11 +80,11 @@
     if (self.isUseRefreshFooter) {
         [self.mainTableView refreshFooterWithRefreshingBlock:^{
             @strongify(self);
-            [self getBaseMoreData];
+            [self getBaseRefreshData];
         }];
     }
-    
-    [self.mainTableView willDisplayCell:^(UITableView * _Nullable tableView, UITableViewCell * _Nonnull cell, NSIndexPath * _Nullable indexPath) {
+    [self tableViewDefultDelete];
+    [self.mainTableView yi_willDisplayCell:^(UITableView * _Nullable tableView, UITableViewCell * _Nonnull cell, NSIndexPath * _Nullable indexPath) {
         @strongify(self);
         if (self.isLoading) {
             return;
@@ -97,12 +104,12 @@
             [self getBaseMoreData];
         }
     }];
-    [self tableViewDefultDelete];
+    
 }
 
 - (void)tableViewDefultDelete {
     @weakify(self);
-    [self.mainTableView numberForSection:^NSInteger(UITableView * _Nonnull tableView) {
+    [self.mainTableView yi_numberForSection:^NSInteger(UITableView * _Nonnull tableView) {
         @strongify(self);
         if (YJArrayNotEmpty(self.dataSource)) {
             if (![self.dataSource.firstObject isKindOfClass:NSArray.class]) {
@@ -111,7 +118,7 @@
         }
         return self.dataSource.count;
     }];
-    [self.mainTableView numberOfRowsInSection:^NSInteger(UITableView * _Nonnull tableView, NSInteger section) {
+    [self.mainTableView yi_numberOfRowsInSection:^NSInteger(UITableView * _Nonnull tableView, NSInteger section) {
         @strongify(self);
         if (YJArrayNotEmpty(self.dataSource)) {
             if ([self.dataSource.firstObject isKindOfClass:NSArray.class]) {
@@ -161,7 +168,7 @@
             [self getBaseMoreData];
         }];
     }
-    [self.mainCollectionView willDisplayCell:^(UICollectionView * _Nullable collectionView, UICollectionViewCell * _Nonnull cell, NSIndexPath * _Nullable indexPath) {
+    [self.mainCollectionView yi_willDisplayCell:^(UICollectionView * _Nullable collectionView, UICollectionViewCell * _Nonnull cell, NSIndexPath * _Nullable indexPath) {
         @strongify(self);
         if (self.isLoading) {
             return;
@@ -186,7 +193,7 @@
 }
 - (void)collectionViewDefultDelete {
     @weakify(self);
-    [self.mainCollectionView numberOfSectionsInCollectionView:^NSInteger(UICollectionView * _Nonnull collectionView) {
+    [self.mainCollectionView yi_numberOfSectionsInCollectionView:^NSInteger(UICollectionView * _Nonnull collectionView) {
         @strongify(self);
         if (YJArrayNotEmpty(self.dataSource)) {
             if (![self.dataSource.firstObject isKindOfClass:NSArray.class]) {
@@ -195,7 +202,7 @@
         }
         return self.dataSource.count;
     }];
-    [self.mainCollectionView numberOfItemsInSection:^NSInteger(UICollectionView * _Nonnull collectionView, NSInteger section) {
+    [self.mainCollectionView yi_numberOfItemsInSection:^NSInteger(UICollectionView * _Nonnull collectionView, NSInteger section) {
         @strongify(self);
         if (YJArrayNotEmpty(self.dataSource)) {
             if ([self.dataSource.firstObject isKindOfClass:NSArray.class]) {
