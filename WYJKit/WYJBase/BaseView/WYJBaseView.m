@@ -91,7 +91,7 @@
         NSInteger current = indexPath.section  * self.dataSource.count + indexPath.row;
         NSInteger count = self.dataSource.count;
         if (current > count * 0.8) {
-            [self getMoreData];
+            [self getBaseMoreData];
         }
     }];
     [self tableViewDefultDelete];
@@ -122,7 +122,6 @@
 //MARK: --- collection ---
 - (void)addCollection {
     UICollectionViewFlowLayout * layout = [UICollectionViewFlowLayout.alloc init];
-    
     [self initCollectionView:layout];
 }
 
@@ -173,7 +172,7 @@
         NSInteger current = indexPath.section  * self.dataSource.count + indexPath.row;
         NSInteger count = self.dataSource.count;
         if (current > count * 0.8) {
-            [self getMoreData];
+            [self getBaseMoreData];
         }
     }];
     
@@ -221,16 +220,23 @@
 -(void)getMoreData {
     
 }
-
 /// 判断是否是最后一页
 /// @param pageNow 当前页
 /// @param totalPage 总页数
 -(void)dataSetWithPageNow:(NSInteger )pageNow totalPage:(NSInteger)totalPage {
     self.pageNow = pageNow;
     self.totalPage = totalPage;
-    [self.mainTableView endRefresh];
-    if (pageNow >= totalPage || totalPage == 0) {
-        [self.mainTableView endRefreshAndNoMoreData];
+    
+    if (self.mainTableView) {
+        [self.mainTableView endRefresh];
+        if (pageNow >= totalPage || totalPage == 0) {
+            [self.mainTableView endRefreshAndNoMoreData];
+        }
+    } else if (self.mainCollectionView) {
+        [self.mainCollectionView endRefresh];
+        if (pageNow >= totalPage || totalPage == 0) {
+            [self.mainCollectionView endRefreshAndNoMoreData];
+        }
     }
     self.isLoading = NO;
 }

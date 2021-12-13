@@ -39,14 +39,17 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark ---  添加Collection ---
 - (void)addCollection;
 - (void)addCollection:(UICollectionViewFlowLayout *)flowLayout configuration:(void(^)(UICollectionView *collectionView))block;
-
+/// 判断是否是最后一页
+/// @param pageNow 当前页
+/// @param totalPage 总页数
+-(void)dataSetWithPageNow:(NSInteger )pageNow totalPage:(NSInteger)totalPage;
 /// 点击回调
 @property (nonatomic,copy) void (^yi_tapClickBlock)(void);
 /// 界面布局
 - (void)initSubviews;
 /// 界面约束
 - (void)makeConstraint;
-/// p配置数据
+/// 配置数据
 - (void)configurationData:(id)data;
 @end
 
