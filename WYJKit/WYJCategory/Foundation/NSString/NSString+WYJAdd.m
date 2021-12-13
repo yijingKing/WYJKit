@@ -8,7 +8,7 @@
 
 @implementation NSString (WYJAdd)
 
-+ (BOOL)judgeEmpty:(NSString *)str {
++ (BOOL)yi_judgeEmpty:(NSString *)str {
     if (!str) {
         return YES;
     }
