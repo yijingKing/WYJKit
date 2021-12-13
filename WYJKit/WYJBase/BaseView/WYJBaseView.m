@@ -43,11 +43,11 @@
     }
 }
 //MARK: --- tableView ---
-- (void) addTableView {
+- (void)addTableView {
     [self initTableView:self.tableViewStyle];
 }
 
-- (void) addTableView:(UITableViewStyle)style configuration:(void(^)(UITableView *))block {
+- (void)addTableView:(UITableViewStyle)style configuration:(void(^)(UITableView *))block {
     [self initTableView:self.tableViewStyle];
     !block ?: block(self.mainTableView);
 }
@@ -261,13 +261,6 @@
     }
     return _dataSource;
 }
-
-
-
-
-
-
-
 
 - (void)tapGesture:(UITapGestureRecognizer *)tap {
     if (self.yi_tapClickBlock) {

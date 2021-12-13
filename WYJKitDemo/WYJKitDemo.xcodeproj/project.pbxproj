@@ -121,7 +121,7 @@
 		7F2E7AC1275E0E6F00E6BFAA /* UIImageViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageViewHeader.h; sourceTree = "<group>"; };
 		7F30A1A2275EFCA0009CF3B2 /* UITextField+WYJBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WYJBlocks.m"; sourceTree = "<group>"; };
 		7F30A1A3275EFCA0009CF3B2 /* UITextField+WYJBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+WYJBlocks.h"; sourceTree = "<group>"; };
-		7F408291274F725B0072B088 /* WYJKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WYJKit.podspec; path = ../WYJKit.podspec; sourceTree = "<group>"; };
+		7F408291274F725B0072B088 /* WYJKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WYJKit.podspec; sourceTree = "<group>"; };
 		7F408293274F75B60072B088 /* WYJMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJMacroHeader.h; sourceTree = "<group>"; };
 		7F41DFC4274245BA002CAE5F /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		7F41DFC5274245BB002CAE5F /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
@@ -378,6 +378,7 @@
 		7F87AA5A273CE7270079BB0C /* WYJKit */ = {
 			isa = PBXGroup;
 			children = (
+				7F408291274F725B0072B088 /* WYJKit.podspec */,
 				7F87AA5B273CE7270079BB0C /* WYJKitHeader.h */,
 				7F4BBD40274DD926009C774B /* ToolUI */,
 				7F87AA5C273CE7270079BB0C /* WYJCategory */,
@@ -808,7 +809,6 @@
 		F7E089D727312C2700361311 = {
 			isa = PBXGroup;
 			children = (
-				7F408291274F725B0072B088 /* WYJKit.podspec */,
 				7F87AA5A273CE7270079BB0C /* WYJKit */,
 				F7E089E227312C2700361311 /* WYJKitDemo */,
 				F7E08A0127312C2B00361311 /* WYJKitDemoTests */,

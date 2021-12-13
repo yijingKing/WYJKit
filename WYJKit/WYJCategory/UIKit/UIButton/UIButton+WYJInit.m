@@ -3,7 +3,7 @@
   Copyright © 2021年 King. All rights reserved.
 */
 #import "UIButton+WYJInit.h"
-
+#import "UIFontHeader.h"
 @implementation UIButton (WYJInit)
 /// @param frame 位置
 /// @param title 文本
@@ -11,7 +11,7 @@
 + (UIButton *)yi_createWithFrame:(CGRect)frame
                         title:(NSString *)title
                    titleColor:(UIColor *)titleColor {
-    return [self yi_createWithFrame:frame title:title titleColor:titleColor font:[UIFont systemFontOfSize:17] buttonType:UIButtonTypeSystem bgColor:UIColor.whiteColor corner:0 target:nil action:nil];
+    return [self yi_createWithFrame:frame title:title titleColor:titleColor font:PFRFontWithSizes(17) buttonType:UIButtonTypeCustom bgColor:UIColor.whiteColor corner:0 target:nil action:nil];
 }
 /// @param frame 位置
 /// @param title 文本
@@ -21,7 +21,7 @@
                         title:(NSString *)title
                    titleColor:(UIColor *)titleColor
                          font:(UIFont *)font {
-    return [self yi_createWithFrame:frame title:title titleColor:titleColor font:font buttonType:UIButtonTypeSystem bgColor:UIColor.whiteColor corner:0 target:nil action:nil];
+    return [self yi_createWithFrame:frame title:title titleColor:titleColor font:font buttonType:UIButtonTypeCustom bgColor:UIColor.whiteColor corner:0 target:nil action:nil];
 }
 /// @param frame 位置
 /// @param title 文本
@@ -35,7 +35,7 @@
                          font:(UIFont *)font
                        target:(id)target
                        action:(SEL)action {
-    return [self yi_createWithFrame:frame title:title titleColor:titleColor font:font buttonType:UIButtonTypeSystem bgColor:UIColor.whiteColor corner:0 target:target action:action];
+    return [self yi_createWithFrame:frame title:title titleColor:titleColor font:font buttonType:UIButtonTypeCustom bgColor:UIColor.whiteColor corner:0 target:target action:action];
 }
 /// @param frame 位置
 /// @param title 文本
@@ -100,7 +100,7 @@
 + (UIButton *)yi_createWithFrame:(CGRect)frame
                         image:(UIImage *)image
                 selectedImage:(UIImage *)selectedImage {
-    return [self yi_createWithFrame:frame image:image selectedImage:selectedImage buttonType:UIButtonTypeSystem corner:0 target:nil action:nil];
+    return [self yi_createWithFrame:frame image:image selectedImage:selectedImage buttonType:UIButtonTypeCustom corner:0 target:nil action:nil];
 }
 /// @param frame 位置
 /// @param image 图片
@@ -112,7 +112,7 @@
                 selectedImage:(UIImage *)selectedImage
                        target:(id)target
                        action:(SEL)action {
-    return [self yi_createWithFrame:frame image:image selectedImage:selectedImage buttonType:UIButtonTypeSystem corner:0 target:target action:action];
+    return [self yi_createWithFrame:frame image:image selectedImage:selectedImage buttonType:UIButtonTypeCustom corner:0 target:target action:action];
 }
 /// @param frame 位置
 /// @param image 图片
