@@ -75,6 +75,7 @@
 		7FF193392768765900264B56 /* WYJNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF192E92768765900264B56 /* WYJNavigationView.m */; };
 		7FF1933A2768765900264B56 /* WYJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF192ED2768765900264B56 /* WYJNavigationController.m */; };
 		7FF1933B2768765900264B56 /* WYJGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF192F12768765900264B56 /* WYJGradientLabel.m */; };
+		7FF1934027687A2E00264B56 /* WYJBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1933F27687A2E00264B56 /* WYJBaseViewModel.m */; };
 		D1F87EFB1C4D24462E08B78A /* Pods_WYJKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EBFA619975621472F674A8 /* Pods_WYJKitDemo.framework */; };
 		F7E089E527312C2700361311 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E089E427312C2700361311 /* AppDelegate.m */; };
 		F7E089E827312C2700361311 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E089E727312C2700361311 /* SceneDelegate.m */; };
@@ -280,6 +281,8 @@
 		7FF192F92768765900264B56 /* WYJSystemMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJSystemMacro.h; sourceTree = "<group>"; };
 		7FF192FA2768765900264B56 /* WYJFrameMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJFrameMacro.h; sourceTree = "<group>"; };
 		7FF192FB2768765900264B56 /* WYJHandyMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJHandyMacro.h; sourceTree = "<group>"; };
+		7FF1933E27687A2E00264B56 /* WYJBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJBaseViewModel.h; sourceTree = "<group>"; };
+		7FF1933F27687A2E00264B56 /* WYJBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJBaseViewModel.m; sourceTree = "<group>"; };
 		F7AA6636273226C7006015AF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		F7AA6638273226ED006015AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F7AA663A27322702006015AF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -679,6 +682,7 @@
 		7FF192C72768765900264B56 /* WYJBase */ = {
 			isa = PBXGroup;
 			children = (
+				7FF1933D27687A1800264B56 /* ViewModel */,
 				7FF192C82768765900264B56 /* BaseView */,
 				7FF192D02768765900264B56 /* UICollectionView */,
 				7FF192DA2768765900264B56 /* UITableView */,
@@ -780,6 +784,15 @@
 				7FF192FB2768765900264B56 /* WYJHandyMacro.h */,
 			);
 			path = Macro;
+			sourceTree = "<group>";
+		};
+		7FF1933D27687A1800264B56 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7FF1933E27687A2E00264B56 /* WYJBaseViewModel.h */,
+				7FF1933F27687A2E00264B56 /* WYJBaseViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8B68FB4E12A3F376143DB4CC /* Pods */ = {
@@ -1101,6 +1114,7 @@
 				7FF193172768765900264B56 /* UIControl+WYJEventInterval.m in Sources */,
 				7FF1932F2768765900264B56 /* WYJBaseCollectionView+Delegate.m in Sources */,
 				7FF193102768765900264B56 /* UIImageView+WYJAddition.m in Sources */,
+				7FF1934027687A2E00264B56 /* WYJBaseViewModel.m in Sources */,
 				7FF193202768765900264B56 /* NSString+WYJGB2312.m in Sources */,
 				7FF1932A2768765900264B56 /* NSDate+WYJConversion.m in Sources */,
 				7FF193262768765900264B56 /* NSArray+WYJConversion.m in Sources */,

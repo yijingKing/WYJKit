@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL isUseRefreshHeader;
 /// 是否开启上拉加载
 @property (nonatomic,assign) BOOL isUseRefreshFooter;
-/// 是否自动预加载下一页功能
-@property (nonatomic,assign) BOOL isAutoRequestMore;
+///// 是否自动预加载下一页功能
+//@property (nonatomic,assign) BOOL isAutoRequestMore;
 
 /// 当前页数
 @property (nonatomic,assign) NSInteger  pageNow;
