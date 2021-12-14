@@ -18,8 +18,7 @@
         self.backgroundColor = [UIColor whiteColor];
         [self initSubviews];
         [self makeConstraint];
-        self.tableViewStyle = UITableViewStyleGrouped;
-        [self addTableView];
+        self.tableViewStyle = UITableViewStylePlain;
     }
     return self;
 }

@@ -22,7 +22,6 @@
         self.totalPage = 1;
         self.isLoading = YES;
         self.loadingPercentage = 0.8;
-        [self addCollection];
     }
     return self;
 }
