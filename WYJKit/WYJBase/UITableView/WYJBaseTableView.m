@@ -19,6 +19,7 @@ typedef enum : NSUInteger {
 } EmptyTypeState;
 
 @interface WYJBaseTableView ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+@property (strong, nonatomic)WYJBaseTableViewDelegate * baseDelegate;
 
 @property(nonatomic,assign) EmptyTypeState state;
 /** is empty data */
@@ -34,19 +35,8 @@ typedef enum : NSUInteger {
 @property(nonatomic,assign) BOOL isEmptyData;
 /** is button  */
 @property(nonatomic,assign) BOOL isEmptyButton;
-
-///** 是否开启适配高度 */
-//@property(nonatomic,assign) BOOL isAutoHeight;
-///** 行数 */
-//@property(nonatomic,assign) NSInteger numberRow;
-///** 区数 */
-//@property(nonatomic,assign) NSInteger numberSection;
-///** cell类名数组 */
-//@property(nonatomic,copy) NSArray * cellNameArray;
-
 /** clickBadNetWorkPage */
 @property (strong, nonatomic) void(^clickBadNetWorkPage)(void);
-
 @end
 
 @implementation WYJBaseTableView
@@ -68,9 +58,6 @@ typedef enum : NSUInteger {
         self.isFirstShow = YES;
         self.backgroundColor = UIColor.clearColor;
         
-        self.dataSource = self.baseDelegate;
-        self.delegate = self.baseDelegate;
-        
         #ifdef __IPHONE_15_0
         if (@available(iOS 15.0, *)) {
             self.sectionHeaderTopPadding = 0;
@@ -80,8 +67,17 @@ typedef enum : NSUInteger {
     }
     return self;
 }
+- (void)setIsUserBaseDelegate:(BOOL)isUserBaseDelegate {
+    _isUserBaseDelegate = isUserBaseDelegate;
+    if (_isUserBaseDelegate) {
+        self.dataSource = self.baseDelegate;
+        self.delegate = self.baseDelegate;
+    }
+}
+
 - (void)setIsUserEmpty:(BOOL)isUserEmpty {
-    if (isUserEmpty) {
+    _isUserEmpty = isUserEmpty;
+    if (_isUserEmpty) {
         self.emptyDataSetSource = self;
         self.emptyDataSetDelegate = self;
         [self showNoSourcePageWithEmpty:self.emptyMsg];

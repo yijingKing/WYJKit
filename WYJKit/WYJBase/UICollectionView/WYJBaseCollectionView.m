@@ -18,7 +18,7 @@ typedef enum : NSUInteger {
 } EmptyTypeState;
 
 @interface WYJBaseCollectionView ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
-
+@property (strong, nonatomic)WYJBaseCollectionViewDelegate * baseDelegate;
 @property(nonatomic,assign)EmptyTypeState state;
 /** is empty data */
 @property (assign, nonatomic) BOOL isEmptyPage;
@@ -58,8 +58,17 @@ typedef enum : NSUInteger {
     }
     return self;
 }
+- (void)setIsUserBaseDelegate:(BOOL)isUserBaseDelegate {
+    _isUserBaseDelegate = isUserBaseDelegate;
+    if (_isUserBaseDelegate) {
+        self.dataSource = self.baseDelegate;
+        self.delegate = self.baseDelegate;
+    }
+}
+
 - (void)setIsUserEmpty:(BOOL)isUserEmpty {
-    if (isUserEmpty) {
+    _isUserEmpty = isUserEmpty;
+    if (_isUserEmpty) {
         self.emptyMsg = @"暂无数据";
         self.emptyDataSetSource = self;
         self.emptyDataSetDelegate = self;

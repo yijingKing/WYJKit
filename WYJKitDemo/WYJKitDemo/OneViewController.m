@@ -8,7 +8,10 @@
 #import "TwoViewController.h"
 #import <Masonry/Masonry.h>
 #import "DSNDJNSDJSD.h"
+#import "ViewModel.h"
 @interface OneViewController ()
+@property (nonatomic,strong) DSNDJNSDJSD *viewM;
+@property (nonatomic,strong) ViewModel *viewModel;
 
 @end
 
@@ -21,8 +24,13 @@
     self.view.backgroundColor = UIColor.blueColor;
 //    self.yi_prefersNavigationBarHidden = YES;
     [self setBackItem:[UIImage imageNamed:@"nav_back_black"] ];
-
-    self.view = DSNDJNSDJSD.alloc.init;
+    self.viewM = DSNDJNSDJSD.alloc.init;
+    self.view = self.viewM;
+    
+    
+    
+//    self.viewModel = [[ViewModel alloc]init];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

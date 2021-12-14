@@ -6,7 +6,9 @@
 #import <UIKit/UIKit.h>
 #import "WYJBaseCollectionViewDelegate.h"
 @interface WYJBaseCollectionView : UICollectionView
-@property (strong, nonatomic)WYJBaseCollectionViewDelegate * baseDelegate;
+
+/// 是否开启BaseDelegate (使用block方式调用代理方法)
+@property (nonatomic,assign) BOOL isUserBaseDelegate;
 @property (nonatomic,copy) NSArray *dataSoureBaseArray;
 /// 是否开启空界面
 @property (nonatomic,assign) BOOL isUserEmpty;

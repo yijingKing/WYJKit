@@ -10,5 +10,5 @@
 #import "BaseCollectionViewHeader.h"
 #import "BaseViewControllerHeader.h"
 #import "WYJNavigationView.h"
-#import "WYJBaseView.h"
+#import "BaseViewHeader.h"
 #endif /* BaseFoundationHeader_h */
