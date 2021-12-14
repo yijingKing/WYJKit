@@ -1,9 +1,7 @@
-//
-//  WYJCollectionBaseView.m
-//  WYJKitDemo
-//
-//  Created by 祎 on 2021/12/14.
-//
+/*
+ Created by King on 2021
+ Copyright © 2021年 King. All rights reserved.
+ */
 
 #import "WYJCollectionBaseView.h"
 #import "WYJKitHeader.h"

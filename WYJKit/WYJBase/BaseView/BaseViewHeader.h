@@ -1,12 +1,12 @@
-//
-//  BaseViewHeader.h
-//  WYJKitDemo
-//
-//  Created by 祎 on 2021/12/14.
-//
+/*
+ Created by King on 2021
+ Copyright © 2021年 King. All rights reserved.
+ */
 
 #ifndef BaseViewHeader_h
 #define BaseViewHeader_h
+
+#import "WYJBaseViewModel.h"
 
 #import "WYJBaseView.h"
 #import "WYJTableBaseView.h"
