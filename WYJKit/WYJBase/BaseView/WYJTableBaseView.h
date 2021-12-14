@@ -30,7 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 ///添加tableview
 - (void)addTableView:(UITableViewStyle)style configuration:(void(^)(UITableView *tableView))block;
 
-
+/// 判断是否是最后一页
+/// @param pageNow 当前页
+/// @param totalPage 总页数
+-(void)dataSetWithPageNow:(NSInteger )pageNow totalPage:(NSInteger)totalPage;
 @end
 
 NS_ASSUME_NONNULL_END
