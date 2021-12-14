@@ -10,4 +10,5 @@ pod 'DZNEmptyDataSet'
   pod 'Masonry'
   pod 'MJRefresh'
   pod 'ReactiveObjC'
+  pod 'IQKeyboardManager'
 end

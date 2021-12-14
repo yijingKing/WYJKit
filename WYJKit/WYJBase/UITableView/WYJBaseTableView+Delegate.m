@@ -3,7 +3,6 @@
   Copyright © 2021年 King. All rights reserved.
 */
 #import "WYJBaseTableView+Delegate.h"
-#import "WYJKitHeader.h"
 @implementation WYJBaseTableView (Delegate)
 
 - (void)yi_numberForSection:(WYJNumberForSection)numberForSectionBlock {

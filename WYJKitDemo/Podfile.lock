@@ -1,6 +1,7 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
   - FLEX (4.6.0)
+  - IQKeyboardManager (6.5.9)
   - Masonry (1.1.0)
   - MJRefresh (3.7.5)
   - ReactiveObjC (3.1.1)
@@ -8,6 +9,7 @@ PODS:
 DEPENDENCIES:
   - DZNEmptyDataSet
   - FLEX
+  - IQKeyboardManager
   - Masonry
   - MJRefresh
   - ReactiveObjC
@@ -16,6 +18,7 @@ SPEC REPOS:
   trunk:
     - DZNEmptyDataSet
     - FLEX
+    - IQKeyboardManager
     - Masonry
     - MJRefresh
     - ReactiveObjC
@@ -23,10 +26,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FLEX: 6223ad3d853fb6177a6ab1cda85f372a72768da8
+  IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
 
-PODFILE CHECKSUM: d3685c266bf9e920be5045e88fa0a640c8f62582
+PODFILE CHECKSUM: 0e6e3692274a7ad1fb72beb83e64e31e384691b4
 
 COCOAPODS: 1.11.2

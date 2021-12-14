@@ -7,7 +7,7 @@
 #import <UIKit/UIKit.h>
 #import "WYJBaseTableViewDelegate.h"
 @interface WYJBaseTableView : UITableView
-
+@property (strong, nonatomic)WYJBaseTableViewDelegate * baseDelegate;
 /// 是否开启BaseDelegate (使用block方式调用代理方法)
 @property (nonatomic,assign) BOOL isUserBaseDelegate;
 /// 是否开启空界面

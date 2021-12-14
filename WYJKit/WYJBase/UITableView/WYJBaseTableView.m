@@ -19,7 +19,7 @@ typedef enum : NSUInteger {
 } EmptyTypeState;
 
 @interface WYJBaseTableView ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
-@property (strong, nonatomic)WYJBaseTableViewDelegate * baseDelegate;
+
 
 @property(nonatomic,assign) EmptyTypeState state;
 /** is empty data */

@@ -18,7 +18,7 @@ typedef enum : NSUInteger {
 } EmptyTypeState;
 
 @interface WYJBaseCollectionView ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
-@property (strong, nonatomic)WYJBaseCollectionViewDelegate * baseDelegate;
+
 @property(nonatomic,assign)EmptyTypeState state;
 /** is empty data */
 @property (assign, nonatomic) BOOL isEmptyPage;
