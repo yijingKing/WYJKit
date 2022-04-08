@@ -5,7 +5,6 @@
 //
 
 #import "ViewController.h"
-#import "OneViewController.h"
 #import <ReactiveObjC.h>
 @interface ViewController ()
 @property (nonatomic,strong) UILabel *label;
@@ -30,11 +29,18 @@
     
     [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         YJDEBUG(@"1111");
-        self.label.text = @"mmmm";
+        self.label.text = @"1";
         [self buttonClick:button];
     }];
     
     [self.view addSubview:self.label];
+    
+    [[[RACSignal combineLatest:@[RACObserve(self.label, text)] reduce:^(NSString * text) {
+         return @"1";
+    }] distinctUntilChanged] subscribeNext:^(id  _Nullable x) {
+        YJDEBUG(@"222222");
+    }];
+    
     
     [RACObserve(self.label, text) subscribeNext:^(id  _Nullable x) {
         YJDEBUG(@"label值改变");
@@ -44,11 +50,11 @@
         YJDEBUG(@"通知");
     }];
     
-    [[self rac_signalForSelector:@selector(buttonClick:)] subscribeNext:^(RACTuple * _Nullable x) {
-        YJDEBUG(@"事件触发");
-    }];
-    
-//    [[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSDate * _Nullable x) {
+//    [[self rac_signalForSelector:@selector(buttonClick:)] subscribeNext:^(RACTuple * _Nullable x) {
+//        YJDEBUG(@"事件触发");
+//    }];
+
+    //    [[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSDate * _Nullable x) {
 //        self.label.text = @"3";
 //    }];
     
@@ -58,10 +64,12 @@
 //    RAC(button, backgroundColor) = [RACSignal combineLatest:@[tf.rac_textSignal.text] reduce:^id _Nullable(NSString * username){
 //            return (username.integerValue == 3) ? [UIColor redColor] : [UIColor grayColor];
 //        }];
+    
+    
 }
 - (void)buttonClick:(UIButton *)sender {
     YJDEBUG(@"点击");
-    [self pushViewController:OneViewController.alloc.init animated:YES];
+//    [self pushViewController:OneViewController.alloc.init animated:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
