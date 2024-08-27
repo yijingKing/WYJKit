@@ -1,36 +1,34 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
-  - FLEX (4.6.0)
-  - IQKeyboardManager (6.5.9)
+  - IQKeyboardManager (6.5.19)
   - Masonry (1.1.0)
-  - MJRefresh (3.7.5)
-  - ReactiveObjC (3.1.1)
+  - MJRefresh (3.7.9)
+  - SDWebImage (5.19.4):
+    - SDWebImage/Core (= 5.19.4)
+  - SDWebImage/Core (5.19.4)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
-  - FLEX
   - IQKeyboardManager
   - Masonry
   - MJRefresh
-  - ReactiveObjC
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - DZNEmptyDataSet
-    - FLEX
     - IQKeyboardManager
     - Masonry
     - MJRefresh
-    - ReactiveObjC
+    - SDWebImage
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  FLEX: 6223ad3d853fb6177a6ab1cda85f372a72768da8
-  IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
-  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
 
-PODFILE CHECKSUM: 0e6e3692274a7ad1fb72beb83e64e31e384691b4
+PODFILE CHECKSUM: ae1243f011d55d3b9cf7e79593871d24a83d8b1e
 
 COCOAPODS: 1.15.2

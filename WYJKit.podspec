@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '5.1.2'
+  s.version          = '5.1.3'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -18,11 +18,10 @@ s.platform     = :ios, '13.0'
   s.frameworks = 'UIKit','Foundation','CoreGraphics','CoreText'
 
 s.dependency 'Masonry'
-s.dependency 'IQKeyboardManager'
 s.dependency 'DZNEmptyDataSet'
 s.dependency 'MJRefresh'
 s.dependency 'SDWebImage'
-
+s.dependency 'IQKeyboardManager'
 s.public_header_files   = 'WYJKit/**/*.{h}'
 s.source_files = 'WYJKit/**/*.{h,m}'
 

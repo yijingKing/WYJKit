@@ -11,6 +11,5 @@
 #import "NSDateHeader.h"
 #import "NSDataHeader.h"
 #import "NSObjectHeader.h"
-#import "NSMutableAttributedString+YJAdd.h"
 
 #endif /* FoundationHeader_h */

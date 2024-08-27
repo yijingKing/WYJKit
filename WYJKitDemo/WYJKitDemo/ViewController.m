@@ -5,7 +5,6 @@
 //
 
 #import "ViewController.h"
-#import <ReactiveObjC.h>
 @interface ViewController ()
 @property (nonatomic,strong) UILabel *label;
 
@@ -27,28 +26,6 @@
     [self.view addSubview:button];
     button.backgroundColor = UIColor.blueColor;
     
-    [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        YJDEBUG(@"1111");
-        self.label.text = @"1";
-        [self buttonClick:button];
-    }];
-    
-    [self.view addSubview:self.label];
-    
-    [[[RACSignal combineLatest:@[RACObserve(self.label, text)] reduce:^(NSString * text) {
-         return @"1";
-    }] distinctUntilChanged] subscribeNext:^(id  _Nullable x) {
-        YJDEBUG(@"222222");
-    }];
-    
-    
-    [RACObserve(self.label, text) subscribeNext:^(id  _Nullable x) {
-        YJDEBUG(@"label值改变");
-    }];
-    
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-        YJDEBUG(@"通知");
-    }];
     
 //    [[self rac_signalForSelector:@selector(buttonClick:)] subscribeNext:^(RACTuple * _Nullable x) {
 //        YJDEBUG(@"事件触发");
