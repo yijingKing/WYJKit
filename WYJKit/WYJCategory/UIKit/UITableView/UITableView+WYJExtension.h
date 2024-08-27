@@ -10,9 +10,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (WYJExtension)
-- (void)registerClass:(Class)cellClass;
-- (void)registerNibClass:(Class)cellClass;
-- (__kindof UITableViewCell *)dequeueReusableCellWithClass:(Class)cellClass;
+// 根据类名注册cell
+- (void)yi_registerClass:(Class)cellClass;
+// 根据类名注册cell
+- (void)yi_registerNibClass:(Class)cellClass;
+// 根据类名获取cell,如果未注册自动注册
+- (nullable __kindof UITableViewCell *)yi_dequeueReusableCellWithClass:(Class)cellClass;
 @end
 
 NS_ASSUME_NONNULL_END

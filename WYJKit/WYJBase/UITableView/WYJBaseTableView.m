@@ -147,13 +147,6 @@ typedef enum : NSUInteger {
     [self endRefreshingWithNoMoreData];
 }
 
--(void)registerClass:(Class)class {
-    [self registerClass:class forCellReuseIdentifier:NSStringFromClass(class)];
-}
--(void)registerNibClass:(Class)class {
-    [self registerNib:class forCellReuseIdentifier:NSStringFromClass(class)];
-}
-
 #pragma mark - DZNEmptyDataSetSource
 /**
  *  返回标题文字

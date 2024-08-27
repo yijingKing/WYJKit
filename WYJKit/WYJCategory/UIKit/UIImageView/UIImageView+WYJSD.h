@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImageView (WYJSD)
 - (void)k_setImageWithURL:(nullable NSURL *)url;
+- (void)k_setImageWithURL:(nullable NSURL *)url placeholderImage:(UIImage *)placeholderImage;
 @end
 
 NS_ASSUME_NONNULL_END

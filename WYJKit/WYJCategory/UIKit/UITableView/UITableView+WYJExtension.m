@@ -9,14 +9,33 @@
 
 @implementation UITableView (WYJExtension)
 
-- (void)registerClass:(Class)cellClass {
+- (void)yi_registerClass:(Class)cellClass {
     [self registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
 }
-- (__kindof UITableViewCell *)dequeueReusableCellWithClass:(Class)cellClass {
-    return [self dequeueReusableCellWithIdentifier:NSStringFromClass(cellClass)];
+- (nullable __kindof UITableViewCell *)yi_dequeueReusableCellWithClass:(Class)cellClass {
+    NSString *identifier = NSStringFromClass(cellClass);
+    __kindof UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        if ([self hasRegisteredClass:cellClass]) {
+            cell = [self dequeueReusableCellWithIdentifier:identifier];
+        } else {
+            NSString *nibName = NSStringFromClass(cellClass);
+            if ([[NSBundle mainBundle] pathForResource:nibName ofType:@"nib"]) {
+                [self registerNib:[UINib nibWithNibName:nibName bundle:nil] forCellReuseIdentifier:identifier];
+            } else {
+                [self registerClass:cellClass forCellReuseIdentifier:identifier];
+            }
+            cell = [self dequeueReusableCellWithIdentifier:identifier];
+        }
+    }
+    return cell;
+}
+- (BOOL)hasRegisteredClass:(Class)cellClass {
+    NSString *identifier = NSStringFromClass(cellClass);
+    return ([self dequeueReusableCellWithIdentifier:identifier] != nil);
 }
 
-- (void)registerNibClass:(Class)cellClass {
+- (void)yi_registerNibClass:(Class)cellClass {
     [self registerNib:[UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil] forCellReuseIdentifier:NSStringFromClass(cellClass)];
 }
 

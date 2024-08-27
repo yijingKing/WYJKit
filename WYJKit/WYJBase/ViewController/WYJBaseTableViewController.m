@@ -8,9 +8,7 @@
 #import "WYJBaseTableViewController.h"
 #import <Masonry/Masonry.h>
 #import <MJRefresh/MJRefresh.h>
-#import "WYJMacroHeader.h"
-#import "WYJBaseTableViewCell.h"
-#import "WYJBaseTitleTableViewCell.h"
+#import "WYJKitHeader.h"
 
 @interface WYJBaseTableViewController ()
 /// //判断是否加载中
@@ -41,8 +39,8 @@
     self.tableView.emptyTitle = @"暂无数据";
     self.tableView.emptyBackgroundColor = UIColor.clearColor;
     [self.view sendSubviewToBack:self.tableView];
-    [self.tableView registerClass:WYJBaseTableViewCell.class];
-    [self.tableView registerClass:WYJBaseTitleTableViewCell.class];
+    [self.tableView yi_registerClass:WYJBaseTableViewCell.class];
+    [self.tableView yi_registerClass:WYJBaseTitleTableViewCell.class];
     
 }
 - (void)setIsUserEmpty:(BOOL)isUserEmpty {

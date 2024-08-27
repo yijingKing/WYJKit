@@ -62,8 +62,4 @@
 /// 结束刷新并加载无数据
 - (void)endRefreshAndNoMoreData;
 
-
--(void)registerClass:(Class)class;
--(void)registerNibClass:(Class)class;
-
 @end

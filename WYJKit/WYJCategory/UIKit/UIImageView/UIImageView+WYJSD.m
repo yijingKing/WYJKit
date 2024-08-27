@@ -8,7 +8,9 @@
 #import "UIImageView+WYJSD.h"
 #import <SDWebImage/SDWebImage.h>
 @implementation UIImageView (WYJSD)
-
+- (void)k_setImageWithURL:(nullable NSURL *)url {
+    [self sd_setImageWithURL:url];
+}
 - (void)k_setImageWithURL:(nullable NSURL *)url placeholderImage:(UIImage *)placeholderImage{
     [self sd_setImageWithURL:url placeholderImage:placeholderImage options:0 progress:nil completed:nil];
 }
