@@ -1,9 +1,9 @@
 /*
-  Created by King on 2021
-  Copyright © 2021年 King. All rights reserved.
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
 */
 
-#import "UIViewController+YJAdd.h"
+#import "UIViewController+WYJAdd.h"
 #import "WYJNavigationButton.h"
 #import <objc/runtime.h>
 #import "WYJKitHeader.h"
@@ -27,7 +27,7 @@ typedef void(^RightNavItemsBlock)(NSInteger);
 
 @end
 
-@implementation UIViewController (YJAdd)
+@implementation UIViewController (WYJAdd)
 
 #pragma make ------ 导航返回按钮 ------
 - (void)setBackItem:(UIImage *)image {

@@ -1,9 +1,7 @@
-//
-//  BaseTableViewController.h
-//  LCProduct
-//
-//  Created by 王祎境 on 2024/7/5.
-//
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+*/
 
 #import <UIKit/UIKit.h>
 #import "WYJBaseViewController.h"
