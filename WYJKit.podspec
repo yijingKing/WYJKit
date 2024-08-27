@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '5.1.1'
+  s.version          = '5.1.2'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/MemoryKing/WYJKit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
-
+s.platform     = :ios, '13.0'
   s.frameworks = 'UIKit','Foundation','CoreGraphics','CoreText'
 
 s.dependency 'Masonry'
