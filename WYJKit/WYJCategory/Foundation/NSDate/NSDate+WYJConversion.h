@@ -5,9 +5,10 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (WYJConversion)
-#pragma mark --- 将时间转换成时间戳
+// 将时间转换成时间戳
 - (nullable NSString *)yi_toTimestampWithFormatter:(nullable NSString *)formatterStr;
-
+// 将时间戳转换成时间
+- (NSString *)yi_timestampToString:(NSTimeInterval)timestamp withFormat:(NSString *)format;
 @end
 
 

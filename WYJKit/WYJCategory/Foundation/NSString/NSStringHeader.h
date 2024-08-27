@@ -14,4 +14,5 @@
 #import "NSString+WYJEncode.h"
 #import "NSString+WYJBase64.h"
 #import "NSString+WYJGB2312.h"
+#import "NSString+WYJAttributed.h"
 #endif /* NSStringHeader_h */

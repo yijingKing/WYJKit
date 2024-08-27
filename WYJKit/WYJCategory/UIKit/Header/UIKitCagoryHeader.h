@@ -27,4 +27,6 @@
 
 #import "UIControlHeader.h"
 #import "UIImageViewHeader.h"
+
+#import "UITableView+WYJExtension.h"
 #endif /* UIKitCagoryHeader_h */

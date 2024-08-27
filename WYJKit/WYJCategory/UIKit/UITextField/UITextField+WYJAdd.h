@@ -20,7 +20,8 @@
  *  处理系统输入法导致的乱码,如果调用了maximumLimit属性，内部会默认处理乱码
  */
 - (void)fixMessyDisplay;
-
+- (void)setLeftViewWithWidth:(double)width;
+- (void)setLeftViewWithIcon:(nullable UIImage *)image width:(double)width imageSize:(CGSize)imageSize spacing:(double)spacing;
 @end
 
 

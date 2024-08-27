@@ -10,7 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (WYJAdd)
-
+/**
+ Returns the view's view controller (may be nil).
+ */
+@property (nullable, nonatomic, readonly) UIViewController *yi_viewController;
 /** 设置部分圆角*/
 - (void)yi_roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size;
 /** 设置阴影 */
@@ -33,12 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)yi_removeAllSubviews;
 
-/**
- Returns the view's view controller (may be nil).
- */
-@property (nullable, nonatomic, readonly) UIViewController *yi_viewController;
-
-
+- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color thickness:(CGFloat)thickness cornerRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners;
 @end
 NS_ASSUME_NONNULL_END
 

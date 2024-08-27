@@ -118,5 +118,19 @@
         [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
     }
 }
-
+- (void)setLeftViewWithWidth:(double)width {
+    [self setLeftViewWithIcon:nil width:width imageSize:CGSizeZero spacing:0];
+}
+- (void)setLeftViewWithIcon:(nullable UIImage *)image width:(double)width imageSize:(CGSize)imageSize spacing:(double)spacing {
+    UIView * leftView = [UIView new];
+    leftView.frame = CGRectMake(0, 0, width, self.height);
+    if (image) {
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(spacing, 0, imageSize.width, imageSize.height)];
+        imageView.centerY = self.centerY;
+        imageView.image = image;
+        [leftView addSubview:imageView];
+    }
+    self.leftView = leftView;
+    self.leftViewMode = UITextFieldViewModeAlways;
+}
 @end

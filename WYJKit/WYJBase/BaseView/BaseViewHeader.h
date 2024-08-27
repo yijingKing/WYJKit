@@ -6,9 +6,10 @@
 #ifndef BaseViewHeader_h
 #define BaseViewHeader_h
 
-#import "WYJBaseViewModel.h"
+#import "WYJBaseCollectionViewCell.h"
+#import "WYJBaseTableViewCell.h"
 
+#import "WYJBaseTitleTableViewCell.h"
 #import "WYJBaseView.h"
-#import "WYJTableBaseView.h"
-#import "WYJCollectionBaseView.h"
+
 #endif /* BaseViewHeader_h */

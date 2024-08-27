@@ -41,13 +41,6 @@ typedef enum : NSUInteger {
 
 @implementation WYJBaseTableView
 
-- (WYJBaseTableViewDelegate *)baseDelegate {
-    if (!_baseDelegate) {
-        _baseDelegate = WYJBaseTableViewDelegate.alloc.init;
-    }
-    return _baseDelegate;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     if (self = [super initWithFrame:frame style:style]) {
         if (@available(iOS 11.0, *)) {
@@ -66,13 +59,6 @@ typedef enum : NSUInteger {
         self.emptyMsg = @"暂无数据";
     }
     return self;
-}
-- (void)setIsUserBaseDelegate:(BOOL)isUserBaseDelegate {
-    _isUserBaseDelegate = isUserBaseDelegate;
-    if (_isUserBaseDelegate) {
-        self.dataSource = self.baseDelegate;
-        self.delegate = self.baseDelegate;
-    }
 }
 
 - (void)setIsUserEmpty:(BOOL)isUserEmpty {
@@ -159,6 +145,13 @@ typedef enum : NSUInteger {
 - (void)endRefreshAndNoMoreData {
     [self endRefresh];
     [self endRefreshingWithNoMoreData];
+}
+
+-(void)registerClass:(Class)class {
+    [self registerClass:class forCellReuseIdentifier:NSStringFromClass(class)];
+}
+-(void)registerNibClass:(Class)class {
+    [self registerNib:class forCellReuseIdentifier:NSStringFromClass(class)];
 }
 
 #pragma mark - DZNEmptyDataSetSource

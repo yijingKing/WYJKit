@@ -24,6 +24,13 @@
     NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
     return timeSp;
 }
-
+#pragma mark --- 将时间戳转换成时间
+- (NSString *)yi_timestampToString:(NSTimeInterval)timestamp withFormat:(NSString *)format {
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    return dateString;
+}
 
 @end

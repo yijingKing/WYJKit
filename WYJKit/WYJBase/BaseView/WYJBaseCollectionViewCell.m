@@ -1,13 +1,15 @@
 //
-//  BaseView.m
+//  BaseCollectionViewCell.m
 //  LCProduct
 //
-//  Created by 王祎境 on 2024/7/2.
+//  Created by 王祎境 on 2024/7/6.
 //
 
-#import "WYJBaseView.h"
+#import "WYJBaseCollectionViewCell.h"
 
-@implementation WYJBaseView
+
+
+@implementation WYJBaseCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -17,6 +19,8 @@
 }
 
 - (void)initElement {
+    
+    
     
 }
 

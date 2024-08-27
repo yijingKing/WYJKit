@@ -8,4 +8,6 @@
 
 #import "WYJBaseViewController.h"
 #import "WYJNavigationView.h"
+#import "WYJBaseTableViewController.h"
+
 #endif /* BaseViewControllerHeader_h */

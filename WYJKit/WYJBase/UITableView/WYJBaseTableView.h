@@ -5,9 +5,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import "WYJBaseTableViewDelegate.h"
 @interface WYJBaseTableView : UITableView
-@property (strong, nonatomic)WYJBaseTableViewDelegate * baseDelegate;
 /// 是否开启BaseDelegate (使用block方式调用代理方法)
 @property (nonatomic,assign) BOOL isUserBaseDelegate;
 /// 是否开启空界面
@@ -63,5 +61,9 @@
 
 /// 结束刷新并加载无数据
 - (void)endRefreshAndNoMoreData;
+
+
+-(void)registerClass:(Class)class;
+-(void)registerNibClass:(Class)class;
 
 @end

@@ -9,5 +9,5 @@
 
 #import "UIImageView+WYJAddition.h"
 #import "UIImageView+WYJAdd.h"
-
+#import "UIImageView+WYJSD.h"
 #endif /* UIImageViewHeader_h */

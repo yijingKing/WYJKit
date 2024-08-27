@@ -7,8 +7,7 @@
 #define BaseTableViewHeader_h
 
 #import "WYJBaseTableView.h"
-#import "WYJBaseTableView+Delegate.h"
-#import "WYJBaseTableViewDelegate.h"
-#import "WYJTableView.h"
-#import "WYJTableViewCell.h"
+#import "WYJBaseTitleTableViewCell.h"
+#import "WYJBaseTableViewCell.h"
+#import "WYJBaseViewController.h"
 #endif /* BaseTableViewHeader_h */

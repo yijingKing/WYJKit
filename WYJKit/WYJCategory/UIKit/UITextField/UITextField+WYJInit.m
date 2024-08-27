@@ -73,7 +73,7 @@
     if (returnKeyType) {
         textField.returnKeyType = returnKeyType;
     }
-    if (YJStringIsEmpty(placeholder)) {
+    if (YJStringNotEmpty(placeholder)) {
         textField.placeholder = placeholder;
     }
     if (placeholderColor) {
