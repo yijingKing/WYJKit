@@ -27,8 +27,8 @@
 #define YJDOUBLE_TO_STRING(i)               [NSString stringWithFormat:@"%f",i]
 #endif
 ///字符串拼接
-#ifndef YJSTRING_WITH_FORMAT
-#define YJSTRING_WITH_FORMAT(str)           [NSString stringWithFormat:@"%@",str]
+#ifndef YJSTRING_FORMAT
+#define YJSTRING_FORMAT(fmt, ...)          [NSString stringWithFormat:(fmt), ##__VA_ARGS__]
 #endif
 
 ///图片

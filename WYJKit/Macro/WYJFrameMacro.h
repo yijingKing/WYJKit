@@ -1,11 +1,7 @@
-/*******************************************************************************
- Copyright (K), 2019 - ~, ╰莪呮想好好宠Nǐつ
- 
- Author:        ╰莪呮想好好宠Nǐつ (Wang Yijing)
- E-mail:        1091676312@qq.com
- GitHub:        https://github.com/MemoryKing
- FileContent:   适配尺寸
- ********************************************************************************/
+/*
+  Created by 祎 on 2021
+  Copyright © 2021年 祎. All rights reserved.
+*/
 
 #ifndef WYJFrameMacro_h
 #define WYJFrameMacro_h
@@ -71,34 +67,17 @@
 #endif
 //底部安全区域
 #ifndef YJBottomHeight
-#define YJBottomHeight       ([[UIApplication sharedApplication] statusBarFrame].size.height>20.1?34.0:0.0)
+#define YJBottomHeight [UIApplication sharedApplication].windows.firstObject.safeAreaInsets.bottom
 #endif
 //状态条占的高度
 #ifndef YJStatusHeight
-#define YJStatusHeight \
-^(){\
-if (@available(iOS 13.0, *)) {\
-UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager;\
-return statusBarManager.statusBarFrame.size.height;\
-} else {\
-return [UIApplication sharedApplication].statusBarFrame.size.height;\
-}\
-}()
+#define YJStatusHeight [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height
 #endif
 
 //底部指示条
 #ifndef INDICATOR_HEIGHT
-#define INDICATOR_HEIGHT \
-^(){\
-if (@available(iOS 11.0, *)) {\
-UIEdgeInsets safeAreaInsets = [[UIApplication sharedApplication] delegate].window.safeAreaInsets;\
-return safeAreaInsets.bottom;\
-} else {\
-return UIEdgeInsetsMake(0, 0, 0, 0).bottom;\
-}\
-}()
+#define INDICATOR_HEIGHT [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom
 #endif
-
 
 /** 导航栏高度 + 状态栏高度 */
 #ifndef YJStatusAndNavHeight

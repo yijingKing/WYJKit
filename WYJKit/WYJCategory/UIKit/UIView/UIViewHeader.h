@@ -10,4 +10,5 @@
 #import "UIView+WYJPageRouter.h"
 #import "UIView+WYJConvenience.h"
 #import "UIView+WYJBlock.h"
+#import "UIView+WYJXib.h"
 #endif /* UIViewHeader_h */

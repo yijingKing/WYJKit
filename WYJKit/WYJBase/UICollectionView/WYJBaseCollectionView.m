@@ -39,12 +39,6 @@ typedef enum : NSUInteger {
 @end
 
 @implementation WYJBaseCollectionView
-- (WYJBaseCollectionViewDelegate *)baseDelegate {
-    if (!_baseDelegate) {
-        _baseDelegate = WYJBaseCollectionViewDelegate.alloc.init;
-    }
-    return _baseDelegate;
-}
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout
 {
     if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
@@ -58,14 +52,6 @@ typedef enum : NSUInteger {
     }
     return self;
 }
-- (void)setIsUserBaseDelegate:(BOOL)isUserBaseDelegate {
-    _isUserBaseDelegate = isUserBaseDelegate;
-    if (_isUserBaseDelegate) {
-        self.dataSource = self.baseDelegate;
-        self.delegate = self.baseDelegate;
-    }
-}
-
 - (void)setIsUserEmpty:(BOOL)isUserEmpty {
     _isUserEmpty = isUserEmpty;
     if (_isUserEmpty) {

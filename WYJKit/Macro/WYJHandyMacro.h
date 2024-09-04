@@ -50,14 +50,13 @@ static id _instance; \
 /**
  *  安全地调用 block
  */
-#ifndef BLOCK_SAFE_CALLS
+#ifndef YJ_BLOCK_SAFE_CALLS
 #define BLOCK_SAFE_CALLS(block, ...) block ? block(__VA_ARGS__) : nil
 #endif
 #ifndef BLOCK_SAFE_CALLS_In_Main_Queue
 #define BLOCK_SAFE_CALLS_In_Main_Queue(block, ...) block ? dispatch_async(dispatch_get_main_queue(), ^{ block(__VA_ARGS__); }) : nil
 #endif
 
-
-
-
+//拷贝字符串
+#define YJ_COPY_TO_PASTEBOARD(str) [[UIPasteboard generalPasteboard] setString:(str)]
 #endif /* WYJHandyMacro_h */

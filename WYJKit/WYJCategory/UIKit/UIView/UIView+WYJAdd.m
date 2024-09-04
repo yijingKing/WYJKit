@@ -42,13 +42,15 @@
 - (nullable UIViewController *)yi_viewController {
     return [self yi_currentViewController];
 }
+- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth {
+    [self yi_addBorderToSide:side color:color lineWidth:lineWidth cornerRadius:0 corners:(UIRectCornerAllCorners)];
+}
 
-
-- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color thickness:(CGFloat)thickness cornerRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners {
+- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth cornerRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners {
     CAShapeLayer *borderLayer = [CAShapeLayer layer];
     borderLayer.strokeColor = color.CGColor;
     borderLayer.fillColor = [UIColor clearColor].CGColor;
-    borderLayer.lineWidth = thickness;
+    borderLayer.lineWidth = lineWidth;
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     CGFloat width = CGRectGetWidth(self.bounds);
@@ -56,7 +58,7 @@
     
     switch (side) {
         case UIRectEdgeTop:
-            [path moveToPoint:CGPointMake(0, thickness)];
+            [path moveToPoint:CGPointMake(0, lineWidth)];
             if (corners & UIRectCornerTopLeft) {
                 [path addArcWithCenter:CGPointMake(cornerRadius, cornerRadius) radius:cornerRadius startAngle:M_PI endAngle:3*M_PI/2 clockwise:YES];
             } else {
@@ -68,13 +70,13 @@
                 [path addArcWithCenter:CGPointMake(width - cornerRadius, cornerRadius) radius:cornerRadius startAngle:3*M_PI/2 endAngle:0 clockwise:YES];
             } else {
                 [path addLineToPoint:CGPointMake(width, 0)];
-                [path addLineToPoint:CGPointMake(width, thickness)];
+                [path addLineToPoint:CGPointMake(width, lineWidth)];
             }
-            [path addLineToPoint:CGPointMake(0, thickness)];
+            [path addLineToPoint:CGPointMake(0, lineWidth)];
             break;
             
         case UIRectEdgeBottom:
-            [path moveToPoint:CGPointMake(0, height - thickness)];
+            [path moveToPoint:CGPointMake(0, height - lineWidth)];
             if (corners & UIRectCornerBottomLeft) {
                 [path addArcWithCenter:CGPointMake(cornerRadius, height - cornerRadius) radius:cornerRadius startAngle:M_PI/2 endAngle:M_PI clockwise:YES];
             } else {
@@ -86,13 +88,13 @@
                 [path addArcWithCenter:CGPointMake(width - cornerRadius, height - cornerRadius) radius:cornerRadius startAngle:0 endAngle:M_PI/2 clockwise:YES];
             } else {
                 [path addLineToPoint:CGPointMake(width, height)];
-                [path addLineToPoint:CGPointMake(width, height - thickness)];
+                [path addLineToPoint:CGPointMake(width, height - lineWidth)];
             }
-            [path addLineToPoint:CGPointMake(0, height - thickness)];
+            [path addLineToPoint:CGPointMake(0, height - lineWidth)];
             break;
             
         case UIRectEdgeLeft:
-            [path moveToPoint:CGPointMake(thickness, height)];
+            [path moveToPoint:CGPointMake(lineWidth, height)];
             if (corners & UIRectCornerBottomLeft) {
                 [path addArcWithCenter:CGPointMake(cornerRadius, height - cornerRadius) radius:cornerRadius startAngle:M_PI/2 endAngle:M_PI clockwise:YES];
             } else {
@@ -104,13 +106,13 @@
                 [path addArcWithCenter:CGPointMake(cornerRadius, cornerRadius) radius:cornerRadius startAngle:M_PI endAngle:3*M_PI/2 clockwise:YES];
             } else {
                 [path addLineToPoint:CGPointMake(0, 0)];
-                [path addLineToPoint:CGPointMake(thickness, 0)];
+                [path addLineToPoint:CGPointMake(lineWidth, 0)];
             }
-            [path addLineToPoint:CGPointMake(thickness, height)];
+            [path addLineToPoint:CGPointMake(lineWidth, height)];
             break;
             
         case UIRectEdgeRight:
-            [path moveToPoint:CGPointMake(width - thickness, 0)];
+            [path moveToPoint:CGPointMake(width - lineWidth, 0)];
             if (corners & UIRectCornerTopRight) {
                 [path addArcWithCenter:CGPointMake(width - cornerRadius, cornerRadius) radius:cornerRadius startAngle:3*M_PI/2 endAngle:0 clockwise:YES];
             } else {
@@ -122,9 +124,9 @@
                 [path addArcWithCenter:CGPointMake(width - cornerRadius, height - cornerRadius) radius:cornerRadius startAngle:0 endAngle:M_PI/2 clockwise:YES];
             } else {
                 [path addLineToPoint:CGPointMake(width, height)];
-                [path addLineToPoint:CGPointMake(width - thickness, height)];
+                [path addLineToPoint:CGPointMake(width - lineWidth, height)];
             }
-            [path addLineToPoint:CGPointMake(width - thickness, 0)];
+            [path addLineToPoint:CGPointMake(width - lineWidth, 0)];
             break;
             
         default:
@@ -134,5 +136,7 @@
     borderLayer.path = path.CGPath;
     [self.layer addSublayer:borderLayer];
 }
+
+
 
 @end

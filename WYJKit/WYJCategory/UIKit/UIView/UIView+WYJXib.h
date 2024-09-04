@@ -7,8 +7,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIFont (WYJAdapter)
-
+@interface UIView (WYJXib)
+@property (nonatomic, assign) IBInspectable CGFloat cornerRadius;
+@property (nonatomic, assign) IBInspectable BOOL masksToBounds;
 @end
 
 NS_ASSUME_NONNULL_END

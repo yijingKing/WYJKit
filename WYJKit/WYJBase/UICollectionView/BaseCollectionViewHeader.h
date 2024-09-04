@@ -7,7 +7,5 @@
 #define BaseCollectionViewHeader_h
 
 #import "WYJBaseCollectionView.h"
-#import "WYJBaseCollectionView+Delegate.h"
-#import "WYJBaseCollectionViewDelegate.h"
 #import "WYJCollectionViewAlignmentFlowLayout.h"
 #endif /* BaseCollectionViewHeader_h */

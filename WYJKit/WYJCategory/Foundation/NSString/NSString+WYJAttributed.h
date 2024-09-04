@@ -8,8 +8,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (WYJAttributed)
-- (NSAttributedString *)attributedFontWithTargetString:(NSString *)targetString
-                                                fontSize:(CGFloat)fontSize;
+
+- (NSAttributedString *)yi_attributedFontWithTargetString:(nullable NSString *)targetString
+                                                 fontSize:(nullable UIFont *)fontSize;
+
+- (NSAttributedString *)yi_attributedFontWithTargetString:(nullable NSString *)targetString
+                                                 fontSize:(nullable UIFont *)fontSize
+                                                    color:(nullable UIColor *)color;
 @end
 
 NS_ASSUME_NONNULL_END

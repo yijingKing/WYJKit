@@ -15,4 +15,8 @@
 #import "BaseFoundationHeader.h"
 
 #import "WYJToolUIHeader.h"
+
+#import "WYJImagePickerManager.h"
+
+
 #endif /* WYJKitHeader_h */

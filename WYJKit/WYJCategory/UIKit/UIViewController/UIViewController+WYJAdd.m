@@ -516,12 +516,28 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     }
     return vcArray.copy;
 }
-
+-(void)pushViewController:(UIViewController *)viewController {
+    [self pushViewController:viewController animated:YES];
+}
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.navigationController.viewControllers.count > 0 ) {
         viewController.hidesBottomBarWhenPushed = YES;
     }
     [self.navigationController pushViewController:viewController animated:animated];
 }
-
+- (void)pushViewController:(UIViewController *)vc destructionCount:(NSInteger)count {
+    [self pushViewController:vc];
+    NSInteger total_count = self.navigationController.viewControllers.count;
+    if (total_count > 2) {
+        NSMutableArray * vcs = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
+        for (int i = 0; i < count; i++) {
+            if (self.navigationController.viewControllers.count > 2) {
+                [vcs removeObjectAtIndex:total_count - 2 - i];
+            }else {
+                break;
+            }
+        }
+        self.navigationController.viewControllers = vcs;
+    }
+}
 @end

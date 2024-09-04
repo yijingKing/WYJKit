@@ -36,7 +36,19 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)yi_removeAllSubviews;
 
-- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color thickness:(CGFloat)thickness cornerRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners;
+/// 添加边框
+/// @param side 位置
+/// @param color 颜色
+/// @param lineWidth 宽
+- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth;
+/// 添加边框
+/// @param side 位置
+/// @param color 颜色
+/// @param lineWidth 宽
+/// @param cornerRadius 圆角
+/// @param corners 圆角位置
+- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth cornerRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners;
+
 @end
 NS_ASSUME_NONNULL_END
 

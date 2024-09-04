@@ -123,7 +123,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** push */
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
-
+-(void)pushViewController:(UIViewController *)viewController;
+// 跳转并销毁
+- (void)pushViewController:(UIViewController *)vc destructionCount:(NSInteger)count;
 @end
 
 NS_ASSUME_NONNULL_END

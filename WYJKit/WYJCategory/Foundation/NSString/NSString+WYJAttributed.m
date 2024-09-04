@@ -6,13 +6,24 @@
 #import "NSString+WYJAttributed.h"
 #import "WYJKitHeader.h"
 @implementation NSString (WYJAttributed)
-- (NSAttributedString *)attributedFontWithTargetString:(NSString *)targetString
-                                              fontSize:(CGFloat)fontSize {
+- (NSAttributedString *)yi_attributedFontWithTargetString:(nullable NSString *)targetString
+                                                 fontSize:(nullable UIFont *)fontSize {
+    [self yi_attributedFontWithTargetString:targetString fontSize:fontSize color:nil];
+}
+- (NSAttributedString *)yi_attributedFontWithTargetString:(nullable NSString *)targetString
+                                                 fontSize:(nullable UIFont *)fontSize
+                                                    color:(nullable UIColor *)color {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self];
     NSRange targetRange = [self rangeOfString:targetString];
     if (targetRange.location != NSNotFound) {
-        NSDictionary *attributes = @{NSFontAttributeName: WYJSysFontWithSizes(fontSize)};
-        [attributedString addAttributes:attributes range:targetRange];
+        if (fontSize) {
+            NSDictionary *attributes = @{NSFontAttributeName: fontSize};
+            [attributedString addAttributes:attributes range:targetRange];
+        }
+        if (color) {
+            NSDictionary *attributes = @{NSForegroundColorAttributeName: color};
+            [attributedString addAttributes:attributes range:targetRange];
+        }
     }
     return attributedString;
 }
