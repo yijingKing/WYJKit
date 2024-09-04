@@ -7,7 +7,7 @@
 @implementation NSString (WYJAttributed)
 - (NSAttributedString *)yi_attributedFontWithTargetString:(nullable NSString *)targetString
                                                  fontSize:(nullable UIFont *)fontSize {
-    [self yi_attributedFontWithTargetString:targetString fontSize:fontSize color:nil];
+    return [self yi_attributedFontWithTargetString:targetString fontSize:fontSize color:nil];
 }
 
 - (NSAttributedString *)yi_attributedFontWithTargetString:(nullable NSString *)targetString
