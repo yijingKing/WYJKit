@@ -11,7 +11,7 @@
 - (NSString *)yi_stringFromDate:(NSString *)formatter;
 /** 时间格式转换 */
 + (NSString *)yi_stringFromDate:(NSDate *)date formatter:(NSString *)formatter;
-
+- (NSDate *)yi_dateWithYMDHMS;
 /**
  获取某时间前或后几个月的时间
 
@@ -66,6 +66,9 @@
 /** 增加dHours小时 */
 - (NSDate *)yi_dateByAddingHours:(NSInteger)dHours;
 
+
+//计算两时间差
++ (NSDateComponents *)yi_differenceBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 @end
 
 static inline NSInteger WYear(void) {

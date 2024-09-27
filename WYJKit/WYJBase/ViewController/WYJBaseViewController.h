@@ -36,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setRightBtnTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize block:(void(^)(UIButton *btn))block;
 - (void)setRightBtnImage:(NSString *)image block:(void(^)(UIButton *btn))block;
 - (void)setBackBtnImage:(NSString *)image;
+- (void)setBackImage:(UIImage *)image;
 /// 页面初始化
 - (void)initChildView;
 

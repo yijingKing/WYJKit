@@ -12,6 +12,7 @@ static char WYJActionHandlerLongPressGestureKey;
 @implementation UIView (WYJBlock)
 
 - (void)yi_addTapActionWithBlock:(WYJGestureActionBlock)block {
+    self.userInteractionEnabled = YES;
     UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &WYJActionHandlerTapGestureKey);
     if (!gesture) {
         gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleActionForTapGesture:)];

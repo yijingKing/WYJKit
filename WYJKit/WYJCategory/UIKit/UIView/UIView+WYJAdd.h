@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nullable, nonatomic, readonly) UIViewController *yi_viewController;
 /** 设置部分圆角*/
+- (void)yi_roundeConrners:(UIRectCorner)rectCon radii:(CGFloat)radii;
 - (void)yi_roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size;
 /** 设置阴影 */
 - (void)yi_shadowsColor:(UIColor *)color size:(CGSize)size radius:(CGFloat)radius opacity:(CGFloat)opacity;
@@ -41,14 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param color 颜色
 /// @param lineWidth 宽
 - (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth;
-/// 添加边框
-/// @param side 位置
-/// @param color 颜色
-/// @param lineWidth 宽
-/// @param cornerRadius 圆角
-/// @param corners 圆角位置
-- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth cornerRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners;
 
+// 增加模糊效果的方法
+- (void)yi_addMorseEffectWithAlpha:(CGFloat)alpha;
 @end
 NS_ASSUME_NONNULL_END
 

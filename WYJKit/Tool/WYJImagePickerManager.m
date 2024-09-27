@@ -4,7 +4,7 @@
 */
 
 #import "WYJImagePickerManager.h"
-
+#import <TZImagePickerController/TZImagePickerController.h>
 @implementation WYJImagePickerManager {
     ImagePickerCompletionBlock _completionBlock;
 }
@@ -18,24 +18,34 @@
     return sharedManager;
 }
 
-- (void)presentImagePickerWithSourceType:(UIImagePickerControllerSourceType)sourceType
+- (void)presentImagePickerWithSourceType:(UIImagePickerControllerSourceType)sourceType maxImagesCount:(NSInteger)maxImagesCount
                               completion:(ImagePickerCompletionBlock)completion {
     _completionBlock = [completion copy];
     
     UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
-    
-    if ([UIImagePickerController isSourceTypeAvailable:sourceType]) {
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType] && UIImagePickerControllerSourceTypeCamera == sourceType) {
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         imagePicker.delegate = self;
         imagePicker.sourceType = sourceType;
         [rootViewController presentViewController:imagePicker animated:YES completion:nil];
     } else {
-        NSLog(@"Source type not available.");
+        TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:maxImagesCount delegate:nil];
+        imagePickerVc.allowTakeVideo = NO;
+        imagePickerVc.allowPickingVideo = NO;
+        imagePickerVc.allowPickingGif = NO;
+        imagePickerVc.naviTitleColor = UIColor.blackColor;
+        imagePickerVc.oKButtonTitleColorNormal = UIColor.blackColor;
+        imagePickerVc.barItemTextColor = UIColor.blackColor;
+        [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+            if (completion) {
+                completion(photos);
+            }
+        }];
+        imagePickerVc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        [rootViewController presentViewController:imagePickerVc animated:YES completion:nil];
     }
 }
-
-- (void)presentImagePickerOptionsWithCompletion:(ImagePickerCompletionBlock)completion {
-    _completionBlock = [completion copy];
+- (void)presentImagePickerOptionsWithMaxImagesCount:(NSInteger)maxImagesCount completion:(ImagePickerCompletionBlock)completion  {
     
     UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
     
@@ -46,14 +56,14 @@
     UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * _Nonnull action) {
-        [self presentImagePickerWithSourceType:UIImagePickerControllerSourceTypeCamera
+        [self presentImagePickerWithSourceType:UIImagePickerControllerSourceTypeCamera maxImagesCount:maxImagesCount
                                     completion:completion];
     }];
     
     UIAlertAction *photoLibraryAction = [UIAlertAction actionWithTitle:@"相册"
                                                                  style:UIAlertActionStyleDefault
                                                                handler:^(UIAlertAction * _Nonnull action) {
-        [self presentImagePickerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary
+        [self presentImagePickerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary maxImagesCount:maxImagesCount
                                     completion:completion];
     }];
     
@@ -67,12 +77,15 @@
     
     [rootViewController presentViewController:alertController animated:YES completion:nil];
 }
+- (void)presentImagePickerOptionsWithCompletion:(ImagePickerCompletionBlock)completion {
+    [self presentImagePickerOptionsWithMaxImagesCount:1 completion:completion];
+}
 
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    UIImage *selectedImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *selectedImages = info[UIImagePickerControllerOriginalImage];
     if (_completionBlock) {
-        _completionBlock(selectedImage);
+        _completionBlock(@[selectedImages]);
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

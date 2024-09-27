@@ -56,6 +56,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable UIImage *)yi_cropSquareImageRect:(CGRect)rect;
 ///图片不自动渲染
 + (nullable UIImage *)imageWithNamed:(nullable NSString *)name;
+
+//字符串生成二维码
++ (UIImage *)y_qrodeFromString:(NSString *)inputString;
++ (UIImage *)yi_createNonInterpolatedUIImageFromCIImage:(CIImage *)ciImage withScale:(CGFloat)scale;
 @end
 
 

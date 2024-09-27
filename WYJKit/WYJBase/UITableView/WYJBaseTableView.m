@@ -7,7 +7,7 @@
 #import "WYJBaseTableView.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import <MJRefresh/MJRefresh.h>
-
+#import "WYJKitHeader.h"
 static const char emptyTitleKey;
 static const char emptyImageKey;
 static const char emptyBackgroundColorKey;
@@ -41,24 +41,35 @@ typedef enum : NSUInteger {
 
 @implementation WYJBaseTableView
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self initNormal];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     if (self = [super initWithFrame:frame style:style]) {
-        if (@available(iOS 11.0, *)) {
-            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-//            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
-        self.isFirstShow = YES;
-        self.backgroundColor = UIColor.clearColor;
-        
-        #ifdef __IPHONE_15_0
-        if (@available(iOS 15.0, *)) {
-            self.sectionHeaderTopPadding = 0;
-        }
-        #endif
-        self.emptyMsg = @"暂无数据";
+        [self initNormal];
     }
     return self;
+}
+
+- (void)initNormal {
+    if (@available(iOS 11.0, *)) {
+        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+//            self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    self.isFirstShow = YES;
+    self.backgroundColor = UIColor.clearColor;
+    
+    #ifdef __IPHONE_15_0
+    if (@available(iOS 15.0, *)) {
+        self.sectionHeaderTopPadding = 0;
+    }
+    #endif
+    self.emptyMsg = @"暂无数据";
+    UIView * footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, YJSCREEN_WIDTH, YJBottomHeight)];
+    self.tableFooterView = footerView;
 }
 
 - (void)setIsUserEmpty:(BOOL)isUserEmpty {

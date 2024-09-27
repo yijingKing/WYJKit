@@ -164,9 +164,28 @@
     NSString *selfStr = [fmt stringFromDate:self];
     return [fmt dateFromString:selfStr];
 }
-
-
-
+- (NSDate *)yi_dateWithYMDHMS {
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSString *selfStr = [fmt stringFromDate:self];
+    return [fmt dateFromString:selfStr];
+}
+//计算两时间差
++ (NSDateComponents *)yi_differenceBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+    if (startDate == nil || endDate == nil) {
+        return nil;
+    }
+    // 创建日历实例
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    // 定义要计算的时间单位：天、小时、分钟、秒
+    NSCalendarUnit units = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    
+    // 计算时间差
+    NSDateComponents *components = [calendar components:units fromDate:startDate toDate:endDate options:0];
+    
+    return components;
+}
 
 
 @end

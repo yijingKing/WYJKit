@@ -22,6 +22,8 @@
 - (void)fixMessyDisplay;
 - (void)setLeftViewWithWidth:(double)width;
 - (void)setLeftViewWithIcon:(nullable UIImage *)image width:(double)width imageSize:(CGSize)imageSize spacing:(double)spacing;
+- (void)setLeftViewWithTitle:(NSString *)title icon:(nullable UIImage *)image  imageSize:(CGSize)imageSize spacing:(double)spacing;
+- (void)setLeftViewWithIcon:(nullable UIImage *)image title:(NSString *)title imageSize:(CGSize)imageSize spacing:(double)spacing;
 @end
 
 

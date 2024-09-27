@@ -7,6 +7,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define kImageNamed(imageName)      [UIImage imageNamed:@#imageName]
+#define kSDImageView(img,path)      [img sd_setImageWithURL:[NSURL URLWithString:[LCRequest imageUrlString:path]] placeholderImage:[UIImage imageNamed:@"goods_place_holder"]];
+
 @interface UIImageView (WYJSD)
 - (void)k_setImageWithURL:(nullable NSURL *)url;
 - (void)k_setImageWithURL:(nullable NSURL *)url placeholderImage:(UIImage *)placeholderImage;

@@ -126,6 +126,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)pushViewController:(UIViewController *)viewController;
 // 跳转并销毁
 - (void)pushViewController:(UIViewController *)vc destructionCount:(NSInteger)count;
+/// 跳转到指定控制器并移除所有控制器，仅保留根控制器
+- (void)pushToViewControllerAndRemoveAllExceptRoot:(UIViewController *)viewController;
 @end
 
 NS_ASSUME_NONNULL_END

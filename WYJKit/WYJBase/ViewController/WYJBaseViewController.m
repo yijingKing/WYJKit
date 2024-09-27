@@ -95,6 +95,9 @@
     CGPoint center = CGPointMake(self.nav_bar_view.width / 2, self.nav_bar_view.height / 2);
     self.lab_base_title.center = center;
 }
+- (void)setBackImage:(UIImage *)image {
+    [self.left_base_btn setImage:image forState:UIControlStateNormal];
+}
 - (void)setBackBtnImage:(NSString *)image {
     [self.left_base_btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
 }

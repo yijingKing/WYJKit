@@ -23,6 +23,24 @@
     return [objc_getAssociatedObject(self, @selector(masksToBounds)) boolValue];
 }
 
+#pragma mark - Border Width
+- (void)setBorderWidth:(CGFloat)borderWidth {
+    self.layer.borderWidth = borderWidth;
+    objc_setAssociatedObject(self, @selector(borderWidth), @(borderWidth), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
+- (CGFloat)borderWidth {
+    return [objc_getAssociatedObject(self, @selector(borderWidth)) floatValue];
+}
+
+#pragma mark - Border Color
+- (void)setBorderColor:(UIColor *)borderColor {
+    self.layer.borderColor = borderColor.CGColor;
+    objc_setAssociatedObject(self, @selector(borderColor), borderColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIColor *)borderColor {
+    return objc_getAssociatedObject(self, @selector(borderColor));
+}
 
 @end

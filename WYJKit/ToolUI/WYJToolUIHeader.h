@@ -7,5 +7,5 @@
 #define WYJToolUIHeader_h
 
 #import "WYJGradientLabel.h"
-
+#import "WYJUploadImageView.h"
 #endif /* WYJToolUIHeader_h */

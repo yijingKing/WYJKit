@@ -9,7 +9,9 @@
 #import "NSObject+WYJWindow.h"
 
 @implementation UIView (WYJAdd)
-
+- (void)yi_roundeConrners:(UIRectCorner)rectCon radii:(CGFloat)radii {
+    [self yi_roundeConrners:rectCon cornerRadii:CGSizeMake(radii, radii)];
+}
 - (void)yi_roundeConrners:(UIRectCorner)rectCon cornerRadii:(CGSize)size {
     UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCon cornerRadii:size];
     CAShapeLayer* shape = [[CAShapeLayer alloc] init];
@@ -43,100 +45,66 @@
     return [self yi_currentViewController];
 }
 - (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth {
-    [self yi_addBorderToSide:side color:color lineWidth:lineWidth cornerRadius:0 corners:(UIRectCornerAllCorners)];
+    CAShapeLayer *border = [CAShapeLayer layer];
+        border.strokeColor = color.CGColor;
+        border.fillColor = [UIColor clearColor].CGColor;
+        border.lineWidth = lineWidth;
+
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        CGFloat width = CGRectGetWidth(self.bounds);
+        CGFloat height = CGRectGetHeight(self.bounds);
+
+        switch (side) {
+            case UIRectEdgeTop:
+                [path moveToPoint:CGPointMake(0, 0)];
+                [path addLineToPoint:CGPointMake(width, 0)];
+                break;
+
+            case UIRectEdgeBottom:
+                [path moveToPoint:CGPointMake(0, height)];
+                [path addLineToPoint:CGPointMake(width, height)];
+                break;
+
+            case UIRectEdgeLeft:
+                [path moveToPoint:CGPointMake(0, 0)];
+                [path addLineToPoint:CGPointMake(0, height)];
+                break;
+
+            case UIRectEdgeRight:
+                [path moveToPoint:CGPointMake(width, 0)];
+                [path addLineToPoint:CGPointMake(width, height)];
+                break;
+
+            default:
+                break;
+        }
+
+        border.path = path.CGPath;
+        [self.layer addSublayer:border];
 }
 
-- (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth cornerRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners {
-    CAShapeLayer *borderLayer = [CAShapeLayer layer];
-    borderLayer.strokeColor = color.CGColor;
-    borderLayer.fillColor = [UIColor clearColor].CGColor;
-    borderLayer.lineWidth = lineWidth;
-    
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    CGFloat width = CGRectGetWidth(self.bounds);
-    CGFloat height = CGRectGetHeight(self.bounds);
-    
-    switch (side) {
-        case UIRectEdgeTop:
-            [path moveToPoint:CGPointMake(0, lineWidth)];
-            if (corners & UIRectCornerTopLeft) {
-                [path addArcWithCenter:CGPointMake(cornerRadius, cornerRadius) radius:cornerRadius startAngle:M_PI endAngle:3*M_PI/2 clockwise:YES];
-            } else {
-                [path addLineToPoint:CGPointMake(0, 0)];
-                [path addLineToPoint:CGPointMake(cornerRadius, 0)];
-            }
-            if (corners & UIRectCornerTopRight) {
-                [path addLineToPoint:CGPointMake(width - cornerRadius, 0)];
-                [path addArcWithCenter:CGPointMake(width - cornerRadius, cornerRadius) radius:cornerRadius startAngle:3*M_PI/2 endAngle:0 clockwise:YES];
-            } else {
-                [path addLineToPoint:CGPointMake(width, 0)];
-                [path addLineToPoint:CGPointMake(width, lineWidth)];
-            }
-            [path addLineToPoint:CGPointMake(0, lineWidth)];
-            break;
-            
-        case UIRectEdgeBottom:
-            [path moveToPoint:CGPointMake(0, height - lineWidth)];
-            if (corners & UIRectCornerBottomLeft) {
-                [path addArcWithCenter:CGPointMake(cornerRadius, height - cornerRadius) radius:cornerRadius startAngle:M_PI/2 endAngle:M_PI clockwise:YES];
-            } else {
-                [path addLineToPoint:CGPointMake(0, height)];
-                [path addLineToPoint:CGPointMake(cornerRadius, height)];
-            }
-            if (corners & UIRectCornerBottomRight) {
-                [path addLineToPoint:CGPointMake(width - cornerRadius, height)];
-                [path addArcWithCenter:CGPointMake(width - cornerRadius, height - cornerRadius) radius:cornerRadius startAngle:0 endAngle:M_PI/2 clockwise:YES];
-            } else {
-                [path addLineToPoint:CGPointMake(width, height)];
-                [path addLineToPoint:CGPointMake(width, height - lineWidth)];
-            }
-            [path addLineToPoint:CGPointMake(0, height - lineWidth)];
-            break;
-            
-        case UIRectEdgeLeft:
-            [path moveToPoint:CGPointMake(lineWidth, height)];
-            if (corners & UIRectCornerBottomLeft) {
-                [path addArcWithCenter:CGPointMake(cornerRadius, height - cornerRadius) radius:cornerRadius startAngle:M_PI/2 endAngle:M_PI clockwise:YES];
-            } else {
-                [path addLineToPoint:CGPointMake(0, height)];
-                [path addLineToPoint:CGPointMake(0, height - cornerRadius)];
-            }
-            if (corners & UIRectCornerTopLeft) {
-                [path addLineToPoint:CGPointMake(0, cornerRadius)];
-                [path addArcWithCenter:CGPointMake(cornerRadius, cornerRadius) radius:cornerRadius startAngle:M_PI endAngle:3*M_PI/2 clockwise:YES];
-            } else {
-                [path addLineToPoint:CGPointMake(0, 0)];
-                [path addLineToPoint:CGPointMake(lineWidth, 0)];
-            }
-            [path addLineToPoint:CGPointMake(lineWidth, height)];
-            break;
-            
-        case UIRectEdgeRight:
-            [path moveToPoint:CGPointMake(width - lineWidth, 0)];
-            if (corners & UIRectCornerTopRight) {
-                [path addArcWithCenter:CGPointMake(width - cornerRadius, cornerRadius) radius:cornerRadius startAngle:3*M_PI/2 endAngle:0 clockwise:YES];
-            } else {
-                [path addLineToPoint:CGPointMake(width, 0)];
-                [path addLineToPoint:CGPointMake(width, cornerRadius)];
-            }
-            if (corners & UIRectCornerBottomRight) {
-                [path addLineToPoint:CGPointMake(width, height - cornerRadius)];
-                [path addArcWithCenter:CGPointMake(width - cornerRadius, height - cornerRadius) radius:cornerRadius startAngle:0 endAngle:M_PI/2 clockwise:YES];
-            } else {
-                [path addLineToPoint:CGPointMake(width, height)];
-                [path addLineToPoint:CGPointMake(width - lineWidth, height)];
-            }
-            [path addLineToPoint:CGPointMake(width - lineWidth, 0)];
-            break;
-            
-        default:
-            break;
+- (void)yi_addMorseEffectWithAlpha:(CGFloat)alpha {
+    // 检查是否已经有模糊效果，避免重复添加
+    if ([self viewWithTag:9999]) {
+        return;
     }
     
-    borderLayer.path = path.CGPath;
-    [self.layer addSublayer:borderLayer];
+    // 创建模糊效果
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    
+    // 设置模糊视图的透明度
+    blurEffectView.alpha = alpha; // 设置透明度，0.0 到 1.0 范围，越小透明度越高
+    
+    // 设置模糊视图的尺寸与父视图一致
+    blurEffectView.frame = self.bounds;
+    blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    // 给模糊视图设置唯一标识，避免重复添加
+    blurEffectView.tag = 9999;
+    
+    // 将模糊视图添加到目标视图上
+    [self addSubview:blurEffectView];
 }
-
-
 
 @end

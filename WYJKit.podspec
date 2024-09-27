@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WYJKit'
-  s.version          = '5.1.7'
+  s.version          = '5.1.8'
   s.summary          = 'WYJKit'
   s.description      = <<-DESC
                             add nav
@@ -22,6 +22,8 @@ s.dependency 'DZNEmptyDataSet'
 s.dependency 'MJRefresh'
 s.dependency 'SDWebImage'
 s.dependency 'IQKeyboardManager'
+s.dependency 'TZImagePickerController'
+
 s.public_header_files   = 'WYJKit/**/*.{h}'
 s.source_files = 'WYJKit/**/*.{h,m}'
 

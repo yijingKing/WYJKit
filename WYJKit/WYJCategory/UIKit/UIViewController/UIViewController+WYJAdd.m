@@ -540,4 +540,14 @@ typedef void(^RightNavItemsBlock)(NSInteger);
         self.navigationController.viewControllers = vcs;
     }
 }
+
+- (void)pushToViewControllerAndRemoveAllExceptRoot:(UIViewController *)viewController {
+    [self pushViewController:viewController];
+    UINavigationController *navController = self.navigationController;
+    if (navController) {
+        UIViewController *rootViewController = navController.viewControllers.firstObject;
+        NSArray *viewControllers = @[rootViewController, viewController];
+        [navController setViewControllers:viewControllers animated:YES];
+    }
+}
 @end

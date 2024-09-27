@@ -201,4 +201,58 @@
     return image;
 }
 
+
++ (UIImage *)y_qrodeFromString:(NSString *)inputString {
+    // 将字符串转换为NSData
+    NSData *data = [inputString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // 创建CIFilter过滤器对象，类型为QRCode
+    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    
+    // 重置滤镜的默认属性
+    [filter setDefaults];
+    
+    // 设置输入数据
+    [filter setValue:data forKey:@"inputMessage"];
+    
+    // 设置纠错级别 (L: 7%, M: 15%, Q: 25%, H: 30%)
+    [filter setValue:@"H" forKey:@"inputCorrectionLevel"];
+    
+    // 获取生成的二维码图像
+    CIImage *ciImage = [filter outputImage];
+    
+    // 将CIImage转换为UIImage并放大
+    return [self yi_createNonInterpolatedUIImageFromCIImage:ciImage withScale:10.0];
+}
++ (UIImage *)yi_createNonInterpolatedUIImageFromCIImage:(CIImage *)ciImage withScale:(CGFloat)scale {
+    CGRect extent = CGRectIntegral(ciImage.extent);
+    CGFloat scaleWidth = scale * CGRectGetWidth(extent);
+    CGFloat scaleHeight = scale * CGRectGetHeight(extent);
+    
+    // 创建位图上下文
+    UIGraphicsBeginImageContext(CGSizeMake(scaleWidth, scaleHeight));
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // 创建CoreImage上下文
+    CIContext *ciContext = [CIContext contextWithOptions:nil];
+    
+    // 创建CGImage
+    CGImageRef cgImage = [ciContext createCGImage:ciImage fromRect:extent];
+    
+    // 设置上下文的插值质量
+    CGContextSetInterpolationQuality(context, kCGInterpolationNone);
+    
+    // 绘制图片
+    CGContextDrawImage(context, CGRectMake(0, 0, scaleWidth, scaleHeight), cgImage);
+    
+    // 获取UIImage
+    UIImage *qrCodeImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 释放资源
+    UIGraphicsEndImageContext();
+    CGImageRelease(cgImage);
+    
+    return qrCodeImage;
+}
+
 @end
