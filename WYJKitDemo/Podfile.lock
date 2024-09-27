@@ -6,6 +6,11 @@ PODS:
   - SDWebImage (5.19.4):
     - SDWebImage/Core (= 5.19.4)
   - SDWebImage/Core (5.19.4)
+  - TZImagePickerController (3.8.7):
+    - TZImagePickerController/Basic (= 3.8.7)
+    - TZImagePickerController/Location (= 3.8.7)
+  - TZImagePickerController/Basic (3.8.7)
+  - TZImagePickerController/Location (3.8.7)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
@@ -13,6 +18,7 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - SDWebImage
+  - TZImagePickerController
 
 SPEC REPOS:
   trunk:
@@ -21,6 +27,7 @@ SPEC REPOS:
     - Masonry
     - MJRefresh
     - SDWebImage
+    - TZImagePickerController
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -28,7 +35,8 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
+  TZImagePickerController: 5f35bb7266552e36ca834bafa955b869fe086124
 
-PODFILE CHECKSUM: ae1243f011d55d3b9cf7e79593871d24a83d8b1e
+PODFILE CHECKSUM: 6c08501151b41fc2b1ae41877ab9d85faf8c1ae1
 
 COCOAPODS: 1.15.2

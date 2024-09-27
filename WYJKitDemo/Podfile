@@ -10,4 +10,5 @@ pod 'DZNEmptyDataSet'
   pod 'MJRefresh'
   pod 'SDWebImage'
   pod 'IQKeyboardManager'
+  pod 'TZImagePickerController'
 end
