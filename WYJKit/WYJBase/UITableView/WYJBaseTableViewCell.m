@@ -26,6 +26,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = UIColor.clearColor;
         [self normalElement];
+        [self initBaseElement];
         [self initElement];
     }
     return self;
@@ -33,14 +34,14 @@
 - (void)normalElement {
     [self.contentView addSubview:self.bgView];
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YJRatio(15));
-        make.right.mas_equalTo(-YJRatio(15));
+        make.left.mas_equalTo(YJRatio(12));
+        make.right.mas_equalTo(-YJRatio(12));
         make.top.mas_equalTo(self.contentView);
         make.bottom.mas_equalTo(self.contentView).priority(MASLayoutPriorityDefaultLow);
     }];
     [self.contentView addSubview:self.nextImageView];
     [self.nextImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.bgView.mas_right).offset(-YJRatio(16));
+        make.right.mas_equalTo(self.bgView.mas_right).offset(-YJRatio(12));
         make.centerY.mas_equalTo(self.contentView);
         make.width.mas_equalTo(YJRatio(5));
         make.height.mas_equalTo(YJRatio(9));
@@ -52,12 +53,25 @@
         make.bottom.mas_equalTo(self.bgView);
         make.height.mas_equalTo(1);
     }];
-    self.bgSpace = YJRatio(15);
+    self.bgSpace = YJRatio(12);
     [self.contentView sendSubviewToBack:self.bgView];
+}
+- (void)initBaseElement {
+    
 }
 - (void)initElement {
     
 }
+- (void)configureWithData:(nullable id)data {
+    
+}
+
+- (void)onTriggerEventWithId:(NSInteger)eventId {
+    if ([self.delegate respondsToSelector:@selector(baseCell:didTriggerEventWithId:)]) {
+        [self.delegate baseCell:self didTriggerEventWithId:eventId];
+    }
+}
+
 - (void)setLineSpace:(CGFloat)lineSpace {
     _lineSpace = lineSpace;
     [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {

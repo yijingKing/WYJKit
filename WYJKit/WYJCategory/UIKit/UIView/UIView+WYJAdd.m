@@ -83,6 +83,53 @@
         [self.layer addSublayer:border];
 }
 
+/// 添加渐变边框
+- (void)yi_addGradientBorderToSide:(UIRectEdge)side colors:(NSArray<UIColor *> *)colors locations:(NSArray<NSNumber *>*)locations lineWidth:(CGFloat)lineWidth {
+    // 创建 CAGradientLayer
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    
+    // 将 UIColor 转换为 CGColor
+    NSMutableArray *cgColors = [NSMutableArray array];
+    for (UIColor *color in colors) {
+        [cgColors addObject:(id)color.CGColor];
+    }
+    
+    gradientLayer.colors = cgColors;
+    gradientLayer.locations = locations;
+    // 设置渐变方向和边框的位置
+    CGRect frame = self.bounds;
+    switch (side) {
+        case UIRectEdgeTop:
+            gradientLayer.startPoint = CGPointMake(0.5, 0);
+            gradientLayer.endPoint = CGPointMake(0.5, 1);
+            gradientLayer.frame = CGRectMake(0, 0, frame.size.width, lineWidth);
+            break;
+
+        case UIRectEdgeBottom:
+            gradientLayer.startPoint = CGPointMake(0.5, 1);
+            gradientLayer.endPoint = CGPointMake(0.5, 0);
+            gradientLayer.frame = CGRectMake(0, frame.size.height - lineWidth, frame.size.width, lineWidth);
+            break;
+
+        case UIRectEdgeLeft:
+            gradientLayer.startPoint = CGPointMake(0, 0.5);
+            gradientLayer.endPoint = CGPointMake(1, 0.5);
+            gradientLayer.frame = CGRectMake(0, 0, lineWidth, frame.size.height);
+            break;
+
+        case UIRectEdgeRight:
+            gradientLayer.startPoint = CGPointMake(1, 0.5);
+            gradientLayer.endPoint = CGPointMake(0, 0.5);
+            gradientLayer.frame = CGRectMake(frame.size.width - lineWidth, 0, lineWidth, frame.size.height);
+            break;
+
+        default:
+            break;
+    }
+    // 将渐变层添加到视图的 layer 上
+    [self.layer addSublayer:gradientLayer];
+}
+
 - (void)yi_addMorseEffectWithAlpha:(CGFloat)alpha {
     // 检查是否已经有模糊效果，避免重复添加
     if ([self viewWithTag:9999]) {

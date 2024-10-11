@@ -7,7 +7,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol WYJBaseTableViewCellDelegate <NSObject>
+
+- (void)baseCell:(UITableViewCell *)cell didTriggerEventWithId:(NSInteger)eventId;
+
+@end
+
 @interface WYJBaseTableViewCell : UITableViewCell
+@property (nonatomic, weak) id<WYJBaseTableViewCellDelegate> delegate;
 @property (nonatomic,strong) UIImageView *nextImageView;
 @property (nonatomic,strong) UIView *lineView;
 
@@ -17,9 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) CGFloat bgSpace;
 @property (nonatomic,assign) CGFloat lineSpace;
 @property (nonatomic,assign) CGFloat bgHeight;
+- (void)initBaseElement;
 - (void)initElement;
 @property (nonatomic,copy) void (^onReload)(id t);
-
+///数据配置
+- (void)configureWithData:(nullable id)data;
+///用于代理事件触发
+- (void)onTriggerEventWithId:(NSInteger)eventId;
 @end
 
 NS_ASSUME_NONNULL_END

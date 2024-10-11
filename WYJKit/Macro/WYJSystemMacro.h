@@ -84,10 +84,15 @@
 #endif
 // 设置Debug模式下打印log,release模式下不打印
 #ifdef DEBUG
-#define YJDEBUG(format, ...)   NSLog((@"[DEBUG] %s [第%d行] " format), __PRETTY_FUNCTION__,__LINE__, ##__VA_ARGS__);
+#define NSLog(format, ...) \
+    do { \
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init]; \
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"]; \
+        NSString *timestamp = [formatter stringFromDate:[NSDate date]]; \
+        printf("[DEBUG] %s class: <%p %s:(%d)> method: %s \n%s\n ", [timestamp UTF8String], self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String]); \
+    } while (0)
 #else
-#define NSLog(...)
+#define NSLog(format, ...)
 #endif
-
 
 #endif /* WYJSystemMacro_h */

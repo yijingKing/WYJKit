@@ -6,7 +6,9 @@
 #import "WYJBaseView.h"
 
 @implementation WYJBaseView
-
+- (void)awakeFromNib {
+    [self initElement];
+}
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self initElement];

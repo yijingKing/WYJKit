@@ -125,6 +125,10 @@
     return UIView.new;
 }
 
+- (void)baseCell:(UITableViewCell *)cell didTriggerEventWithId:(NSInteger)eventId {
+    
+}
+
 - (WYJBaseTableView *)tableView {
     if (!_tableView) {
         _tableView = [[WYJBaseTableView alloc] initWithFrame:CGRectZero style:self.tableViewStyle];

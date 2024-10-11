@@ -6,9 +6,11 @@
 #import <UIKit/UIKit.h>
 #import "WYJBaseViewController.h"
 #import "WYJBaseTableView.h"
+#import "WYJBaseTableViewCell.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJBaseTableViewController : WYJBaseViewController<UITableViewDelegate,UITableViewDataSource>
+@interface WYJBaseTableViewController : WYJBaseViewController<UITableViewDelegate,UITableViewDataSource,WYJBaseTableViewCellDelegate>
 @property (strong, nonatomic, nullable) WYJBaseTableView * tableView;
 /// 当前页数
 @property (nonatomic,assign) NSInteger  pageNow;

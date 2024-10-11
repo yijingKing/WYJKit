@@ -12,28 +12,36 @@
 
 @implementation WYJBaseTitleTableViewCell
 
-- (void)initElement {
+- (void)initBaseElement {
     [self.bgView addSubview:self.titLabel];
     [self.titLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(15);
+        make.left.mas_equalTo(YJRatio(12));
         make.centerY.mas_equalTo(self.bgView);
         make.top.mas_equalTo(YJRatio(12));
     }];
     [self.bgView addSubview:self.descLabel];
-    if (self.showNext) {
-        [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.nextImageView.mas_left).offset(-YJRatio(5));
+    [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-YJRatio(12));
+        make.centerY.mas_equalTo(self.bgView);
+        make.left.mas_equalTo(self.titLabel.mas_right).offset(YJRatio(12));
+    }];
+    self.bgSpace = 0;
+}
+- (void)setShowNext:(BOOL)showNext {
+    [super setShowNext:showNext];
+    if (showNext) {
+        [self.descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.nextImageView.mas_left).offset(-YJRatio(4));
             make.centerY.mas_equalTo(self.bgView);
             make.left.mas_equalTo(self.titLabel.mas_right).offset(YJRatio(12));
         }];
     } else {
-        [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(-15);
+        [self.descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-YJRatio(12));
             make.centerY.mas_equalTo(self.bgView);
             make.left.mas_equalTo(self.titLabel.mas_right).offset(YJRatio(12));
         }];
     }
-    self.bgSpace = 0;
 }
 
 - (UILabel *)titLabel {

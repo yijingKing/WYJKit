@@ -42,7 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param color 颜色
 /// @param lineWidth 宽
 - (void)yi_addBorderToSide:(UIRectEdge)side color:(UIColor *)color lineWidth:(CGFloat)lineWidth;
-
+/// 添加渐变边框
+- (void)yi_addGradientBorderToSide:(UIRectEdge)side colors:(NSArray<UIColor *> *)colors locations:(NSArray<NSNumber *>*)locations lineWidth:(CGFloat)lineWidth;
 // 增加模糊效果的方法
 - (void)yi_addMorseEffectWithAlpha:(CGFloat)alpha;
 @end
