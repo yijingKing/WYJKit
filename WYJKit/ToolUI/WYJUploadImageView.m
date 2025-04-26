@@ -11,6 +11,7 @@
 #import <Masonry/Masonry.h>
 @interface WYJUploadImageView ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic,strong) WYJCollectionViewAlignmentFlowLayout * layout;
 
 @end
 
@@ -22,12 +23,19 @@
     return _dataSource;
 }
 - (void)initElement {
+    _minimumLineSpacing = 12;
+    _minimumInteritemSpacing = 12;
+    _horizonalType = WYJHorizonalLeft;
     self.backgroundColor = UIColor.whiteColor;
     [self addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self);
     }];
     [self.collectionView reloadData];
+}
+- (void)setHorizonalType:(WYJHorizonalType)horizonalType {
+    _horizonalType = horizonalType;
+    self.layout.horizonalType = horizonalType;
 }
 
 
@@ -38,20 +46,26 @@
     return self.dataSource.count + 1 >= self.maxCount ? self.maxCount : self.dataSource.count + 1;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (!CGSizeEqualToSize(self.size, CGSizeZero)) {
+        return self.size;
+    }
     CGFloat width = (self.width - 12 * 2) / 3;
     return CGSizeMake(width, width);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 12;
+    return self.minimumLineSpacing;
 }
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 12;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout mminimumInteritemSpacingeritemSpacingForSectionAtIndex:(NSInteger)section {
+    return self.minimumInteritemSpacing;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.dataSource.count == indexPath.row) {
         WYJUploadAddCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WYJUploadAddCell" forIndexPath:indexPath];
         cell.addImage = self.addImage;
+        if (self.addFullImage) {
+            cell.addFullImage = self.addFullImage;
+        }
         return cell;
     }
     WYJUploadImageCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WYJUploadImageCell" forIndexPath:indexPath];
@@ -73,12 +87,20 @@
     }
 }
 
+- (WYJCollectionViewAlignmentFlowLayout *)layout {
+    if (!_layout) {
+        _layout = [[WYJCollectionViewAlignmentFlowLayout alloc]init];
+    }
+    return _layout;
+}
+
 - (WYJBaseCollectionView *)collectionView {
     if (!_collectionView) {
-        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
+        self.layout = [[WYJCollectionViewAlignmentFlowLayout alloc] init];
+        self.layout.horizonalType = self.horizonalType;
         CGFloat width = (self.width - 12 * 2) / 3;
-        layout.itemSize = CGSizeMake(width, width);
-        _collectionView = [[WYJBaseCollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+        self.layout.itemSize = CGSizeMake(width, width);
+        _collectionView = [[WYJBaseCollectionView alloc] initWithFrame:self.bounds collectionViewLayout:self.layout];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         [_collectionView registerClass:WYJUploadAddCell.class forCellWithReuseIdentifier:@"WYJUploadAddCell"];
@@ -99,6 +121,7 @@
 - (void)initElement {
     self.contentView.backgroundColor = WHexColor(0xf8f8f8);
     self.titleLabel = [UILabel yi_createWithText:@"上传图片" color:WHexColor(0x212121) font:WYJSysFontWithSizes(12)];
+    self.titleLabel.adjustsFontSizeToFitWidth = YES;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.titleLabel];
     self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"照相机"]];
@@ -119,7 +142,29 @@
 }
 - (void)setAddImage:(UIImage *)addImage {
     _addImage = addImage;
-    self.imageView.image = addImage;
+    if (addImage) {
+        self.imageView.image = addImage;
+        [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(self);
+            make.top.mas_equalTo(25);
+        }];
+        [self.imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(YJRatio(30));
+            make.height.mas_equalTo(YJRatio(28));
+            make.centerX.mas_equalTo(self);
+            make.top.mas_equalTo(self.titleLabel.mas_bottom).offset(YJRatio(4));
+        }];
+    }
+}
+- (void)setAddFullImage:(UIImage *)addFullImage {
+    _addFullImage = _addFullImage;
+    if (addFullImage) {
+        self.titleLabel.hidden = YES;
+        self.imageView.image = addFullImage;
+        [self.imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(self);
+        }];
+    }
 }
 
 @end
@@ -153,7 +198,7 @@
     self.deleteButton.layer.masksToBounds = YES;
     [self.deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.top.mas_equalTo(0);
-        make.width.height.mas_equalTo(YJRatio(20));
+        make.width.height.mas_equalTo(YJRatio(15));
     }];
     @weakify(self);
     [self.deleteButton yi_addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {

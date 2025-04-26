@@ -11,10 +11,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WYJUploadImageView : WYJBaseView
+@property (nonatomic, assign) WYJHorizonalType horizonalType;
 @property (nonatomic,strong) WYJBaseCollectionView *collectionView;
 @property (nonatomic,strong) UIImage *addImage;
+@property (nonatomic,strong) UIImage *addFullImage;
 @property (nonatomic,copy) void (^resultBlock)(NSArray * array);
 @property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,assign) CGSize size; 
+@property (nonatomic,assign) double minimumLineSpacing;
+@property (nonatomic,assign) double minimumInteritemSpacing;
+
 /// 最大数
 @property (nonatomic,assign) double maxCount;
 
@@ -22,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WYJUploadAddCell: WYJBaseCollectionViewCell
 @property (nonatomic,strong) UIImage *addImage;
+@property (nonatomic,strong) UIImage *addFullImage;
 @end
 
 @interface WYJUploadImageCell: WYJBaseCollectionViewCell

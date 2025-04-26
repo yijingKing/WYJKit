@@ -8,4 +8,7 @@
 
 #import "WYJGradientLabel.h"
 #import "WYJUploadImageView.h"
+#import "WYJButton.h"
+
+
 #endif /* WYJToolUIHeader_h */

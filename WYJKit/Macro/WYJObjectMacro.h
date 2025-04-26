@@ -42,7 +42,7 @@
 
 //强引用
 #ifndef YJSTRONGSELF
-    #define YJSTRONGSELF typeof(weakSelf) __strong strongSelf = weakSelf;
+    #define YJSTRONGSELF typeof(weakSelf) __strong self = weakSelf;
 #endif
 
 #ifndef strongify
@@ -85,5 +85,23 @@
 #ifndef YJAppVersion
 #define YJAppVersion             [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #endif
+
+
+// 支持任意类的懒加载宏
+#define YJ_LAZY_LOAD(type, name) \
+- (type *)name { \
+if (!_##name) { \
+_##name = (type.new); \
+} \
+return _##name; \
+}
+
+#define YJ_LAZY_LOAD_EX(type, name, expr) \
+- (type *)name { \
+if (!_##name) { \
+_##name = (expr); \
+} \
+return _##name; \
+}
 
 #endif /* WYJObjectMacro_h */

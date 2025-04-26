@@ -90,4 +90,17 @@
 #endif
 
 
+//主窗口
+#define YJKeyWindow \
+({ \
+UIWindow *keyWindow = nil; \
+for (UIWindowScene *windowScene in [UIApplication sharedApplication].connectedScenes) { \
+if (windowScene.activationState == UISceneActivationStateForegroundActive) { \
+keyWindow = windowScene.windows.firstObject; \
+break; \
+} \
+} \
+keyWindow; \
+})
+
 #endif /* WYJFrameMacro_h */

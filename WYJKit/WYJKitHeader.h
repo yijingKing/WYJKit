@@ -18,5 +18,6 @@
 
 #import "WYJImagePickerManager.h"
 
+#import "UIKitThenHeader.h"
 
 #endif /* WYJKitHeader_h */
