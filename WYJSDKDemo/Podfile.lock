@@ -1,0 +1,60 @@
+PODS:
+  - DZNEmptyDataSet (1.8.1)
+  - IQKeyboardManager (6.5.19)
+  - LSTPopView (0.3.10):
+    - LSTPopView/Code (= 0.3.10)
+    - LSTTimer
+  - LSTPopView/Code (0.3.10):
+    - LSTTimer
+  - LSTTimer (0.2.10)
+  - Masonry (1.1.0)
+  - MJRefresh (3.7.9)
+  - SDWebImage (5.19.7):
+    - SDWebImage/Core (= 5.19.7)
+  - SDWebImage/Core (5.19.7)
+  - TZImagePickerController (3.8.7):
+    - TZImagePickerController/Basic (= 3.8.7)
+    - TZImagePickerController/Location (= 3.8.7)
+  - TZImagePickerController/Basic (3.8.7)
+  - TZImagePickerController/Location (3.8.7)
+  - WYJKit (5.2.1):
+    - DZNEmptyDataSet
+    - IQKeyboardManager
+    - LSTPopView
+    - Masonry
+    - MJRefresh
+    - SDWebImage
+    - TZImagePickerController
+
+DEPENDENCIES:
+  - WYJKit (from `DevPods/WYJKit/WYJKit.podspec`)
+
+SPEC REPOS:
+  trunk:
+    - DZNEmptyDataSet
+    - IQKeyboardManager
+    - LSTPopView
+    - LSTTimer
+    - Masonry
+    - MJRefresh
+    - SDWebImage
+    - TZImagePickerController
+
+EXTERNAL SOURCES:
+  WYJKit:
+    :path: DevPods/WYJKit/WYJKit.podspec
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  LSTPopView: 9379f00f6ce7d1fc620b50ab00ed3ef97b2d4d52
+  LSTTimer: caf8f02ff366ca175cf4c1778d26c166183c1b6f
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  SDWebImage: 8a6b7b160b4d710e2a22b6900e25301075c34cb3
+  TZImagePickerController: 5f35bb7266552e36ca834bafa955b869fe086124
+  WYJKit: f7a7bc4912d0f3bf9342c4cc0a5886d7b613f5f8
+
+PODFILE CHECKSUM: c00dcd3e6fbc57f4c9c342c168cced7492d9dd64
+
+COCOAPODS: 1.16.2
