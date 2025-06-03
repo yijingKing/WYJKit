@@ -10,32 +10,32 @@
 
 #pragma mark --- 将时间转换成时间戳
 - (nullable NSString *)yi_toTimestampWithFormatter:(WYJDateFormatType)formatType {
-    return [self yi_toTimestampWithFormatter:formatType customFormat:nil];
+    return [self yi_toTimestampWithFormatter:formatType customFormat:@""];
 }
 
 #pragma mark --- 将时间戳转换成时间
 - (NSString *)yi_timestampToString:(NSTimeInterval)timestamp format:(WYJDateFormatType)formatType {
-    return [self yi_timestampToString:timestamp format:formatType customFormat:nil];
+    return [self yi_timestampToString:timestamp format:formatType customFormat:@""];
 }
 
 #pragma mark --- 日期转字符串
 - (NSString *)yi_dateToStringWithFormat:(WYJDateFormatType)formatType {
-    return [self yi_dateToStringWithFormat:formatType customFormat:nil];
+    return [self yi_dateToStringWithFormat:formatType customFormat:@""];
 }
 
 #pragma mark --- 将时间转换成时间戳
 - (nullable NSString *)yi_toTimestampWithCustomFormatter:(NSString *)customFormat {
-    return [self yi_toTimestampWithFormatter:nil customFormat:customFormat];
+    return [self yi_toTimestampWithFormatter:WYJDateFormatTypeNormal customFormat:customFormat];
 }
 
 #pragma mark --- 将时间戳转换成时间
 - (NSString *)yi_timestampToString:(NSTimeInterval)timestamp customFormat:(NSString *)customFormat {
-    return [self yi_timestampToString:timestamp format:nil customFormat:customFormat];
+    return [self yi_timestampToString:timestamp format:WYJDateFormatTypeNormal customFormat:customFormat];
 }
 
 #pragma mark --- 日期转字符串
 - (NSString *)yi_dateToStringWithCustomFormat:(NSString *)customFormat {
-    return [self yi_dateToStringWithFormat:nil customFormat:customFormat];
+    return [self yi_dateToStringWithFormat:WYJDateFormatTypeNormal customFormat:customFormat];
 }
 
 
@@ -66,7 +66,7 @@
 #pragma mark --- 字符串转日期
 + (NSDate *)yi_stringToDate:(NSString *)dateString {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    NSString *dateFormat = [NSDate.date yi_dateFormatForType:WYJDateFormatTypeNormal customFormat:nil];
+    NSString *dateFormat = [NSDate.date yi_dateFormatForType:WYJDateFormatTypeNormal customFormat:@""];
     [dateFormatter setDateFormat:dateFormat];
     NSDate *date = [dateFormatter dateFromString:dateString];
     return date;
