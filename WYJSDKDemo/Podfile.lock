@@ -12,18 +12,22 @@ PODS:
   - SDWebImage (5.19.7):
     - SDWebImage/Core (= 5.19.7)
   - SDWebImage/Core (5.19.7)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
   - TZImagePickerController (3.8.7):
     - TZImagePickerController/Basic (= 3.8.7)
     - TZImagePickerController/Location (= 3.8.7)
   - TZImagePickerController/Basic (3.8.7)
   - TZImagePickerController/Location (3.8.7)
-  - WYJKit (5.2.1):
+  - WYJKit (5.2.3):
     - DZNEmptyDataSet
     - IQKeyboardManager
     - LSTPopView
     - Masonry
     - MJRefresh
     - SDWebImage
+    - SVProgressHUD
     - TZImagePickerController
 
 DEPENDENCIES:
@@ -38,6 +42,7 @@ SPEC REPOS:
     - Masonry
     - MJRefresh
     - SDWebImage
+    - SVProgressHUD
     - TZImagePickerController
 
 EXTERNAL SOURCES:
@@ -52,8 +57,9 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   SDWebImage: 8a6b7b160b4d710e2a22b6900e25301075c34cb3
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   TZImagePickerController: 5f35bb7266552e36ca834bafa955b869fe086124
-  WYJKit: f7a7bc4912d0f3bf9342c4cc0a5886d7b613f5f8
+  WYJKit: a54fb032496c2eaa16031d482ca23a2ad1fb3ac0
 
 PODFILE CHECKSUM: e7cb06b75dae0704af98504d0ba2c57416013bdf
 
