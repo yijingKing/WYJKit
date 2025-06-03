@@ -2,7 +2,7 @@
 //  SceneDelegate.m
 //  WYJSDKDemo
 //
-//  Created by 祎 on 2025/4/26.
+//  Created by 祎 on 2025/6/3.
 //
 
 #import "SceneDelegate.h"

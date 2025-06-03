@@ -24,7 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL open_noti_reload;
 - (void)startNotiReloadData;
 
-
 /// 设置导航栏标题
 @property (nonatomic, copy) NSString * n_title;
 @property (nonatomic, copy) UIColor * n_titleColor;
@@ -37,12 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setRightBtnImage:(NSString *)image block:(void(^)(UIButton *btn))block;
 - (void)setBackBtnImage:(NSString *)image;
 - (void)setBackImage:(UIImage *)image;
-/// 页面初始化
-- (void)setupUI;
-/// 约束
-- (void)setupConstraints;
-/// 页面初始化
-- (void)initChildView;
 
 /// 网络请求
 - (void)requestData;

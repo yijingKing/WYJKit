@@ -7,18 +7,30 @@
 
 // 定义日期格式类型
 typedef NS_ENUM(NSUInteger, WYJDateFormatType) {
-    WYJDateFormatTypeISO8601,       // ISO8601 标准日期格式
-    WYJDateFormatTypeNormal,        // 正常日期格式
-    WYJDateFormatTypeShort,         // 短日期格式
-    WYJDateFormatTypeMedium,        // 中等日期格式
-    WYJDateFormatTypeLong,          // 长日期格式
-    WYJDateFormatTypeFull,          // 完整日期格式
-    WYJDateFormatTypeTimeOnly,      // 仅时间格式
-    WYJDateFormatTypeDateOnly,      // 仅日期格式
-    WYJDateFormatTypeYearMonthDayHourMinute, // 年月日时分格式
-    WYJDateFormatTypeYearMonthDayHour,       // 年月日时格式
-    WYJDateFormatTypeYearMonthDay,           // 年月日格式
-    WYJDateFormatTypeMonthDayHourMinute     // 月日时分格式
+    /// ISO8601 标准日期格式
+    WYJDateFormatTypeISO8601,
+    /// 正常日期格式
+    WYJDateFormatTypeNormal,
+    /// 短日期格式
+    WYJDateFormatTypeShort,
+    /// 中等日期格式
+    WYJDateFormatTypeMedium,
+    /// 长日期格式
+    WYJDateFormatTypeLong,
+    /// 完整日期格式
+    WYJDateFormatTypeFull,
+    /// 仅时间格式
+    WYJDateFormatTypeTimeOnly,
+    /// 仅日期格式
+    WYJDateFormatTypeDateOnly,
+    /// 年月日时分格式
+    WYJDateFormatTypeYearMonthDayHourMinute,
+    /// 年月日时格式
+    WYJDateFormatTypeYearMonthDayHour,
+    /// 年月日格式
+    WYJDateFormatTypeYearMonthDay,
+    /// 月日时分格式
+    WYJDateFormatTypeMonthDayHourMinute
 };
 
 @interface NSDate (WYJConversion)

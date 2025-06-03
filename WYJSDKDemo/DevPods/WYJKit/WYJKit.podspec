@@ -47,5 +47,11 @@ s.source_files = 'WYJKit/**/*.{h,m}'
 #end
 
 s.requires_arc = true
+
+s.module_name      = 'WYJKit'
+s.pod_target_xcconfig = {
+  'DEFINES_MODULE' => 'YES'
+}
+
 end
 

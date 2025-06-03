@@ -9,6 +9,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YJViewMaker : NSObject
 
+@property (nonatomic, weak) UIView *view;
+
 /// 设置背景颜色
 /// @param color 背景颜色
 /// @return 返回 YJViewMaker 实例以支持链式调用
@@ -91,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)yi_configureWithMake:(void (^)(YJViewMaker *make))block;
 /// 配置视图的属性
 /// @param block 配置 block，提供链式调用接口
-+ (UILabel *)yi_configureWithMake:(void (^)(YJViewMaker *make))block;
++ (UIView *)yi_configureWithMake:(void (^)(YJViewMaker *make))block;
 @end
 
 NS_ASSUME_NONNULL_END

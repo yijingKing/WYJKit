@@ -1,7 +1,7 @@
 /*
-  Created by 祎 on 2021
-  Copyright © 2021年 祎. All rights reserved.
-*/
+ Created by 祎 on 2021
+ Copyright © 2021年 祎. All rights reserved.
+ */
 
 #import "WYJBaseTableViewController.h"
 #import <Masonry/Masonry.h>
@@ -12,12 +12,13 @@
 /// //判断是否加载中
 @property (nonatomic ,assign)BOOL isLoading;
 
+
 @end
 
 @implementation WYJBaseTableViewController
 
 - (void)viewDidLoad {
-    self.tableViewStyle = UITableViewStyleGrouped;
+    self.tableViewStyle = UITableViewStylePlain;
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -40,8 +41,9 @@
     [self.view sendSubviewToBack:self.tableView];
     [self.tableView yi_registerClass:WYJBaseTableViewCell.class];
     [self.tableView yi_registerClass:WYJBaseTitleTableViewCell.class];
-    
 }
+
+
 - (void)setIsUserEmpty:(BOOL)isUserEmpty {
     _isUserEmpty = isUserEmpty;
     self.tableView.isUserEmpty = isUserEmpty;
@@ -120,7 +122,8 @@
     return 0.01;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return UIView.new;
+    UIView *header = [[UIView alloc] init];
+    return header;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return UIView.new;

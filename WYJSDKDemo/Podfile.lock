@@ -9,18 +9,18 @@ PODS:
   - LSTTimer (0.2.10)
   - Masonry (1.1.0)
   - MJRefresh (3.7.9)
-  - SDWebImage (5.19.7):
-    - SDWebImage/Core (= 5.19.7)
-  - SDWebImage/Core (5.19.7)
+  - SDWebImage (5.21.0):
+    - SDWebImage/Core (= 5.21.0)
+  - SDWebImage/Core (5.21.0)
   - SVProgressHUD (2.3.1):
     - SVProgressHUD/Core (= 2.3.1)
   - SVProgressHUD/Core (2.3.1)
-  - TZImagePickerController (3.8.7):
-    - TZImagePickerController/Basic (= 3.8.7)
-    - TZImagePickerController/Location (= 3.8.7)
-  - TZImagePickerController/Basic (3.8.7)
-  - TZImagePickerController/Location (3.8.7)
-  - WYJKit (5.2.3):
+  - TZImagePickerController (3.8.9):
+    - TZImagePickerController/Basic (= 3.8.9)
+    - TZImagePickerController/Location (= 3.8.9)
+  - TZImagePickerController/Basic (3.8.9)
+  - TZImagePickerController/Location (3.8.9)
+  - WYJKit (5.2.4):
     - DZNEmptyDataSet
     - IQKeyboardManager
     - LSTPopView
@@ -56,11 +56,11 @@ SPEC CHECKSUMS:
   LSTTimer: caf8f02ff366ca175cf4c1778d26c166183c1b6f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
-  SDWebImage: 8a6b7b160b4d710e2a22b6900e25301075c34cb3
+  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
-  TZImagePickerController: 5f35bb7266552e36ca834bafa955b869fe086124
-  WYJKit: a54fb032496c2eaa16031d482ca23a2ad1fb3ac0
+  TZImagePickerController: 456f470b5dea97b37226ec7a694994a8663340b2
+  WYJKit: 0de28761d655721e4d3af81cd0a7e1e9225bda8e
 
-PODFILE CHECKSUM: e7cb06b75dae0704af98504d0ba2c57416013bdf
+PODFILE CHECKSUM: 030a89f83739b0e5495d5496c9dea2ead3366d83
 
 COCOAPODS: 1.16.2

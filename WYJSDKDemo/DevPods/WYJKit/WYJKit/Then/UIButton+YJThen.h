@@ -8,6 +8,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJButtonMaker : YJViewMaker
+@property (nonatomic, weak) UIButton *button;
 
 /// 设置按钮的 title。
 /// @param title 按钮的标题。

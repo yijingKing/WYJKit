@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) LSTPopView *popView;
 
 @property (nonatomic, strong) id data;
+/// 设置弹窗配置
+- (void)setPopConfiguration;
 
 /// 显示弹窗
 - (void)pop;
@@ -23,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIView *)setupUI;
 ///权重
 - (NSInteger)priority;
+
 @end
 
 NS_ASSUME_NONNULL_END

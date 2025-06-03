@@ -25,10 +25,13 @@
                                        parentView:YJKeyWindow.rootViewController.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
+        [self setPopConfiguration];
     }
     return self;
 }
-
+- (void)setPopConfiguration {
+    
+}
 - (UIView *)setupUI {
     return UIView.new;
 }

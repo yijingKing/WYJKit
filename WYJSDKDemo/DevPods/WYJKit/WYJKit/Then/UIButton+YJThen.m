@@ -29,7 +29,7 @@
 
 @interface YJButtonMaker ()
 
-@property (nonatomic, weak) UIButton *button;
+
 
 @end
 
@@ -81,8 +81,6 @@
         return weakSelf;
     };
     _selectedFont = ^YJButtonMaker *(UIFont *font) {
-        // 不能直接设置不同状态字体，需要 runtime 或其他方法 workaround
-        // 暂时作为同一字体设置，备注此限制
         weakSelf.button.titleLabel.font = font;
         return weakSelf;
     };

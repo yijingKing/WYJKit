@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
   s.author           = { '╰莪呮想好好宠Nǐつ ' => '1091676312@qq.com' }
   s.source           = { :git => 'https://github.com/MemoryKing/WYJKit.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '14.0'
-  s.platform     = :ios, '14.0'
+  s.ios.deployment_target = '13.0'
+s.platform     = :ios, '13.0'
   s.frameworks = 'UIKit','Foundation','CoreGraphics','CoreText'
 
 s.dependency 'Masonry'
@@ -47,5 +47,11 @@ s.source_files = 'WYJKit/**/*.{h,m}'
 #end
 
 s.requires_arc = true
+
+s.module_name      = 'WYJKit'
+s.pod_target_xcconfig = {
+  'DEFINES_MODULE' => 'YES'
+}
+
 end
 
