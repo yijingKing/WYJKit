@@ -8,6 +8,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YJImageViewMaker : YJViewMaker
+@property (nonatomic, weak) UIImageView *imageView;
 
 /// 设置 UIImageView 的图片。
 /// @param image 要设置的图片。

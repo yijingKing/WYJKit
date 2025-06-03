@@ -7,7 +7,7 @@
 
 @interface YJViewMaker ()
 
-@property (nonatomic, weak) UIView *view;
+
 
 @end
 
@@ -106,7 +106,7 @@
         block(maker);
     }
 }
-+ (UILabel *)yi_configureWithMake:(void (^)(YJViewMaker *make))block {
++ (UIView *)yi_configureWithMake:(void (^)(YJViewMaker *make))block {
     UIView *v = [UIView new];
     if (block) {
         YJViewMaker *maker = [[YJViewMaker alloc] initWithView:v];

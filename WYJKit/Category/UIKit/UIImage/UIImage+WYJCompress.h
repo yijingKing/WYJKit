@@ -40,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///对指定图片进行拉伸
 + (UIImage*)yi_resizableImage:(NSString *)name;
+
+///压缩上传图片到指定字节(压缩质量和尺寸)
+- (nullable NSData *)yi_forceCompressToMaxLength:(NSUInteger)maxLength;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -27,8 +27,6 @@
 
 @interface YJImageViewMaker ()
 
-@property (nonatomic, weak) UIImageView *imageView;
-
 @end
 
 @implementation YJImageViewMaker

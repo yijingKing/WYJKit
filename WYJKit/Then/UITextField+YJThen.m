@@ -7,7 +7,7 @@
 
 @interface YJTextFieldMaker ()
 
-@property (nonatomic, weak) UITextField *textField;
+
 
 @end
 

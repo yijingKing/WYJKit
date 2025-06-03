@@ -9,6 +9,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YJTextFieldMaker : YJViewMaker
 
+@property (nonatomic, weak) UITextField *textField;
+
 /// 设置视图的框架
 /// @param frame 视图的框架
 /// @return 返回 YJTextFieldMaker 实例以支持链式调用

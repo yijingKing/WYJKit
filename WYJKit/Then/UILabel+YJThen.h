@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 // Maker 类，用于链式调用方法
 @interface YJLabelMaker : YJViewMaker
 
+@property (nonatomic, strong) UILabel *label;
+
 // 初始化方法，传入一个 UILabel 实例
 - (instancetype)initWithLabel:(UILabel *)label;
 

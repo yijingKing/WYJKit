@@ -61,10 +61,6 @@
     if (!self.nav_hidden) {
         [self.view addSubview:self.nav_base_view];
     }
-    
-    [self initChildView];
-    [self setupUI];
-    [self setupConstraints];
 }
 - (void)setNav_hidden:(BOOL)nav_hidden {
     _nav_hidden = nav_hidden;
@@ -127,12 +123,6 @@
 }
 
 - (void)reloadViewData {
-    
-}
-- (void)setupUI {
-    
-}
-- (void)setupConstraints {
     
 }
 
